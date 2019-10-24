@@ -49,9 +49,9 @@ console.log(superHeroes['active']);
 console.log(superHeroes['members'][1]['powers'][2]);
 ```
 
-Metro City
-true
-Superhuman reflexes
+Metro City \n
+true \n
+Superhuman reflexes \n
 
 
 
