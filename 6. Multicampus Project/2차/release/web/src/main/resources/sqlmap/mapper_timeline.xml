@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+> 
+
+<mapper namespace="lab.latte.issue.dao.ITimelineDAO">
+	
+	<select id="getLastTimeunit" resultType="TimelineVO"> 
+		SELECT * FROM (SELECT * FROM latte_timeline ORDER BY yymmdd DESC, hhmm DESC)
+		WHERE rownum = 1
+	</select>
+  
+  
+  
+    <select id="getTimeunitByTime" resultType="TimelineVO" parameterType="hashmap"> 
+      SELECT * FROM latte_timeline WHERE yymmdd = #{yymmdd} and hhmm = #{hhmm}
+    </select>
+ 
+ 
+ 
+    <select id="isExistTimeunit" resultType="int" parameterType="hashmap">
+      SELECT count(yymmdd) FROM latte_timeline WHERE yymmdd = #{yymmdd} and hhmm = #{hhmm}
+    </select>
+    
+    
+    
+    <select id="getAroundTimeunit" resultType="TimelineVO" parameterType="hashmap">
+      SELECT 
+          yymmdd, hhmm
+      FROM (
+          SELECT 
+              yymmdd, hhmm, 
+              ABS (
+                  TO_NUMBER(CONCAT(TO_CHAR(yymmdd), LPAD(hhmm, 4, '0')))
+                  - 
+                  TO_NUMBER(TO_CHAR(TO_DATE(#{yymmddhhmm}, 'yyMMddHH24MI'), 'yyMMddHH24MI'))
+              )  as diff
+          FROM 
+              latte_timeline
+          WHERE 
+              (CONCAT(TO_CHAR(yymmdd), LPAD(hhmm, 4, '0')))
+              <![CDATA[>]]> 
+              TO_CHAR(TO_DATE(#{yymmddhhmm}, 'yyMMddHH24MI') - 1, 'yyMMddHH24MI')
+              AND
+              (CONCAT(TO_CHAR(yymmdd), LPAD(hhmm, 4, '0'))) 
+              <![CDATA[<]]>
+              TO_CHAR(TO_DATE(#{yymmddhhmm}, 'yyMMddHH24MI') + 1, 'yyMMddHH24MI')
+          ORDER BY
+              diff
+      )
+      WHERE
+          rownum = 1
+    </select>
+
+
+
+    <select id="getPastTimeline" resultType="TimelineVO" parameterType="hashmap">
+      SELECT 
+          yymmdd, hhmm
+      FROM (
+          SELECT 
+              rownum as rnum, yymmdd, hhmm
+          FROM (
+              SELECT yymmdd, hhmm
+              FROM latte_timeline
+              WHERE (CONCAT(TO_CHAR(yymmdd), LPAD(hhmm, 4, '0'))) <![CDATA[<]]> #{yymmddhhmm}
+              ORDER BY yymmdd DESC, hhmm DESC
+          )
+          WHERE 
+              rownum <![CDATA[<=]]> #{ea}     
+          )
+      WHERE 
+          rnum <![CDATA[<=]]> #{ea}
+      ORDER BY 
+          yymmdd, hhmm
+    </select>
+    
+    
+    
+    <select id="getFutureTimeline" resultType="TimelineVO" parameterType="hashmap">
+      SELECT 
+          yymmdd, hhmm
+      FROM (
+          SELECT 
+              rownum as rnum, yymmdd, hhmm
+          FROM (
+              SELECT yymmdd, hhmm
+              FROM latte_timeline
+              WHERE (CONCAT(TO_CHAR(yymmdd), LPAD(hhmm, 4, '0'))) <![CDATA[>]]> #{yymmddhhmm}
+              ORDER BY yymmdd, hhmm
+          )
+          WHERE 
+              rownum <![CDATA[<=]]> #{ea}     
+          )
+      WHERE 
+          rnum <![CDATA[<=]]> #{ea}
+      ORDER BY 
+          yymmdd, hhmm
+    </select>
+	
+  
+  
+	<select id="getTimeunitByPos" resultType="TimelineVO" parameterType="Integer">
+		SELECT 
+		     yymmdd, hhmm, searchword, visdata
+		FROM (
+		    SELECT 
+		        rownum as rnum, yymmdd, hhmm, searchword, visdata
+		    FROM (
+		        SELECT *
+		        FROM latte_timeline 
+		        ORDER BY yymmdd DESC, hhmm DESC
+		    )
+		    WHERE 
+		    	
+		    	rownum <![CDATA[<=]]> #{pos}
+		    	
+		)
+		WHERE 
+		    rnum = #{pos}
+	</select>
+	
+</mapper>
+

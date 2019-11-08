@@ -1,0 +1,46 @@
+﻿티백 하나서 미세 플라스틱 조각 116억개 나와
+티백(NNG)+하나(NR)+서(JKB)+미세(NNG)+플라스틱(NNG)+조각(NNG)+116(SN)+억(NR)+개(NNB)+나오(VV)+아(EC)+
+
+
+인체상 위험 아직 확인 안 돼..추가 연구 필요
+인체(NNG)+상(XSN)+위험(NNG)+아직(MAG)+확인(NNG)+안(MAG)+되(VV)+어(EC)+..(SE)+추가(NNG)+연구(NNG)+필요(NNG)+
+
+
+(서울=뉴스1) 김서연 기자 = 티백으로 우려낸 차(茶) 한잔에서 수십억 개의 미세 플라스틱이 나온다는 연구 결과가 발표됐다.
+((SS)+서울(NNP)+=(SW)+뉴스(NNG)+1(SN)+)(SS)+김서연(NNP)+기자(NNG)+=(SW)+티백(NNG)+으로(JKB)+우리(VV)+ㄴ(ETM)+차(NNG)+((SS)+茶(SH)+)(SS)+한잔(NNG)+에서(JKB)+수십억(NR)+개(NNB)+의(JKG)+미세(NNG)+플라스틱(NNG)+이(JKS)+나오(VV)+ㄴ(ETM)+다는(ETM)+연구(NNG)+결과(NNG)+가(JKS)+발표되(VV)+었(EP)+다(EF)+.(SF)+
+
+
+30일(현지시간) CNN에 따르면 캐나다 맥길대 연구진은 지난 25일 발표한 논문에서 4개의 티백 제품을 끓는 물에 넣어 분석한 결과, 티백 하나에서 116억개에 달하는 미세 플라스틱과 31억개 나노 플라스틱 조각이 방출됐다고 밝혔다.
+30(SN)+일(NNB)+((SS)+현지(NNG)+시간(NNG)+)(SS)+CNN(SL)+에(JKB)+따르(VV)+면(EC)+캐(VV)+나(VX)+다(EF)+맥길(NNP)+대(XSN)+연구진(NNG)+은(JX)+지나(VV)+ㄴ(ETM)+25(SN)+일(NNB)+발표하(VV)+ㄴ(ETM)+논문(NNG)+에서(JKB)+4(SN)+개(NNB)+의(JKG)+티백(NNG)+제품(NNG)+을(JKO)+끓(VV)+는(ETM)+물(NNG)+에(JKB)+넣(VV)+어(EC)+분석하(VV)+ㄴ(ETM)+결(NNG)+과(JC)+,(SP)+티백(NNG)+하나(NR)+에서(JKB)+116(SN)+억(NR)+개(NNB)+에(JKB)+달하(VV)+는(JX)+미세(NNG)+플라스틱(NNG)+과(JC)+31(SN)+억(NR)+개(NNB)+나노(NNG)+플라스틱(NNG)+조각(NNG)+이(JKS)+방출되(VV)+었(EP)+다고(EC)+밝히(VV)+었(EP)+다(EF)+.(SF)+
+
+
+이는 다른 음식이나 음료 등에서 발견된 검출 양보다 수천 배 더 많은 것이다. 많은 티백 업체들은 제품을 만들 때 폴리프로필렌을 사용하고 있다.
+이(NP)+는(JX)+다른(MM)+음식(NNG)+이나(JC)+음료(NNG)+등(NNB)+에서(JKB)+발견되(VV)+ㄴ(ETM)+검출(NNG)+양보(NNG)+다(EF)+수천(NR)+배(NNB)+더(MAG)+많(VA)+은(ETM)+것(NNB)+이다(EF)+.(SF)+많(VA)+은(ETM)+티백(NNG)+업체(NNG)+들(XSN)+은(JX)+제품(NNG)+을(JKO)+만들(VV)+때(NNG)+폴리프로필렌(NNG)+을(JKO)+사용하(VV)+고(EC)+있(VX)+다(EF)+.(SF)+
+
+
+연구진은 티백에서 찻잎을 제거한 뒤 티백으로 차를 끓이는 과정을 따라했다. CNN은 과학자들이 여태까지 다양한 음식에서 미세 플라스틱 조각을 발견했지만, 차를 끓이거나 다른 뜨거운 음료를 만드는 동안에도 미세 플라스틱이 배출될 수 있는지에 대한 연구는 거의 이뤄지지 않았다고 설명했다.
+연구진(NNG)+은(JX)+티백(NNG)+에서(JKB)+찻잎(NNG)+을(JKO)+제거하(VV)+ㄴ(ETM)+뒤(NNG)+티백(NNG)+으로(JKB)+차(NNG)+를(JKO)+끓이(VV)+는(JX)+과정(NNG)+을(JKO)+따르(VV)+아(EC)+하(VX)+았(EP)+다(EF)+.(SF)+CNN(SL)+은(JX)+과학자(NNG)+들(XSN)+이(JKS)+여태(MAG)+까지(JX)+다양하(VV)+ㄴ(ETM)+음식(NNG)+에서(JKB)+미세(NNG)+플라스틱(NNG)+조각(NNG)+을(JKO)+발견하(VV)+았(EP)+지만(EC)+,(SP)+차(NNG)+를(JKO)+끓이(VV)+거나(EC)+다른(MM)+뜨겁(VA)+ㄴ(ETM)+음료(NNG)+를(JKO)+만들(VV)+는(EC)+동안(NNG)+에(JKB)+도(JX)+미세(NNG)+플라스틱(NNG)+이(JKS)+배출되(VV)+ㄹ(ETM)+수(NNB)+있(VX)+는지(EC)+에(JKB)+대하(VV)+ㄴ(ETM)+연구(NNG)+는(JX)+거의(MAG)+이루(VV)+어(EC)+지(VX)+지(EC)+않(VX)+았(EP)+다고(EC)+설명하(VV)+았(EP)+다(EF)+.(SF)+
+
+
+아직 이 미세 플라스틱 조각을 마신 것이 건강에 끼치는 영향은 알려지지 않았으며, 맥길대 연구진은 이 분야에 대한 더 많은 연구가 필요하다고 말했다.
+아직(MAG)+이(MM)+미세(NNG)+플라스틱(NNG)+조각(NNG)+을(JKO)+마시(VV)+ㄴ(ETM)+것(NNB)+이(JKS)+건강(NNG)+에(JKB)+끼치(VV)+는(JX)+영향(NNG)+은(JX)+알리(VV)+어(EC)+지(VX)+지(EC)+않(VX)+았(EP)+으며(EC)+,(SP)+맥길(NNP)+대(XSN)+연구진(NNG)+은(JX)+이(MM)+분야(NNG)+에(JKB)+대하(VV)+ㄴ(ETM)+더(MAG)+많(VA)+은(ETM)+연구(NNG)+가(JKS)+필요하(VV)+다고(EC)+말하(VV)+았(EP)+다(EF)+.(SF)+
+
+
+올해 초 발표된 또 다른 연구에 따르면 사람들은 매주 신용카드 무게에 달하는 평균 5g의 플라스틱을 섭취하는 것으로 나타났다.
+올해(NNG)+초(NNG)+발표되(VV)+ㄴ(ETM)+또(MAG)+다른(MM)+연구(NNG)+에(JKB)+따르(VV)+면(EC)+사람(NNG)+들(XSN)+은(JX)+매주(MAG)+신용(NNG)+카드(NNG)+무게(NNG)+에(JKB)+달하(VV)+는(JX)+평균(NNG)+5(SN)+g(SL)+의(JKG)+플라스틱(NNG)+을(JKO)+섭취하(VV)+는(ETM)+것(NNB)+으로(JKB)+나타나(VV)+았(EP)+다(EF)+.(SF)+
+
+
+세계보건기구(WHO)는 지난달 공개한 수돗물 및 용기에 든 생수(bottled water)에 포함된 플라스틱으로 인한 건강상 위험 검토보고서에서 "현재 수준에서는 미세 플라스틱 조각이 건강상 위험을 초래하진 않는 것으로 보인다"고 밝혔다.
+세계보건기구(NNP)+((SS)+WHO(SL)+)(SS)+는(JX)+지난달(NNG)+공개하(VV)+ㄴ(ETM)+수돗물(NNG)+및(MAG)+용기(NNG)+에(JKB)+들(VV)+ㄴ(ETM)+생수(NNG)+((SS)+bottled(SL)+water(SL)+)(SS)+에(IC)+포함되(VV)+ㄴ(ETM)+플라스틱(NNG)+으로(JKB)+인하(VV)+ㄴ(ETM)+건강(NNG)+상(XSN)+위험(NNG)+검토(NNG)+보고서(NNG)+에서(JKB)+"(SS)+현재(MAG)+수준(NNG)+에서(JKB)+는(JX)+미세(NNG)+플라스틱(NNG)+조각(NNG)+이(JKS)+건강(NNG)+상(XSN)+위험(NNG)+을(JKO)+초래하(VV)+지(EC)+ㄴ(JX)+않(VX)+는(ETM)+것(NNB)+으로(JKB)+보이(VV)+ㄴ다(EF)+"(SS)+고(JKQ)+밝히(VV)+었(EP)+다(EF)+.(SF)+
+
+
+그러나 동시에 "정보가 제한돼 있으며, 미세 플라스틱 조각과 이것이 인체에 미치는 영향에 대해서는 더 많은 연구가 필요하다"고 경고했다. WHO 연구원은 "미세 플라스틱은 식수를 포함해 모든 곳에 있기 때문에 건강에 끼치는 영향에 대해 더 많이 알아야 한다"고 말했다.
+그러나(MAJ)+동시(NNG)+에(JKB)+"(SS)+정보(NNG)+가(JKS)+제한되(VV)+어(EC)+있(VX)+으며(EC)+,(SP)+미세(NNG)+플라스틱(NNG)+조각(NNG)+과(JC)+이것(NP)+이(JKS)+인체(NNG)+에(JKB)+미치(VV)+는(JX)+영향(NNG)+에(JKB)+대하(NNG)+아서(EC)+는(JX)+더(MAG)+많(VA)+은(ETM)+연구(NNG)+가(JKS)+필요하(VV)+다(EF)+"(SS)+고(JKQ)+경고하(VV)+았(EP)+다(EF)+.(SF)+WHO(SL)+연구원(NNG)+은(JX)+"(SS)+미세(NNG)+플라스틱(NNG)+은(JX)+식수(NNG)+를(JKO)+포함하(VV)+아(EC)+모든(MM)+곳(NNG)+에(JKB)+있(VX)+기(ETN)+때문(NNB)+에(JKB)+건강(NNG)+에(JKB)+끼치(VV)+는(JX)+영향(NNG)+에(JKB)+대하(VV)+어(EC)+더(MAG)+많이(MAG)+알(VV)+아야(EC)+하(VV)+ㄴ다(EF)+"(SS)+고(JKQ)+말하(VV)+았(EP)+다(EF)+.(SF)+
+
+
+sy@news1.kr
+sy(SL)+@(SW)+news(SL)+1(SN)+.(SF)+kr(SL)+
+
+
+Copyright ⓒ 뉴스1코리아 www.news1.kr 무단복제 및 전재 – 재배포금지
+Copyright(SL)+ⓒ(SW)+뉴스(NNG)+1(SN)+코리아(NNP)+www(SL)+.(SF)+news(SL)+1(SN)+.(SF)+kr(SL)+무단(NNG)+복제(NNG)+및(MAG)+전재(NNG)+?(SH)+재(XPN)+배포(NNG)+금지(NNG)+

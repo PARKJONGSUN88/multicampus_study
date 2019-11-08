@@ -1,0 +1,1 @@
+﻿티백/NNG 하나/NR+서/JKB 미세/NNG 플라스틱/NNG 조각/NNG 116/SN+억/NR+개/NNB 나오/VV+아/EC 인체/NNG+상/XSN 위험/NNG 아직/MAG 확인/NNG 안/MAG 되/VV+어/EF+./SF+./SP+추가/NNG 연구/NNG 필요/NNG (/SP+서울/NNP+=/SP+뉴스/NNG+1/SN+)/SW 김서연/NNG 기자/NNG =/SP 티백/NNG+으로/JKB 우려내/VV+ㄴ/ETM 차/NNG+(/SP+茶/SH+)/SP 한/MM+잔/NNG+에서/JKB 수십억/NR 개/NNB+의/JKG 미세/NNG 플라스틱/NNG+이/JKS 나오/VV+ㄴ다는/ETM 연구/NNG 결과/NNG+가/JKS 발표/NNG+되/XSV+었/EP+다/EF+./SF

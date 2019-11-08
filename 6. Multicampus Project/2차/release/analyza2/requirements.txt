@@ -1,0 +1,4 @@
+konlpy
+gensim
+pandas
+cx_Oracle

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/**
+ * global.css
+ */
+ 
+nav, footer  {
+  width: 100%;
+  background-color:rgba( 255, 255, 255, 0.01 );
+}
+
+nav {
+  position: relative;
+}
+
+nav *{
+  padding: 0;
+  margin: 0;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+ 

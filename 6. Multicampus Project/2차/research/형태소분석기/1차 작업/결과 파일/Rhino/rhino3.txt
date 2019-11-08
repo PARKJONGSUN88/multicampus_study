@@ -1,0 +1,66 @@
+최고 수급자 월 210만8천원 받아..노노령연금 (CG) [연합뉴스TV 제공]
+최고(NNG)+수급자(NNG)+월(NNB)+210(SN)+만(JX)+8(SN)+천(NR)+원(NNB)+받(VV)+아(EC)+..(SE)+노노(NNG)+령(NNG)+연금(NNG)+((SS)+CG(SL)+)(SS)+[(SS)+연합뉴스TV(SL)+제공(NNG)+](SS)+
+
+
+노령연금 (CG) [연합뉴스TV 제공]령연금 부부수급자 32만4천597쌍
+노령(NNG)+연금(NNG)+((SS)+CG(SL)+)(SS)+[(SS)+연합뉴스TV(SL)+제공(NNG)+](SS)+령(NNG)+연금(NNG)+부부(NNG)+수급자(NNG)+32(SN)+만(JX)+4(SN)+천(NNG)+597(SN)+쌍(NNG)+
+
+
+(서울=연합뉴스) 서한기 기자 = 국민연금에 20년 이상 가입한 노령연금 수급자가 60만명에 달하는 것으로 나타났다. 이들은 월평균 92만6천원의 노령연금을 받고 있다.
+((SS)+서울(NNP)+=(SW)+연합뉴스(NNP)+)(SS)+서한기(NNP)+기자(NNG)+=(SW)+국민(NNG)+연금(NNG)+에(JKB)+20(SN)+년(NNB)+이상(NNG)+가입하(VV)+ㄴ(ETM)+노령(NNG)+연금(NNG)+수급자(NNG)+가(JKS)+60(SN)+만(NR)+명(NNB)+에(JKB)+달하(VV)+는(JX)+것(NNB)+으로(JKB)+나타나(VV)+았(EP)+다(EF)+.(SF)+이(NP)+들(XSN)+은(JX)+월(NNB)+평균(NNG)+92(SN)+만(JX)+6(SN)+천(NR)+원(NNB)+의(JKG)+노령(NNG)+연금(NNG)+을(JKO)+받(VV)+고(EC)+있(VX)+다(EF)+.(SF)+
+
+
+30일 국민연금공단에 따르면 올해 6월 말 현재 전체 노령연금 수급자는 389만8천명이다. 성별로는 남성은 257만8천명(66.2%), 여성은 132만명(33.8%)이다.
+30(SN)+일(NNB)+국민연금공단(NNP)+에(JKB)+따르(VV)+면(EC)+올해(NNG)+6(SN)+월(NNB)+말(NNG)+현재(MAG)+전체(NNG)+노령(NNG)+연금(NNG)+수급자(NNG)+는(JX)+389(SN)+만(JX)+8(SN)+천(NR)+명(NNB)+이(VCP)+다(EF)+.(SF)+성별(NNG)+로(JKB)+는(JX)+남성(NNG)+은(JX)+257(SN)+만(JX)+8(SN)+천(NR)+명(NNB)+((SS)+66(SN)+.(SF)+2(SN)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s, 
+
+
+노령연금 수급자를 가입 기간별로 보면 20년 이상 59만7천명(15.3%)이고, 10∼20년 미만 209만7천명(53.8%), 10년 미만은 120만4천명(30.9%)이다.
+노령(NNG)+연금(NNG)+수급자(NNG)+를(JKO)+가입(NNG)+기간(NNG)+별(XSN)+로(JKB)+보(VV)+면(EC)+20(SN)+년(NNB)+이상(NNG)+59(SN)+만(JX)+7(SN)+천(NR)+명(NNB)+((SS)+15(SN)+.(SF)+3(SN)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+5년 전(2014년 12월)과 비교해서 10년 미만은 10.5% 줄었지만, 10년~20년 미만은 56.5%, 20년 이상은 127.8% 증가했다.
+5(SN)+년(NNB)+저(NP)+는(JX)+((SS)+2014(SN)+년(NNB)+12(SN)+월(NNB)+)(SS)+과(NNG)+비교하(VV)+아서(EC)+10(SN)+년(NNB)+미만(NNG)+은(JX)+10(SN)+.(SF)+5(SN)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+전체 노령연금 수급자에서 20년 이상 가입자의 비율은 2014년 8.9%에서 올해 6월 현재 15.3%로 6.4%포인트 느는 등 해마다 증가하고 있다.
+전체(NNG)+노령(NNG)+연금(NNG)+수급자(NNG)+에서(JKB)+20(SN)+년(NNB)+이상(NNG)+가입자(NNG)+의(JKG)+비율(NNG)+은(JX)+2014(SN)+년(NNB)+8(SN)+.(SF)+9(SN)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+전체 노령연금 수급자의 평균 연금월액(특례연금과 분할연금 제외)은 52만3천원이며, 20년 이상 가입 수급자의 평균 연금월액은 92만6천원, 최고 수급자의 수급액은 월 210만8천원이었다.
+전체(NNG)+노령(NNG)+연금(NNG)+수급자(NNG)+의(JKG)+평균(NNG)+연금(NNG)+월액(NNG)+((SS)+특례(NNG)+연금(NNG)+과(JC)+분할(NNG)+연금(NNG)+제외(NNG)+)(SS)+은(NNG)+52(SN)+만(JX)+3(SN)+천(NR)+원(NNB)+이(VCP)+며(EC)+,(SP)+20(SN)+년(NNB)+이상(NNG)+가입(NNG)+수급자(NNG)+의(JKG)+평균(NNG)+연금(NNG)+월액(NNG)+은(JX)+92(SN)+만(JX)+6(SN)+천(NR)+원(NNB)+,(SP)+최고(NNG)+수급자(NNG)+의(JKG)+수급(NNG)+액(NNG)+은(JX)+월(NNB)+210(SH)+만(JX)+8(NA)+천(NR)+원(NNB)+이(VCP)+었(EP)+다(EF)+.(SF)+
+
+
+여성의 사회활동이 늘고 노후준비 인식이 확산하면서 여성 수급자도 늘고 있다.
+여성(NNG)+의(JKG)+사회(NNG)+활동(NNG)+이(JKS)+늘(VV)+고(EC)+노후(NNG)+준비(NNG)+인식(NNG)+이(JKS)+확산하(VV)+면서(EC)+여성(NNG)+수급자(NNG)+도(JX)+늘(VV)+고(EC)+있(VX)+다(EF)+.(SF)+
+
+
+2014년과 비교하면 5년 간 남성 수급자는 27.0% 증가했지만, 여성 수급자는 43.8%(40만명)가 늘었다.
+2014(SN)+년(NNB)+과(JC)+비교하(VV)+면(EC)+5(SN)+년(NNB)+간(MAG)+남성(NNG)+수급자(NNG)+는(JX)+27(SN)+.(SF)+0(SN)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+올해 6월 현재 부부 모두 노령연금을 받는 수급자는 32만4천597쌍(64만9천194명)으로 2018년 12월보다 2만6천쌍(8.7%) 증가했다.
+올해(NNG)+6(SN)+월(NNB)+현재(MAG)+부부(NNG)+모두(MAG)+노령(NNG)+연금(NNG)+을(JKO)+받(VV)+는(ETM)+수급자(NNG)+는(JX)+32(SN)+만(JX)+4(SN)+천(NNG)+597(SN)+쌍(NNG)+((SS)+64(SN)+만(JX)+9(SN)+천(NNG)+194(SN)+명(NNB)+)(SS)+으(IC)+로(JKB)+2018(SN)+년(NNB)+12(SN)+월(NNB)+보다(JKB)+2(SN)+만(JX)+6(SN)+천(NR)+쌍(NNG)+((SS)+8(SN)+.(SF)+7(SN)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+부부 합산 기준으로 가장 높은 연금액은 월 353만5천원에 달했다.
+부부(NNG)+합산(NNG)+기준(NNG)+으로(JKB)+가장(MAG)+높(VA)+은(ETM)+연금액(NNG)+은(JX)+월(NNB)+353(SN)+만(JX)+5(SN)+천(NR)+원(NNB)+에(JKB)+달하(VV)+았(EP)+다(EF)+.(SF)+
+
+
+부부 합산 연금 월액을 보면, 100만원 이상인 부부 수급자는 총 6만8천567쌍(21.1%)이며, 200만원 이상을 받는 부부 연금 수급자는 총 1천334쌍이었다.
+부부(NNG)+합산(NNG)+연금(NNG)+월액(NNG)+을(JKO)+보(VV)+면(EC)+,(SP)+100(SN)+만(NR)+원(NNB)+이상인(NNP)+부부(NNG)+수급자(NNG)+는(JX)+총(MM)+6(SN)+만(JX)+8(SN)+천(NNG)+567(SN)+쌍(NNG)+((SS)+21(SN)+.(SF)+1(SN)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+[연도별 노령연금 수급자 현황] (기준 : 2019년 6월, 단위 : 명, %)
+[(SS)+연도(NNG)+별(XSN)+노령(NNG)+연금(NNG)+수급자(NNG)+현황(NNG)+](SS)+((SS)+기준(NNG)+:(SP)+2019(SN)+년(NNB)+6(SN)+월(NNB)+,(SP)+단위(NNG)+:(SP)+명(NNG)+,(SP)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+[연도별 노령연금 성별 수급자 현황] (기준 :2019년 6월, 단위 : 명, %)
+[(SS)+연도(NNG)+별(XSN)+노령(NNG)+연금(NNG)+수급자(NNG)+현황(NNG)+](SS)+((SS)+기준(NNG)+:(SP)+2019(SN)+년(NNB)+6(SN)+월(NNB)+,(SP)+단위(NNG)+:(SP)+명(NNG)+,(SP)+Exception in thread "main" java.util.FormatFlagsConversionMismatchException: Conversion = s,
+
+
+shg@yna.co.kr
+shg(SL)+@(SW)+yna(SL)+.(SF)+co(SL)+.(SF)+kr(SL)+
+
+
+저작권자(c)연합뉴스. 무단전재-재배포금지
+저작권자(NNG)+((SS)+c(SL)+)(SS)+연합뉴스(NNP)+.(SF)+무단(NNG)+전재(NNG)+-(SW)+재(XPN)+배포(NNG)+금지(NNG)+

@@ -1,0 +1,19 @@
+#config.py
+
+#--------------------------------------------------------------------------------
+# NAVER Developpers
+#   https://developers.naver.com
+#--------------------------------------------------------------------------------
+clientID = "ooOooOOOOOOOOoooooOoO"
+clientSecret = "oOoOoooOoooO"
+
+
+#--------------------------------------------------------------------------------
+# These tokens are needed for user authentication.
+# Credentials can be generated via Twitter's Application Management:
+#	https://developer.twitter.com/en/apps
+#--------------------------------------------------------------------------------
+consumer_key = "oOooOoOoOoOoooooOOoooOooOo"
+consumer_secret = "oooooOOOooOooOooOooooOooooOoooooooOOoOOOoooOoOOOOO"
+access_key = "ooOoOooooOOOOOooOOooOOOOOOooOoOoOoOoOOoOOOOoOOOOoO"
+access_secret = "ooOOooOOoooOooOoOoooOooOooooOooOooOooOooOooOoO"

@@ -1,0 +1,234 @@
+﻿티백	﻿/NNP + 티백/NNG
+하나서	하나/NR + 서/EC
+미세	미/NR + 세/NNG
+플라스틱	플라스틱/NNG
+조각	조각/NNG
+116억개	116/SN + 억/NR + 개/NNB
+나와	나/VV + 와/JC
+인체상	인체/NNG + 상/XSN
+위험	위험/NNG
+아직	아직/MAG
+확인	확인/NNG
+안	안/MAG
+돼..추가	되/VV + 어/EF + ./SP + ./SE + 추가/NNG
+연구	연구/NNG
+필요	필요/NNG
+(서울=뉴스1)	(/SS + 서울/NNP + =/SW + 뉴/NNP + 스/NNG + 1/SN + )/SS
+김서연	김서연/NNP
+기자	기자/NNG
+=	=/SW
+티백으로	티백/NNG + 으로/JKB
+우려낸	우/NNG + 리/VV + 어/EC + 내/VX + ㄴ/ETM
+차(茶)	차/NNG + (/SS + 茶/SH + )/SS
+한잔에서	한/NNP + 잔/NNG + 에서/JKB
+수십억	수십억/NR
+개의	개/NNB + 의/JKG
+미세	미세/NNG
+플라스틱이	플라스틱/NNG + 이/JKS
+나온다는	나오/VV + ㄴ다는/ETM
+연구	연구/NNG
+결과가	결과/NNG + 가/JKS
+발표됐다.	발표/NNG + 되/XSV + 었/EP + 다/EF + ./SF
+30일(현지시간)	30/SN + 일/NNB + (/SS + 현지/NNG + 시간/NNG + )/SS
+CNN에	CNN/SL + 에/JKB
+따르면	따르/VV + 면/EC
+캐나다	캐나다/NNP
+맥길대	맥길대/NNP
+연구진은	연구진/NNG + 은/JX
+지난	지나/VV + ㄴ/ETM
+25일	25/SN + 일/NNB
+발표한	발표/NNG + 하/XSV + ㄴ/ETM
+논문에서	논문/NNG + 에서/JKB
+4개의	4/SN + 개/NNB + 의/JKG
+티백	티백/NNG
+제품을	제품/NNG + 을/JKO
+끓는	끓/VV + 는/ETM
+물에	물/NNG + 에/JKB
+넣어	넣/VV + 어/EC
+분석한	분석/NNG + 하/XSV + ㄴ/ETM
+결과,	결과/NNG + ,/SP
+티백	티백/NNG
+하나에서	하나/NR + 에서/JKB
+116억개에	116/SN + 억/NR + 개/NNB + 에/JKB
+달하는	달하/VV + 는/ETM
+미세	미세/NNG
+플라스틱과	플라스틱/NNG + 과/JC
+31억개	31/SN + 억/NR + 개/NNB
+나노	나노/NNP
+플라스틱	플라스틱/NNG
+조각이	조각/NNG + 이/JKS
+방출됐다고	방출/NNG + 되/XSV + 었/EP + 다고/EC
+밝혔다.	밝히/VV + 었/EP + 다/EF + ./SF
+이는	이/NP + 는/JX
+다른	다른/MM
+음식이나	음식/NNG + 이나/JC
+음료	음료/NNG
+등에서	등/NNB + 에서/JKB
+발견된	발견/NNG + 되/XSV + ㄴ/ETM
+검출	검출/NNG
+양보다	양/NNG + 보다/JKB
+수천	수천/NR
+배	배/NNG
+더	더/MAG
+많은	많/VA + 은/ETM
+것이다.	것/NNB + 이/VCP + 다/EF + ./SF
+많은	많/VA + 은/ETM
+티백	티백/NNG
+업체들은	업체/NNG + 들/XSN + 은/JX
+제품을	제품/NNG + 을/JKO
+만들	만들/VV + ㄹ/ETM
+때	때/NNG
+폴리프로필렌을	폴/NNP + 리프로필렌/NNG + 을/JKO
+사용하고	사용/NNG + 하/XSV + 고/EC
+있다.	있/VX + 다/EF + ./SF
+연구진은	연구진/NNG + 은/JX
+티백에서	티백/NNG + 에서/JKB
+찻잎을	찻잎/NNG + 을/JKO
+제거한	제거/NNG + 하/XSV + ㄴ/ETM
+뒤	뒤/NNG
+티백으로	티백/NNG + 으로/JKB
+차를	차/NNG + 를/JKO
+끓이는	끓이/VV + 는/ETM
+과정을	과정/NNG + 을/JKO
+따라했다.	따르/VV + 아/EC + 하/VX + 였/EP + 다/EF + ./SF
+CNN은	CNN/SL + 은/JX
+과학자들이	과학자/NNG + 들/XSN + 이/JKS
+여태까지	여태/MAG + 까지/JX
+다양한	다양/NNG + 하/XSA + ㄴ/ETM
+음식에서	음식/NNG + 에서/JKB
+미세	미세/NNG
+플라스틱	플라스틱/NNG
+조각을	조각/NNG + 을/JKO
+발견했지만,	발견/NNG + 하/XSV + 였/EP + 지만/EC + ,/SP
+차를	차/NNG + 를/JKO
+끓이거나	끓이/VV + 거나/EC
+다른	다른/MM
+뜨거운	뜨겁/VA + ㄴ/ETM
+음료를	음료/NNG + 를/JKO
+만드는	만들/VV + 는/ETM
+동안에도	동안/NNG + 에/JKB + 도/JX
+미세	미/MAG + 세/NNG
+플라스틱이	플라스틱/NNG + 이/JKS
+배출될	배출/NNG + 되/XSV + ㄹ/ETM
+수	수/NNB
+있는지에	있/VV + 는지/EC + 에/JKB
+대한	대하/VV + ㄴ/ETM
+연구는	연구/NNG + 는/JX
+거의	거의/MAG
+이뤄지지	이루어지/VV + 지/EC
+않았다고	않/VX + 았/EP + 다고/EC
+설명했다.	설명/NNG + 하/XSV + 였/EP + 다/EF + ./SF
+아직	아직/MAG
+이	이/MM
+미세	미세/NNG
+플라스틱	플라스틱/NNG
+조각을	조각/NNG + 을/JKO
+마신	마시/VV + ㄴ/ETM
+것이	것/NNB + 이/JKS
+건강에	건강/NNG + 에/JKB
+끼치는	끼치/VV + 는/ETM
+영향은	영향/NNG + 은/JX
+알려지지	알리/VV + 어/EC + 지/VX + 지/EC
+않았으며,	않/VX + 았/EP + 으며/EC + ,/SP
+맥길대	맥길대/NNP
+연구진은	연구진/NNG + 은/JX
+이	이/MM
+분야에	분야/NNG + 에/JKB
+대한	대하/VV + ㄴ/ETM
+더	더/MAG
+많은	많/VA + 은/ETM
+연구가	연구/NNG + 가/JKS
+필요하다고	필요/NNG + 하/XSA + 다고/EC
+말했다.	말/NNG + 하/XSV + 였/EP + 다/EF + ./SF
+올해	올해/NNG
+초	초/NNG
+발표된	발표/NNG + 되/XSV + ㄴ/ETM
+또	또/MAG
+다른	다른/MM
+연구에	연구/NNG + 에/JKB
+따르면	따르/VV + 면/EC
+사람들은	사람/NNG + 들/XSN + 은/JX
+매주	매주/MAG
+신용카드	신용/NNG + 카드/NNG
+무게에	무게/NNG + 에/JKB
+달하는	달하/VV + 는/ETM
+평균	평균/NNG
+5g의	5/SN + g/SL + 의/JKG
+플라스틱을	플라스틱/NNG + 을/JKO
+섭취하는	섭취/NNG + 하/XSV + 는/ETM
+것으로	것/NNB + 으로/JKB
+나타났다.	나타나/VV + 았/EP + 다/EF + ./SF
+세계보건기구(WHO)는	세계보건기구/NNP + (/SS + WHO/SL + )/SS + 는/JX
+지난달	지난달/NNG
+공개한	공개/NNG + 하/XSV + ㄴ/ETM
+수돗물	수돗물/NNG
+및	및/MAG
+용기에	용기/NNG + 에/JKB
+든	들/VV + ㄴ/ETM
+생수(bottled	생수/NNG + (/SS + bottled/SL
+water)에	water/SL + )/SS + 에/JKB
+포함된	포함/NNG + 되/XSV + ㄴ/ETM
+플라스틱으로	플라스틱/NNG + 으로/JKB
+인한	인하/VV + ㄴ/ETM
+건강상	건강/NNG + 상/XSN
+위험	위험/NNG
+검토보고서에서	검토/NNG + 보고서/NNG + 에서/JKB
+"현재	"/SS + 현재/MAG
+수준에서는	수준/NNG + 에서/JKB + 는/JX
+미세	미세/NNG
+플라스틱	플라스틱/NNG
+조각이	조각/NNG + 이/JKS
+건강상	건강/NNG + 상/XSN
+위험을	위험/NNG + 을/JKO
+초래하진	초래/NNG + 하/XSV + 지/EC + ㄴ/JX
+않는	않/VX + 는/ETM
+것으로	것/NNB + 으로/JKB
+보인다"고	보이/VV + ㄴ다/EF + "/SS + 고/JKQ
+밝혔다.	밝히/VV + 었/EP + 다/EF + ./SF
+그러나	그러나/MAJ
+동시에	동시/NNG + 에/JKB
+"정보가	"/SS + 정보/NNG + 가/JKS
+제한돼	제한/NNG + 되/XSV + 어/EC
+있으며,	있/VX + 으며/EC + ,/SP
+미세	미세/NNG
+플라스틱	플라스틱/NNG
+조각과	조각/NNG + 과/JC
+이것이	이것/NP + 이/JKS
+인체에	인체/NNG + 에/JKB
+미치는	미치/VV + 는/ETM
+영향에	영향/NNG + 에/JKB
+대해서는	대하/VV + 여서/EC + 는/JX
+더	더/MAG
+많은	많/VA + 은/ETM
+연구가	연구/NNG + 가/JKS
+필요하다"고	필요/NNG + 하/XSA + 다/EF + "/SS + 고/JKQ
+경고했다.	경고/NNG + 하/XSV + 였/EP + 다/EF + ./SF
+WHO	WHO/SL
+연구원은	연구원/NNG + 은/JX
+"미세	"/SS + 미/NNP + 세/NNG
+플라스틱은	플라스틱/NNG + 은/JX
+식수를	식수/NNG + 를/JKO
+포함해	포함/NNG + 하/XSV + 여/EC
+모든	모든/MM
+곳에	곳/NNG + 에/JKB
+있기	있/VV + 기/ETN
+때문에	때문/NNB + 에/JKB
+건강에	건강/NNG + 에/JKB
+끼치는	끼치/VV + 는/ETM
+영향에	영향/NNG + 에/JKB
+대해	대하/VV + 여/EC
+더	더/MAG
+많이	많이/MAG
+알아야	알/VV + 아야/EC
+한다"고	하/VX + ㄴ다/EF + "/SS + 고/JKQ
+말했다.	말/NNG + 하/XSV + 였/EP + 다/EF + ./SF
+sy@news1.kr	sy/SL + @/SW + news/SL + 1/SN + ./SF + kr/SL
+Copyright	Copyright/SL
+ⓒ	ⓒ/SW
+뉴스1코리아	뉴스/NNG + 1코리아/NNP
+www.news1.kr	www/SL + ./SP + news/SL + 1/SN + ./SF + kr/SL
+무단복제	무단/NNG + 복제/NNG
+및	및/MAG
+전재	전/NNG + 재/NNP
+–	–/SH
+재배포금지	재배/NNG + 포금지/NNG

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!--  util:properties id="envs" location="classpath:/properties/envs.properties" / --> 
+	<!-- 이게 왜 추가되는지 모르겠다!!! -->
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+	
+	<bean id="envProperties"
+      class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	  <property name="locations">
+	    <list>
+	      <value>classpath:/properties/env.properties</value>
+	    </list>
+	  </property>
+	</bean>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> 
+		<property name="url" value="jdbc:oracle:thin:@#{envProperties['db_server']}" /> 
+		<property name="username" value="#{envProperties['db_username']}"/> 
+		<property name="password" value="#{envProperties['db_password']}"/> 
+	</bean>
+	
+
+
+
+	<!-- SqlSessionFactoryBean --> 
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource" /> 
+		<!-- MyBatis 설정 파일의 위치를 지정합니다. --> 
+		<property name="configLocation" value="classpath:/mybatis-config.xml" /> 
+		<!-- SQL 파일의 위치를 지정합니다. --> 
+		<property name="mapperLocations" value="classpath:/sqlmap/*.xml" /> 
+	</bean> 
+	
+	<!-- SqlSessionTemplate --> 
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache"> 
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" /> 
+	</bean> 
+	
+	<!-- 지정된 베이스 패키지에서 DAO(Mapper) 를 검색하여 등록합니다. -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> 
+		<property name="basePackage" value="lab.latte.issue.dao" /> 
+	</bean> 
+	
+	<!-- 트랜잭션 매니저 bean 을 등록합니다. --> 
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource" /> 
+	</bean> 
+	
+	<!-- 아노테이션 기반의 트랜잭션을 사용합니다. --> 
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+		
+</beans>

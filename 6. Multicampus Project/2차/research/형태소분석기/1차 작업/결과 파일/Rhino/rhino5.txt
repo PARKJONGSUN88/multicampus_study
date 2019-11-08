@@ -1,0 +1,70 @@
+﻿NASA 수석 과학자 경고.."코페르니쿠스적 혁명적 사고 전환 가져올 것"
+NASA(SL)+수석(NNG)+과학자(NNG)+경고(NNG)+..(SE)+"(SS)+코페르니쿠스(NNP)+적(XSN)+혁명(NNG)+적(XSN)+사고(NNG)+전환(NNG)+가지(VV)+어(EC)+오(VX)+ㄹ(ETM)+것(NNB)+"(SS)+
+
+
+화성 생명체 존재를 확인하게 될 마즈2020 [NASA/JPL-Caltech 제공]
+화성(NNP)+생명체(NNG)+존재(NNG)+를(JKO)+확인하(VV)+게(EC)+되(VV)+ㄹ(ETM)+(NA)+2020(SN)+[(SS)+NASA(SL)+()+JPL(SL)+-(SW)+Caltech(SL)+제공(NNG)+](SS)+
+
+
+화성 생명체 존재를 확인하게 될 엑소
+화성(NNP)+생명체(NNG)+존재(NNG)+를(JKO)+확인하(VV)+게(EC)+되(VV)+ㄹ(ETM)+엑소(NNG)+
+
+
+(서울=연합뉴스) 엄남석 기자 = 인류는 2021년 중반께면 화성에 보낸 로버를 통해 생명체가 존재하는지에 대한 확답을 얻을 수 있지만 외계 생명체 존재가 확인됐을 때 갖는 혁명적 의미를 받아들일 준비가 아직 안 돼 있다고 미국항공우주국(NASA) 수석 과학자가 경고했다.
+((SS)+서울(NNP)+=(SW)+연합뉴스(NNP)+)(SS)+엄남석(NNP)+기자(NNG)+=(SW)+인류(NNG)+는(JX)+2021(SN)+년(NNB)+중반(NNG)+께(XSN)+이(VCP)+면(EC)+화성(NNP)+에(JKB)+보내(VV)+ㄴ(ETM)+로(NNG)+버(NA)+를(JKO)+통하(VV)+아(EC)+생명체(NNG)+가(JKS)+존재하(VV)+는지(EC)+에(JKB)+대하(VV)+ㄴ(ETM)+확답(NNG)+을(JKO)+얻(VV)+을(JKO)+수(MM)+있(VX)+지만(EC)+외계(NNG)+생명체(NNG)+존재(NNG)+가(JKS)+확인되(VV)+었(EP)+을(JKO)+때(NNG)+갖(VV)+는(ETM)+혁명(NNG)+적(NNB)+의미(NNG)+를(JKO)+받아들이(VV)+ㄹ(ETM)+준비(NNG)+가(JKS)+아직(MAG)+안(MAG)+되(VV)+어(EC)+있(VX)+다고(EC)+미국항공우주국(NNP)+((SS)+NASA(SL)+)(SS)+수석(NNG)+과학자(NNG)+가(JKS)+경고하(VV)+았(EP)+다(EF)+.(SF)+
+
+
+NASA와 유럽우주국(ESA)이 나란히 발사할 화성 탐사 로버 '마즈(Mars)2020'과 '엑소마즈(ExoMars)' 프로젝트에 핵심 역할을 해온 NASA 수석과학자 짐 그린 박사는 29일 영국 선데이 텔레그래프와의 회견에서 두 로버가 생명체 탐사에 답을 해줄 최상의 기회가 될 것이라며 이런 우려를 나타냈다.
+NASA(SL)+와(JC)+유럽(NNP)+우주국(NNG)+((SS)+ESA(SL)+)(SS)+이(VCP)+나란히(MAG)+발사하(VV)+ㄹ(ETM)+화성(NNP)+탐사(NNG)+(NA)+'(SS)+마(NNG)+즈(NP)+((SS)+Mars(SL)+)(SS)+2020(SN)+'(SS)+과(NNG)+'(SS)+엑소(NNG)+마(NNG)+즈(NP)+((SS)+ExoMars(SL)+)(SS)+'(SS)+프로젝트(NNG)+에(JKB)+핵심(NNG)+역할(NNG)+을(JKO)+하(VV)+아(EC)+오(VX)+ㄴ(ETM)+NASA(SL)+수석(NNG)+과학자(NNG)+짐(NNG)+그린(NNG)+박사(NNG)+는(JX)+29(SN)+일(NNB)+영국(NNP)+선데이(NNG)+텔레그래프(NNG)+와(JKB)+의(JKG)+회견(NNG)+에서(JKB)+두(MM)+로(NNG)+버(NA)+가(JKS)+생명체(NNG)+탐사(NNG)+에(JKB)+답(NNG)+을(JKO)+하(VV)+아(EC)+주(VX)+ㄹ(ETM)+최상(NNG)+의(JKG)+기회(NNG)+가(JKS)+되(VV)+ㄹ(ETM)+것(NNB)+이(VCP)+라며(EC)+이런(MM)+우려(NNG)+를(JKO)+나타나(VV)+었(EP)+다(EF)+.(SF)+
+
+
+두 로버는 내년 7~8월에 발사돼 마즈2020은 이듬해 2월, 엑소마즈는 3월에 화성에 도착한다. 특히 영국 화학자 로잘린드 프랭클린의 이름을 따 '로잘린드'로도 불리는 엑소마즈는 2ｍ가량 땅을 파고 샘플을 채취한 로버에 탑재된 장비로 유기물 존재 여부를 검사할 수 있다. 따라서 착륙 후 수주에서 몇 달 안에 생명체 존재 여부를 확인할 수 있다.
+두(MM)+로(NNG)+버(NA)+는(JX)+내년(NNG)+7(SN)+~(SO)+8(SN)+월(NNB)+에(JKB)+발사되(VV)+어(EC)+말(VV)+아라(EF)+즈(NP)+2020(NA)+은(JX)+2020(SN)+은(JX)+이듬해(NNG)+2(SN)+월(NNB)+,(SP)+엑소(NNG)+마(NNG)+즈(NP)+는(JX)+3(SN)+월(NNB)+에(JKB)+화성(NNP)+에(JKB)+도착하(VV)+ㄴ다(EF)+.(SF)+특히(MAG)+영국(NNP)+화학자(NNG)+(NA)+프랭클린(NNP)+의(JKG)+이름(NNG)+을(JKO)+따(NNG)+'(SS)+(NA)+'(SS)+로(NNG)+도(JX)+불리(VV)+는(JX)+엑소(NNG)+마(NNG)+즈(NP)+는(JX)+2(SN)+ｍ가량(NA)+땅(NNG)+을(JKO)+파고(NNG)+샘플(NNG)+을(JKO)+채취하(VV)+ㄴ(ETM)+로(NNG)+버(NA)+에(JKB)+탑재되(VV)+ㄴ(ETM)+장비(NNG)+로(JKB)+유기물(NNG)+존재(NNG)+여부(NNG)+를(JKO)+검사하(VV)+ㄹ(ETM)+수(NNB)+있(VX)+다(EF)+.(SF)+따라서(MAG)+착륙(NNG)+후(NNG)+수주(NNG)+에서(JKB)+몇(MM)+달(NNG)+안(NNG)+에(JKB)+생명체(NNG)+존재(NNG)+여부(NNG)+를(JKO)+확인하(VV)+ㄹ(ETM)+수(NNB)+있(VX)+다(EF)+.(SF)+
+
+
+마즈2020도 화성의 생명체 탐사를 주요임무로 하고 있어, 두 로버가 2021년 여름께 경쟁적으로 생명체 탐사결과를 보내올 것으로 기대되고 있다.
+마(NNG)+즈2020(NA)+도(JX)+화성(NNP)+의(JKG)+생명체(NNG)+탐사(NNG)+를(JKO)+주요(NNG)+임무(NNG)+로(JKB)+하(XSV)+고(EC)+있(VX)+어(EC)+,(SP)+두(MM)+로(NNG)+버(NA)+가(JKS)+2021(SN)+년(NNB)+여름(NNG)+께(JKB)+경쟁(NNG)+적(XSN)+으로(JKB)+생명체(NNG)+탐사(NNG)+결(NNG)+과(JKB)+를(JKO)+보내오(VV)+ㄹ(ETM)+것(NNB)+으로(JKB)+기대(VV)+되(VV)+고(EC)+있(VX)+다(EF)+.(SF)+
+
+
+기자회견 중인 그린 박사 [자료사진] [EPA=연합뉴스]
+기자(NNG)+회견(NNG)+중(NNB)+이(VCP)+ㄴ(ETM)+그린(NNG)+박사(NNG)+[(SS)+자료(NNG)+사진(NNG)+](SS)+[(SS)+EPA(SL)+=(SW)+연합뉴스(NNP)+](SS)+
+
+
+기자회견 중인 그린 박사 [자료사진] [EPA=연합뉴스]
+기자(NNG)+회견(NNG)+중(NNB)+이(VCP)+ㄴ(ETM)+그린(NNG)+박사(NNG)+[(SS)+자료(NNG)+사진(NNG)+](SS)+[(SS)+EPA(SL)+=(SW)+연합뉴스(NNP)+](SS)+
+
+
+그린 박사는 과거든 현재든 생명체 존재가 확인되면 "혁명적일 것"이라면서 "코페르니쿠스가 지동설을 주장했을 때처럼 사고를 완전히 바꿔놓기 시작하겠지만 우리가 그런 결과에 준비가 돼 있다고 생각하지 않는다"고 했다.
+그린(NNG)+박사(NNG)+는(JX)+과거(NNG)+든(EC)+현재(NNG)+든(EC)+생명체(NNG)+존재(NNG)+가(JKS)+확인되(VV)+면(EC)+"(SS)+혁명(NNG)+적(XSN)+이(VCP)+ㄹ(ETM)+것(NNB)+"(SS)+이(VCP)+라면서(EC)+"(SS)+코페르니쿠스(NNP)+가(JKS)+지동설(NNG)+을(JKO)+주장하(VV)+았(EP)+을(JKO)+때(VV)+처럼(JKB)+사고(NNG)+를(JKO)+완전히(MAG)+바꾸(VV)+어(EC)+놓(VX)+기(ETN)+시작하(VV)+겠(EP)+지만(EC)+우리(NP)+가(JKS)+그런(MM)+결과(NNG)+에(JKB)+준비(NNG)+가(JKS)+되(VV)+어(EC)+있(VX)+다고(EC)+생각하(VV)+지(EC)+않(VX)+는다(EF)+"(SS)+고(JKQ)+하(XSV)+았(EP)+다(EF)+.(SF)+
+
+
+그러면서 "생명체를 발견하고 결과를 발표해야 할 시점에 점점 더 다가서고 있다고 생각하기 때문에 걱정하고 있다"고 덧붙였다.
+그러면(MAJ)+서(JKB)+"(SS)+생명체(NNG)+를(JKO)+발견하(VV)+고(EC)+결과(NNG)+를(JKO)+발표하(VV)+아야(EC)+하(VV)+ㄹ(ETM)+시점(NNG)+에(JKB)+점점(MAG)+더(MAG)+다가서(VV)+고(EC)+있(VX)+다고(EC)+생각하(VV)+기(ETN)+때문(NNB)+에(JKB)+걱정하(VV)+고(EC)+있(VX)+다(EF)+"(SS)+고(JKQ)+덧붙이(VV)+었(EP)+다(EF)+.(SF)+
+
+
+NASA에서 38년간 일해온 그린 박사는 다른 행성에 작은 유기체가 존재하는 것으로 믿고 있으며, 더 나아가 토성의 위성(달) 타이탄에 '이상한 생명체'가 있을 수 있으며 멀지않은 다른 은하에 외계문명이 존재할 수 있다고 믿고있다.
+NASA(SL)+에서(JKB)+38(SN)+년(NNB)+간(NNB)+일해(NNP)+오(VV)+ㄴ(ETM)+그린(NNG)+박사(NNG)+는(JX)+다른(MM)+행성(NNG)+에(JKB)+작(VA)+은(ETM)+유기체(NNG)+가(JKS)+존재하(VV)+는(ETM)+것(NNB)+으로(JKB)+믿(VV)+고(EC)+있(VX)+으며(EC)+,(SP)+더(MAG)+나아가(VV)+토성(NNG)+의(JKG)+위성(NNG)+((SS)+달(NNG)+)(SS)+타이탄(NNG)+에(JKB)+'(SS)+이상하(VV)+ㄴ(ETM)+생명체(NNG)+'(SS)+가(NNG)+있(VX)+을(JKO)+수(MM)+있(VX)+으며(EC)+멀(VV)+지(EC)+않(VX)+은(ETM)+다른(MM)+은하(NNG)+에(JKB)+외계(NNG)+문명(NNG)+이(JKS)+존재하(VV)+ㄹ(ETM)+수(NNB)+있(VX)+다고(EC)+믿(VV)+고(EC)+있(VX)+다(EF)+.(SF)+
+
+
+그린 박사는 수십억년 전 생명체가 살았을지도 모를 고대 바다 인근을 탐색하게 되는 두 로버가 "정말로 생명체를 찾을 가능성이 있고 그러길 바라기 때문에 이번 탐사 프로젝트에 기대감을 갖고 있다"면서 "생명체는 환경이 극단적으로 나빠지면 바위 속으로 들어가는데 우리는 이 깊이까지 파본 적이 없다"고 했다.
+그린(NNG)+박사(NNG)+는(JX)+수십억(NR)+년(NNG)+저(NP)+는(JX)+생명체(NNG)+가(JKS)+살(VV)+았(EP)+을지(EC)+도(JX)+모르(VV)+ㄹ(ETM)+고대(NNG)+바(NNG)+다(EF)+인근(NNG)+을(JKO)+탐색하(VV)+게(EC)+되(VV)+는(ETM)+두(MM)+로(NNG)+버(NA)+가(JKS)+"(SS)+정말로(MAG)+생명체(NNG)+를(JKO)+찾(VV)+을(JKO)+가능(NNG)+성(XSN)+이(JKS)+있(VX)+고(EC)+그러(VV)+기(ETN)+ㄹ(JKO)+바라(VV)+기(ETN)+때문(NNB)+에(JKB)+이번(NNG)+탐사(NNG)+프로젝트(NNG)+에(JKB)+기대감(NNG)+을(JKO)+갖(VV)+고(EC)+있(VX)+다(EF)+"(SS)+면(NNG)+서(JKB)+"(SS)+생명체(NNG)+는(JX)+환경(NNG)+이(JKS)+극단(NNG)+적(XSN)+으로(JKB)+나빠지(VV)+면(EC)+바위(NNG)+속(NNG)+으로(JKB)+들어가(VV)+는데(EC)+우리(NP)+는(JX)+이(MM)+깊이(NNG)+까지(JX)+파본(NNG)+적(NNB)+이(JKC)+없(VA)+다(EF)+"(SS)+고(JKQ)+하(XSV)+았(EP)+다(EF)+.(SF)+
+
+
+그러면서 "1990년대에 우주생물학을 시작할 때 극단적인 환경에서 사는 생물을 찾기 시작했다"면서 "아무것도 살 수 없을 것으로 여겨졌던 핵 오수도 생명체로 넘쳐났으며 물이 있는 곳에 생명체가 있었다"고 덧붙였다.
+그러면(MAJ)+서(JKB)+"(SS)+1990(SN)+년(NNB)+대(XSN)+에(JKB)+우주(NNG)+생물학(NNG)+을(JKO)+시작하(VV)+ㄹ(ETM)+때(NNG)+극단(NNG)+적(XSN)+이(VCP)+ㄴ(ETM)+환경(NNG)+에서(JKB)+살(VV)+는(ETM)+생물(NNG)+을(JKO)+찾(VV)+기(ETN)+시작하(VV)+았(EP)+다(EF)+"(SS)+면(NNG)+서(JKB)+"(SS)+아무것(NNG)+도(JX)+사(VV)+ㄹ(ETM)+수(NNB)+없(VA)+을(JKO)+것(NNB)+으로(JKB)+여기(VV)+어(EC)+지(VX)+었(EP)+던(ETM)+핵(NNG)+오수(NNG)+도(JX)+생명체(NNG)+로(JKB)+넘치(VV)+어(EC)+나(VX)+았(EP)+으며(EC)+물(NNG)+이(JKS)+있(VX)+는(ETM)+곳(NNG)+에(JKB)+생명체(NNG)+가(JKS)+있(VX)+었(EP)+다(EF)+"(SS)+고(JKQ)+덧붙이(VV)+었(EP)+다(EF)+.(SF)+
+
+
+그린 박사는 또 화성에 로버를 안착시키는 것은 "뉴욕에서 골프공을 쳐 로스앤젤레스(골프장)에 홀인원 시키는 것과 같다"면서 "NASA와 ESA는 이런 불가능한 일을 매일 하고 있으며, 항상 기적 같은 일을 수행하고 있다"고 했다.
+그린(NNG)+박사(NNG)+는(JX)+또(MAG)+화성(NNP)+에(JKB)+로(NNG)+버(NA)+를(JKO)+안착(NNG)+시키(XSV)+는(ETM)+것(NNB)+은(JX)+"(SS)+뉴욕(NNP)+에서(JKB)+골프공(NNG)+을(JKO)+치(VV)+어(EC)+로스앤젤레스(NNP)+((SS)+골프장(NNG)+)(SS)+에(IC)+홀인원(NNG)+시키(VV)+는(ETM)+것(NNB)+과(JC)+같(VA)+다(EF)+"(SS)+면(NNG)+서(JKB)+"(SS)+NASA(SL)+와(JC)+ESA(SL)+는(JX)+이런(MM)+불가능하(VV)+ㄴ(ETM)+일(NNG)+을(JKO)+매일(MAG)+하(XSV)+고(EC)+있(VX)+으며(EC)+,(SP)+항상(MAG)+기적(NNG)+같(VA)+은(ETM)+일(NNG)+을(JKO)+수행하(VV)+고(EC)+있(VX)+다(EF)+"(SS)+고(JKQ)+하(XSV)+았(EP)+다(EF)+.(SF)+
+
+
+eomns@yna.co.kr
+eomns(SL)+@(SW)+yna(SL)+.(SF)+co(SL)+.(SF)+kr(SL)+
+
+
+이슈 · 화성 탐사
+이슈(NNG)+·(SP)+화성(NNP)+탐사(NNG)+
+
+
+저작권자(c)연합뉴스. 무단전재-재배포금지마즈 궤도선과 로버 [ESA/ATG 미디어랩]
+저작권자(NNG)+((SS)+c(SL)+)(SS)+연합뉴스(NNP)+.(SF)+무단(NNG)+전재(NNG)+-(SW)+재(XPN)+배포(NNG)+금지(NNG)+즈(NP)+궤도(NNG)+선(NNG)+과(JC)+(NA)+[(SS)+ESA(SL)+()+ATG(SL)+미디어(NNG)+랩(NNG)+](SS)+

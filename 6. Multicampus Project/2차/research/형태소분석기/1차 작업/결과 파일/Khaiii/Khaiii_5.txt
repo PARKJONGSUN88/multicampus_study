@@ -1,0 +1,357 @@
+﻿NASA	﻿/NNG + NASA/SL
+수석	수석/NNG
+과학자	과학자/NNG
+경고.."코페르니쿠스적	경고/NNG + ../SE + "/SS + 코페르니쿠스/NNP + 적/XSN
+혁명적	혁명/NNG + 적/XSN
+사고	사고/NNG
+전환	전환/NNG
+가져올	가져오/VV + ㄹ/ETM
+것"	것/NNB + "/SS
+화성	화성/NNG
+생명체	생명체/NNG
+존재를	존재/NNG + 를/JKO
+확인하게	확인/NNG + 하/XSV + 게/EC
+될	되/VV + ㄹ/ETM
+마즈2020	마즈/NNP + 2020/SN
+[NASA/JPL-Caltech	[/SS + NASA/SL + //SP + JPL/SL + -/SS + Caltech/SL
+제공]	제공/NNG + ]/SS
+화성	화성/NNG
+생명체	생명체/NNG
+존재를	존재/NNG + 를/JKO
+확인하게	확인/NNG + 하/XSV + 게/EC
+될	되/VV + ㄹ/ETM
+엑소	엑소/NNG
+(서울=연합뉴스)	(/SS + 서울/NNP + =/SW + 연합뉴/NNP + 스/NNG + )/SS
+엄남석	엄남석/NNP
+기자	기자/NNG
+=	=/SW
+인류는	인류/NNG + 는/JX
+2021년	2021/SN + 년/NNB
+중반께면	중반/NNG + 께면/NNG
+화성에	화성/NNG + 에/JKB
+보낸	보내/VV + ㄴ/ETM
+로버를	로버/NNG + 를/JKO
+통해	통하/VV + 여/EC
+생명체가	생명체/NNG + 가/JKS
+존재하는지에	존재/NNG + 하/XSV + 는지/EC + 에/JKB
+대한	대하/VV + ㄴ/ETM
+확답을	확답/NNG + 을/JKO
+얻을	얻/VV + 을/ETM
+수	수/NNB
+있지만	있/VV + 지만/EC
+외계	외계/NNG
+생명체	생명체/NNG
+존재가	존재/NNG + 가/JKS
+확인됐을	확인/NNG + 되/XSV + 었/EP + 을/ETM
+때	때/NNG
+갖는	갖/VV + 는/ETM
+혁명적	혁명/NNG + 적/XSN
+의미를	의미/NNG + 를/JKO
+받아들일	받아들이/VV + ㄹ/ETM
+준비가	준비/NNG + 가/JKS
+아직	아직/MAG
+안	안/MAG
+돼	되/VV + 어/EC
+있다고	있/VX + 다고/EC
+미국항공우주국(NASA)	미국항공우/NNP + 주국/NNG + (/SS + NASA/SL + )/SS
+수석	수석/NNG
+과학자가	과학자/NNG + 가/JKS
+경고했다.	경고/NNG + 하/XSV + 였/EP + 다/EF + ./SF
+NASA와	NASA/SL + 와/JC
+유럽우주국(ESA)이	유럽우주국/NNP + (/SS + ESA/SL + )/SS + 이/JKS
+나란히	나란히/MAG
+발사할	발사/NNG + 하/XSV + ㄹ/ETM
+화성	화성/NNG
+탐사	탐사/NNG
+로버	로버/NNP
+'마즈(Mars)2020'과	'/SS + 마즈/NNP + (/SS + Mars/SL + )/SS + 2020/SN + '/SS + 과/JC
+'엑소마즈(ExoMars)'	'/SS + 엑소마즈/NNG + (/SS + ExoMars/SL + )/SS + '/SS
+프로젝트에	프로젝트/NNG + 에/JKB
+핵심	핵심/NNG
+역할을	역할/NNG + 을/JKO
+해온	하/VV + 여/EC + 오/VX + ㄴ/ETM
+NASA	NASA/SL
+수석과학자	수석/NNG + 과학자/NNG
+짐	지/VV + ㅁ/ETN
+그린	그리/VV + ㄴ/ETM
+박사는	박사/NNG + 는/JX
+29일	29/SN + 일/NNB
+영국	영국/NNP
+선데이	선데이/NNG
+텔레그래프와의	텔레그/NNG + 래/NNP + 프/NNG + 와/JKB + 의/JKG
+회견에서	회견/NNG + 에서/JKB
+두	두/MM
+로버가	로버/NNP + 가/JKS
+생명체	생명체/NNG
+탐사에	탐사/NNG + 에/JKB
+답을	답/NNG + 을/JKO
+해줄	하/VV + 여/EC + 주/VX + ㄹ/ETM
+최상의	최상/NNG + 의/JKG
+기회가	기회/NNG + 가/JKC
+될	되/VV + ㄹ/ETM
+것이라며	것/NNB + 이/VCP + 라며/EC
+이런	이런/MM
+우려를	우려/NNG + 를/JKO
+나타냈다.	나타내/VV + 었/EP + 다/EF + ./SF
+두	두/MM
+로버는	로버/NNP + 는/JX
+내년	내년/NNG
+7~8월에	7/SN + ~/SO + 8/SN + 월/NNB + 에/JKB
+발사돼	발사/NNG + 되/XSV + 어/EC
+마즈2020은	마즈/NNP + 2020/SN + 은/JX
+이듬해	이듬해/NNG
+2월,	2/SN + 월/NNB + ,/SP
+엑소마즈는	엑소마즈/NNG + 는/JX
+3월에	3/SN + 월/NNB + 에/JKB
+화성에	화성/NNG + 에/JKB
+도착한다.	도착/NNG + 하/XSV + ㄴ다/EF + ./SF
+특히	특히/MAG
+영국	영국/NNP
+화학자	화학자/NNG
+로잘린드	로잘/NNG + 린드/NNP
+프랭클린의	프랭클린/NNP + 의/JKG
+이름을	이름/NNG + 을/JKO
+따	따/VV + 아/EC
+'로잘린드'로도	'/SS + 로/JKB + 잘/NNP + 린드/NNG + '/SS + 로/JKB + 도/JX
+불리는	불리/VV + 는/ETM
+엑소마즈는	엑소마즈/NNG + 는/JX
+2ｍ가량	2/SN + ｍ/SW + 가량/NNG
+땅을	땅/NNG + 을/JKO
+파고	파/VV + 고/EC
+샘플을	샘플/NNG + 을/JKO
+채취한	채취/NNG + 하/XSV + ㄴ/ETM
+로버에	로버/NNG + 에/NNP
+탑재된	탑재/NNG + 되/XSV + ㄴ/ETM
+장비로	장비/NNG + 로/JKB
+유기물	유기물/NNG
+존재	존재/NNG
+여부를	여부/NNG + 를/JKO
+검사할	검사/NNG + 하/XSV + ㄹ/ETM
+수	수/NNB
+있다.	있/VV + 다/EF + ./SF
+따라서	따라서/MAJ
+착륙	착륙/NNG
+후	후/NNG
+수주에서	수주/NNP + 에서/JKB
+몇	몇/MM
+달	달/NNG
+안에	안/NNG + 에/JKB
+생명체	생명체/NNG
+존재	존재/NNG
+여부를	여부/NNG + 를/JKO
+확인할	확인/NNG + 하/XSV + ㄹ/ETM
+수	수/NNB
+있다.	있/VV + 다/EF + ./SF
+마즈2020도	마즈/NNP + 2020/SN + 도/NNB
+화성의	화성/NNG + 의/JKG
+생명체	생명체/NNG
+탐사를	탐사/NNG + 를/JKO
+주요임무로	주요임무/NNG + 로/JKB
+하고	하/VV + 고/EC
+있어,	있/VX + 어/EC + ,/SP
+두	두/MM
+로버가	로버/NNP + 가/JKS
+2021년	2021/SN + 년/NNB
+여름께	여름/NNG + 께/JKB
+경쟁적으로	경쟁/NNG + 적/XSN + 으로/JKB
+생명체	생명체/NNG
+탐사결과를	탐사/NNG + 결과/NNG + 를/JKO
+보내올	보내오/VV + ㄹ/ETM
+것으로	것/NNB + 으로/JKB
+기대되고	기대/NNG + 되/XSV + 고/EC
+있다.	있/VX + 다/EF + ./SF
+기자회견	기자/NNG + 회견/NNG
+중인	중/NNB + 이/VCP + ㄴ/ETM
+그린	그린/NNP
+박사	박사/NNG
+[자료사진]	[/SS + 자료/NNG + 사/NNP + 진/NNG + ]/SS
+[EPA=연합뉴스]	[/SS + EPA/SL + =/SW + 연합/NNP + 뉴스/NNG + ]/SS
+기자회견	기자/NNG + 회견/NNG
+중인	중/NNB + 이/VCP + ㄴ/ETM
+그린	그린/NNP
+박사	박사/NNG
+[자료사진]	[/SS + 자료/NNG + 사/NNP + 진/NNG + ]/SS
+[EPA=연합뉴스]	[/SS + EPA/SL + =/SW + 연합/NNP + 뉴스/NNG + ]/SS
+그린	그/NNG + 린/NNP
+박사는	박사/NNG + 는/JX
+과거든	과거/NNG + 이/VCP + 든/EC
+현재든	현재/MAG + 이/VCP + 든/EC
+생명체	생명체/NNG
+존재가	존재/NNG + 가/JKS
+확인되면	확인/NNG + 되/XSV + 면/EC
+"혁명적일	"/SS + 혁명/NNG + 적/XSN + 이/VCP + ㄹ/ETM
+것"이라면서	것/NNB + "/SS + 이/VCP + 라면서/EC
+"코페르니쿠스가	"/SS + 코페르니쿠스/NNP + 가/JKS
+지동설을	지동/NNG + 설/NNB + 을/JKO
+주장했을	주장/NNG + 하/XSV + 였/EP + 을/ETM
+때처럼	때/NNG + 처럼/JKB
+사고를	사고/NNG + 를/JKO
+완전히	완전히/MAG
+바꿔놓기	바꾸/VV + 어/EC + 놓/VX + 기/ETN
+시작하겠지만	시작/NNG + 하/XSV + 겠/EP + 지만/EC
+우리가	우리/NP + 가/JKS
+그런	그런/MM
+결과에	결과/NNG + 에/JKB
+준비가	준비/NNG + 가/JKC
+돼	되/VV + 어/EC
+있다고	있/VX + 다고/EC
+생각하지	생각/NNG + 하/XSV + 지/EC
+않는다"고	않/VX + 는다/EC + "/SS + 고/JKQ
+했다.	하/VV + 였/EP + 다/EF + ./SF
+그러면서	그러/VV + 면서/EC
+"생명체를	"/SS + 생명체/NNG + 를/JKO
+발견하고	발견/NNG + 하/XSV + 고/EC
+결과를	결과/NNG + 를/JKO
+발표해야	발표/NNG + 하/XSV + 여야/EC
+할	하/VX + ㄹ/ETM
+시점에	시점/NNG + 에/JKB
+점점	점점/MAG
+더	더/MAG
+다가서고	다가서/VV + 고/EC
+있다고	있/VX + 다고/EC
+생각하기	생각/NNG + 하/XSV + 기/ETN
+때문에	때문/NNB + 에/JKB
+걱정하고	걱정/NNG + 하/XSV + 고/EC
+있다"고	있/VX + 다/EF + "/SS + 고/JKQ
+덧붙였다.	덧붙이/VV + 었/EP + 다/EF + ./SF
+NASA에서	NASA/SL + 에서/JKB
+38년간	38/SN + 년/NNB + 간/XSN
+일해온	일/NNG + 하/XSV + 여/EC + 오/VX + ㄴ/ETM
+그린	그/NNP + 린/NNG
+박사는	박사/NNG + 는/JX
+다른	다른/MM
+행성에	행성/NNG + 에/JKB
+작은	작/VA + 은/ETM
+유기체가	유기체/NNG + 가/JKS
+존재하는	존재/NNG + 하/XSV + 는/ETM
+것으로	것/NNB + 으로/JKB
+믿고	믿/VV + 고/EC
+있으며,	있/VX + 으며/EC + ,/SP
+더	더/MAG
+나아가	나아가/VV + 아/EC
+토성의	토성/NNG + 의/JKG
+위성(달)	위성/NNG + (/SS + 달/NNG + )/SS
+타이탄에	타이탄/NNG + 에/JKB
+'이상한	'/SS + 이상/NNG + 하/XSA + ㄴ/ETM
+생명체'가	생명체/NNG + '/SS + 가/JKS
+있을	있/VV + 을/ETM
+수	수/NNB
+있으며	있/VV + 으며/EC
+멀지않은	멀/VA + 지/EC + 않/VX + 은/ETM
+다른	다른/MM
+은하에	은하/NNG + 에/JKB
+외계문명이	외계/NNG + 문명/NNG + 이/JKS
+존재할	존재/NNG + 하/XSV + ㄹ/ETM
+수	수/NNB
+있다고	있/VV + 다고/EC
+믿고있다.	믿/VV + 고/EC + 있/VX + 다/EF + ./SF
+그린	그린/NNG
+박사는	박사/NNG + 는/JX
+수십억년	수십억/NR + 년/NNB
+전	전/MM
+생명체가	생명체/NNG + 가/JKS
+살았을지도	살/VV + 았/EP + 을지/EC + 도/JX
+모를	모르/VV + ㄹ/ETM
+고대	고대/NNG
+바다	바다/NNG
+인근을	인근/NNG + 을/JKO
+탐색하게	탐색/NNG + 하/XSV + 게/EC
+되는	되/VV + 는/ETM
+두	두/MM
+로버가	로버/NNP + 가/JKS
+"정말로	"/SS + 정말로/MAG
+생명체를	생명체/NNG + 를/JKO
+찾을	찾/VV + 을/ETM
+가능성이	가능/NNG + 성/XSN + 이/JKS
+있고	있/VV + 고/EC
+그러길	그러/VV + 기/ETN + ㄹ/JKO
+바라기	바라/VV + 기/ETN
+때문에	때문/NNB + 에/JKB
+이번	이번/NNG
+탐사	탐사/NNG
+프로젝트에	프로젝트/NNG + 에/JKB
+기대감을	기대감/NNG + 을/JKO
+갖고	갖/VV + 고/EC
+있다"면서	있/VX + 다/EF + "/SS + 면서/EC
+"생명체는	"/SS + 생명체/NNG + 는/JX
+환경이	환경/NNG + 이/JKS
+극단적으로	극단/NNG + 적/XSN + 으로/JKB
+나빠지면	나쁘/VA + 아/EC + 지/VX + 면/EC
+바위	바위/NNG
+속으로	속/NNG + 으로/JKB
+들어가는데	들어가/VV + 는데/EC
+우리는	우리/NP + 는/JX
+이	이/MM
+깊이까지	깊이/NNG + 까지/JX
+파본	파/VV + 보/VX + ㄴ/ETM
+적이	적/NNB + 이/JKS
+없다"고	없/VA + 다/EF + "/SS + 고/JKQ
+했다.	하/VV + 였/EP + 다/EF + ./SF
+그러면서	그러/VV + 면서/EC
+"1990년대에	"/SS + 1990/SN + 년대/NNB + 에/JKB
+우주생물학을	우주/NNG + 생물학/NNG + 을/JKO
+시작할	시작/NNG + 하/XSV + ㄹ/ETM
+때	때/NNG
+극단적인	극단/NNG + 적/XSN + 이/VCP + ㄴ/ETM
+환경에서	환경/NNG + 에서/JKB
+사는	살/VV + 는/ETM
+생물을	생물/NNG + 을/JKO
+찾기	찾/VV + 기/ETN
+시작했다"면서	시작/NNG + 하/XSV + 였/EP + 다/EF + "/SS + 면서/EC
+"아무것도	"/SS + 아무것/NNG + 도/JX
+살	살/VV + ㄹ/ETM
+수	수/NNB
+없을	없/VA + 을/ETM
+것으로	것/NNB + 으로/JKB
+여겨졌던	여기/VV + 어/EC + 지/VX + 었/EP + 던/ETM
+핵	핵/NNG
+오수도	오수/NNG + 도/JX
+생명체로	생명체/NNG + 로/JKB
+넘쳐났으며	넘쳐나/VV + 았/EP + 으며/EC
+물이	물/NNG + 이/JKS
+있는	있/VV + 는/ETM
+곳에	곳/NNG + 에/JKB
+생명체가	생명체/NNG + 가/JKS
+있었다"고	있/VV + 었/EP + 다/EF + "/SS + 고/JKQ
+덧붙였다.	덧붙이/VV + 었/EP + 다/EF + ./SF
+그린	그린/NNG
+박사는	박사/NNG + 는/JX
+또	또/MAG
+화성에	화성/NNG + 에/JKB
+로버를	로/NNP + 버/NNG + 를/JKO
+안착시키는	안착/NNG + 시키/XSV + 는/ETM
+것은	것/NNB + 은/JX
+"뉴욕에서	"/SS + 뉴욕/NNP + 에서/JKB
+골프공을	골프공/NNG + 을/JKO
+쳐	치/VV + 어/EC
+로스앤젤레스(골프장)에	로스앤젤레스/NNP + (/SS + 골/NNP + 프장/NNG + )/SS + 에/JKB
+홀인원	홀인원/NNG
+시키는	시키/VV + 는/ETM
+것과	것/NNB + 과/JKB
+같다"면서	같/VA + 다/EF + "/SS + 면서/EC
+"NASA와	"/SS + NASA/SL + 와/JC
+ESA는	ESA/SL + 는/JX
+이런	이런/MM
+불가능한	불/XPN + 가능/NNG + 하/XSA + ㄴ/ETM
+일을	일/NNG + 을/JKO
+매일	매일/MAG
+하고	하/VV + 고/EC
+있으며,	있/VX + 으며/EC + ,/SP
+항상	항상/MAG
+기적	기적/NNG
+같은	같/VA + 은/ETM
+일을	일/NNG + 을/JKO
+수행하고	수행/NNG + 하/XSV + 고/EC
+있다"고	있/VX + 다/EF + "/SS + 고/JKQ
+했다.	하/VV + 였/EP + 다/EF + ./SF
+eomns@yna.co.kr	eomns/SL + @/SW + yna/SL + ./SP + co/SL + ./SP + kr/SL
+이슈	이/NNP + 슈/NNG
+·	·/SP
+화성	화성/NNG
+탐사	탐사/NNG
+저작권자(c)연합뉴스.	저작권자/NNG + (/SS + c/SL + )/SS + 연합뉴스/NNG + ./SF
+무단전재-재배포금지마즈	무단/NNG + 전재/NNG + -/SS + 재배/NNG + 포금지마즈/NNG
+궤도선과	궤도선/NNG + 과/JC
+로버	로버/NNP
+[ESA/ATG	[/SS + ESA/SL + //SP + ATG/SL
+미디어랩]	미디어랩/NNG + ]/SS

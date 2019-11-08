@@ -1,0 +1,208 @@
+﻿최고	﻿/SW + 최고/NNG
+수급자	수급자/NNG
+월	월/NNG
+210만8천원	210/SN + 만/NR + 8/SN + 천/NR + 원/NNB
+받아..노노령연금	받/VV + 아/EF + ./SF + ./SE + 노/NNG + 노령/NNP + 연금/NNG
+(CG)	(/SS + CG/SL + )/SS
+[연합뉴스TV	[/SS + 연합/NNP + 뉴스/NNG + TV/SL
+제공]	제공/NNG + ]/SS
+노령연금	노령/NNG + 연금/NNG
+(CG)	(/SS + CG/SL + )/SS
+[연합뉴스TV	[/SS + 연합/NNP + 뉴스/NNG + TV/SL
+제공]령연금	제공/NNG + ]/SS + 령연금/NNG
+부부수급자	부부/NNG + 수급자/NNG
+32만4천597쌍	32/SN + 만/NR + 4/SN + 천/NR + 597/SN + 쌍/NNG
+(서울=연합뉴스)	(/SS + 서울/NNP + =/SW + 연합/NNP + 뉴스/NNG + )/SS
+서한기	서한기/NNP
+기자	기자/NNG
+=	=/SW
+국민연금에	국민/NNG + 연금/NNG + 에/JKB
+20년	20/SN + 년/NNB
+이상	이상/NNG
+가입한	가입/NNG + 하/XSV + ㄴ/ETM
+노령연금	노령/NNG + 연금/NNG
+수급자가	수급자/NNG + 가/JKS
+60만명에	60/SN + 만/NR + 명/NNB + 에/JKB
+달하는	달하/VV + 는/ETM
+것으로	것/NNB + 으로/JKB
+나타났다.	나타나/VV + 았/EP + 다/EF + ./SF
+이들은	이/NP + 들/XSN + 은/JX
+월평균	월평균/NNG
+92만6천원의	92/SN + 만/NR + 6/SN + 천/NR + 원/NNB + 의/JKG
+노령연금을	노령/NNG + 연금/NNG + 을/JKO
+받고	받/VV + 고/EC
+있다.	있/VX + 다/EF + ./SF
+30일	30/SN + 일/NNB
+국민연금공단에	국민/NNG + 연금/NNG + 공단/NNG + 에/JKB
+따르면	따르/VV + 면/EC
+올해	올해/NNG
+6월	6/SN + 월/NNB
+말	말/NNB
+현재	현재/MAG
+전체	전체/NNG
+노령연금	노령/NNG + 연금/NNG
+수급자는	수급자/NNG + 는/JX
+389만8천명이다.	389/SN + 만/NR + 8/SN + 천/NR + 명/NNB + 이/VCP + 다/EF + ./SF
+성별로는	성/NNG + 별/XSN + 로/JKB + 는/JX
+남성은	남성/NNG + 은/JX
+257만8천명(66.2%),	257/SN + 만/NR + 8/SN + 천/NR + 명/NNB + (/SS + 66/SN + ./SP + 2/SN + %/SW + )/SS + ,/SP
+여성은	여성/NNG + 은/JX
+132만명(33.8%)이다.	132/SN + 만/NR + 명/NNB + (/SS + 33/SN + ./SP + 8/SN + %/SW + )/SS + 이/VCP + 다/EF + ./SF
+노령연금	노령/NNG + 연금/NNG
+수급자를	수급자/NNG + 를/JKO
+가입	가입/NNG
+기간별로	기간/NNG + 별/XSN + 로/JKB
+보면	보/VV + 면/EC
+20년	20/SN + 년/NNB
+이상	이상/NNG
+59만7천명(15.3%)이고,	59/SN + 만/NR + 7/SN + 천/NR + 명/NNB + (/SS + 15/SN + ./SP + 3/SN + %/SW + )/SS + 이/VCP + 고/EC + ,/SP
+10∼20년	10/SN + ∼/SO + 20/SN + 년/NNB
+미만	미만/NNG
+209만7천명(53.8%),	209/SN + 만/NR + 7/SN + 천/NR + 명/NNB + (/SS + 53/SN + ./SP + 8/SN + %/SW + )/SS + ,/SP
+10년	10/SN + 년/NNB
+미만은	미만/NNG + 은/JX
+120만4천명(30.9%)이다.	120/SN + 만/NR + 4/SN + 천/NR + 명/NNB + (/SS + 30/SN + ./SP + 9/SN + %/SW + )/SS + 이/VCP + 다/EF + ./SF
+5년	5/SN + 년/NNB
+전(2014년	전/NNG + (/SS + 2014/SN + 년/NNB
+12월)과	12/SN + 월/NNB + )/SS + 과/JKB
+비교해서	비교/NNG + 하/XSV + 여서/EC
+10년	10/SN + 년/NNB
+미만은	미만/NNG + 은/JX
+10.5%	10/SN + ./SP + 5/SN + %/SW
+줄었지만,	줄/VV + 었/EP + 지만/EC + ,/SP
+10년~20년	10/SN + 년/NNB + ~/SO + 20/SN + 년/NNB
+미만은	미만/NNG + 은/JX
+56.5%,	56/SN + ./SP + 5/SN + %/SW + ,/SP
+20년	20/SN + 년/NNB
+이상은	이상/NNG + 은/JX
+127.8%	127/SN + ./SP + 8/SN + %/SW
+증가했다.	증가/NNG + 하/XSV + 였/EP + 다/EF + ./SF
+전체	전체/NNG
+노령연금	노령/NNG + 연금/NNG
+수급자에서	수급자/NNG + 에서/JKB
+20년	20/SN + 년/NNB
+이상	이상/NNG
+가입자의	가입자/NNG + 의/JKG
+비율은	비율/NNG + 은/JX
+2014년	2014/SN + 년/NNB
+8.9%에서	8/SN + ./SP + 9/SN + %/SW + 에서/JKB
+올해	올해/NNG
+6월	6/SN + 월/NNB
+현재	현재/MAG
+15.3%로	15/SN + ./SP + 3/SN + %/SW + 로/JKB
+6.4%포인트	6/SN + ./SP + 4/SN + %/SW + 포인트/NNG
+느는	늘/VV + 는/ETM
+등	등/NNB
+해마다	해/NNG + 마다/JX
+증가하고	증가/NNG + 하/XSV + 고/EC
+있다.	있/VX + 다/EF + ./SF
+전체	전체/NNG
+노령연금	노령/NNG + 연금/NNG
+수급자의	수급자/NNG + 의/JKG
+평균	평균/NNG
+연금월액(특례연금과	연금월액/NNG + (/SS + 특례/NNG + 연금/NNG + 과/JC
+분할연금	분할/NNG + 연금/NNG
+제외)은	제외/NNG + )/SS + 은/JX
+52만3천원이며,	52/SN + 만/NR + 3/SN + 천/NR + 원/NNB + 이/VCP + 며/EC + ,/SP
+20년	20/SN + 년/NNB
+이상	이상/NNG
+가입	가입/NNG
+수급자의	수급자/NNG + 의/JKG
+평균	평균/NNG
+연금월액은	연금/NNG + 월액/NNG + 은/JX
+92만6천원,	92/SN + 만/NR + 6/SN + 천/NR + 원/NNB + ,/SP
+최고	최고/NNG
+수급자의	수급자/NNG + 의/JKG
+수급액은	수급액/NNG + 은/JX
+월	월/NNG
+210만8천원이었다.	210/SN + 만/NR + 8/SN + 천/NR + 원/NNB + 이/VCP + 었/EP + 다/EF + ./SF
+여성의	여성/NNG + 의/JKG
+사회활동이	사회/NNG + 활동/NNG + 이/JKS
+늘고	늘/VV + 고/EC
+노후준비	노후/NNG + 준비/NNG
+인식이	인식/NNG + 이/JKS
+확산하면서	확산/NNG + 하/XSV + 면서/EC
+여성	여성/NNG
+수급자도	수급자/NNG + 도/JX
+늘고	늘/VV + 고/EC
+있다.	있/VX + 다/EF + ./SF
+2014년과	2014/SN + 년/NNB + 과/JKB
+비교하면	비교/NNG + 하/XSV + 면/EC
+5년	5/SN + 년/NNB
+간	간/NNB
+남성	남성/NNG
+수급자는	수급자/NNG + 는/JX
+27.0%	27/SN + ./SP + 0/SN + %/SW
+증가했지만,	증가/NNG + 하/XSV + 였/EP + 지만/EC + ,/SP
+여성	여성/NNG
+수급자는	수급자/NNG + 는/JX
+43.8%(40만명)가	43/SN + ./SP + 8/SN + %/SW + (/SS + 40/SN + 만/NR + 명/NNB + )/SS + 가/JKS
+늘었다.	늘/VV + 었/EP + 다/EF + ./SF
+올해	올해/NNG
+6월	6/SN + 월/NNB
+현재	현재/MAG
+부부	부부/NNG
+모두	모두/MAG
+노령연금을	노령/NNG + 연금/NNG + 을/JKO
+받는	받/VV + 는/ETM
+수급자는	수급자/NNG + 는/JX
+32만4천597쌍(64만9천194명)으로	32/SN + 만/NR + 4/SN + 천/NR + 597/SN + 쌍/NNG + (/SS + 64/SN + 만/NR + 9/SN + 천/NR + 194/SN + 명/NNB + )/SS + 으로/JKB
+2018년	2018/SN + 년/NNB
+12월보다	12/SN + 월/NNB + 보다/JKB
+2만6천쌍(8.7%)	2/SN + 만/NR + 6/SN + 천/NR + 쌍/NNG + (/SS + 8/SN + ./SP + 7/SN + %/SW + )/SS
+증가했다.	증가/NNG + 하/XSV + 였/EP + 다/EF + ./SF
+부부	부부/NNG
+합산	합산/NNG
+기준으로	기준/NNG + 으로/JKB
+가장	가장/MAG
+높은	높/VA + 은/ETM
+연금액은	연금액/NNG + 은/JX
+월	월/NNG
+353만5천원에	353/SN + 만/NR + 5/SN + 천/NR + 원/NNB + 에/JKB
+달했다.	달하/VV + 였/EP + 다/EF + ./SF
+부부	부부/NNG
+합산	합산/NNG
+연금	연금/NNG
+월액을	월액/NNG + 을/JKO
+보면,	보/VV + 면/EC + ,/SP
+100만원	100/SN + 만/NR + 원/NNB
+이상인	이상/NNG + 이/VCP + ㄴ/ETM
+부부	부부/NNG
+수급자는	수급자/NNG + 는/JX
+총	총/MM
+6만8천567쌍(21.1%)이며,	6/SN + 만/NR + 8/SN + 천/NR + 567/SN + 쌍/NNG + (/SS + 21/SN + ./SP + 1/SN + %/SW + )/SS + 이/VCP + 며/EC + ,/SP
+200만원	200/SN + 만/NR + 원/NNB
+이상을	이상/NNG + 을/JKO
+받는	받/VV + 는/ETM
+부부	부부/NNG
+연금	연금/NNG
+수급자는	수급자/NNG + 는/JX
+총	총/MM
+1천334쌍이었다.	1/SN + 천/NR + 334/SN + 쌍/NNG + 이/VCP + 었/EP + 다/EF + ./SF
+[연도별	[/SS + 연도/NNG + 별/XSN
+노령연금	노령/NNG + 연금/NNG
+수급자	수급자/NNG
+현황]	현황/NNG + ]/SS
+(기준	(/SS + 기준/NNG
+:	:/SP
+2019년	2019/SN + 년/NNB
+6월,	6/SN + 월/NNB + ,/SP
+단위	단위/NNG
+:	:/SP
+명,	명/NNG + ,/SP
+%)	%/XR + )/SS
+[연도별	[/SS + 연도/NNG + 별/XSN
+노령연금	노령/NNG + 연금/NNG
+성별	성별/NNG
+수급자	수급자/NNG
+현황]	현황/NNG + ]/SS
+(기준	(/SS + 기준/NNG
+:2019년	:/SP + 2019/SN + 년/NNB
+6월,	6/SN + 월/NNB + ,/SP
+단위	단위/NNG
+:	:/SP
+명,	명/NNG + ,/SP
+%)	%/XR + )/SS
+shg@yna.co.kr	shg/SL + @/SW + yna/SL + ./SP + co/SL + ./SP + kr/SL
+저작권자(c)연합뉴스.	저작권자/NNG + (/SS + c/SL + )/SS + 연합뉴스/NNG + ./SF
+무단전재-재배포금지	무단/NNG + 전재/NNG + -/SS + 재배/NNG + 포금지/NNG
