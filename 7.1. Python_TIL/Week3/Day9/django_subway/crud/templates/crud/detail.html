@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body %}
+제목 : {{ art.title }} <br>
+내용 : {{ art.content }} <br>
+
+<a href="{% url 'crud:update' art.id %}">수정하기</a>
+<form action='{% url "crud:delete" art.id %}' method='POST'>
+    {% csrf_token %}
+    <input type='submit' value="삭제하기">
+</form>
+<hr><br>
+
+<form action='{% url "crud:comment" art.id %}' method='POST'>
+    {% csrf_token %}
+    댓글달기: <input type="text" name="comment">
+    <input type='submit'>
+</form>
+<hr><br>
+댓글 갯수 : {{ comments|length }} <!-- / {#{ art.comment_set.all|length }} / {#{ comments.count }} -->
+<!-- 3개의 방법 중 속도는 1, 2, 3순임  -->
+<!-- {#{}}은 템플릿 랭귀지의 주석처리 #임 -->
+
+<ul>
+    {% for com in comments %}
+    <li>
+        {{com.comment}}
+        <a href="{% url 'crud:comment_edit' art.id com.id %}">수정하기</a>
+        <form action='{% url "crud:comment_del" art.id com.id %}' method='POST'>
+            {% csrf_token %}
+            <input type='submit' value="삭제">
+        </form>
+    </li>
+    {% empty %}  <!-- empty는 내용없을때 나올 내용 작성 가능 -->
+        <b>등록된 댓글이 없습니다.</b>
+    {% endfor %}
+</ul>
+
+{% endblock %}
