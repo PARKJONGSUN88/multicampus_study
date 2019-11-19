@@ -30,11 +30,11 @@ def new(request):
 
 #     return redirect('crud:index')
 
-def detail(request, id):
+def detail(request, art_id):
     art = Article.objects.get(id=id)
     return render(request, 'crud/detail.html', {'art':art})
 
-def update(request, id):
+def update(request, art_id):
     art = Article.objects.get(id=id)
     # print(f'update : {request.method}') # request method 확인
     if request.method == "POST":
@@ -60,7 +60,7 @@ def update(request, id):
 # delete 부분은 데이터를 삭제하는 동작이기에 GET으로 동작되어서는 안됨.
 # GET으로 동작할 경우 브라우저 URL로도 데이터 삭제가 가능하게됨.
 # DELETE method가 장고에서 지원이 안되기에 POST 방식으로 값을 넘겨 받음.
-def delete(request, id):
+def delete(request, art_id):
     art = Article.objects.get(id=id)
     if request.method == "POST":
         art.delete()
@@ -72,11 +72,12 @@ def delete(request, id):
 def comment(request, art_id):
     article = Aritcle.objects.get(id=art_id)
 
-    comment = request.POST.get('comment')
+    if request.method == "POST":
+        comment = request.POST.get('comment')
 
-    com = Comment()
-    com.comment = comment
-    com.article = article
-    com.save()
+        com = Comment()
+        com.comment = comment
+        com.article = article
+        com.save()
 
-    return redirect('crud:detail', art_id)
+        return redirect('crud:detail', art_id)
