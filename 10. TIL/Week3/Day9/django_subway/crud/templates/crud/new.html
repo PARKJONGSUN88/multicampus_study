@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+    <form action='{% url "crud:new" %}' method='POST'>
+        {% csrf_token %}
+        <input type="text" name="title"><br>
+        <textarea name="content" cols="30" rows="10"></textarea><br>
+        <input type='submit'>
+    </form>
+{% endblock %}
