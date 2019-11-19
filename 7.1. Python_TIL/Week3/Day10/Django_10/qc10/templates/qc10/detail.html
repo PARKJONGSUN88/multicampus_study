@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3>질문 : {{ qc.content }}</h3>
+<a href="{% url 'qc10:update' qc.id %}">수정하기</a>
+{% endblock %}

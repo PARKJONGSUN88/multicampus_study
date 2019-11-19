@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action='{% url "qc10:update" qc.id %}' method='POST'>
+    {% csrf_token %}
+    <input type="text" name="content" value="{{ qc.content }}"><br>
+    <input type='submit'>
+</form>
+{% endblock %}
