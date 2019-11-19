@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+Artii입력해
+{% endblock %}
+{% block body %}
+<form action="/pages/artii_result/" method="GET">
+    <label for="neyong">원하는 내용을 입력하세요.</label>
+    <input type="text" name="neyong" id="neyong">
+    <input type="submit">
+</form>
+{% endblock %}

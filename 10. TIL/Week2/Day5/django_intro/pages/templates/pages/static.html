@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 펭수 {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'stylesheets/pages/style1.css' %}">    
+{% endblock %}
+
+{% block body %}
+    <img src="{% static 'images/pages/peng.jpg' %}" alt="요즘대세">
+{% endblock %}

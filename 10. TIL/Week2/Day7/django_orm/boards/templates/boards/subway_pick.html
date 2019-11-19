@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+Subway_pick
+{% endblock %}
+{% block content%}
+<ul>
+{% for i in result %}
+    <li><p>{{ i.size }}</p></li>
+    <li><p>{{ i.bread }}</p></li>
+    <li><p>{{ i.source }}</p></li>
+{% endfor %}    
+</ul>
+{% endblock %}

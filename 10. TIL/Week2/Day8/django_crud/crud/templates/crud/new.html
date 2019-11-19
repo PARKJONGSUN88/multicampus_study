@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <form action='/crud/created/' method='POST'>
+        {% csrf_token %}
+        <label for="title"><b>기사제목</b></label><br>
+        <input type="text" name="title" id="title"><br><br>
+        <b>본문</b><br>
+        <textarea name="content" cols="30" rows="5"></textarea><br><br>
+        <input type='submit'>
+    </form>    
+{% endblock %}

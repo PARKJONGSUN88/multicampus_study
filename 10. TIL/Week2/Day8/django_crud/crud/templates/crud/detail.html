@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h3>기사 본문</h3>    
+    제목 : {{ article.title }} <br>
+    내용 : {{ article.content }} <br>
+    <a href="/crud/{{ article.id }}/update/"><button>수정하기</button></a>
+    <a href="/crud/{{ article.id }}/delete/"><button>삭제하기</button></a>
+{% endblock %}

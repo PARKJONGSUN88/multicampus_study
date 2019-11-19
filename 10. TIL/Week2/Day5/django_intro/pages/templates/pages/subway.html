@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Subway주문
+{% endblock %}
+{% block body%}
+<form action="/pages/subway_pick/" method="POST">
+    {% csrf_token %}
+    <h1>빵 사이즈</h1>
+    <input type="number" min="15" max="30" step="15" name="size" id="size">
+    <h1>빵 종류</h1>
+    <select name="bread" id="bread">
+        <option value="bread1">참깨빵</option>
+        <option value="bread2">오트밀</option>
+        <option value="bread3">이런식빵</option>
+    </select>
+    <h1>소스골라</h1>
+        <input type="checkbox" name="source" id="source" value="source1">단거
+        <input type="checkbox" name="source" id="source" value="source2">짠거
+        <input type="checkbox" name="source" id="source" value="source3">신거
+        <input type="checkbox" name="source" id="source" value="source4">매워
+    <br>
+    <br>
+    <input type="submit">
+</form>
+{% endblock %}

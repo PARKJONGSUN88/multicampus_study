@@ -1,0 +1,69 @@
+<!-- templates/dtl.html -->
+<h3>1. 반복문</h3>
+{% for f in foods %}
+    <p>{{ f }}</p>
+{% endfor %}
+<hr>
+{% for f in foods %}
+    <p>{{ forloop.counter }}. {{ f }}</p>
+{% endfor %}
+<hr>
+{% for user in empty_list %}
+    <p>{{ user }} 입니다.</p>    
+{% empty %}
+    <p>현재 가입한 유저가 없습니다.</p>    
+{% endfor %}
+
+<hr>
+<h3>2. 조건문</h3>
+{% if '짜장면' in foods %}
+    <p>짜장면엔 단무지 최고!</p>
+{% endif %}    
+<hr>
+{% for f in foods %}
+    {{ forloop.counter }}번째..
+    {% if forloop.first %}
+        <p>짜장면+고추가루</p>
+    {% else %}
+        <p>{{ f }}</p>
+    {% endif %}    
+{% endfor %}
+
+<hr>
+<h3>3. lorem ipsum</h3>
+{% lorem %}
+<hr>
+{% lorem 3 w %}
+<hr>
+{% lorem 4 random %}
+<hr>
+{% lorem 2 p %}
+<hr>
+
+<h3>4. length filter 활용</h3>
+{% for message in messages %}
+    {% if message|length > 5 %}
+        <p>글씨가 너무 길어요.</p>
+
+    {% endif %}
+{% endfor %}
+
+<hr>
+
+<h3>7. 연산</h3>
+<p>{{ 4|add:6 }}</p>
+<hr>
+
+<h3>8. 날짜 표현</h3>
+{{ timenow }}
+{% now "DATETIME_FORMAT" %} <br>
+{% now "SHORT_DATETIME_FORMAT" %} <br>
+{% now "DATE_FORMAT" %} <br>
+{% now "SHORT_DATE_FORMAT" %} <br>
+<hr>
+{% now "Y년 m월 d일 (D) h:i" %}
+Copyright {{ current_year }}
+<hr>
+{{ timenow|date:"SHORT_DATE_FORMAT" }}
+
+<h3>9. 하이퍼</h3>
