@@ -4,7 +4,7 @@
 <ul>
     {% for m in movies %}
     <li>
-        <a href="{% url 'movie:detail' m.id %}"><b>영화명: {{ m.title }} / 평점: {{ m.score }}</b></a>
+        <a href="{% url 'movie:detail' m.id %}"><b>{{ m.title }} / 평점: {{ m.score }}</b></a>
     </li>    
     {% empty %}
     <br><br>
