@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+영화명: <b>{{ movie.title }}</b><br>
+영화명(영문): <b>{{ movie.title_en }}</b><br>
+누적 관객수: <b>{{ movie.audience }}</b><br>
+개봉일: <b>{{ movie.open_date }}</b><br>
+장르: <b>{{ movie.genre }}</b><br>
+관람등급: <b>{{ movie.watch_grade }}</b><br>
+평점: <b>{{ movie.score }}</b><br>
+<img src="{{ movie.poster_url }}" width=30%><br>
+영화 소개: <b>{{ movie.description }}</b><br>
+<br>
+<ul>
+    <li style='display:inline'><a href="{% url 'movie:index' %}"><button>목록</button></a></li>
+    <li style='display:inline'><a href="{% url 'movie:edit' movie.id %}"><button>수정</button></a></li>
+    <li style='display:inline-block'>
+        <form action='{% url "movie:delete" movie.id %}' method='POST'>
+        {% csrf_token %}
+        <input type='submit' value='삭제'>
+        </form>
+    </li>
+</ul>
+{% endblock %}

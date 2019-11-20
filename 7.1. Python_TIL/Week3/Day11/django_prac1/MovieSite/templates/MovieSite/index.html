@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<br>
+<ul>
+    {% for m in movies %}
+    <li>
+        <a href="{% url 'movie:detail' m.id %}"><b>영화명: {{ m.title }} / 평점: {{ m.score }}</b></a>
+    </li>    
+    {% empty %}
+    <br><br>
+    <b>현재 상영중인 영화가 없습니다.</b>
+    {% endfor %}    
+</ul>
+{% endblock %}

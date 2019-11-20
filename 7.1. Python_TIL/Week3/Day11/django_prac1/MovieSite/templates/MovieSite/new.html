@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action='{% url "movie:new" %}' method='POST'>
+    {% csrf_token %}
+    영화명: <input type="text" name='title'><br>
+    영화명(영문): <input type="text" name='title_en'><br>
+    누적 관객수: <input type="number" name='audience' min="0"><br>
+    개봉일: <input type="date" name='open_date'><br>
+    장르: <input type="text" name='genre'><br>
+    관람등급: <input type="text" name='watch_grade'><br>
+    평점: <input type="number" name='score' step="0.01" max="10" min="0" ><br>
+    포스터 이미지 URL: <input type="text" name='poster_url'><br>
+    영화 소개: <textarea name="description" cols="30" rows="10"></textarea><br>
+    <input type='submit'>
+</form>
+{% endblock %}
