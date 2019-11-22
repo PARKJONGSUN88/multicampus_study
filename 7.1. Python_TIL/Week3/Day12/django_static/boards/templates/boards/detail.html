@@ -1,0 +1,20 @@
+{% load static %}
+<h2>Detail Page</h2>
+
+<div>
+    TITLE : {{ board.title }} <br>
+    content : {{ board.content}}    <br>
+    IMAGE: <br>
+
+    <!-- 저장된 이미지가 없는경우 에러가 발생하는데 if 로 분기해서 회피 -->
+    {% if board.image %}
+        <img src="{{ board.image.url }}" alt="{{ board.image }}">
+        {% if board.image_thumbnail %}
+            <img src="{{ board.image_thumbnail.url }}" alt="{{ board.image_thumbnail }}">
+        {% endif %}
+    {% else %}
+        <!-- 이미지가 없는경우 이미지가 없음을 알리는 준비된 image로 대처 -->
+        <img src="{% static 'no_image.jpg'%}" alt="No_Image">
+    {% endif %}
+</div>
+<a href="{% url 'boards:edit' board.id %}">수정하기</a>

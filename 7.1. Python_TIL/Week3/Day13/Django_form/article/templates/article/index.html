@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Index page</h1>
+<ul>
+    {% for a in article %}
+    <li><a href="{% url 'article:detail' a.id %}">{{a.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

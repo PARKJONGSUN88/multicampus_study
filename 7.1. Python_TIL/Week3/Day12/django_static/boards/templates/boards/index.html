@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!-- static 을 사용하기 위해 필수! -->
+{% load static %}
+
+{% block body %}
+
+<h1>index page</h1>
+<!-- boards/static/boards/images/peng.jpg -->
+<!-- <img src="{#% static 'boards/images/peng.jpg' %}" alt="peng.jpg">
+<img src="{#% static 'peng2.jpg' %}" alt="peng2.jpg"> -->
+<hr><br><hr>
+
+<ul>
+{% for board in boards %}
+    <li><a href="{% url 'boards:detail' board.id %}">{{ board.title }}</a></li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'boards:new' %}">새로 만들기</a>
+
+{% endblock %}

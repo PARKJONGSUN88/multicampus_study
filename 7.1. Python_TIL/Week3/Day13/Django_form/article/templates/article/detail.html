@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+title:{{ article.title }} <br>
+content:{{ article.content }} <br>
+<a href="{% url 'article:edit' article.id %}">수정</a>
+<form action='{% url "article:delete" article.id %}' method='POST'>
+    {% csrf_token %}
+    <a href="#" onclick="this.parentNode.submit()">삭제</a>
+</form>
+{% endblock %}

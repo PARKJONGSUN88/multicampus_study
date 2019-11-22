@@ -1,0 +1,12 @@
+<h1>NEW</h1>
+
+<hr><br><hr>
+<form action="{% url 'boards:new' %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    타이틀 : <input type="text" name="title" required><br>
+    내용 : <input type="text" name="content" required><br>
+    <hr>
+    <input type="file" name="image" accept='image/*'> <br>
+    <hr>
+    <input type="submit">
+</form>
