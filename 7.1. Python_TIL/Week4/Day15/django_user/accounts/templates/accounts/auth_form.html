@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+
+<h1>{{ label }}</h1>
+
+<form action='' method='POST'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+{% if request.resolver_match.url_name == "signup" %}
+    {% buttons submit="회원 가입"%}
+    {% endbuttons %}
+{% elif request.resolver_match.url_name == "login" %}    
+    {% buttons submit="로그인"%}
+    {% endbuttons %}
+{% elif request.resolver_match.url_name == "edit" %}    
+    {% buttons submit="수정하기"%}
+    {% endbuttons %}
+{% else %}    
+    {% buttons submit="비번 변경"%}
+    {% endbuttons %}
+{% endif %}
+</form>
+
+{% if request.resolver_match.url_name == "edit" %}  
+<form action='{% url 'accounts:chg_pwd' %}' method='POST'>
+    {% csrf_token %}
+    <a href="#" onclick="this.parentNode.submit()">비번 변경</a>
+</form>  
+<form action='{% url 'accounts:delete' %}' method='POST'>
+    {% csrf_token %}
+    <a href="#" onclick="this.parentNode.submit()">회원탈퇴</a>
+</form>
+{% endif %}
+
+{% endblock %}

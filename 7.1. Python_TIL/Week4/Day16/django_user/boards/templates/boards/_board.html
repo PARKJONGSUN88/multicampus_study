@@ -1,0 +1,13 @@
+<div class="card-body">
+    <a href="{% url 'boards:like' board.id %}" class="card-link">
+        <p class="card-text">
+            <!-- 현재 유저가 좋아요 리스트에 있는지 확인 -->
+            {% if user in board.like_users.all %}
+                <i class="fas fa-heart fa-lg" style="color:crimson"></i>
+            {% else %}
+                <i class="far fa-heart fa-lg" style="color:black"></i>
+            {% endif %}
+        </a>
+            {{ board.like_users.all|length }} 명이 좋아합니다.
+        </p>
+</div>

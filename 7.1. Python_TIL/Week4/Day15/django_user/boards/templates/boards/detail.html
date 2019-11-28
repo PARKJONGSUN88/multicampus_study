@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<table>
+    <tr>
+        <td>타이틀</td>
+        <td>{{ board.title }}</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>{{ board.content }}</td>
+    </tr>
+</table>
+{% if user == board.user %}
+<a href="{% url 'boards:edit' board.id %}">수정하기</a>
+
+<form action="{% url 'boards:delete' board.id %}" method="post">
+    {% csrf_token %}
+    <a href="#" onclick="this.parentNode.submit()">삭제하기</a>
+</form>
+{% endif %}
+
+{% endblock %}

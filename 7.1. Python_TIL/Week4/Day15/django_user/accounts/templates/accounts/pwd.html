@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+
+<form action='' method='POST'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons submit="비번변경"%}
+    {% endbuttons%}
+</form>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+<table>
+    <tr>
+        <td>타이틀</td>
+        <td>{{ board.title }}</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>{{ board.content }}</td>
+    </tr>
+</table>
+<!-- 댓글 보여주기 -->
+<hr>
+<h3>댓글</h3>
+{% for comment in comments %}
+    <p><b>{{ comment.comment }}</b> - {{ comment.user }} </p>
+    {% if user == comment.user %}
+    <form action='{% url "boards:del_comment" comment.id %}' method='POST'>
+        {% csrf_token %}
+        <a href="#" onclick="this.parentNode.submit()">댓글 삭제</a>
+    </form>
+    {% endif %}
+
+{% empty %}
+    <h4>작성된 댓글이 없어요.</h4>
+{% endfor %}
+<hr>
+
+<form action='{% url "boards:new_comment" board.id %}' method='POST'>
+    {% csrf_token %}
+    {% bootstrap_form comment_form %}
+    {% buttons submit="댓글등록" %}
+    {% endbuttons %}
+</form>
+
+
+
+
+
+{% if user == board.user %}
+<a href="{% url 'boards:edit' board.id %}">수정하기</a>
+
+<form action="{% url 'boards:delete' board.id %}" method="post">
+    {% csrf_token %}
+    <a href="#" onclick="this.parentNode.submit()">삭제하기</a>
+</form>
+{% endif %}
+
+{% endblock %}
