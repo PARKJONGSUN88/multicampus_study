@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons%}
+        <button type="submit">{{ button_label }}</button>
+    {% endbuttons %}
+</form>
+{% endblock %}

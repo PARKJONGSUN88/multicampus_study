@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+<table>
+    <tr>
+        <td>제목</td>
+        <td>{{ movie.title }}</td>
+    </tr>
+    <tr>
+        <td>설명</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>{{ movie.description }}</td>
+    </tr>
+    <tr>
+        <td>포스터</td>
+        {% if movie.poster %}
+        <td><img src="{{ movie.poster.url }}" alt="{{ movie.poster }}" style="width:50%; height:auto"></td>
+        {% else %}
+        <td><img src="{% static 'movies/images/no_img.jpg'%}" alt="pengsu"></td>
+        {% endif %}
+    </tr>
+</table>
+
+<hr>
+<ul>
+    {% for r in ratings %}
+    <li>
+        <form action="{% url 'movies:rating_del' movie.id r.id%}" method="post">
+            {% csrf_token %}
+            {{ r.content }} - score : {{ r.score }}
+            {% if user == r.user %}
+            <a href="#" onclick="this.parentNode.submit()">삭제</a>
+            {% endif %}
+        </form>
+    </li>
+    {% empty %}
+    <h3>등록된 평점이 없습니다.</h3>
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated %}
+<form action="{% url 'movies:rating_new' movie.id %}" method="post">
+{% csrf_token %}
+{% bootstrap_form form %}
+{% buttons submit="평점등록" %}
+{% endbuttons %}
+</form>
+{% endif %}
+
+<hr>
+<a href="{% url 'movies:index' %}">목록</a>
+{% if user.is_authenticated %}
+<form action="{% url 'movies:delete' movie.id %}" method="post">
+{% csrf_token %}
+<a href="{% url 'movies:edit' movie.id %}">수정</a> / 
+<a href="#" onclick="this.parentNode.submit()">삭제</a>
+</form>
+{% endif %}
+
+{% endblock %}
