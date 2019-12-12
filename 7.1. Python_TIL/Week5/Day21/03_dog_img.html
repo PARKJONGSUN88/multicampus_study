@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <style>
+  .animals {
+    
+  }
+  .animals_dog {       
+  
+  }
+  .animals_cat {
+  
+  }  
+  </style>
+
+</head>
+
+<body>
+  <h1> 캣n독 </h1>
+  <button class="get_dog">댕청이</button>
+  <button class="get_cat">냥님</button>
+  
+  <div class='animals'>
+  <div class="animals_dog">
+  </div>
+  <div class="animals_cat">
+  </div>
+  </div>
+
+  <script>
+    function getDogImg(){
+    axios.get('https://dog.ceo/api/breeds/image/random')
+      .then(response =>{
+        console.log(response)
+        //1. 이미지 url을 저장한다.
+        const imgurl = response.data.message
+        //2. 이미지 태그 생성
+        const imgTag = document.createElement('img')
+        //3. 이미지 url을 태그의src에 추가
+        imgTag.src = imgurl
+        //5. 사이즈 조절
+        imgTag.style.width = '300px'
+        imgTag.style.height = '300px'
+        //4. 요소를 원하는 위치에 추가
+        document.querySelector('.animals_dog').append(imgTag)
+      })
+    }
+  
+    function getCatImg(){      
+      axios.get('https://api.thecatapi.com/v1/images/search')
+        .then(response =>{
+          console.log(response.data[0].url)
+          //1. 이미지 url을 저장한다.
+          const imgurl = response.data[0].url
+          //2. 이미지 태그 생성
+          const imgTag = document.createElement('img')
+          //3. 이미지 url을 태그의src에 추가
+          imgTag.src = imgurl
+          //5. 사이즈 조절
+          imgTag.style.width = '300px'
+          imgTag.style.height = '300px'
+          //4. 요소를 원하는 위치에 추가
+          document.querySelector('.animals_cat').append(imgTag)
+        })
+    }  
+
+    const dogButton = document.querySelector('.get_dog')
+    dogButton.addEventListener('click', getDogImg)
+
+    const catButton = document.querySelector('.get_cat')
+    catButton.addEventListener('click', getCatImg)
+
+  </script>
+</body>
+
+</html>

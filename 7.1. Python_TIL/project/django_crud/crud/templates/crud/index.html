@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body%}
+    <h1>Article List</h1>
+    <ul>
+        {% for i in articles %}
+            <li><a href="/crud/{{ i.pk }}/article/">{{ i.title }}</a></li> 
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+<!-- <li><a href="/crud/{{ i.pk }}/article/">{{ i.title }}</a></li>에서 
+    {{ i.pk }}의 i.pk는 db의 컬럼으로 찾아라가 되기에 pk 또는 id처럼 정해진거를 함 -->
