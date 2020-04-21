@@ -180,7 +180,7 @@ CSS에서 레이아웃을 제어하기 위한 프로퍼티.
 </html>
 ```
 
-![image-20200421115609243](C:\Users\PJS\AppData\Roaming\Typora\typora-user-images\image-20200421115609243.png)
+![image-20200421115609243](https://user-images.githubusercontent.com/50945715/79825240-786d7980-83d3-11ea-9b93-6c83cb3d8b65.png)
 
 
 
@@ -212,7 +212,7 @@ CSS에서 레이아웃을 제어하기 위한 프로퍼티.
 <div>박스 아래에 나타나야 하는 내용</div>
 ```
 
-![image-20200421120008686](C:\Users\PJS\AppData\Roaming\Typora\typora-user-images\image-20200421120008686.png)
+![image-20200421120008686](https://user-images.githubusercontent.com/50945715/79825241-799ea680-83d3-11ea-9710-cae844b03642.png)
 
 
 
@@ -225,4 +225,4 @@ CSS에서 레이아웃을 제어하기 위한 프로퍼티.
 <div>박스 아래에 나타나야 하는 내용</div>
 ```
 
-![image-20200421120117325](C:\Users\PJS\AppData\Roaming\Typora\typora-user-images\image-20200421120117325.png)
+![image-20200421120117325](https://user-images.githubusercontent.com/50945715/79825244-7a373d00-83d3-11ea-8b95-ced73a042ac8.png)
