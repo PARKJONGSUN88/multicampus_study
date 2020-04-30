@@ -1,0 +1,30 @@
+body {
+    display: flex;  
+}
+.body-inner {
+    margin:0 auto;
+ 
+    border:black 1px solid;
+    width:800px;   
+}
+.logo {
+    border:black 1px solid;
+}
+.id {
+    border:black 1px solid;
+}
+.pass {
+    border:black 1px solid;
+}
+#login {
+    border:black 1px solid;
+   
+}
+.info {
+    border:black 1px solid;
+}
+
+
+#loginbutton {
+    background-color:skyblue;
+}
