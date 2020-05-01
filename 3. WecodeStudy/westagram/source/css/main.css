@@ -1,0 +1,280 @@
+nav {
+  width:100%;
+  position:fixed;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom:solid 1px gray;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.nav-contents {
+  width: 950px;
+  height: 3.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.instagramText {
+  width:50%;
+}
+
+.search-div {
+  border: solid 1px  rgba(181, 181, 181, 0.8);
+  background-color: rgba(181, 181, 181, 0.1);
+  border-radius:0.2em;
+  width: 13em;
+  height: 1.8em;
+  display:flex;
+  justify-content:center;
+  align-items:center;  
+}
+
+.search-div-inner {
+  width:3em;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchIcon {
+  width:20%;
+}
+
+.searchText {
+  color: rgba(181, 181, 181, 0.8);
+  font-size: 0.9em;
+}
+
+.menu-div {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:12em;
+}
+
+.menu-div-all {
+  border:solid 1px black;
+}
+
+.nav-img{
+  width:1.6em;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding-top: 5em;      
+}
+
+.feeds{    
+  height:300em;  
+  width: 39em;
+  border: solid 1px  rgba(181, 181, 181, 0.8);
+}
+
+
+
+
+.article-title {
+  
+  display:inline-block;
+  text-align:center;
+  border:solid 2px red;
+  width:98%;
+  height:95%;
+  margin: 1em 0; 
+}
+
+.article-content {
+  display:inline-block;
+  text-align:center;    
+  border:solid 1px black;
+  width:95%;
+  padding:1em;        
+}
+
+.article-content-all {
+  border:solid 1px black; 
+  color:red      
+}
+
+
+
+.article-content-title {
+  display:flex;
+  position: relative;      
+}
+
+.article-content-title-all {
+  border:solid 1px black;
+  width:3em;
+  margin:0.3em 0; 
+}
+
+.article-content-title-picture {
+  position: relative;
+  left:1em;
+}
+
+.article-content-title-name {
+  position: relative;
+  left:3em;
+}
+.article-content-title-menu {
+  position: relative;
+  left:25em;
+}
+
+.article-content-body-inner {
+  display: inline-block;
+  text-align: center;
+  width:95%;
+  border:solid 1px black;
+}
+
+
+.article-content-body,
+.article-content-bottom {
+  padding:1em;
+}
+
+
+.article-content-bottom-menu {
+  display: inline-block;
+  text-align: center;
+  border:solid 1px black;
+  width:98%;
+  position: relative;
+}
+
+.article-content-bottom-menu-left {
+  display: inline-block;
+  position: relative;
+  left:1px;
+}
+
+.article-content-bottom-menu-right {
+  display: inline-block;
+  position: relative;
+  left:3px; 
+}
+
+.article-content-bottom-menu-all {
+  border:solid 1px black;    
+}
+
+.article-content-bottom-review {
+  display: inline-block;
+  text-align: center;
+  border:solid 1px black;
+  width:98%;    
+}
+
+.article-content-bottom-review-write {
+  display: inline-block;
+  text-align: center;
+  border:solid 1px black;  
+  width:98%;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:980px){
+  .main-right{
+    display:none;
+  }
+}
+@media (max-width:981px){
+  .main-right{
+      display:" ";
+  }
+}
+
+
+
+
+
+
+
+/*    */
+.main-right {
+  display:flex; 
+  align-items: center;
+  justify-content:center;
+  width: 20em;
+  height: 40em;  
+}
+
+.main-right-inner {
+  height: 100%;
+  width: 18em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-right-profile {
+  display:flex;
+  align-items: center;
+  width: 100%;
+  height: 5em;
+  margin-bottom: 1em;
+}
+
+.main-right-profile-img {
+  width: 3em;
+}
+
+.main-right-profile-text {
+  margin-left: 1em;
+  padding-top: 0.3em;
+}
+
+.main-right-story {
+  width: 100%;
+  height: 12em;
+  border: solid 1px  rgba(181, 181, 181, 0.8);
+  border-radius: 0.2em;
+  margin-bottom: 1em;
+}
+
+.main-right-explore {
+  width: 100%;
+  height: 11em;
+  border: solid 1px  rgba(181, 181, 181, 0.8);
+  border-radius: 0.2em;
+  margin-bottom: 1em;
+}
+
+.main-right-info {
+  width: 100%;
+  height: 6em;
+  border: solid 1px  rgba(181, 181, 181, 0.8);
+  border-radius: 0.2em;
+  margin-bottom: 1em;
+}
+
+
+b {
+  display:block;
+  font-size:0.9em;
+}
+
+span {
+  display:block;
+  font-size:0.8em;
+}

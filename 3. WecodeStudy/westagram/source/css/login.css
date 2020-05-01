@@ -1,0 +1,70 @@
+.body-contents-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;      
+}
+
+.body-contents-inner-div {
+  width: 22em;
+  height: 23.7em;
+  border: rgba(181, 181, 181, 0.5) 1px solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-div {
+  margin-top: 2.3em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+  
+.instargramlogo{
+  width:50%;
+}
+
+.idpass-div {
+  margin: auto;
+  width: 100%;
+}
+
+.idpass-div-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 18.7em;
+  height: 2.3em;
+  border-radius: 0.3em;
+  border: rgba(181, 181, 181, 0.5) solid 0.1em;
+  margin: 0.1em;
+  padding: 0.2em 0.5em;
+}
+  
+button {
+  width: 18.7em;
+  height: 2.3em;
+  border-radius: 0.3em;
+  border:rgba(var(--d69,0,149,246),.3);    
+  background-color:rgba(var(--d69,0,149,246),.3);
+  color:white;
+  margin: 1em 0 0 0; 
+}
+
+.afterbutton {
+  background-color:rgba(var(--d69,0,149,246),1);  
+}
+
+.info-div {
+  margin:auto;
+}
+
+.info-div span{
+  color:rgba(var(--d69,0,149,246),1);
+  font-size: 0.8em;
+  font-weight: bold;
+}
