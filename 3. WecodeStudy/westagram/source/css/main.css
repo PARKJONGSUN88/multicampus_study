@@ -4,7 +4,7 @@ nav {
   display:flex;
   justify-content: center;
   align-items: center;
-  border-bottom:solid 1px gray;
+  border-bottom:solid 1px rgba(181, 181, 181, 0.5);
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -16,50 +16,40 @@ nav {
   align-items: center;
 }
 
-.instagramText {
-  width:50%;
+.logo-div {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:7em;  
+  cursor: pointer;
 }
 
-.search-div {
-  border: solid 1px  rgba(181, 181, 181, 0.8);
-  background-color: rgba(181, 181, 181, 0.1);
-  border-radius:0.2em;
-  width: 13em;
-  height: 1.8em;
-  display:flex;
-  justify-content:center;
-  align-items:center;  
+.instagramText {
+  width:100%;
 }
 
 .search-div-inner {
-  width:3em;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.searchIcon {
-  width:20%;
-}
-
-.searchText {
-  color: rgba(181, 181, 181, 0.8);
-  font-size: 0.9em;
+  border: solid 1px  rgba(181, 181, 181, 0.5);
+  background-color: rgba(181, 181, 181, 0.1);
+  border-radius:0.2em;
+  width: 16em;
+  height: 2.2em;
 }
 
 .menu-div {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  width:12em;
+  width:13em;
 }
 
-.menu-div-all {
-  border:solid 1px black;
+.nav-icon {
+  width:1.5em;  
+  cursor: pointer;
 }
 
-.nav-img{
-  width:1.6em;
+.nav-profile { 
+  border-radius:1em;
 }
 
 main {
@@ -68,160 +58,206 @@ main {
   padding-top: 5em;      
 }
 
-.feeds{    
-  height:300em;  
-  width: 39em;
-  border: solid 1px  rgba(181, 181, 181, 0.8);
+.feeds {    
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:38em;
 }
 
-
-
+article { 
+  margin-bottom:4em;
+  width: 100%;
+  border: solid 1px  rgba(181, 181, 181, 0.5);  
+  border-radius:0.2em;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .article-title {
-  
-  display:inline-block;
-  text-align:center;
-  border:solid 2px red;
-  width:98%;
-  height:95%;
-  margin: 1em 0; 
+  display: flex;
+  height:4em;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  padding:0.7em;
+}
+
+.article-title-img {
+  flex:none;
+  width: 2em;
+  height: 2em;
+  border-radius: 10em;
+  cursor: pointer;  
+  margin:0 0.5em;
+}
+
+.article-title-center {
+  flex:none;
+  margin:0 0.5em;
+}
+
+/* 이름정보 텍스트에 사용할 span */
+.span-userName {  
+  font-size:0.88em;
+  cursor: pointer;
+  font-weight:bold;  
+  display:block;
+}
+
+.span-location {
+  font-size:0.7em;
+  cursor: pointer; 
+  display:block;
+}
+
+.article-title-more {
+  margin-left: auto;
+  width:1.5em;
+}
+
+.article-center-div {
+  width:100%;
+}
+
+.article-center-div-img {
+  width:100%;
 }
 
 .article-content {
-  display:inline-block;
-  text-align:center;    
-  border:solid 1px black;
-  width:95%;
-  padding:1em;        
+  max-height: 15em;
+  min-height: 10em;
+  width:100%;
+  display:flex;
+  flex-direction: column;
 }
-
-.article-content-all {
-  border:solid 1px black; 
-  color:red      
-}
-
-
 
 .article-content-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0.3em 0.8em;
+}
+
+.article-content-title-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 7.5em;
+}
+
+.article-content-icon {
+  width: 1.7em;
+  height: 1.6em;  
+  cursor: pointer;
+}
+
+.article-content-title-center {
+  display: flex;   
+  width: 7.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+.article-content-title-right {
   display:flex;
-  position: relative;      
+  width:7.5em;
 }
 
-.article-content-title-all {
-  border:solid 1px black;
-  width:3em;
-  margin:0.3em 0; 
+.article-content-bookmarkicon {
+  display:flex;
+  width: 1.8em;
+  height: 1.6em;
+  margin-left:auto;
 }
 
-.article-content-title-picture {
-  position: relative;
-  left:1em;
+.article-like-user {
+  display:flex;
+  align-items: center;
+  padding:0.3em 0.8em;
 }
 
-.article-content-title-name {
-  position: relative;
-  left:3em;
-}
-.article-content-title-menu {
-  position: relative;
-  left:25em;
+.article-like-user-icon {
+  width:1.5em;
+  margin-right:0.5em;
 }
 
-.article-content-body-inner {
-  display: inline-block;
-  text-align: center;
-  width:95%;
-  border:solid 1px black;
+/* 이름정보 텍스트에 사용할 span */
+.span-like-user { 
+  font-size:0.8em;
+  margin:0 0.1em;
+  cursor: pointer;  
+  font-weight: bold;
 }
 
-
-.article-content-body,
-.article-content-bottom {
-  padding:1em;
+.span-like-user-common {
+  font-size:0.8em;  
+  margin:0 0.1em;
 }
 
-
-.article-content-bottom-menu {
-  display: inline-block;
-  text-align: center;
-  border:solid 1px black;
-  width:98%;
-  position: relative;
+.comment-write-div {
+  padding:0.1em 0.8em;
+  border-top: solid 1px  rgba(181, 181, 181, 0.5); 
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;  
+  min-height:3.7em;
+  margin-top:auto;
 }
 
-.article-content-bottom-menu-left {
-  display: inline-block;
-  position: relative;
-  left:1px;
+.comment-write {
+  border: solid 0.1px  rgba(255, 255, 255, 0.1);
+  width: 90%;  
 }
 
-.article-content-bottom-menu-right {
-  display: inline-block;
-  position: relative;
-  left:3px; 
+input:focus {outline:none;}
+button:focus {outline:none;}
+
+.submitButton {
+  color:rgba(var(--d69,0,149,246),.3);
+  background-color: white;
+  border: solid 0.1px  rgba(255, 255, 255, 0.1);
+  font-size:0.9em;
+  font-weight: bold;
 }
 
-.article-content-bottom-menu-all {
-  border:solid 1px black;    
+.clickbutton {
+  color:rgba(var(--d69,0,149,246),1);
+  cursor: pointer;  
+  background-color: white;
+  border: solid 0.1px  rgba(255, 255, 255, 0.1);
+  font-size:0.9em;
+  font-weight: bold;  
 }
 
-.article-content-bottom-review {
-  display: inline-block;
-  text-align: center;
-  border:solid 1px black;
-  width:98%;    
-}
-
-.article-content-bottom-review-write {
-  display: inline-block;
-  text-align: center;
-  border:solid 1px black;  
-  width:98%;  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:980px){
-  .main-right{
-    display:none;
-  }
-}
-@media (max-width:981px){
-  .main-right{
-      display:" ";
-  }
-}
-
-
-
-
-
-
-
-/*    */
+/* 우측메뉴 */
 .main-right {
   display:flex; 
   align-items: center;
   justify-content:center;
   width: 20em;
-  height: 40em;  
+  height: 40em;
+  margin-left: 1em;  
+}
+
+/* 우측메뉴 반응형 적용 */
+@media (max-width:980px){
+  .main-right {
+    display:none;
+  }
+}
+@media (max-width:981px){
+  .main-right {
+      display:" ";
+  }
 }
 
 .main-right-inner {
   height: 100%;
-  width: 18em;
+  width: 92%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,12 +267,14 @@ main {
   display:flex;
   align-items: center;
   width: 100%;
-  height: 5em;
+  height: 4em;
   margin-bottom: 1em;
 }
 
-.main-right-profile-img {
-  width: 3em;
+.main-right-profile-icon {
+  width: 3.2em;
+  border-radius: 10em;
+  cursor: pointer;
 }
 
 .main-right-profile-text {
@@ -244,37 +282,160 @@ main {
   padding-top: 0.3em;
 }
 
+/* 이름아래 텍스트에 사용할 span */
+.span-description {
+  display:block;
+  font-size:0.8em;
+  color:gray;
+}
+
 .main-right-story {
   width: 100%;
-  height: 12em;
-  border: solid 1px  rgba(181, 181, 181, 0.8);
+  height: 13em;
+  border: solid 1px  rgba(181, 181, 181, 0.5);
   border-radius: 0.2em;
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-right-story-title {  
+  display: flex;
+  justify-content:space-between;
+  padding:0.8em 1em 0.6em 1em;
+}
+
+/* 오른쪽메뉴의 스토리, 회원님을 위한 추천 텍스트 */
+.span-right-secondTitle {
+  font-size:0.9em;
+  color:gray;
+  font-weight: bold;
+}
+/* 오른쪽메뉴의 모두보기 텍스트 */
+.span-right-description {
+  cursor: pointer;
+  font-size:0.8em;
+  font-weight: bold;
+}
+
+.main-right-story-content {
+  display:flex;
+  flex-direction: column;
+  overflow-y: auto;  
+  padding-left:0.8em;
+}
+
+.main-right-story-content-inner {
+  display:flex;
+  align-items: center;
+  margin:0.2em;  
+}
+
+.main-right-story-content-img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 2.5em;
+  border: solid 0.5px  rgba(181, 181, 181, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+/* 스토리 있을 때 빨간 테두리 */
+.storyOn-border {
+  border: solid 2px rgb(246, 70, 91);
+}
+
+.main-right-story-content-img-inner {
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 2.4em;
+  margin: 0;
+}
+
+.main-right-story-content-text {
+  margin-left: 0.6em;
+}
+/* 스토리 시간표현에 사용할 span */
+.span-story-time {
+  display:block;
+  font-size:0.65em;
+  color:gray;
 }
 
 .main-right-explore {
   width: 100%;
-  height: 11em;
-  border: solid 1px  rgba(181, 181, 181, 0.8);
+  height: 12em;
+  border: solid 1px  rgba(181, 181, 181, 0.5);
   border-radius: 0.2em;
   margin-bottom: 1em;
+  display:flex;
+  flex-direction: column;
+}
+
+.main-right-explore-title {
+  display: flex;
+  justify-content:space-between;
+  padding:0.8em 1em 0.5em 1em;
+}
+
+.main-right-explore-content {
+  display:flex;
+  flex-direction: column;  
+  padding-left:0.8em;
+}
+
+.main-right-explore-content-inner {
+  display:flex;
+  align-items: center;
+  margin:0.2em;  
+}
+
+.main-right-explore-content-img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+  cursor: pointer;
+}
+
+.main-right-explore-content-text {
+  margin-left: 0.6em;
+}
+
+/* 추천안에서 상대방의 상테 표현에 사용할 span */
+.span-explore-userStatus {
+  display:block;
+  font-size:0.75em;
+  color:gray;
+}
+
+.main-right-explore-content-follow {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.span-explore-content-follow {
+  display: block;
+  margin-left: 4.1em;
+  color: #0095f6;
+  font-size: 0.75em;
+  font-weight: bold;
+
 }
 
 .main-right-info {
   width: 100%;
   height: 6em;
-  border: solid 1px  rgba(181, 181, 181, 0.8);
-  border-radius: 0.2em;
-  margin-bottom: 1em;
 }
-
-
-b {
+/* 인포에서 사용할 span */
+.span-info {
   display:block;
-  font-size:0.9em;
-}
-
-span {
-  display:block;
-  font-size:0.8em;
+  font-size:0.65em;
+  color:rgba(181, 181, 181, 0.7);
 }

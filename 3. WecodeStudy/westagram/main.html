@@ -3,62 +3,250 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>westagram</title>
+<title>westagram.jsPark</title>
 <link rel="stylesheet" type="text/css" href="source/css/main.css">
 <link rel="stylesheet" type="text/css" href="source/css/common.css">
 </head>
-<body> 
+<body>
+<!-- nav 바 -->
   <nav>
-    <div class="nav-contents">       
+    <!-- nav바 사이즈 떄문에 사용된 이너 시작 --> 
+    <div class="nav-contents">
+      <!-- nav바 로고 시작 -->       
       <div class="logo-div">
-        <img src="source/img/instagramtext.png" alt="instagram" class="instagramText">
-      </div>      
-      <div class="search-div">
-        <div class="search-div-inner">
-          <img src="source/img/heart.png" alt="search" class="searchIcon">
-          <span class="searchText">검색</span>
-        </div>
+        <img class="instagramText" src="source/img/instagramtext.png" alt="instagram">
       </div>
+      <!-- nav바 로고 끝 --> 
+      <!-- nav바 서치창 시작 -->
+      <div class="search-div">        
+          <input type="text" class="search-div-inner" placeholder="검색">
+      </div>
+      <!-- nav바 서치창 끝 -->
+      <!-- nav바 우측메뉴 시작 -->
       <div class="menu-div">
-        <img src="source/img/heart.png" alt="explore" class="nav-img">
-        <img src="source/img/heart.png" alt="explore" class="nav-img">
-        <img src="source/img/explore.png" alt="explore" class="nav-img">
-        <img src="source/img/heart.png" alt="explore" class="nav-img">
-        <img src="source/img/heart.png" alt="explore" class="nav-img">       
+        <img src="source/img/home.png" alt="home" class="nav-icon">
+        <img src="source/img/DM.png" alt="DM" class="nav-icon">
+        <img src="source/img/explore.png" alt="explore" class="nav-icon">
+        <img src="source/img/heart.png" alt="like" class="nav-icon">
+        <img src="source/img/pic/pjs.jpg" alt="profile" class="nav-icon nav-profile">       
       </div>
+      <!-- nav바 우측메뉴 끝 -->
     </div>
+    <!-- nav바 사이즈 떄문에 사용된 이너 끝 -->
   </nav>
+<!-- nav바 끝 -->
 
+<!-- main 시작 -->
   <main>
+  <!-- main 피드 시작 -->
     <div class="feeds">
-      <br>
+    
+      <!-- article 시작 -->
+      <article >
+        <!-- article 타이틀 시작 -->
+        <div class="article-title">
+          <img src="source/img/pic/pjs.jpg" alt="artcile_title_profile" class="article-title-img">
+          <div class="article-title-center">
+            <span class="span-userName">suwonjspark88</span>
+            <span class="span-location">평창</span>
+          </div>
+          <img src="source/img/more.png" alt="artcile_title_more" class="article-title-more">  
+        </div>
+        <!-- article 타이틀 끝 -->
+        <!-- article 중간 이미지 div 시작 -->
+        <div class="article-center-div">
+          <img src="source/img/pic/snow.jpg" alt="artcile_img" class="article-center-div-img"> 
+        </div>
+        <!-- article 중간 이미지 div 끝 -->
+        <!-- article 아래칸 div 시작 -->
+        <div class="article-content">
+          <!-- 좋아요,댓글등 버튼줄 시작 -->
+          <div class="article-content-title">
+            <div class="article-content-title-left">
+              <img src="source/img/heart.png" alt="like" class="article-content-icon">
+              <img src="source/img/comment.png" alt="like" class="article-content-icon">
+              <img src="source/img/DM.png" alt="DM" class="article-content-icon">
+            </div>
+            <div class="article-content-title-center">
+              <!-- 페이징 기능 들어갈 자리 -->
+            </div>
+            <div class="article-content-title-right">
+              <img src="source/img/bookmark.png" alt="bookmark" class="article-content-bookmarkicon">
+            </div>
+          </div>
+          <!-- 좋아요,댓글등 버튼줄 시작 -->
+          <!-- 좋아요 수 보이는줄 시작 -->
+          <div class="article-like-user">
+            <img src="source/img/pic/black.png" alt="article-like-user" class="article-like-user-icon">
+            <span class="span-like-user">WaKanDa_forever</span>
+            <span class="span-like-user-common">님</span>
+            <span class="span-like-user">외 302명</span>
+            <span class="span-like-user-common">이 좋아합니다</span>
+          </div>
+          <!-- 좋아요 수 보이는줄 끝 -->
+          <!-- 댓글 보이는 창 시작 -->
+          <div class="comment-view-div">
+          </div>
+          <!-- 댓글 보이는 창 끝 -->
+          <!-- 댓글 쓰는 창 시작 -->  
+          <div class="comment-write-div">
+            <input class="comment-write" type="text" placeholder="댓글 달기...">
+            <button type="submit" class="submitButton">게시</button>
+          </div>
+          <!-- 댓글 쓰는 창 끝 -->
+        </div>
+        <!-- article 아래칸 div 끝 -->  
+      </article>
+      <!-- article 끝 -->
+
     </div>
-
-
-
+  <!-- main 피드 끝 -->
+  <!-- main 우측메뉴 시작 -->
     <div class="main-right">
       <div class="main-right-inner">
+        <!-- 우측메뉴 1번 프로필 시작 -->
         <div class="main-right-profile">
-          <img src="source/img/explore.png" alt="explore" class="main-right-profile-img">
+          <img src="source/img/pic/pjs.jpg" alt="profile" class="main-right-profile-icon">
           <div class="main-right-profile-text">
-            <b>suwonjspark88</b>
-            <span>박종선</span>
+            <span class="span-userName">suwonjspark88</span>
+            <span class="span-description">박종선</span>
           </div>
         </div>
-        <div class="main-right-story main-right-inner-all">오른쪽에스토리</div>
-        <div class="main-right-explore main-right-inner-all">추천칸</div>
-        <div class="main-right-info main-right-inner-all">
-        소개도움말홍보 센터API채용 정보개인정보처리방침약관위치인기 계정해시태그언어
-© 2020 INSTAGRAM FROM FACEBOOK
-        
-        </div> 
+        <!-- 우측메뉴 1번 프로필 끝 -->
+        <!-- 우측메뉴 2번 스토리 시작 -->
+        <div class="main-right-story">
+          <div class="main-right-story-title">
+            <span class="span-right-secondTitle">스토리</span>
+            <span class="span-right-description">모두 보기</span>
+          </div>
+          <div class="main-right-story-content">
+      <!-- 스토리메뉴 더미 모음 시작 -->
+        <!-- 더미 1사이클 시작 -->
+            <div class="main-right-story-content-inner">
+              <div class="main-right-story-content-img storyOn-border">
+                <img src="source/img/pic/ant.png" alt="story-content-img" class="main-right-story-content-img-inner">
+              </div>
+              <div class="main-right-story-content-text">
+                <span class="span-userName">Ant_man</span>
+                <span class="span-story-time">20분 전</span>
+              </div>
+            </div>
+        <!-- 더미 1사이클 끝 -->        
+        <!-- 더미 2사이클 시작 -->
+            <div class="main-right-story-content-inner">
+              <div class="main-right-story-content-img">
+                <img src="source/img/pic/black.png" alt="story-content-img" class="main-right-story-content-img-inner">
+              </div>
+              <div class="main-right-story-content-text">
+                <span class="span-userName">WaKanDa_forever</span>
+                <span class="span-story-time">10시간 전</span>
+              </div>
+            </div>
+        <!-- 더미 2사이클 끝 -->
+        <!-- 더미 3사이클 시작 -->
+            <div class="main-right-story-content-inner">
+              <div class="main-right-story-content-img">
+                <img src="source/img/pic/thor.jpg" alt="story-content-img" class="main-right-story-content-img-inner">
+              </div>
+              <div class="main-right-story-content-text">
+                <span class="span-userName">I_Luv_Beer</span>
+                <span class="span-story-time">21시간 전</span>
+              </div>
+            </div>
+        <!-- 더미 3사이클 끝 -->
+        <!-- 더미 4사이클 시작 -->
+            <div class="main-right-story-content-inner">
+              <div class="main-right-story-content-img storyOn-border">
+                <img src="source/img/pic/cap.png" alt="story-content-img" class="main-right-story-content-img-inner">
+              </div>
+              <div class="main-right-story-content-text">
+                <span class="span-userName">captain_America</span>
+                <span class="span-story-time">11시간 전</span>
+              </div>
+            </div>
+        <!-- 더미 4사이클 끝 -->
+        <!-- 더미 5사이클 시작 -->
+            <div class="main-right-story-content-inner">
+              <div class="main-right-story-content-img">
+                <img src="source/img/pic/iron.png" alt="story-content-img" class="main-right-story-content-img-inner">
+              </div>
+              <div class="main-right-story-content-text">
+                <span class="span-userName">I_am_IronMan</span>
+                <span class="span-story-time">3000일 전</span>
+              </div>
+            </div>
+        <!-- 더미 5사이클 끝 --> 
+        <!-- 더미 6사이클 시작 -->
+            <div class="main-right-story-content-inner">
+              <div class="main-right-story-content-img storyOn-border">
+                <img src="source/img/pic/dead.png" alt="story-content-img" class="main-right-story-content-img-inner">
+              </div>
+              <div class="main-right-story-content-text">
+                <span class="span-userName">die_die_die</span>
+                <span class="span-story-time">1시간 전</span>
+              </div>
+            </div>
+        <!-- 더미6사이클 끝 시작 -->                                               
+      <!-- 스토리메뉴 더미 모음 끝 -->
+          </div>
+        </div>
+        <!-- 우측메뉴 2번 스토리 끝 -->  
+        <!-- 우측메뉴 3번 추천(explore) 시작 -->
+        <div class="main-right-explore">
+          <div class="main-right-explore-title">
+            <span class="span-right-secondTitle">회원님을 위한 추천</span>
+            <span class="span-right-description">모두 보기</span>
+          </div>
+          <div class="main-right-explore-content">
+      <!-- 추천메뉴 더미 모음 시작 -->
+        <!-- 더미 1사이클 시작 -->
+            <div class="main-right-explore-content-inner">              
+              <img src="source/img/pic/spider.png" alt="explore-content-img" class="main-right-explore-content-img">
+              <div class="main-right-explore-content-text">
+                <span class="span-userName">ok_marvel_no_sony</span>
+                <span class="span-explore-userStatus">회원님을 팔로우합니다</span>
+              </div>            
+              <span class="span-explore-content-follow">팔로우</span>              
+            </div>
+        <!-- 더미 1사이클 끝 -->
+        <!-- 더미 2사이클 시작 -->
+            <div class="main-right-explore-content-inner">              
+              <img src="source/img/pic/dr.jpg" alt="explore-content-img" class="main-right-explore-content-img">
+              <div class="main-right-explore-content-text">
+                <span class="span-userName">time_14,000,605</span>
+                <span class="span-explore-userStatus">회원님을 팔로우합니다</span>
+              </div>            
+              <span class="span-explore-content-follow">팔로우</span>              
+            </div>
+        <!-- 더미 2사이클 끝 -->
+        <!-- 더미 3사이클 시작 -->
+            <div class="main-right-explore-content-inner">              
+              <img src="source/img/pic/fury.png" alt="explore-content-img" class="main-right-explore-content-img">
+              <div class="main-right-explore-content-text">
+                <span class="span-userName">not_one_eye</span>
+                <span class="span-explore-userStatus">회원님을 팔로우합니다</span>
+              </div>            
+              <span class="span-explore-content-follow">팔로우</span>              
+            </div>
+        <!-- 더미 3사이클 끝 -->                  
+      <!-- 추천메뉴 더미 모음 끝 -->
+          </div> 
+        </div>
+        <!-- 우측메뉴 3번 추천(explore) 끝 -->
+        <!-- 우측메뉴 4번 info창 시작 -->
+        <div class="main-right-info">
+          <span class="span-info">소개 · 도움말 · 홍보 센터 · API · 채용 정보</span>
+          <span class="span-info">개인정보처리방침 · 약관 · 위치 · 인기 계정 · 해시태그</span>
+          <span class="span-info">언어</span>
+          <br>
+          <span class="span-info">© 2020 INSTAGRAM FROM FACEBOOK</span>        
+        </div>
+        <!-- 우측메뉴 4번 info창 끝 --> 
       </div>
     </div>
+  <!-- main 우측메뉴 끝-->
   </main>
-
-
-
-  <script src="js/main.js"></script>
-
+<!-- main 끝-->
+<script src="source/js/main.js"></script>
 </body>
 </html>
