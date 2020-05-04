@@ -3,6 +3,6 @@ addEventListener('keyup', function() {
     const passcheck = document.getElementById("userpass").value;
 
     if (idcheck.length !== 0 && passcheck.length !== 0) {
-        document.getElementsByClassName("loginbutton")[0].setAttribute("class", "afterbutton");           
+        document.getElementsByClassName("loginbutton")[0].classList.add("afterbutton");            
     }
 });

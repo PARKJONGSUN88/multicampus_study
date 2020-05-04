@@ -197,6 +197,24 @@ article {
   margin:0 0.1em;
 }
 
+.comment-view-div {
+  max-height: 6em;
+  padding: 0.5em 0.8em;
+  overflow-y: auto;
+}
+
+/* 댓글창에 글 달리면 보이는 글씨체 */
+.comment-view-div b {
+  font-size:0.8em;
+  margin:0.2em;
+}
+
+/* 댓글창에 글 달리면 보이는 글씨체 */
+.comment-view-div span {
+  font-size:0.8em;
+  margin:0.2em;
+}
+
 .comment-write-div {
   padding:0.1em 0.8em;
   border-top: solid 1px  rgba(181, 181, 181, 0.5); 
@@ -224,6 +242,7 @@ button:focus {outline:none;}
   font-weight: bold;
 }
 
+/* 스크립트에서 setAttribute로 만든 클래스임 */
 .clickbutton {
   color:rgba(var(--d69,0,149,246),1);
   cursor: pointer;  
@@ -383,7 +402,7 @@ button:focus {outline:none;}
 .main-right-explore-content {
   display:flex;
   flex-direction: column;  
-  padding-left:0.8em;
+  padding:0 0.8em;
 }
 
 .main-right-explore-content-inner {
@@ -414,19 +433,12 @@ button:focus {outline:none;}
   color:gray;
 }
 
-.main-right-explore-content-follow {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .span-explore-content-follow {
   display: block;
-  margin-left: 4.1em;
+  margin-left: auto;
   color: #0095f6;
   font-size: 0.75em;
   font-weight: bold;
-
 }
 
 .main-right-info {
