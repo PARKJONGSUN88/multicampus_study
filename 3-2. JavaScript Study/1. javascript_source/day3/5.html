@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트</title>
+<script>
+window.addEventListener("load", function(){
+	document.querySelector("#btn1").onclick=function(){
+		var span1 = document.querySelector("#count1");
+		span1.innerHTML=Number(span1.innerHTML)+1;
+	};
+	document.querySelector("#btn2").onclick=function(){
+		var span2 = document.querySelector("#count2");
+		span2.innerHTML=Number(span2.innerHTML)+1;
+		document.querySelector("#btn1").onclick(); //강제 이벤트 발생
+	};
+	
+	
+	
+}, false);
+</script>
+</head>
+<body>
+ <h3> 자바스크립트 이벤트 </h3>
+# 강제 이벤트 발생  방법 : 이벤트소스객체.on이벤트();<br>
+<button id="btn1">Button 1</button>
+<button id="btn2">Button 2</button><br>
+<h3>Button 1 Click Count : <span id="count1">0</span></h3>
+<h3>Button 2 Click Count : <span id="count2">0</span></h3>
+</body>
+</html>

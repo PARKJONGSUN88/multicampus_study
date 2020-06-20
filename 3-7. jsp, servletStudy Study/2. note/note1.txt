@@ -1,0 +1,86 @@
+자바스크립트로 지도 보여주기 :
+navigator.geolocation.getCurrentPosition(success콜백함수, error콜백함수, [options] )
+success콜백함수(position객체) {
+  position.coords.latitude
+  position.coords.longitude
+  ....
+  }
+  
+error콜백함수(error객체){
+  error.message
+  error.code
+  ...
+  }  
+  
+Servlet : www 웹 서비스 제공하는 웹 서버에서 실행되는 웹 컴포넌트를 구현하는 기술
+           웹 요청을 처리, 처리 결과를 동적으로 응답 페이지 (html) 생성, 응답 보내기
+WAS : Web Server + Application Server
+      (http listener, http daemon) + WebContainer(서버에서 실행되는 웹 컴포넌트의 실행환경을 제공, NamingContext 기능, Resource Pooling 기능,...)
+      
+JSP (Java Server Page) - script
+
+웹 컨텍스트 표준 구조 :
+웹 컨텍스트 (http://ip:8080/web1)
+  |----html, js, css, image,...jsp 
+  |---WEB-INF  (보안 폴더)
+        |---classes (패키지형태-class파일)
+        |---lib (jar파일형태 -외부 자바 library)
+        |---web.xml(웹 컨텍스트의 환경설정파일 - 컨텍스트의 파라미터, 리스너, 필터, 전역세션timeout, 전역 에러 페이지, 서블릿, 리소스 참조, welcome-file-list,...)
+        |---src
+        |---tld
+        |---tags
+        
+ [Servlet Spec]
+ 1. 패키지 선언
+ 2. public class로 선언
+ 3. HttpServlet 상속 받고
+ 4. life cycle 메서드 override 
+    반드시 override해야 할 메서드는 service(), doGet(), doPost(), doPut(), ...메서드는 요청 처리 및 응답을 위해 반드시 override해야 합니다.
+    service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}    
+        
+[JSP Spec]
+정적 페이지 선언 <%@ page .....%>
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              

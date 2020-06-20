@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+div#Red {border:2Px solid #F00;}
+div#Blue {border:2Px solid #00F;}
+div {width:400px;height:266px;}
+a {margin:50px;display:block;}
+</style>
+<script>
+function drag(source, event){
+	//event.stopPropagation();
+	event.stopPropagation();
+	event.dateTransfer.setData("text", source.id);
+}
+
+function drop(source, event){
+	//event.preventDefault();
+	event.stopPropagation();
+	var imngId = event.dataTransfer.getData("text");
+	console.log(event.dataTransfer.getData("text");
+	source.appendChild(document.getElementById(imgId));
+}
+</script>
+</head>
+<body>
+<div id="Red" ondrop="drop(this, event);" 
+     ondragenter="return false;" 
+     ondragover="return false;"></div>
+<div id="Blue" ondrop="drop(this, event);" 
+	ondragenter="return false;" 
+	ondragover="return false;"></div>
+<img draggable="true" id="textlink" 
+     ondragstart="drag(this, event);" 
+     src="dog.jpeg"></img>
+</body>
+</html>

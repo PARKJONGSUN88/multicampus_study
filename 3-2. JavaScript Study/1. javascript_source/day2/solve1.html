@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+		
+		}
+		
+		div{
+			border: 1px solid #999999;
+			margin:20px;
+			margin-bottom:20px;
+		}
+		div div{
+			border: 1px dotted #CCC;
+			
+		}
+		
+		.active{
+			font-size:20pt;
+			color:#090;
+			border:5px solid #ff0000;
+		}
+	</style>
+	<script>
+	window.onload=function(){			
+		 solveM1();
+		 solveM2();
+		 solveM3();
+		 solveM4();
+		 solveM5();
+		 solveM6();
+	}
+	
+	function solveM1(){
+		// 노드 찾기
+		var m1 = document.getElementById("m_1");
+		// 스타일 변경하기.
+		m1.style.color = "#ff0000";
+	}
+	
+	function solveM2(){
+		// 노드 찾기.
+		var m2 = document.getElementById("m_2");
+		// 클래스 이름 변경하기.
+		m2.className = "active";
+	}
+	
+	function solveM3(){
+		// 노드 찾기.
+		var m2 = document.getElementById("m_3");
+		// 자식노드중에서 img 태그만을 찾은 후 첫번째 태그를 얻어온다. 
+		var img = m2.getElementsByTagName("img")[0];
+		// HTMLImageElement의 src 프로퍼티를 이용해서 이미지를 변경하는 경우.
+		img.src	= "ch3.png"
+		// Element의 setAttribute 메소드를 이용해서 이미지를 변경하는 경우.
+		img.setAttribute("src", "ch3.png");
+	}
+	
+	function solveM4(){
+		// p태그 노드 생성하기.
+		var p4 = document.createElement("p");
+		// 텍스트 설정하기.
+		p4.innerHTML = "항목4";
+		// 신규로 생성한 p태그를 추가할 부모 노드 찾기.
+		var m4 = document.getElementById("m_4");
+		// p태그를 부모노드에 추가하기.
+		m4.appendChild(p4);
+	}
+	
+	function solveM4_2(){
+		// p태그 노드 생성하기.
+		var p4 = document.createElement("p");
+		// text 노드 생성하기.
+		var text = document.createTextNode();
+		// 텍스트 설정하기.
+		text.nodeValue = "항목4";
+		p4.appendChild(text);
+
+		// 신규로 생성한 p태그를 추가할 부모 노드 찾기.
+		var m4 = document.getElementById("m_4");
+		// p태그를 부모노드에 추가하기.
+		m4.appendChild(p4);
+	}
+	
+	function solveM5(){
+		//부모노드 찾기.
+		var m5 = document.getElementById("m_5");
+		// m5의 자식노드에서 <p>태그만을 모두 찾기.
+		var ps = m5.getElementsByTagName("p");
+				
+		for(var i=0;i<ps.length;i++){
+			var p = ps[i];
+			
+			//p.firstChild는 text node 입니다.
+			var text = p.firstChild.nodeValue;
+		
+			// p요소중 텍스트값이 항목4를 가지고 있는 노드를 찾아 삭제.	
+			if(text.indexOf("항목4")!=-1){
+				m5.removeChild(p);
+				break;
+			}
+		}
+	}
+	
+	function solveM5_2(){
+		var m5 = document.getElementById("m_5");
+		var ps = m5.getElementsByTagName("p");
+		
+		m5.removeChild(ps[2]);
+		// 또는 m5.removeChild(ps.item(2))
+	}
+
+	
+	function solveM6(){
+		// 제거할 노드와 가장 근접한 노드를 찾습니다.
+		var m6 = document.getElementById("m_6");
+		// 제거하기.
+		document.body.removeChild(m6.parentNode);
+	}
+	
+	function solveM6_2(){
+		// 제거할 노드와 가장 근접한 노드를 찾습니다.
+		var divs = document.getElementsTagName("div");
+		// 제거하기.
+		document.body.removeChild(divs[11]);
+	}
+	</script>
+</head>
+
+<body>
+	<div> 
+		<h4>테스트1</h4>
+		<div id="m_1">
+			#m_1 : 글자색을 빨간색으로 변경해주세요.
+		</div>
+	</div>
+	<div> 
+		<h4>테스트2</h4>
+		<div id="m_2">
+			#m_2 : 클래스 active를 적용시켜 주세요.
+		</div>
+	</div>
+	<div> 
+		<h4>테스트3</h4>
+		<div id="m_3">
+			#m_3 : 에고 이 이미지가 아닌데... 이미지를 ch3.png로 변경해주세요"<br>
+			<img src="ch2.png">
+		</div>
+	</div>
+	<div> 
+		<h4>테스트4</h4>
+		<div id="m_4">
+			#m_ 4 :  홋! 항목4까지 있어야 하는건데, 바쁜나머지 실수를 했군요. 항목4를 제일 뒤에 추가해주시겠어요?
+			<p>
+				항목1
+			</p>
+			<p>
+				항목2
+			</p>
+			<p>
+				항목3
+			</p>
+		</div>
+	</div>
+	<div> 
+		<h4>테스트5</h4>
+		<div id="m_5">
+			#m_ 5 :  이번에는 항목4가 더 추가되었네요. 즉시 삭제해주세요.
+			<p>
+				항목1
+			</p>
+			<p>
+				항목4
+			</p>
+			<p>
+				항목2
+			</p>
+		</div>
+	</div>
+	<div> 
+		<h4>테스트6</h4>
+		<div id="m_6">
+			#m_ 6 : 이런이런! 이 부분은 전혀 필요없는 내용들인데 왜 있는거죠? #m_6부터 헤더태그까지 모두 삭제해주세요.
+			<p>
+				DOM(Document Object Model)이란?<br>
+				웹페이지 문서를 조작하기 위해서 지켜야될 약속(interface)만 딸랑 적혀있는 문서랍니다.
+				약속만 있을뿐 내부는 텅빈 상자랍니다.
+				우리가 알고있는 W3C DOM에는 구현소스가 한줄도 존재하지 않습니다.
+				그럼 실제 구현소스는??
+			</p>
+		</div>
+	</div>
+</body>
+</html>

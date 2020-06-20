@@ -1,0 +1,73 @@
+########################window연산 실습 #######################
+import org.apache.spark.streaming.StreamingContext
+import org.apache.spark.streaming.Seconds
+import scala.collection.mutable
+
+
+val ssc = new StreamingContext(sc, Seconds(1))
+ssc.checkpoint(".")
+val input = for (i <- mutable.Queue(1 to 100: _*)) yield sc.parallelize(i :: Nil)
+val ds = ssc.queueStream(input)
+ds.window(Seconds(3), Seconds(2)).print
+ssc.start
+ssc.awaitTermination()
+
+
+val ssc = new StreamingContext(sc, Seconds(1))
+ssc.checkpoint(".")
+val input = for (i <- mutable.Queue(1 to 100: _*)) yield sc.parallelize(i :: Nil)
+val ds = ssc.queueStream(input)
+ds.countByWindow(Seconds(3), Seconds(2)).print
+ssc.start
+ssc.awaitTermination()
+
+
+val ssc = new StreamingContext(sc, Seconds(1))
+ssc.checkpoint(".")
+val input = for (i <- mutable.Queue(1 to 100: _*)) yield sc.parallelize(i :: Nil)
+val ds = ssc.queueStream(input) 
+ds.reduceByWindow( (a, b) => Math.max(a, b), Seconds(3), Seconds(2)).print
+ssc.start
+ssc.awaitTermination()
+
+
+val ssc = new StreamingContext(sc, Seconds(1))
+ssc.checkpoint(".")
+val input = for (i <- mutable.Queue(1 to 100: _*)) yield sc.parallelize(i :: Nil)
+val ds = ssc.queueStream(input)
+ds.map( v => (v%2, 1)).reduceByKeyAndWindow((a: Int, b: Int) => a+b, Seconds(4), Seconds(2)).print
+ssc.start
+ssc.awaitTermination()
+
+
+val ssc = new StreamingContext(sc, Seconds(1))
+ssc.checkpoint(".")
+val input = for (i <- mutable.Queue(1 to 100: _*)) yield sc.parallelize(i :: Nil)
+val ds = ssc.queueStream(input)
+ds.countByValueAndWindow(Seconds(3), Seconds(2)).print
+ssc.start
+ssc.awaitTermination()
+
+#############################################
+
+import org.apache.spark.ml.linalg.Vectors
+val v1 = Vectors.dense(0.1, 0.0, 0.2, 0.3)
+val v2 = Vectors.dense(Array(0.1, 0.0, 0.2, 0.3))
+val v3 = Vectors.sparse(4, Seq((0, 0.1), (2, 0.2), (3, 0.3))
+val v4 = Vectors.sparse(4, Array(0, 2, 3), Array(0.1, 0.2, 0.3))
+
+println(v1.toArray.mkString(", "))
+println(v3.toArray.mkString(", "))
+
+
+
+
+
+
+
+
+
+
+
+
+

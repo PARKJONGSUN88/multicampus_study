@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {		
+		var color=['red', 'white', 'yellow'];
+		$('h1').css({
+			color: function(index) {
+			return color[index];
+			},
+			'backgroundColor' : 'black'
+			});	
+	});	
+</script>
+</head>
+<body>
+	<h1>RED</h1>
+	<h1>WHITE</h1>
+	<h1>YELLOW</h1>
+</body>
+</html>
+

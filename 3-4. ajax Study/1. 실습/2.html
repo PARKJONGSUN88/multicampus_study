@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset="UTF-8">
+	<title></title>
+	<style>
+		.image_panel{
+			border:1px solid eeeeee;
+			text-align:center;
+			margin:5px;
+		}
+		.image_panel .title{
+			font-size:9pt;
+			color:#ff0000;
+			
+		}
+		
+	</style>
+	 
+	<script src="ajax_json.js"></script>	 
+</head>
+
+<body>
+	<div>
+		<button id="btn_load">이미지 읽어들이기</button>
+	</div>
+	<div id="image_container">
+		<!-- 1. 이곳에 이미지를 넣어주세요-->
+	</div>
+	
+	<!-- 2. 이 내용은 이미지 패널 템플릿입니다. -->
+	<div style="display:none;" id="image_panel_template">
+		<div class="image_panel">
+			<img >
+			<p class="title"></p>
+		</div>
+	</div>
+</body>
+</html>

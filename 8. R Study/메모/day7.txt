@@ -1,0 +1,85 @@
+install.packages("sqldf")
+library(sqldf)
+#install.packages("googleVis")
+library(googleVis)
+print(Fruits)
+str(Fruits)
+sqldf('select * from Fruits')  #Fruits 데이터셋의 모든 데이터 리턴
+
+#Apple 데이터 행만 추출
+sqldf("select * from Fruits where Fruit= 'Apples'")
+
+#처음부터 3개의 행만 추출
+sqldf('select * from Fruits limit 3' )
+
+#Sales 컬럼변수값으로 내림차순 정렬
+sqldf('select * from Fruits order by  Sales  desc' )  
+ 
+
+#Sales 컬럼의 누적합, 최소값, 최대값, 평균
+sqldf('select sum(Sales), min(Sales), max(Sales), avg(Sales) 
+from Fruits ' ) 
+
+#Fruit 과일 종류별  Sales 컬럼의 누적합, 최소값, 최대값, 평균, 행개수
+sqldf('select sum(Sales), min(Sales), max(Sales), avg(Sales) 
+from Fruits  group by Fruit' ) 
+
+
+
+library(ggplot2)
+#자동차 배기량에 따라 고속도록 연비 ...데이터 셋
+mpg <- as.data.frame(ggplot2::mpg)
+mpg
+#displ 배기량
+#manufaturer 제조사
+#cty 도시연비
+#hwy 고속도로 연비
+#class차종
+
+Quiz> 회사별로 분리, suv 추출, 통합 연비(도시연비, 고속도로 연비) 변수 생성, 
+통합 연비 평균 산출, 내림차순 정렬, 1~5위까지 출력
+result <-sqldf( select class, (cty+hwy)/2 as tot , avg((cty+hwy)/2) mean_tot
+ from mpg
+ where class='suv'
+ group by manufacturer 
+ order by 3 desc") 
+head(result, 5) 
+
+mpg %>% group_by(manufacturer) %>% filter(class=="suv")
+        %>% mutate( tot=(cty+hwy)/2) 
+        %>%  summarise(mean_tot = mean(tot)) 
+        %>% arrange(desc(mean_tot)) %>% head(5) 
+
+Quiz> 어떤 회사에서 "compact"(경차) 차종을 가장 많이 생산하는지 알아보려고 합니다. 
+각 회사별로 "compact" 차종을 내림차순으로 정렬해 출력하세요
+sqldf("select class, count(*)
+ from mpg
+ where class='compact'
+ group by manufacturer
+ order by 2")
+
+
+표본 오차 구하기########################################################
+20세 이상 유권자 1,500명 대상으로 A후보 대선 출마에 대한 찬성과 반대
+를 조사하는 설문조사를 시행하였다. 설문조사 결과 95% 신뢰수준에서 찬성 
+55%, 반대 45%가 나왔다. 이때 표본 오차는 얼마인가?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

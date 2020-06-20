@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculator</title>
+</head>
+<body>
+<form id ="f1" action="join" method="get" >
+number1 : <input type="text" name="num1" ><br>
+operator :
+<select>
+	<option id="sum">&nbsp;+&nbsp;</option>
+	<option id="minus">-</option>
+	<option id="mul">*</option>
+	<option id="div">/</option>	
+</select><br>
+number2 : <input type="text" name="num2" ><br>
+</body>
+</html>

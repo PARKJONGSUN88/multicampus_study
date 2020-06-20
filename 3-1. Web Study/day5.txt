@@ -1,0 +1,110 @@
+jQuery - 모든 브라우저에서 동작하는(클라언트 side에서 실행) 자바스크립트로 만들어진 라이브러리
+# html의 문서요소를 간결하게 처리할 수 있다. 
+<head>내에 <script src="로컬경로/jquery-3.x.x.js"></script>
+           <script src="CDN서버 경로 "></script>
+jQuery(문서 요소  | 함수)
+$(문서 요소  | 함수)
+
+# 일관된 이벤트 핸들러 등록 - on(), off()
+on이벤트명 = function(){}
+addEventListener("이벤트명", function(){}, false);
+removeEventListener("이벤트명", 핸들러);
+attachEvent()
+detachEvent()
+
+# 효과
+# ajax처리 간결하면서 쉽게
+
+load이벤트와 유사한 jquery의 이벤트는 ready 이벤트
+
+$(document).ready(이벤트 핸들러 함수);
+   $("css select문법")
+
+$("태그명")
+$("#id값")
+$("태그.class속성값")
+$("부모태그> 자식태그")
+$("부모태그  자손태그")
+$("태그, 태그, 태그")
+$("태그[속성명=속성값]")
+
+
+#jquery는 메서드 체인형태로 사용합니다.
+
+
+
+
+
+<%@ page   contentType="text/xml; charset=utf-8"     %>
+<%
+    request.setCharacterEncoding("utf-8"); 
+    //반드시 응답되는 내용의  Content-type을 "text/xml;charset=utf-8"해야함, 생략시 결과가 표시되지 않을 수 있음
+   // response.setContentType("text/xml;charset=utf-8");//응답되는 내용의 Content-type을 설정
+
+    String outString = ""; // 요청한 페이지인 partPageDBUse.js로 리턴할  결과를 저장
+    int result = 0 ;
+    String id = request.getParameter("userid"); 
+    String passwd = request.getParameter("userpwd"); 
+     
+    if(id.equals("admin")&&passwd.equals("1234")){
+    	result = 1;
+    }else if(id.equals("admin")){
+    	result = 0;
+    }else{
+    	result = 2;
+    }
+     
+    
+    //userCheck()메소드의 수행후 리턴되는 결과 값에 따라 처리
+    if(result==1){//사용자 인증에 성공시
+		session.setAttribute("id",id);
+		outString="<response><result>"+ result + "</result><id>"+ id 
+				+"</id></response>";
+	}else if(result==0){//사용자 인증에 실패시 - 비밀번호 틀림
+		outString="<response><result>"+ result + "</result><id>"+ id 
+		+"</id></response>";
+    }else{//사용자 인증에 실패시 - 아이디 틀림
+    	outString="<response><result>"+ result + "</result><id>"+ id 
+    	+"</id></response>";
+    }	
+    
+    out.println(outString); // outString의 내용을 요청한 페이지인 partPageDBUse.js로 응답함
+    
+%>
+
+
+
+
+
+function cofirmedProcess(){//로그인의 성공과 실패에 따라 표시되는 내용을 결정하는 메소드
+    var result =req.responseXML.getElementsByTagName("result")[0].firstChild.data;
+    var name = req.responseXML.getElementsByTagName("id")[0].firstChild.data;
+     
+    if (result == 1){//사용자 인증성공시
+      var str="<table><tr><td align='center'><b>"+name+"</b> 님 오셨구려..</td></tr>"
+      str+="<tr><td align='center'><input type='button' id='logout' value='로그아웃' onclick ='logoutMethod()'/></td></tr></table>"
+    	  document.getElementById("confirmed").innerHTML = str;
+    }else if(result==0){//사용자 인증실패시 - 비밀번호가 틀림
+      alert("비밀번호가 맞지 않습니다.\n다시 입력해 주시기 바랍니다.");
+      document.getElementById("userid").value=name;
+      document.getElementById("userpwd").value="";
+      document.getElementById("userpwd").focus();
+    }else{//사용자 인증실패시 - 아이디가가 틀림
+      alert("아이디가 맞지 않습니다.\n다시 입력해 주시기 바랍니다.");
+      document.getElementById("userid").value="";
+      document.getElementById("userpwd").value="";
+      document.getElementById("userid").focus();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

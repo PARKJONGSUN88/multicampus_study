@@ -1,0 +1,229 @@
+논리연산자(shortcircuit) : (조건표현식)&&(조건표현식), ||
+X<<Y : X*2^Y의 결과
+X>>Y : X/2^Y의 결과, 왼쪽 비트를 sign 비트로 채움
+X>>>Y :왼쪽 비트는 항상 0으로 채움, 결과는 항상 양수
+
+(조건표현식)?true일때 수행될 표현식:false일때 수행될 표현식
+
++=, /=, <<=,.......
+
+※ 연산식내에서 데이터 타입들이 다른 경우, 결과는 데이터 타입중에서 가장 큰 타입으로 자동으로 promotion이 일어나기 때문에 저장될 변수의 타입을 맞게 선언하시거나 casting해서 처리해야 합니다.
+
+
+조건처리 :
+if (조건표현식)  {
+   문장;
+   ...
+   ...
+}
+
+if (조건표현식)  {
+   문장;
+   ...
+   ...
+}else {
+   문장;
+   ...
+   ...
+}
+
+
+다중 if문 or nested if문
+if (조건표현식1)  {
+    문장1;
+}else if (조건표현식2)  {  //else if의 선언 개수 제한 없음
+    문장2;
+}else if (조건표현식3)  {
+    문장3;
+}else {  //위의 모든 조건 표현식이 false일때 수행
+  ...
+}
+
+
+if (조건표현식1)  {
+    if (조건표현식2)  { 
+           문장1;
+    }else {
+           문장2;
+     }
+}else{
+    문장3;
+}
+
+if (조건표현식1 &&  조건표현식2)  {
+     문장1;
+}else if (조건표현식1 &&  !조건표현식2)  {
+     문장2;
+}else {
+  ...
+}
+
+//byte, short, int, char, String 
+switch(표현식) {
+   case 값1 :  문장 ; break;
+   case 값2 :  문장 ;
+   .....
+   default : 문장 ;
+
+}
+
+
+
+반복문 :
+for(초기화 ; 조건식 ; 증감식){
+  반복 수행 문장;
+}
+문장;
+
+for문 내부에 제어문, 반복문
+
+//2차원의 데이터 구조 처리시
+for(초기화 ; 조건식 ; 증감식){   //행(기준) 반복 횟수 5
+   for(초기화 ; 조건식 ; 증감식){  //열(컬럼) 반복 횟수 3
+         반복 수행 문장;
+    }
+}
+
+
+for ( ; ; ){ 
+//반드시 무한 루프 종료시킬 조건이 포함되어 있어야 합니다.
+}
+
+while(조건표현식){
+  반복 수행 문장;
+}
+
+int count =0;
+while(count<10){
+  System.out.println(++count);
+}
+
+
+
+while(true){  //무한루프
+  ...
+  if(조건) break;
+ 
+}
+
+while문은 선 조건 체크, 후 실행
+do ~ while문 선 실행, 후 조건 체크
+do {
+ 반복 수행 문장;
+ }while(조건표현식);
+
+========================난수 생성 코드 예=============================
+
+package lab.java.core;
+
+import java.util.Random;
+
+public class RandomTest {
+
+	public static void main(String[] args) {
+		//0<= N <1
+		int rnum = (int)(Math.random()*100+1);
+		Random r = new Random();
+		int rnum2 = r.nextInt(100)+1; //0~99
+		System.out.println(rnum);
+		System.out.println(rnum2);
+
+	}
+
+}
+
+====================UpDown Game 코드 예===========================
+
+
+
+package lab.java.core;
+
+import java.util.Scanner;
+
+public class UpDownGame {
+
+	public static void main(String[] args) {
+		int computer = (int)(Math.random()*100+1);		
+		int count =0;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Game Start");		
+		do {
+			count++;
+			System.out.print("내가 생각한 수는?");		
+		    int num = input.nextInt();
+		    if(computer==num ) {
+		    	System.out.println("You Win!!!!");
+		    	break;
+		    }else if(computer<num) {
+		    	System.out.println("Down!!!");
+		    }else if(computer>num) {
+		    	System.out.println("Up!!!");
+		    }
+		}while(count<5);		
+		if(count>=5) { 
+			System.out.println("number is "+computer);
+	    	System.out.println("I Win^^!!!");
+	    }
+		System.out.println("Game End");	
+	}
+
+}
+
+
+
+
+=====================================================
+조건문과 반복문에서 함께 사용되는 제어문 continue;
+continue - 반복 수행중에 반복수행을 skip하고 다음 회차로 수행 흐름을 제어 하고자 할때 
+
+
+
+
+package lab.java.core;
+
+import java.util.Scanner;
+
+public class DoWhile {
+
+	public static void main(String[] args) {
+		int base=0, height =0;		
+	    char answer='\u0000';
+		do {		
+		Scanner input = new Scanner(System.in);
+		System.out.print("Base = ");
+		base =input.nextInt(); 
+		System.out.print("Height = ");
+		height =input.nextInt(); 		
+		
+		System.out.printf("Triangle Width = %.1f\n",(base*height)*0.5);
+		//Math함수의 round()함수는 실수의 소수점 첫번째 자리를 반올림하여 정수로 리턴시켜줍니다
+		//소수점 둘째 자리까지 나타내고싶으시면 100.0을 곱하였다가 나눠주시면 되고
+		//소수점 셋째 자리까지 나타내고싶으시면 1000.0을 곱하였다가 나눠주면 됩니다.
+		System.out.println("Triangle Width ="+ Math.round((base*height)*0.5*100)/100.0);
+		// String클래스의 format 메소드는 리턴되는 문자열 형태를 지정하는 함수인데
+		//이 함수를 활용하면 Math.round() 함수와 같이 소수점 n번째 자리까지 반올림하여 나타낼 수 있습니다.
+		System.out.println("Triangle Width = "+String.format("%.1f", (base*height)*0.5));
+		System.out.print("Continue ? ");
+		answer = input.next().charAt(0);
+		}while(answer=='Y'||answer=='y');
+
+	}
+
+}
+
+
+배열은 Reference Type, 객체로 취급합니다.
+new 키워드로 생성합니다.
+new 키워드로 생성할 경우 heap메모리에 생성됩니다.
+배열은 타입에 따라서 요소(element)값을  기본값으로 저장합니다.
+배열은 객체로 생성되면 자동으로 length 속성(멤버필드)에 요소 개수 size가 저장됩니다.
+
+
+
+
+
+
+
+
+
+

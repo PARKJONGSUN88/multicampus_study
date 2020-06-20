@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>객체 리터널 방식으로 객체 생성<h3>
+<script>
+var employee = {}; //빈 객체 생성, var emp = new Object();
+employee.ename = 'Scott';
+employee.job = 'Developer';
+employee.salary = 5000;
+employee.hiredate = '2013/01/01';
+employee.address = '삼성동';
+/*
+document.write("employee.ename="+employee.ename+"<br>");
+document.write("<br>");
+document.write("employee['job']="+employee['job']+"<br>");
+document.write("<br>");
+
+for(var key in employee) { //key변수에는 객체의 property가 저장됩니다.
+	document.write(key+" : "+employee[key]+"<br>");
+}
+document.write("<br>");
+
+document.write("employee instanceof Object =>"+(employee instanceof Object)+"<br>");
+//내장 객체(Math, String, Number,...)중 최상위 Object 상속 확인
+ */
+console.dir(Object);
+
+
+document.write(employee+"<br>");
+document.write("<br>");
+
+employee.toString = function(){
+	var output = "";
+	for(var key in this){
+		if(key != 'toString'){
+		output += key+" : "+this[key]+"\n";
+		}
+	}
+	return output;
+}
+
+document.write(employee+"<br>");
+document.write("<br>");
+
+document.write(employee.toString()+"<br>");
+document.write("<br>");
+
+delete(employee.address);
+document.write(employee+"<br>");
+document.write("address in employee"+('address' in employee)+"<br>");
+document.write("hiredate in employee"+('hiredate' in employee)+"<br>");
+
+
+</script>
+</body>
+</html>

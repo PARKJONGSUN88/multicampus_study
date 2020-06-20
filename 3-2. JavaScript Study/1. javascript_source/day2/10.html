@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>내장 객체</h3>
+
+<script>
+	console.dir(Date);
+	/*
+	var today = new Date();
+	for(var key in Date){
+		document.write("*"+key+":"+Date[key]+"<br>");
+	}
+	*/
+	var array1 = new Array(); //빈것
+	var array2 = new Array(10); //사이즈
+	var array3 = new Array(10, 20, 30, 40, 50); //각 요소값까지
+	document.write("array1.length : "+array1.length+"<br>");
+	document.write("array2.length : "+array2.length+"<br>");
+	document.write("array3.length : "+array3.length+"<br>");
+	array3[5] = 60;
+	array3.push = 70;
+	for(var idx in array3) {
+		document.write("array3[" +idx+ "] : " +array3[idx]+"<br>");
+	}
+	document.write("<hr>");
+	delete array3[1];
+	for(var idx in array3) {
+		document.write("array3[" +idx+ "] : " +array3[idx]+"<br>");
+	}	
+</script>
+<br>
+자바스크립트에서 배열은 서로 다른 타입의 요소를 저장할 수 있고<br>
+동적으로 요소를 추가하거나 삭제할 수 있습니다.<br>
+</body>
+</html>

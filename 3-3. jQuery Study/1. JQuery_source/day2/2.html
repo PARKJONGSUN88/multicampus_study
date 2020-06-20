@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">  
+  <title>jQuery 기본</title>
+  <style>
+	.high_light1 {background:Red;}
+	.high_light2 {background:Orange;}
+	.high_light3 {background:Yellow;}
+	.high_light4 {background:Green;}
+	.high_light5 {background:Blue;}	
+  </style>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+	$("h1").each(function(index, item){
+		//$(item).addClass("high_light"+(index+1));
+		//console.log(indext+", "+item);
+		$(this).addClass("high_light"+(index+1));
+	});
+});  
+  </script> 
+ </head>
+ <body>
+	jQuery: jquery 배열 관리
+	<h1>item-0</h1>
+	<h1>item-1</h1>
+	<h1>item-2</h1>
+	<h1>item-3</h1>
+	<h1>item-4</h1>	
+ </body>
+</html>

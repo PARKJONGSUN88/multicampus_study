@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+window.onload = function(){
+	document.getElementById("up").onclick = function(){
+		window.moveBy(0,-20);
+	};
+	document.getElementById("left").onclick = function(){
+		window.moveBy(-20,0);
+	};
+	document.getElementById("right").onclick = function(){
+		window.moveBy(20,0);
+	};
+	document.getElementById("down").onclick = function(){
+		window.moveBy(0,20);
+	};
+}	
+</script>
+</head>
+<body>
+<h3>12.html</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="up" value="      UP      " /><br>
+<input type="button" id="left" value="    LEFT    " />
+<input type="button" id="right" value="  RIGHT   " /><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="down" value="   DOWN    " />
+</body>
+</html>

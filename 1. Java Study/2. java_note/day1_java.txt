@@ -1,0 +1,208 @@
+﻿자바는 변수 선언 또는 실행 문장 한개라도 반드시 클래스 단위로 소스 코드를 작성해야 합니다. (객체지향 언어)
+자바에서 키워드는 소문자입니다. 
+키워드는 식별자(변수, 메소드, 클래스)로 사용 못합니다.
+
+
+객체는 속성과 동작(기능)으로 구성되고, 설계도 역할이 클래스입니다. 
+
+standalone application - 서버없이 독립적으로 실행되는 application
+JVM이 실행 요청 받은 standalone application의 실행 메소드를 실행시킵니다.
+
+client/server application (network, web) - 서버는 클라이언트 요청을 처리하고 응답해주는 application
+
+class { }
+메서드 {  }
+변수 선언 ;
+실행문장 ;
+
+
+자바는 대소문자 구별하는 언어입니다
+
+package는 연관된 인터페이스, 클래스, enum, 예외(Exception) 들을 그룹핑한 단위
+
+
+소스 코드의 첫번째에 package 선언은 선택적이며 선언하는 경우 1번만 선언합니다.
+
+package 선언예시 ]
+package kr.company.project;
+package kr.company.project.model;
+package kr.company.project.biz;
+
+[Primitive data type]
+타입 변수명 ;
+타입 변수명 = 값;
+
+
+[Reference data type : class, interface, enum, 배열]
+타입 reference변수(객체) = new 타입(); //메모리에 객체를 생성 instance화
+reference변수(객체).속성 = 값;  //속성값 변경
+reference변수(객체).메서드(값,...); //기능 호출
+
+
+
+ 
+
+
+package lab.java.core;
+
+public class DataType1 {
+
+	public static void main(String[] args) {
+		boolean success = false;//정수와 호환 불가, 키워드 false 또는 true만 값으로 저장 가능합니다.
+		//메모리는 1byte할당
+		System.out.println(success);
+		//success = 1;
+		
+		//byte 정수자료형 , 1byte 할당, sign bit, binary , -2^7 ~ 2^7-1, -128 ~ 127
+		byte num1 = 127;
+		System.out.println(num1);
+		//num1 = 128; 
+		
+		//short 정수자료형 , 2byte 할당, -2^15 ~ 2^15-1, -32768~32767
+		short num2 = 32767;
+		System.out.println(num2);
+		//num2 = 32768;
+		
+		//int 정수자료형, 4byte 할당, -2^31 ~ 2^31-1, -2147483648~2147483647
+		int num3 = 2147483647; //정수 literal의 기본형은 int
+		System.out.println(num3);
+		//num3 = 2147483648;
+		num3 = 077;//8진수
+		System.out.println(num3);//출력은 decimal 10진수로
+		num3 = 0xff;//16진수
+		System.out.println(num3);//출력은 decimal 10진수로
+		
+		//long 정수자료형, -2^63 ~2^63-1
+		long num4 = 2147483648L; 
+		System.out.println(num4);
+		
+		
+		//char 문자 자료형, 자바는 unicode지원 ,  2byte할당, 0~2^16-1, 0~65535
+		char ch1 = 'A';
+		System.out.println(ch1);
+		ch1 = 97; //ascii코드값
+		System.out.println(ch1);
+		ch1 = '\u0063'; //unicode 코드값
+		System.out.println(ch1);
+		
+		//실수 자료형 , 부동소수점 형식 (가수부, 지수부) , 4byte할당
+		float num5 = 3.14F;  //실수 literal의 default 유형은 double(8byte)
+		System.out.println(num5);
+		double num6 = 3.14;
+		System.out.println(num6);
+		num6 = 1.204307E-5; //IEEE표기형식, 과학적 수치 표기형식
+		System.out.println(num6);
+		num6 = 1.204307E+9;
+		System.out.println(num6);
+		
+		//문자열은 Reference Data Type (객체)
+		String st = new String("java"); //st는 객체명, heap메모리에 객체 생성
+		System.out.println(st);
+		System.out.println(st.length());
+		
+		String st2 = "java";  //String 상수 pool 메모리 영역에 생성
+		System.out.println(st2);
+		
+		final int PORT = 9000; //상수
+		System.out.println(PORT);
+		//PORT = 5555;
+		
+	}
+
+}
+
+
+
+키보드 입력 객체 System.in (InputStream) - 1byte단위의 입출력처리 Byte(Binary) Stream
+
+2차 Stream - 필터, buffer를 이용한 성능 개선..
+
+입출력은 반드시 예외처리를 해야 합니다.
+try{
+InputStreamReader isr = new InputStreamReader(System.in);
+BufferedReader br = new BufferedReader(isr);
+String st = br.readLine();
+}catch(IOException ie){
+  ...
+}finally{
+ ...
+}
+
+JDK 1.5버전에서  Scanner를 제공합니다. (예외 처리가 필수가 아님, 입력값의 DataType으로 변환해서 리턴해주는 메소드를 제공합니다.)
+
+
+
+<<표준 입력 받는 방법1>>
+package lab.java.core;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class InputTest {
+
+	public static void main(String[] args) throws IOException{
+		System.out.print("태어난 년도를 입력하세요:");
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		String year = br.readLine();
+		int age = 2019-Integer.parseInt(year); //문자열을 정수로 변환
+		System.out.print("Your age is "+ age);
+
+	}
+
+}
+
+
+<<표준 입력 받는 방법2>>
+package lab.java.core;
+
+import java.util.Scanner;
+
+public class InputTest2 {
+
+	public static void main(String[] args) {
+		System.out.print("태어난 년도를 입력하세요:");
+		Scanner scanner = new Scanner(System.in);
+		int year = scanner.nextInt();
+		int age = 2019-year;
+		System.out.print("Your age is "+ age);
+
+	}
+
+}
+
+
+<<연산자>>
+operator, operand
+단항연산자 : +, -(sign 연산자), (), ++, --, !, ~
+이항연산자 : 산술연산자(*, /, +, -, %), 비교연산자,...
+삼항연산자
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

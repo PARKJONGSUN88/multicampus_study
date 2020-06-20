@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myCanvas{width:600px; height:500px;}
+
+</style>
+<meta charset="utf-8">
+<script src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDn8S5dDaiHdKxO8UiCW33syu4OFfJij4k">
+</script>
+	<script>
+	function myMap(){
+		var mapCanvas = document.getElementById("myCanvas");
+		var myLatlng = new google.maps.LatLng(37.498146, 127.027557);
+		var mapOptions = {center:myLatlng, zoom:16, mapTypeId:google.maps.MapTypeId.ROADMAP};
+		
+		var map = new google.maps.Map(mapCanvas, mapOptions);
+		var marker = new google.maps.Marker({
+											position:myLatlng, 
+											map:map, 
+											draggable:true, 
+											title: '지하철 강남 역에서 하차'});
+		var contentString = '<div style= "width:100px; height:50px;"> 여기서 만나자 </div>';
+		var infowindow = new google.maps.InfoWindow({
+													content: contentString, 
+													size: new google.maps.
+													Size(200,100)});		
+		google.maps.event.addListener(marker, 'click', 
+		function(){
+			infowindow.open(map, marker);
+			if(marker.getAnimation() != null){
+				marker.setAnimation(null);
+			}else{
+				marker.setAnimation(google.maps.Animation.BOUNCE);
+			}
+		});
+		marker.setMap(map);
+	}
+	</script>
+</head>	
+<body onload="myMap()">
+	<div id="myCanvas"></div>
+</body>
+</html>		

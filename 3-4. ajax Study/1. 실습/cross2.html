@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta  charset="utf-8">
+<title>Communication API 예제(window.postMessage())</title>
+
+<script type="text/javascript">
+	window.onload=function(){
+		setInterval(Send, 1000);
+	}
+
+	function Send(){
+		var ifrm = document.getElementById("ifrm");
+		var MyOrigin = location.protocol+ "//" +location.host;
+		var date = new Date();
+		var dateStr = date.getFullYear()+ "/" + (date.getMonth()+1) +
+			"/" + date.getDate() + " " + date.getHours() + ":" +
+			date.getMinutes() + ":" + date.getSeconds();
+		var number = Math.floor(Math.random()*100);
+
+		ifrm.contentWindow.postMessage({date:dateStr, number:number},
+		"http://70.12.50.130:9000");
+		document.getElementById("msg").innerHTML = dateStr +
+		"생성된 값은 '" + number + "' 입니다.<br/> MyOrigin : " + MyOrigin;
+	}
+</script>
+</head>
+<body>
+	<div id="msg">8080<br/>MyOrigin</div>
+	<iframe id="ifrm" src="http://70.12.50.130:9000/receive.html"
+	width=500 height=200></iframe>
+</body>
+</html>

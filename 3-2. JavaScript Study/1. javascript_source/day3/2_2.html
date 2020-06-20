@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<style>
+.box{
+	display:inline-block;
+	padding:50px;
+	margin:100px;
+	margin-left:100px;
+	background-color:yellow;
+}
+</style>
+<body>
+	<div class="box" id="sec1">#sec1</div>
+	<br/>
+	<div class="box" id="sec2">#sec2</div>
+	<br/>
+	<div class="box" id="sec3">#sec3</div>
+	<script>
+		function getScrollTop() {
+			if(window.pageYOffset !== undefined){
+				return window.pageYOffset;
+			}else{
+				return document.documentElement.scrollTop || document.body.
+scrollTop;
+			}
+		}
+		function getScrollLeft(){
+			if(window.pageXOffset !== undefined){
+				return window.pageXOffset;
+			}else{
+				return document.documentElement.scrollLeft || document.body.
+scrollLeft;
+			}
+		}
+		
+		if ('scrollRestoration' in history){
+			history.scrollRestoration='manual';
+		}
+		var element=document.getElementById("sec3");
+		var rect=element.getBoundingClientRect();
+		scrollTo(rect.left+getScrollLeft(), rect.top+getScrollTop());
+	</script>
+</body>
+</html>

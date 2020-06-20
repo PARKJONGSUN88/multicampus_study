@@ -1,0 +1,657 @@
+Q1> 다음 중 가설이 갖추어야 할 요건이 아닌 것은?
+① 가설은 경험적으로 검증할 수 있어야 한다.
+②가설은 계량적인 형태를 취하든가 계량화 할 수 있어야 한다.
+③가설의 표현은 간단명료해야 한다.
+④가설은 동일 분야의 다른 가설과 연관을 가져서는 안된다.
+
+Q2> 다음 중 과학적 연구절차에 기초한 올바른 이론 구축 과정은?
+① 연구문제 - 개념화 - 가설검정 - 자료수집- 자료분석
+② 개념화-연구문제-가설검정- 자료수집- 자료분석
+③ 연구문제 -가설검정 -개념화 - 자료수집- 자료분석
+④ 개념화 -가설검정 -연구문제 -자료수집- 자료분석
+
+Q3> 가설 검정에 관한 설명으로 옳은 것은?  
+① 검정 통계량은 확률변수이다.
+② 대립가설은 사전에 알고 있는 값이다.
+③ 유의수준 α를 작게 할수록 좋은 검정법이다.
+④ 가설이 틀렸을 때 틀렸다고 판정할 확률을 유의수준이라 한다. 
+
+Q4> '남녀 월급액수에는 차이가 있다'라는 주장을 검증하기 위하여 사회조사를 시행하였다.
+조사결과 남자집단의 평균액수는 μ1, 여자집단의 μ2라고 한다면, 귀무가설은?
+①  μ1 > μ2
+②  μ1 = μ2
+③  μ1 < μ2
+④  μ1 ≠ μ2
+
+
+Q5> 가설구성 시 고려할 사항이 아닌 것은?
+① 경험적 검증이 가능하여야 한다.
+② 다른 가설 및 이론과의 연관성을 가져야 한다.
+③ 두 개 이상의 변수 간의 관계로 서술되어야 한다.
+④ 한 가설에 독립변수나 종속변수 수가 많아지도록 한다.
+
+Q6> 가설의 특성이라고 할 수 없는 것은?
+① 문제를 해결해 줄 수 있어야 한다. 
+② 변수로 구성되며, 그들 간의 관계를 나타내고 있어야 하낟.
+③ 검증될 수 있어야 한다.
+④ 매개변수가 있어야 한다.
+
+Q7> 유의확률(p-value)의 설명이 틀린 것은?
+①  검정 통계량이 실제 관측된 값보다 대립가설을 지지하는 방항으로 더욱 치우칠 확률로서 귀무가설 하에서 계산된 값이다
+② 주어진 데이터와는 직접적으로 관계가 없다.
+③ 유의확률이 낮을 수록 반증이 강한 것을 뜻한다.
+④ 귀무가설에 대한 반증의 강도에 대하여 기준값을 미리 정해놓고 p-value값을 그 기준값과 비교한다.
+
+Q8> 다음 내용에 대한 가설형태로 옳은 것은?
+기존의 진통제는 진통효과가 지속되는 시간이 평균 30분이고, 표준편차는 5분이라고 한다. 
+새로운 진통제를 개발하였는데, 개발팀은 이 진통제의 진통 효과가 30분 이상이라고 주장한다.
+① H0 : μ<30, H1: μ=30
+② H0 : μ=30, H1: μ>30
+③ H0 : μ>30, H1: μ=30
+④ H0 : μ=30, H1: μ≠30
+
+Q9> 모집단의 회귀계수β에 대한 표본 회귀계수가 0.23일 경우, 독립변수가 종속변수에 의미 있는
+영향을 미치는지를 알기 위해 모집단 회귀계수에 대한 가설 검정을 하려곻 라때 귀무가설과 대립가설은?
+① H0 : β= 0, H1: β≠ 0
+② H0 : β≠ 0, H1: β= 0
+③ H0 : β= 0.23, H1: β≠ 0.23
+④ H0 : β≠ 0.23, H1: β= 0.23
+
+11> 통계적 검증 오류중 제 1종 오류에 해당하는 것은?
+① 귀무가설이 참임에도 불구하고 이를 기각
+② 귀무가설이 참이므로 이를 채택
+③ 귀무가설이 거짓이므로 채택
+④ 귀무가설이 거짓임에도 이를 기각
+
+
+12> 통계적 가설의 기각 여부를 판정하는 가설 검정에 대한 설명으로 맞는 것은?
+① 표본으로부터 확실한 근거에 의하여 입증하고자 하는 가설을 귀무가설이라 한다.
+② 유의수준은 제2종 오류를 범할 확률의 최대허용한계이다.
+③ 대립가설을 채택하게 하는 검정 통계량의 영역을 채택역이라 한다.
+④ 대립가설이 옳은데도 귀무가설을 채택함으로써 범하게 되는 오류를 제2종 오류라 한다.
+
+13> 통계적 가설 검정을 위한 검정 통계값에 대한 유의확률(p-value)이 주어졌을 때, 귀무가설을 유의수준 α
+로 기각할 수 있는 경우는?
+①  p-value >  α
+② p-value <  α
+③ p-value =  α
+④ p-value >  2α
+
+14> 정규분포의 특성에 대한 설명으로 틀린 것은?
+① 평균, 중위수, 최빈수가 모두 일치한다.
+② X=μ에 관해 종 모양의 좌우대칭이고, 이 점에서 확률 밀도함수가 최대값 1/0을 갖는다.
+③ 분포의 기울어진 방향과 정도를 나타내는 왜도이다.
+④ 분포의 봉우리가 얼마나 뾰족한가를 관측하는 첨도이다.
+
+15> 보험가입액의 모평균이 1억 원이라고 볼 수 있는가를 검정하고자 한다. 이에 대한 t-검정 통계량이 1.201이고,
+유의확률이 0.239이었다. 
+① '유의확률 >유의수준'이므로 모평균이 1억 원이라는 가설을 기각하지 못한다.
+② '유의확률 >유의수준'이므로 모평균이 1억 원이라는 가설을 기각한다.
+③ '검정 통계량 1.201 >유의수준'이므로 모평균이 1억 원이라는 가설을 기각하지 못한다.
+④ '검정 통계량 1.201 >유의수준'이므로 모평균이 1억 원이라는 가설을 기각한다.
+
+
+16> '표본의 크기가 충분히 크다면, 표본의 평규은 0에 가까워진다.'는 이론은?
+
+Q17> 표준화 변환을 하면 변환된 자료의 평균과 표준편차의 값은?
+① 평균 = 0, 표준편차 = 1
+② 평균 = 1, 표준편차 = 1
+③ 평균 = 1, 표준편차 = 0
+④ 평균 = 0, 표준편차 = 0
+
+
+Q18> 신뢰수준에 대한 설명으로 틀린 것은?
+① 신뢰구간에 확신하는 정도를 의미한다.
+② 신뢰수준은 연구자가 결정한다.
+③ 신뢰수준이 95%라는 의미는 표본오차가 ±5%라는 의미이다.
+④ 신뢰수준 높이면 신뢰구간은 좁아진다.
+
+
+Q19> A회사에서 만든 제품의 수명의 표준편차는 50이라고 한다. 새로운 공정
+에 의해 제품 100개를 생산하여 실험한 결과 수명의 평균이 280이었다.
+모 평균에 대한 95% 오차 한계는?
+①  9.8
+②  12.9
+③   98
+④  129
+
+Q20> 크기가 n표본으로 신뢰수준 95%를 갖도록 모평균을 추정하였더니 
+신뢰구간의 길이가 10이었다. 동일한 조건 아래 표본의 크기만을 1/4로 줄이면
+신뢰구간의 길이는?
+①  1/4로 줄어든다
+②  1/2로 줄어든다
+③  2배로 늘어난다.
+④  4배로 늘어난다.
+
+Q21> 어느 고등학교 1학년 1,000명의 성적분포가 평균 80점, 표준편차 20점인 정규분포로 나타났다.
+이경우에 60점 이상 100점 이하의 점수를 얻은 학생은 대략 몇 명인가?
+①  350
+②  680
+③  790
+④  850
+
+=================================================================
+getwd()
+data <- read.csv("./data/descriptive.csv", header=TRUE)
+head(data)
+str(data)     #8개변수(컬럼), 300개의 관측치
+#resident(거주지역)
+#gender(성별 - 명목(1,2))
+#level(학력수준-서열1,2,3)
+#cost(생활비-비율)
+#type(학교유형-명목 1, 2)
+#survey(만족도 -등간척도 5점)
+#pass(합격여부- 명목 1, 2)
+
+dim(data)
+length(data) #변수 개수 (컬럼개수)
+length(data$survey)   #관측치 개수 (행개수)
+
+fivenum(data)
+summary(data)  #컬럼단위로 최소값, 최대값, 평균, 1,3 분위수, 결측치, 중앙값(중위수) 등 제공
+
+
+#명목척도의 기술 통계량 - 결측치 제거 -> 빈도수 - >비율 ->백분률 
+length(data$gender)  #관측치 확인
+summary(data$gender)  #명목척도는 최소값, 최대값, 평균등 의미없음
+
+table(data$gender) #각 성별의 빈도수
+
+data <- subset(data, data$gender==1 | data$gender=2)
+x <- table(data$gender)  #빈도수에 따른 분할표
+barplot(x)  #범주별 데이터 시각화 -> 막대 차트
+
+y <- prop.table(x) #비율 계산
+round(y*100, 2)    #백분률로 변환
+
+#########서열 척도 기술 통계량
+data <- read.csv("./data/descriptive.csv", header=TRUE)
+summary(data$level)  #명목척도는 최소값, 최대값, 평균등 의미없음
+table(data$level)  #고졸(1), 대졸(2), 대학원(3)  의 빈도수에 따른 분할표
+
+x1<- table(data$level) 
+barplot(x1)
+
+y1 <- prop.table(x1) #비율 계산
+round(y1*100, 2)    #백분률로 변환
+
+
+
+#########등간 척도 기술 통계량
+survey <- data$survey
+survey
+summary(survey) #등간척도에서 평균 통계량은 어느 정도 의미가 있다고 볼 수 있습니다.
+
+x2 <- table(survey)   #빈도수는 의미 있음
+hist(survey)   #등간척도 시각화(히스토그램)
+pie(x2)  #빈도수를 이용한 시각화 - 파이 차트
+
+
+
+#########비율 척도 기술 통계량
+length(data$cost)
+summary(data$cost)   #요약 통계 - 의미 있음
+
+plot(data$cost)   # 이상치 발견
+data <- subset(data, data$cost >=2 & data$cost <= 10)
+x3<-data$cost
+mean(x3)
+median(x3)  #평균이 극단치에 영향을 받는 경우 중위수로 대체하는 것이 더 효과적입니다.
+
+A반 성적 = 75,80,80,80,85    평균=80 중위수=80
+B반 성적 = 75,75,75,75,100   평균=80 중위수=75
+
+quantile(x3, 1/4)  # 1사분위수
+quantile(x3, 2/4)  #중앙값과 동일
+quantile(x3, 3/4)   #
+quantile(x3, 4/4)
+
+#최빈수 - 빈도수가 가장 많은 변량  
+x3.t <- table(x3)   #빈도수
+max(table(x3) )
+
+x3.m <- rbind(x3.t)
+x3.m
+
+class(x3.m)
+str(x3.m)
+x3.df <- as.data.frame(x3.m)
+which(x3.df[1,]==18)
+x3.df[1, 19]
+names(x3.df[19])
+
+
+#########산포도는 분산과 표준편차를 통계량으로 사용
+
+
+
+
+##########비율척도의 빈도 분석 : 비율척도를 범주화 (리코딩)
+table(data$cost)
+hist(data$cost)
+plot(data$cost)
+
+
+#연속형 변수 범주화
+data$cost2[data$cost >=1 & data$cost<=3] <- 1
+data$cost2[data$cost >=4 & data$cost<=6] <- 2
+data$cost2[data$cost >=7 ] <- 3
+
+table(data$cost2)
+barplot(table(data$cost2))
+pie(table(data$cost2))
+
+
+##########정규 분포를 갖는지 확인 - 왜도, 첨도 
+install.packages("moments" )   #moments 패키지
+library(moments)
+cost <- data$cost
+result <- cost[!is.na(cost)]
+result
+skewness(result)  #왜도 반환  0보다 크면  , 0보다 작으면 ....
+kurtosis(result)   #첨도 반환 (정규분포의 첨도는 3)
+hist(result)
+hist(result, freq=F) #히스토그램의 계급을 확률 밀도로 표현
+lines(density(result), col='blue')  #cost의 밀도 분포 곡선
+x<-seq(0, 8, 0.1)   #0~8범위의 0.1씩 증가하는 데이터 벡터 생성
+curve(dnorm(x, mean(result), sd(result)), col='red', add=T)  #정규분포 확률 밀도
+
+
+#######attach()/detach() 함수 
+리스트객체$key, dataframe객체$컬럼변수
+attach()함수는 dataframe객체$컬럼변수로부터  dataframe객체 데이터셋 이름을 생략하고 컬럼변수만으로 관측치에 사용가능
+detach()함수는  dataframe객체$컬럼변수로 관측치에 접근
+
+data <- read.csv("./data/descriptive.csv", header=TRUE)
+data$survey
+data$cost
+attach(data)   # '데이터셋$' 생략할 수 있도록 설정
+length(cost)   # na.rm옵션
+summary(cost)
+mean(cost, na.rm=T) 
+min(cost, na.rm=T)
+range(cost, na.rm=T)
+sort(cost, decreasing=T)
+detach(data)    # '데이터셋$' 생략할 수 없도록 설정, attach() 해제
+length(pass)   #오류?
+length(data$pass)
+
+
+#########Hmisc 패키지
+install.packages("Hmisc")
+library(Hmisc)
+describe(data)
+
+
+############prettyR 패키지
+install.packages("prettyR")
+library(prettyR)
+freq(data)
+
+
+
+Quiz> 거주지역 변수 리코딩 후 비율 계산
+범주화 : 1은 특별시  , 2~4 광역시, 5는 시군구   
+빈도수, 비율, 백분율
+
+
+Quiz> 성별 변수 리코딩 후 비율 계산
+범주화 : 1은 남자  , 2은 여자
+빈도수, 비율, 백분율
+
+
+Quiz> 나이변수 리코딩 후 비율 계산
+범주화 : <=45 중년층,  46~59는 장년층, >=60 노년층
+빈도수, 비율, 백분율
+
+
+합격 :1  실패:2
+###########################샘플 추출###########################
+# 벡터 데이터 1~10 로부터 5개 샘플 추출 복원 추출
+sample(1:10, 5, replace=TRUE)
+
+# 벡터 데이터 1~10 로부터 5개 샘플 추출 비복원 추출
+sample(1:10, 5)
+
+install.packages("sampling")
+library(sampling)
+head(iris)
+result <- strata(c("Species"), size=c(3,3,3) , method="srswor", data=iris))
+# srswor : 비복원 단순 임의 추출
+# srswr : 복원 단순 임의 추출
+# poisson : 포아송 추출
+# systematic : 계통 추출
+
+result
+getdata(iris, result)
+
+
+#계통추출 
+install.packages("doBy")
+library(doBy)
+x <- data.frame(x=1:10)
+sampleBy(~1, frac=.3, data=x, systematic=TRUE)
+
+
+d <- data.frame(x=c("1", "2", "2", "1"),  y=c("A", "B", "A", "B"),   num=c(3, 5, 8, 7))
+xt <- xtabs(num ~ x + y, data=d)   #분할표 생성
+xt
+margin.table(xt, 1)  # 3 + 7 = 10, 8 + 5 = 13
+margin.table(xt, 2)  # 3 + 8 = 11, 7 + 5 = 12
+margin.table(xt)     # 3 + 7 + 8 + 5 = 23
+ 
+
+prop.table(xt, 1)  #  3/10, 7/10
+                      8/13, 5/13
+prop.table(xt, 2)  #  3/11, 7/12
+                      8/11, 5/12
+
+prop.table(xt)     #  3/23, 7/23
+                      8/23, 5/23
+ 
+
+교차분석을 위한 변수 모델링#############################
+
+data <- read.csv("./data/cleanDescriptive.csv", header=TRUE)
+data
+str(data)
+
+#부모의 학력수준이 자녀의 대학진학 여부와 관련이 있는지를 분석하기 위해
+학력수준 변수는 독립변수
+대학진학 여부 변수는 종속변수
+x<- data$level2  
+y<- data$pass2
+
+result <- data.frame(Level=x, Pass=y)
+dim(result)
+
+#교차분석을 위한 분할표 생성
+table(result)
+
+install.packages("gmodels")
+library(gmodels)
+library(ggplot2)
+CrossTable(x=result$Level, y=result$Pass)
+head(diamonds)
+str(diamonds)  
+# 5만4천개의 다이아몬드 속성 데이터 셋
+#price, carat, cut(커팅품질), color, clarity(선명도),....
+CrossTable(x=diamonds$color, y=diamonds$cut)
+
+
+##############################################################
+부모의 학력수준과 자녀의 진학여부와 관련성이 있는지 독립성 검정 
+##############################################################
+연구가설(H1) :  부모의 학력수준과 자녀의 진학여부와 관련성 있다
+귀무가설(H0) : 부모의 학력수준과 자녀의 진학여부와 관련성이 없다
+
+str(data)
+
+#부모의 학력수준이 자녀의 대학진학 여부와 관련이 있는지를 분석하기 위해
+학력수준 변수는 독립변수
+대학진학 여부 변수는 종속변수
+x<- data$level2  
+y<- data$pass2
+
+result <- data.frame(Level=x, Pass=y)
+CrossTable(x=result$Level, y=result$Pass)
+
+#이원카이제곱 검정
+chisq.test(x=result$Level, y=result$Pass)
+
+해석 : 
+유의확률(p-value) 0.2507 이 유의수준(α= 0.05) 보다 크므로 귀무가설 채택
+부모의 학력수준과 자녀의 진학여부와 관련성이 없다
+
+카이제곱 검정통계량 : 2.767, 자유도 : 2
+임계값 : 5.99, 기각값(X^2 >= 5.99) 이면 귀무가설을 기각할 수 있다  
+X^2= 2.767 < 5.99 이므로 귀무가설을 기각 할 수 없다
+
+
+
+########### 선호도 검정 : 일원 카이제곱 검정, 한 개의 변인(집단 또는 범주)를 대상으로 검정을 수행, 관찰도수가 기대도수와 일치하는지를 검정###################
+
+귀무가설 : 기대치와 관찰치는 차이가 없다   예) 스포츠음료에 대한 선호도에 차이가 없다
+대립가설 : 기대치와 관찰치는 차이가 있다.  예) 스포츠음료에 대한 선호도에 차이가 있다
+
+data <- textConnection("스포츠음료종류   관측도수
+                     1  41
+                     2  30
+                     3  51
+                     4  71
+                     5  61")
+x <- read.table(data, header=T)
+x
+str(x)
+chisq.test(x$관측도수)
+
+
+해석 : 
+유의확률(p-value)  0.0003999 이 유의수준(α= 0.05) 보다 작으므로 귀무가설을 기각할 수 있다
+연구가설 채택 됨 (스포츠음료에 대한 선호도에 차이가 있다)
+
+카이제곱검정통계량 20.88 > 9.49 귀무가설을 기각할 수 있다
+
+
+
+
+##############동질성 검정 : 이원 카이제곱검정 방법, 두 집단의 분포가 동일한지 여부 검정############################
+data <- read.csv("./homogenity.csv", header=TRUE)
+head(data)
+str(data)
+#method 교육방법 1, 2, 3
+#survey 만족도  1:매우만족 ~ 5:매우 불만족
+
+대립가설 : 교육방법에 따라 만족도가 차이가 있다.
+귀무가설 : 교육방법에 따라 만족도가 차이가 없다.
+
+
+data <- subset(data, !is.na(survey), c(method, survey))
+
+data$method2[data$method==1] <- "방법1"
+data$method2[data$method==2] <- "방법2"
+data$method2[data$method==3] <- "방법3"
+
+data$survey2[data$survey==1] <- "매우만족"
+data$survey2[data$survey==2] <- "만족"
+data$survey2[data$survey==3] <- "보통"
+data$survey2[data$survey==4] <- "불만족"
+data$survey2[data$survey==5] <- "매우불만족"
+
+
+table(data$method2, data$survey2)  #table(행, 열)
+# 방법1, 방법2, 방법3의 관측치의 개수는 50으로 동일 => 반드시 각 집단의 길이가 동일해야 합니다.
+
+#동질성 검정
+chisq.test(data$method2, data$survey2)
+
+
+해석 : 
+유의확률(p-value)   0.5865 이 유의수준(α= 0.05) 보다 크므로 귀무가설을 기각할 수 없다
+귀무가설 채택 됨 (교육방법에 따라 만족도가 차이가 없다.)
+
+카이제곱검정통계량 6.545 < 15.51 귀무가설을 기각할 수 없다
+
+
+
+
+실습 연습문제#############################################
+Quiz01>
+ 교육수준(education)과 흡연율(smoking) 간의 관련성을 분석하기 위한 연구가설을 수
+립하고, 각 단계별로 가설을 검정하시오. [독립성 검정]
+귀무가설(H0) : 교육수준과 흡연율 간의 관련성은 없다.
+연구가설(H1) : 교육수준과 흡연율 간의 관련성은 있다.
+ 
+smoke <- read.csv("./data/smoke.csv", header=TRUE)
+head(smoke)
+
+education : 1:대졸, 2:고졸, 3:중졸
+smoke : 1:과다흡연, 2:보통흡연, 3:비흡연
+
+
+
+ 
+검정 결과 p-value가 0.003110976 이므로 유의미한 수준에서 ‘교육수준과
+흡연율 간의 관련성은 있다.’ 라고 볼 수 있다.
+
+Quiz02>
+나이(age3)와 직위(position) 간의 관련성을 단계별로 분석하시오. [독립성 검정]
+
+귀무가설(H0) : 나이와 직위는 관련성이 없다 
+연구가설(H1) :나이와 직위는 관련성이 있다.
+
+ 
+data <- read.csv("./data/cleanData.csv", header=TRUE)
+head(data)
+
+
+해석 :
+(X^2=309.369, p<0.05) 따라서 연구가설을 채택한다.
+ 
+
+Quiz03>
+직업유형에 따른 응답정도에 차이가 있는가를 단계별로 검정하시오.[동질성 검정]
+
+귀무가설(H0) : 세 집단의 응답 비율은 동일하다.
+연구가설(H1) : 세 집단의 응답 비율은 다르다
+ 
+response <- read.csv("/data/response.csv", header=TRUE)
+head(response) 
+
+job : 1:학생, 2:직장인, 3:주부
+response : 1:무응답, 2:낮음, 3:높음
+
+
+
+chisq.test(result$job3, result$response3) 
+#p-value = 6.901e-12
+
+검정결과 해석 :
+귀무가설 기각-세 집단 간의 응답율이 서로 다르다 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+피셔의 정확 검정
+ 표본 수가 적거나 표본이 분할표의 셀에 매우 치우치게 분포되어 있다면 카이 제곱 검정의 결과가 부정확할 수 있다. 
+
+
+fisher.test(
+  x,      # 행렬 형태의 이차원 분할표 또는 팩터
+  y=NULL, # 팩터. x가 행렬이면 무시된다.
+  alternative="two.sided" # 대립가설로 two.sided는 양측 검정, less는 작다, greater는 크다를 의미
+)
+
+연구가설(H1) : 글씨를 쓰는 손이 박수 칠때 위로 가는지 관련이 있다. (독립이 아니다)
+귀무가설(H0) : 글씨를 쓰는 손이 박수 칠때 위로 가는지 관련이 없다. (독립이다)
+
+
+MASS::survey 데이터에서 손 글씨를 어느 손으로 쓰는지와 박수를 칠 때 어느 손이 위로 가는지 사이의 경우에 대해 피셔의 정확 검정을 수행
+ xtabs(~ W.Hnd + Clap, data=survey)
+ chisq.test(xtabs(~ W.Hnd + Clap, data=survey))
+ fisher.test(xtabs(~ W.Hnd + Clap, data=survey))
+
+
+# 맥니마 검정 - 사건 전후에 어떻게 달라지는지를 알아보는 경우
+예) 벌금을 부과하기 시작한 후 안전벨트 착용자의 수의 변화율 있는지?
+   선거 유세를 하고 난 뒤 지지율의 변화
+
+##투표권이 있는 나이의 미국인 1,600명에 대해 대통령 지지율을 조사
+1차 조사1st Survey와 2차 조사2nd Survey는 한 달 간격으로 수행
+## Agresti (1990), p. 350.
+## Presidential Approval Ratings.
+## Approval of the President's performance in office in two
+## surveys, one month apart, for a random sample of 1600
+## voting-age Americans.
+  Performance <-
+    matrix(c(794, 86, 150, 570),
+           nrow = 2,
+           dimnames = list(
+           "1st Survey" = c("Approve", "Disapprove"),
+           "2nd Survey" = c("Approve", "Disapprove")))
+
+ Performance
+ mcnemar.test(Performance)
+ 
+귀무가설 : 유세 전후의 지지율에 변화가 없다.
+대립가설 : 유세 전후의 지지율에 변화가 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

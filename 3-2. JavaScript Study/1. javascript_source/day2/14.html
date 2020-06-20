@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+window.onload = function(){
+	//var intervalID = setInterval(함수, 시간);
+	//clearInterval(intervalID);
+	var cnt = 0;	
+	var intervalID = setInterval(function(){
+		document.write(++cnt+"<br>");
+		}, 1000);		
+	
+	setTimeout(function(){
+		window.close();
+	}, 10000);	
+	
+}
+</script>
+</head>
+<body>
+<h3>1초 마다 숫자 출력하고 10까지 출력후 window 종료</h3>
+
+</body>
+</html>

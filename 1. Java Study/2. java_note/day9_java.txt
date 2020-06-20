@@ -1,0 +1,666 @@
+인터페이스? 
+용도 - 사용자(User)와 제공자(Provider)사이에서 매개체(연결) 역할
+구성요소 - public static final 상수속성, abstract 메서드(구현 body없음),  static메서드, default 메서드
+설계시, 서로 다른 시스템을 통합할때 표준화를 위해서 활용
+클래스는 일원화된 구조(선언+구현)라고 볼 수 있습니다.
+인터페이스는 이원화된 구조 - 인터페이스(선언)는 반드시 인터페이스 구현 클래스가 있어야만 인터페이스에서 선언한 서비스  제공이 가능합니다.
+
+public interface 이름 [extends 인터페이스, 인터페이스,..] {...}
+
+public class 이름 implements 인터페이스, 인터페이스,.. {...}
+
+인터페이스는 reference 변수(객체명) 타입으로 선언 가능합니다.
+
+인터페이스는 new를 사용해서 객체 생성 가능하려면 구현한 클래스로 객체 생성 가능 => 다형성 객체
+
+====================================================================
+package exercise.overall.orchestra;
+
+public interface Instrument {
+   public abstract void playStart();
+   public abstract void playStop();
+}
+
+
+
+package exercise.overall.orchestra;
+
+public class Keyboard implements Instrument {
+
+	@Override
+	public void playStart() {
+		 System.out.println(this.toString()+" 연주 시작");
+
+	}
+
+	@Override
+	public void playStop() {
+		System.out.println(this.toString()+"연주 종료");
+	}
+
+	@Override
+	public String toString() {		 
+		return "건반악기";
+	}
+	
+
+}
+
+
+
+package exercise.overall.orchestra;
+
+public class Percussion implements Instrument {
+
+	@Override
+	public void playStart() {
+		System.out.println(this.toString()+" 연주 시작");
+
+	}
+
+	@Override
+	public void playStop() {
+		System.out.println(this.toString()+"연주 종료");
+	}
+
+	@Override
+	public String toString() {		
+		return "타악기";
+	}
+	
+
+}
+
+
+package exercise.overall.orchestra;
+
+public class Wind implements Instrument {
+
+	@Override
+	public void playStart() {
+		System.out.println(this.toString()+" 연주 시작");
+
+	}
+
+	@Override
+	public void playStop() {
+		System.out.println(this.toString()+"연주 종료"); 
+	}
+
+	@Override
+	public String toString() {
+		 
+		return "관악기";
+	}
+
+}
+
+
+
+package exercise.overall.orchestra;
+
+public class Piano extends Keyboard {
+
+	@Override
+	public String toString() {
+		return  super.toString()+" : 피아노";
+	}
+
+}
+
+
+package exercise.overall.orchestra;
+
+public class Timpani extends Percussion {
+
+	@Override
+	public String toString() {
+		return super.toString()+" : 팀파니";
+	}
+
+}
+
+
+
+package exercise.overall.orchestra;
+
+public class Drum extends Percussion {
+
+	@Override
+	public String toString() {
+		return super.toString()+" : 드럼";
+	}
+
+}
+
+
+
+package exercise.overall.orchestra;
+
+public class Trumpet extends Wind {
+
+	@Override
+	public String toString() {
+		return super.toString()+" : 트럼펫";
+	}
+
+}
+
+
+
+package exercise.overall.orchestra;
+
+public class Flute extends Wind {
+
+	@Override
+	public String toString() {
+		return super.toString()+" : 플룻";
+	}
+
+}
+
+
+
+package exercise.overall.orchestra;
+
+public class MusicTest {
+
+	public static void main(String[] args) {
+		Instrument[] e =new Instrument[] {
+				new Piano(),
+				new Flute(),
+				new Drum(),
+				new Timpani(),
+				new Trumpet()
+		};//e[0] ~e[4] 모든 객체는 다형성 객체
+		
+		playAll(e);		
+		summary(e);		
+	}
+	
+	private static void playAll(Instrument[] e) { //Instrument인터페이스의 구현 클래스들을 인자로 전달할 경우 자동으로 Upcasting이되고, Downcasting할 수 있습니다.
+		System.out.println("==============연주 시작=============");
+		for(Instrument instrument : e) {
+			instrument.playStart();
+		}
+		System.out.println();
+		System.out.println("==============연주 종료=============");
+		for(Instrument instrument : e) {
+			instrument.playStop();
+		}
+		System.out.println();
+	}
+	private static void summary(Instrument[] e) {
+		int keyboard = 0, percussion = 0, wind=0;
+		System.out.println("==============연주 악기 목록=============");
+		for(Instrument instrument : e) {
+			System.out.println(instrument);
+			if(instrument instanceof Keyboard) {
+				keyboard +=1;
+			}else if(instrument instanceof Percussion) {
+				percussion +=1;
+			}else if(instrument instanceof Wind) {
+				wind +=1;
+			}
+		}//for end
+		System.out.println();
+		System.out.println("==============연주 악기 수=============");
+		System.out.println("## 건반악기 수 :"+ keyboard);
+		System.out.println("## 관악기 수 :"+ percussion);
+		System.out.println("## 타악기 수 :"+ wind);
+		System.out.println("=======================================");
+		
+	}
+
+}
+
+
+======================================================================
+abstract(추상, 구현이 없음, 선언만 존재함) - 클래스, 메서드
+
+일반적으로 abstract 메서드는 클래스 설계시 모든 자식 클래스의 공통 기능을 선언하는 부모 클래스에 정의합니다.
+부모 클래스에 선언된 abstract 메서드는 상속 받은 자식 클래스에서 반드시 override해서 구현 body를 정의해야만 객체 생성이 가능합니다.
+
+abstract 클래스는 new 사용해서 인스턴스(객체) 생성 불가능합니다. =>abstract메서드가 선언되어 있는 클래스 또는 객체 생성 못하게 클래스 설계할 때 사용
+abstract 메서드가 정의되어 있지 않아도 클래스를 abstract라고 선언할 수 있습니다.
+
+
+
+package exercise.overall.processor;
+
+public abstract class Processor {
+   public String name() {
+         return getClass().getSimpleName();	   
+   }
+   protected abstract Object process(Object input);
+   
+}
+
+
+
+
+package exercise.overall.processor;
+
+public class LowerCase extends Processor {
+
+	@Override
+	protected Object process(Object input) {
+		
+		return ((String)input).toLowerCase();
+	}
+
+}
+
+
+
+package exercise.overall.processor;
+
+import java.util.Arrays;
+
+public class Splitter extends Processor {
+
+	@Override
+	protected Object process(Object input) {
+		String[] strings = ((String)input).split(" ");
+		String resultString = Arrays.toString(strings);
+		return resultString;
+		
+		//return  Arrays.toString(((String)input).split(" "));
+	}
+
+}
+
+
+
+package exercise.overall.processor;
+
+public class UpperCase extends Processor {
+
+	@Override
+	protected Object process(Object input) {		 
+		return ((String)input).toUpperCase();
+	}
+
+}
+
+
+
+package exercise.overall.processor;
+
+public class ProcessTest {
+
+	public static void main(String[] args) {
+		Processor[] processors = new Processor[] {
+				new LowerCase(),
+				new UpperCase(),
+				new Splitter()
+		};
+		String str = "I'm so sorry, but I love you, 다 거짓말~~";
+		process(processors, str);
+
+	}
+	private static void process(Processor[] processors, String s) {		
+		for (Processor p : processors) {
+			System.out.println("Processor 명 : "+p.name());
+			System.out.println("결과 출력 : "+p.process(s));
+		}
+	}
+
+}
+
+
+==============================================================
+package exercise.overall.hero;
+
+public interface CanFly {
+    public abstract void fly();
+}
+
+
+
+package exercise.overall.hero;
+
+public interface CanSwim {
+	public abstract void swim();
+}
+
+
+
+package exercise.overall.hero;
+
+public interface CanFight {
+	public abstract void fight();
+}
+
+
+
+package exercise.overall.hero;
+
+public abstract class Hero implements CanFly, CanFight, CanSwim {
+
+	@Override
+	public void swim() {
+		System.out.println(this+"이 헤엄친다.");
+	}
+
+	@Override
+	public void fight() {
+		System.out.println(this+"이 싸운다.");
+	}
+
+	@Override
+	public void fly() {
+		System.out.println(this+"이 난다.");
+	}
+	protected abstract void action();
+
+}
+
+
+package exercise.overall.hero;
+
+public class BatMan extends Hero {
+
+	@Override
+	protected void action() {
+		swim();
+		fight();
+
+	}
+
+	@Override
+	public String toString() {
+		return "배트맨";
+	}
+	
+
+}
+
+
+
+package exercise.overall.hero;
+
+public class SpiderMan extends Hero {
+
+	@Override
+	protected void action() {
+		fight();
+
+	}
+
+	@Override
+	public String toString() {
+		return "스파이터맨";
+	}
+	
+
+}
+
+
+
+package exercise.overall.hero;
+
+public class SuperMan extends Hero {
+
+	@Override
+	protected void action() {
+		fly();
+		swim();
+		fight();
+	}
+
+	@Override
+	public String toString() {
+		return "수퍼맨";
+	}
+	
+
+}
+
+
+
+package exercise.overall.hero;
+
+import java.util.Arrays;
+
+public class HeroTest {
+
+	public static void main(String[] args) {
+		Hero[] heros = new Hero[] {
+				new SuperMan(),
+				new BatMan(),
+				new SpiderMan()
+		};
+        System.out.println("Hero 목록 : "+Arrays.toString(heros));
+        System.out.println();
+		for (Hero  h : heros) {
+			h.action();
+		}
+	}
+
+}
+
+=======================================================================
+
+예외처리 - declare, handle
+예외발생 - throw new 발생시킬예외클래스생성자()
+사용자정의 Exception 정의, 생성, 사용
+
+
+1. 예외처리(declare) - throws
+
+2. 예외처리(handle) - try~catch~finally
+
+try~catch~finally
+try~finally
+try~catch(0 or M)
+# catch가 여러번 선언될 경우, 예외클래스의 상속 계층구조의 역순으로 구체적인 예외클래스타입부터 선언해줍니다.
+
+try{
+    예외 발생 가능성 문장;
+    문장;
+   }catch(예외클래스타입 객체){
+       예외 처리 문장;
+   }catch(예외클래스타입 객체){
+       예외 처리 문장;
+   }finally{
+     예외 발생과 무관한 반드시 수행해야 할 문장;
+     ex) 사용했었던 resource들의 정리(close()) 코드문장
+  }
+
+
+
+사용자 정의 예외 클래스를 정의할때는 구체적인 예외 처리 관련 API의 Exception을 상속받아서
+속성과 메서드를 추가해서 만듭니다.
+
+사용자 정의 예외 클래스를 정의할때 Exception을 상속을 받아서 예외처리에 필요한 
+속성과 메서드를 추가해서 만듭니다.
+
+public class XXXException extends Exception {
+   //속성
+   //생성자
+   //멤버 메서드
+}
+
+
+
+package lab.java.core;
+
+public class ExceptionHandleTest {
+    
+	public void checkTall(double tall) throws AbnormalValueException {
+		//중학생 키 범위가 140이상 180이하 여부를 체크해서
+		//범위가 아니면예외를 던집니다
+		if(tall<140) throw new AbnormalValueException("140보다 작습니다");
+		if(tall>180) throw new AbnormalValueException("180보다 큽니다");
+	}
+	
+	public static void main(String[] args) {
+		double[] talls = new double[] { 155.5,163.2,170.4,149.5,
+				128,168,189.5,166,172,169,158,173};
+		ExceptionHandleTest  test = new ExceptionHandleTest();
+        //키값의 범위를 체크해서
+		//예외 발생하면 예외처리합니다. => 작년도 키 평균값으로 보정합니다.
+		//올해의 중학생 평균 키값을 출력합니다.
+		for(int i=0;i<talls.length;i++) {
+			try {
+			     test.checkTall(talls[i]);
+			}catch(AbnormalValueException e) {
+				System.out.println(e.getMessage()+", 작년도 키값으로 보정합니다.");
+				talls[i] = e.getOldTall();				
+			}
+		}
+		double hap = 0.0;
+		for(double tall : talls)
+			hap += tall;
+		System.out.println("올해 중학생 평균 키는 "+(hap/talls.length)+"cm입니다.");
+		
+		}//main end
+
+}//class 
+
+
+
+
+java.util.HashMap은 객체를 저장, 저장될 객체의 이름과 함께 저장합니다.
+HashMap<String, Product> cart = new HashMap();
+cart.put("상품1", new Product("사과", 5, 1000));  //객체 저장
+
+
+HashMap에 저장될 객체의 이름은 중복 X, null X
+데이터를 꺼낼때는 키 목록을 먼저 받고, 
+하나 키를 꺼내서 Map으로부터 키로 저장된 객체를 꺼냅니다.
+Set<String> keys = cart.keys();
+//index로 접근할 수 없는 경우 Iterator객체를 받아와서 요소에 접근할 수 있습니다.
+Iterator<String> iterator = keys.iterator();
+while(iterator.hasNext()){
+   String key =   iterator.next();
+   Product p = cart.get(key);
+}
+
+
+
+
+package com.workshop6.biz;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+import com.workshop6.entity.Product;
+
+public class ShoppingBiz implements IShoppingBiz {
+    private HashMap<Product, Integer> basket;
+        
+	public ShoppingBiz() {
+		super();
+		basket = new HashMap();
+		basket.put(new Product("사과", 1500), new Integer(6));
+		basket.put(new Product("라면", 1200), new Integer(3));
+		basket.put(new Product("식용유", 3500), new Integer(1));
+		basket.put(new Product("과자", 2400), new Integer(5));
+	}
+
+	@Override
+	public void printAllProducts() {	
+		System.out.println("--------------------------------------------");
+		System.out.println("순번  품목명\t 단가   구입개수");
+		System.out.println("--------------------------------------------");
+		Set<Product> keys = basket.keySet();
+		//index로 접근할 수 없는 경우 Iterator객체를 받아와서 요소에 접근할 수 있습니다.
+		Iterator<Product> iterator = keys.iterator();
+		int no = 0;
+		while(iterator.hasNext()){
+			System.out.print( ++no+"\t");
+		   Product key = (Product)iterator.next();
+		   System.out.print(key.getName()+"\t");
+		   System.out.print(key.getPrice()+"\t");
+		   Integer qty = basket.get(key);
+		   System.out.print(qty+"개\n");
+		}
+		System.out.println("--------------------------------------------");
+	}
+
+	@Override
+	public void printPricePerProduct() {		 
+		Set<Product> keys = basket.keySet();
+		//index로 접근할 수 없는 경우 Iterator객체를 받아와서 요소에 접근할 수 있습니다.
+		Iterator<Product> iterator = keys.iterator();
+		int no = 0;
+		System.out.println("---------------------");
+		while(iterator.hasNext()){
+			System.out.print(++no +". ");
+		   Product key = (Product)iterator.next();
+		   System.out.print(key.getName()+" :");		  
+		   Integer qty = basket.get(key);
+		   System.out.print(calculateTotalPriceByProduct(key, qty)+"원\n");
+		}
+		System.out.println("---------------------");
+	}
+	private int calculateTotalPriceByProduct(Product product, int count) {
+		return product.getPrice()*count;
+	}
+
+	@Override
+	public void calculateTotalPrice() {		
+		int total = 0;
+		Set<Product> keys = basket.keySet();
+		//index로 접근할 수 없는 경우 Iterator객체를 받아와서 요소에 접근할 수 있습니다.
+		Iterator<Product> iterator = keys.iterator();
+		int no = 0;
+		while(iterator.hasNext()){		
+		   Product key = (Product)iterator.next();		   		  
+		   Integer qty = basket.get(key);
+		   total+=calculateTotalPriceByProduct(key, qty);		   
+		}
+		System.out.print("총 구입 가격 : " +total+"원\n");
+	}
+
+}
+
+
+
+package com.workshop6.test;
+
+import com.workshop6.biz.IShoppingBiz;
+import com.workshop6.biz.ShoppingBiz;
+import com.workshop6.util.CommonUtil;
+
+public class ShoppingTest {
+
+	public static void main(String[] args) {
+		IShoppingBiz biz = new ShoppingBiz();
+		int menu = 0;
+		while(true) {
+			printMenu();
+			System.out.print("## 메뉴 입력:");
+			try {
+			     menu = Integer.parseInt(CommonUtil.getUserInput());
+			}catch(NumberFormatException e) {
+				System.out.println("[에러] 메뉴는 숫자만 입력해야 합니다.");
+				continue;
+			}
+			if (menu==9) {
+				System.out.println("프로그램을 종료합니다. Bye~ Bye~");
+				break;
+			}
+			switch(menu) {
+			case 1 : biz.printAllProducts(); break;
+			case 2: biz.printPricePerProduct(); break;
+			case 3 : biz.calculateTotalPrice(); break;
+			default: System.out.println("[에러]메뉴를 잘못 입력하였습니다.");
+			}
+			 
+		}
+
+	}
+    public static void printMenu() {
+    	System.out.println("===== << 메뉴 >> ======");
+    	System.out.println("1. 장바구니 목록 출력");
+    	System.out.println("2. 품목별 가격 출력");
+    	System.out.println("3. 총 구입가격 출력");
+    	System.out.println("9. 종료");
+    	System.out.println("=======================");
+    	
+    }
+}

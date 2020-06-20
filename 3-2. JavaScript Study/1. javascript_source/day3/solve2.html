@@ -1,0 +1,90 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+		}
+		#panel1{
+			border:1px #000000 solid;
+			line-height:400px;
+			font-size:100px;
+			width:400px;
+			height:400px;
+			text-align:center;
+			vertical-align:middle;		
+		}
+	
+	</style>
+	<script>
+		 
+		var panel1;  //숫자 출력할 div 객체 저장 변수
+		var nTimerID;  //반복수행될 intervalId값 저장 변수
+		var labTotal;  //참여 인원수 입력 input 태그 객체 저장할 변수
+		var nTotalMember;  //참여 인원수 저장 변수
+		window.onload=function(){
+			// 숫자가 출력될 #panel1을 찾아 전역변수에 담아둡니다.
+			panel1 = document.getElementById("panel1");
+			nTimerID = 0;
+			// 참여인원 정보가 입력된 패널을 찾아 전역변수에 담아둡니다.
+			labTotal = document.getElementById("lab_total"); //input태그 객체
+			nTotalMember = 0;
+
+			// 이벤트 초기화 실행.
+			var btnStart = document.getElementById("btn_start");
+			btnStart.addEventListener("click", function(){
+				if(nTimerID==0){
+					//입력된 참여인원수를 구해옵니다.
+					nTotalMember = Number(labTotal.value);
+					// 타이머 시작시 #panel1의 글자색을 초기화 시켜 줍니다.
+					panel1.style.color = "#000000";				
+					nTimerID = setInterval(createNumber,20);	
+				}
+			}
+			,false);
+			var btnStop = document.getElementById("btn_stop");
+			btnStop.addEventListener("click",function(){
+				if(nTimerID){
+					clearInterval(nTimerID);
+					nTimerID = 0;
+					//출력효과 추가.
+					panel1.style.color = "#ff0000";	
+					panel1.style.fontSize = "200px";
+				}
+			},false);
+		}		
+		 
+		
+		// 랜덤하게 1에서 참여인원수 사이의 숫자를 만들어 냅니다.
+		function createNumber(){	
+			var nNum = 1+Math.floor(Math.random()*this.nTotalMember);
+			//만들어진 숫자를 innerHTML에 대입시켜 줍니다.
+			panel1.innerHTML = nNum;
+			// 폰트 크기를 100~200으로 랜덤하게 설정해줍니다.
+			panel1.style.fontSize = 100+(Math.random()*100)+"px";
+		}
+			
+		 
+		
+		 
+	</script>
+</head>
+
+<body>
+	<div> 
+		<h4>경품추첨기-ver 0.1</h4>
+	
+		<div id="panel1" > 1
+			<!-- 이곳에 숫자가 출력됩니다. -->
+		</div>
+	
+		<div id="nav">
+			참여인원 : <input type="text" id="lab_total" value="100">
+			<button id="btn_start">시작</button>
+			<button id="btn_stop">멈춤</button>
+		</div>
+	</div>
+</body>
+</html>

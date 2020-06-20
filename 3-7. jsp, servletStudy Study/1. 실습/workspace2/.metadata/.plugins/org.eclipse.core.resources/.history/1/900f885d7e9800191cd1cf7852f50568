@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>회원가입 페이지</h3>
+<form id ="f1" action="join" method="post" >
+userid : <input type="text" name="userid" ><br>
+passeord : <input type="password" name="userpwd" ><br>
+	<input type="hideen" name="address" value="서율" ><br>
+관심사항 : <input type="checkbox" name="interest" value="영화">영화<br>
+		<input type="checkbox" name="interest" value="게임">게임<br>	
+		<input type="checkbox" name="interest" value="경제">경제<br>
+		<input type="checkbox" name="interest" value="여행">여행<br>
+		<input type="checkbox" name="interest" value="낚시">낚시<br>
+		<input type="checkbox" name="interest" value="등산">등산<br>
+	
+
+
+
+</form>
+
+</body>
+</html>

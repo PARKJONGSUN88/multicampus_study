@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>product</title>
+</head>
+<body>
+<table>
+<th>상품명</th>
+<th>가격</th>
+<th>개수</th>
+<tr>
+	<td>새우깡</td><td>1500</td><td><select><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+	<td>바나나킥</td><td>1000</td><td><select><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+	<td>칸쵸</td><td>1200</td><td><select><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+</tr>
+</table>
+<input type="submit" value="계산">
+
+</body>
+</html>

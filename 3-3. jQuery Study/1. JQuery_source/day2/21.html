@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        div {
+            width:100px; height:100px;
+            background-color:cyan;
+            position:relative;
+        }
+    </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {           
+        	$('button').click(function(){
+				var html=$(this).html();
+				var evalText="$('div')."+html;
+				eval(evalText);
+			});
+				
+				$('div').animate({
+					left: '500'
+				}, 5000).animate({
+					left: '0'
+				}, 5000);			
+        });
+    </script>
+</head>
+<body>
+    <button>stop()</button>
+    <button>stop(true)</button>
+    <button>stop(false, true)</button>
+    <button>stop(true, true)</button>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript 제어문</title>
+</head>
+<body>
+<h3>자바스크립트 제어문</h3>
+if제어문 : nested if, 다중 if문 <br>
+switch문 : javascript에서는 범위 비교 연산이 가능합니다.<br>
+삼항 연산자(조건문)=> (조건식)? true일때 수행 문장 : false일때 수행하는 문장 <br>
+ 조건식1 && 조건식2(실행문장2) => 조건식1이 true이면 조건식2(실행문장2)수행<br>
+ 조건식1 && 조건식2(실행문장2) => 조건식1이 false이면 조건식2(실행문장2)수행 안함<br>
+ 조건식1 || 조건식2(실행문장2) => 조건식1이 true이면 조건식2(실행문장2)수행 안함<br>
+ 조건식1 || 조건식2(실행문장2) => 조건식1이 false이면 조건식2(실행문장2)수행 <br>
+false || 문장 <br>
+true && 문장 <br>
+문1> if문을 이용해서 사용자로부터 입력받은 정수가 짝수인지 홀수인지 출력<br>
+문2> 삼항연산자를 이용해서 사용자로부터 입력받은 정수가 짝수인지 홀수인지 출력<br>
+문3> &&, || 논리연산자를 이용해서 사용자로부터 입력받은 정수가 짝수인지 홀수인지 출력<br>
+문4> switch문을 사용해서 사용자로부터 입력받은 점수에 대한
+A(>=90), B(>=80), C(>=70), D(>=60) F(<60) 등급을 판별하는 웹 어플리케이션을 switch구문을 사용해서 자바스크립트로 구현하시오.<br>
+<br>
+<br>
+문1><br>
+<script>
+var input1 = parseInt(prompt("정수를 입력하세요"));
+if((input1%2)==0) {
+	document.write("짝수");
+} else {
+	document.write("홀수");
+};
+</script>
+<br>
+<br>
+문2><br>
+<script>
+var input1 = parseInt(prompt("정수를 입력하세요"));
+((input1%2)==0) ? document.write("짝수")  : document.write("홀수");
+</script>
+<br>
+<br>
+문3><br>
+<script>
+var input1 = parseInt(prompt("정수를 입력하세요"));
+(input1%2)==0 || document.write("홀수");
+(input1%2)==0 && document.write("짝수");
+</script>
+<br>
+<br>
+문4><br>
+<script>
+var input1 = parseInt(prompt("점수를 입력하세요"));
+document.write("니놈의 점수는 "+input1+"점이고 등급은 ");
+switch(input1/10) {
+	case 9 :
+		document.write("A");
+		break;
+	case 8 :
+		document.write("B");
+		break;
+	case 7 :
+		document.write("C");
+		break;
+	case 6 :
+		document.write("D"); 
+		break;
+	default :
+		document.write("F");
+		break;
+	};
+</script>
+<br>
+<br>
+문4-1><br>
+<script>
+var input1 = parseInt(prompt("점수를 입력하세요"));
+document.write("니놈의 점수는 "+input1+"점이고 등급은 ");
+switch(true) {
+	case input1>=90 : document.write("A");
+		break;
+	case input1>=80 : document.write("B");
+		break;
+	case input1>=70 : document.write("C");
+		break;
+	case input1>=60 : document.write("D"); 
+		break;
+	default : document.write("F");
+		break;
+	};
+</script>
+<br>
+
+</body>
+</html>

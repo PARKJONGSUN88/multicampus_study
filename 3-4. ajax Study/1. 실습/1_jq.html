@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Ajax처리 1</title>
+<style> 
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){         //이벤트 발생
+	$.ajax({
+	        url : "data.txt", 
+			success : function(data){			 
+		    $("#view").html(data);	
+		    }
+		}
+	);
+	});
+</script>
+</head>
+<body>
+ <p id="view"></p>
+</body>
+</html>

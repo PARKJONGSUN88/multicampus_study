@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>자바스크립트 함수<h3>
+# 모든 함수 가변인자를 가지는 함수로 정의할 수 있습니다<br>
+함수가 실행될때 실행 컨텍스트에서는 함수 내부에 arguments 배열과 유사한 타입의 속성이 생성됩니다.<br>  
+arguments에 함수를 호출할때 입력값인 인수가 저장됩니다.
+함수에 정의된 매개변수의 개수보다 많은 매개변수로 호출하면 실행시에 무시된다<br>
+함수에 정의된 매개변수의 개수보다 적은 매개변수로 호출하면 undefined로 전달된다<br>
+<script>
+function hap(a, b) {
+	document.write("함수의 인수개수 : " + arguments.length + "<br>");
+	var sum = 0;
+	for(var item in arguments) {
+		document.write(arguments[item]+"<br>");
+		sum+=arguments[item];	
+	}
+		document.write("함수의 a, b : "+a+", "+b+"<br>");
+	return sum;
+}
+document.write("hap(3, 5) 호출 :"+ hap(3, 5) +"<br>");
+//인수개수 맞게 호출
+document.write("<br>");
+
+document.write("hap(1,3,5,7,9) 호출 :"+hap(1,3,5,7,9)+"<br>");
+//인수개수보다 많게 함수 호출
+document.write("<br>");
+
+document.write("hap(9) 호출 :"+hap(9)+"<br>");
+//인수개수보다 적게 함수 호출
+document.write("<br>");
+
+var nums = [2, 4, 6, 8, 10];
+document.write("hap(nums) 호출 :"+hap(nums) +"<br>"); 
+//배열을 인수로..함수로 호출
+console.dir(hap);
+</script>
+자바스크립트에서 배열은 모든 타입을 요소로 저장할 수 있습니다.<br>
+<script>
+var arrays = [1, 'hello', true, function(){}, {name:'korea'}, [100, 200] ];
+for(var index in arrays) {
+document.write(index+":"+arrays[index]+"<br>");
+}
+</script>
+</body>
+</html>

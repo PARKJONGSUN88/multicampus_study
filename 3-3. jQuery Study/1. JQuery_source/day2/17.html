@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript:event</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+<script>
+//테스트를 위해 내부에 공간을 채워둡니다.
+$(document).ready(function(){
+	for(var i=0; i<20; i++){
+		$('<h1>infinityScroll</h1>').appendTo('body');
+	}	
+	//스크롤 이벤트 발생시
+	$(window).scroll(function(){
+		var scrollHeight=$(window).scrollTop()+$(window).height();
+		var documentHeight=$(document).height();
+
+        // 스크롤의 높이와 문서의 높이가 같을 때
+        if (scrollHeight == documentHeight) {
+            for (var i = 0; i < 10; i++) {
+                $('<h1>Infinity Scroll</h1>').appendTo('body');
+            }
+        }
+    });
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+모르면 ls //목록보기
+
+
+[hadoop@master ~]$ cd /usr/local/hadoop-2.7.7/sbin/
+[hadoop@master ~]$ ./start-all.sh
+
+
+jps
+
+
+방화벽
+service iptables start
+
+
+
+[hadoop@master ~]$ spark-shell --master local verbose

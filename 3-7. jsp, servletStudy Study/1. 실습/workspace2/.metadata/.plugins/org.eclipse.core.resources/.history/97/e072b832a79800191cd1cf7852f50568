@@ -1,0 +1,58 @@
+package lab.web.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.catalina.servlet4preview.ServletContext;
+import org.apache.tomcat.util.http.parser.Cookie;
+
+@WebServlet("/cookieLogin")
+public class CookieLoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    String uid = null, passwd = null;
+    ServletContext sctx = null;
+    RequestDispatcher rd = null;
+	
+    public CookieLoginServlet() {
+        super();
+        
+    }
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		//Get 방식으로 접근하는 경우에 쿠키를 체크한다.
+		Cookie cookies[] = request.getCookies();
+		if(cookies!=null){
+			for(int = 0; i < cookies.length ; i++){
+				String name = cookies[i].getName();
+				if(name.Equals("userid")) {
+					uid = cookies[i].getValue();
+					//System.out.println(uid);
+				}
+			}
+			request.setAttribute("userid", uid);
+		}
+		sctx = request.getServletContext();
+		rd = sctx.getRequestCharacter("/cookie_login.jsp");
+		rd.forward(request, response);
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//1. new FileReader()
+//2. onload, onloadend이벤트에 대한 핸들러 : result속성에 저장낸 내용을 textarea에..
+//3. readAsText()사용  내용 읽기
+function readFile(){
+	var file= document.getElementById("file").files[0];
+	document.getElementById("fileName").innerHTML= file.name;
+	document.getElementById("fileSize").innerHTML= file.size+"Byte";
+	
+	var reader= new FileReader();
+	reader.onloadend= function(){
+		document.getElementById("content").innerHTML=reader.result;
+	}
+	
+	var encodingList= document.getElementById("encoding");
+	var encoding= 
+	encodingList.options[encodingList.selectedIndex].value;
+	reader.readAsText(file, encoding);	
+}
+</script>
+</head>
+<body>
+ <h1> FileReader Interface : readAsText()</h1>
+       <input id="file" type="file">
+       <select id="encoding">
+           <option>UTF-8</option>
+		   <option>euc-kr</option>
+        </select>
+        <button onclick="readFile()">읽기</button><br />
+        <div>
+            <span id="fileName">File Name</span>
+            <span id="fileSize">File Size</span>
+        </div>
+        <textarea id="content" readonly style="width:600px; height:400px;"></textarea>
+</body>
+</html>

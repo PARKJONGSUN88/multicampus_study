@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style>
+		body{
+			font-size:9pt;
+		
+		}
+		
+		div{
+			border: 1px solid #999999;
+			margin:20px;
+			margin-bottom:20px;
+		}
+		div div{
+			border: 1px dotted #CCC;
+			
+		}
+		
+		.active{
+			font-size:20pt;
+			color:#090;
+			border:5px solid #ff0000;
+		}
+	</style>
+	<script>
+	$(document).ready(function(){
+		//문제1
+		$('#m_1').css('color', 'red');
+		//문제2		
+		$('#m_2').addClass("active");
+		//문제3
+		$('img').first().attr("src", "ch3.png");
+		//문제4
+		$("<p></p>").html("항목4").appendTo('#m_4');
+		//문제5
+		$('#m_5>p').each(function(index, item){
+			
+			if(index==1){
+				item.remove();
+			}
+			
+
+			/*
+			if(item.text()=='항목4'){
+				item.remove();
+			}					
+			*/
+		});
+		//문제6
+		$('#m_6').parent().remove();
+		//$('#m_6:parent').parent().empty();
+		//$('body>div').last().empty();
+		
+		
+		
+	
+	});
+	
+	
+	
+
+		
+	</script>
+</head>
+
+<body>
+	<div> 
+		<h4>테스트1</h4>
+		<div id="m_1">
+			#m_1 : 글자색을 빨간색으로 변경해주세요.
+		</div>
+	</div>
+	<div> 
+		<h4>테스트2</h4>
+		<div id="m_2">
+			#m_2 : 클래스 active를 적용시켜 주세요.
+		</div>
+	</div>
+	<div> 
+		<h4>테스트3</h4>
+		<div id="m_3">
+			#m_3 : 에고 이 이미지가 아닌데... 이미지를 ch3.png로 변경해주세요"<br>
+			<img src="ch2.png">
+		</div>
+	</div>
+	<div> 
+		<h4>테스트4</h4>
+		<div id="m_4">
+			#m_ 4 :  홋! 항목4까지 있어야 하는건데, 바쁜나머지 실수를 했군요. 항목4를 제일 뒤에 추가해주시겠어요?
+			<p>
+				항목1
+			</p>
+			<p>
+				항목2
+			</p>
+			<p>
+				항목3
+			</p>
+		</div>
+	</div>
+	<div> 
+		<h4>테스트5</h4>
+		<div id="m_5">
+			#m_ 5 :  이번에는 항목4가 더 추가되었네요. 즉시 삭제해주세요.
+			<p>
+				항목1
+			</p>
+			<p>
+				항목4
+			</p>
+			<p>
+				항목2
+			</p>
+		</div>
+	</div>
+	<div> 
+		<h4>테스트6</h4>
+		<div id="m_6">
+			#m_ 6 : 이런이런! 이 부분은 전혀 필요없는 내용들인데 왜 있는거죠? #m_6부터 헤더태그까지 모두 삭제해주세요.
+			<p>
+				DOM(Document Object Model)이란?<br>
+				웹페이지 문서를 조작하기 위해서 지켜야될 약속(interface)만 딸랑 적혀있는 문서랍니다.
+				약속만 있을뿐 내부는 텅빈 상자랍니다.
+				우리가 알고있는 W3C DOM에는 구현소스가 한줄도 존재하지 않습니다.
+				그럼 실제 구현소스는??
+			</p>
+		</div>
+	</div>
+</body>
+</html>

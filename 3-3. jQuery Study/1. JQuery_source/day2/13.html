@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        	$('h1').click(function(){
+				$(this).html(function(index, html){
+					return html + '★';
+				});
+			});
+			
+			setInterval(function(){
+				//$('h1').last().click();
+				$('h1').last().trigger('click');
+			}, 1000);			
+        });
+    </script>
+</head>
+<body>
+    <h1>Start: </h1>
+    <h1>Start: </h1>
+</body>
+</html>

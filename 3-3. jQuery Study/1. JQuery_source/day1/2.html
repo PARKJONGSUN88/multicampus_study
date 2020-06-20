@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html lang="ko">
+<head>
+<meta charset="UTF=8">
+<title>JQuery 기본</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(
+		function(){ //5초후에 코드를 실행합니다.
+			setTimeout(function(){
+				//변수를 선언합니다.
+				var value= $("select>option:selected").val();
+				
+				//출력합니다
+				alert(value);
+			}, 3000);
+		} 
+	);
+
+ 
+</script>
+</head>
+<body>
+	<select>
+		<option>Apple</option>
+		<option>Bag</option>
+		<option>Cat</option>
+		<option>Dog</option>
+		<option>elephant</option>
+	</select>	
+</body>
+</html>

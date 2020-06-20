@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+	function showPostion(pos){
+		document.getElementById("demo").innerHTML
+		="위도: " + pos.coords.latitude+"<br>경도: " + pos.coords.longitude
+	}
+	
+	function locationEventHandler(){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(showPostion);
+		}else{
+			document.getElementById("demo").innerHTML="브라우저가 Geolocation을 지원하지 않습니다.";
+		}
+	}
+</script>
+</head>
+<body>
+	<p>현재 위치가 궁금한가요?</p>
+	<button onclick="locationEventHandler()">위도/경도</button>
+	<p id="demo"></p>  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트</title>
+<style>
+ 
+</style>
+<script>
+window.addEventListener("load", function(){
+	 history.pushState(null, null, "5.html");
+	 history.pushState(null, null, "6.html");
+	 history.pushState(null, null, "7.html");
+	 history.pushState(null, null, "8.html");
+	 history.pushState(null, null, "mission2.html");
+	 document.getElementById("back").onclick = function(){
+		 history.back();
+		 location.reload();
+		 };
+     document.getElementById("next").onclick = function(){
+		 history.forward();
+		 location.reload();
+		 };
+	  document.getElementById("goBack").onclick = function(){
+		 history.go(-2);
+		 location.reload();
+		 };
+	  document.getElementById("goNext").onclick = function(){
+		 history.go(3);
+		 location.reload();
+		 };
+	}, false);
+  
+</script>
+</head>
+<body>
+ <button id="back">이전</button><br>
+ <button id="next">다음</button><br>
+ <button id="goBack">go(-2)</button><br>
+ <button id="goNext">go(3)</button><br>
+ <script>
+ document.write("화면해상도: "+screen.width+" x "+screen.height);
+ document.write("<br/>생상수화면해상도수(비트):"+screen.colorDepth); 
+ </script>  
+</body>
+</html>

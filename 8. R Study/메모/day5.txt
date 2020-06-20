@@ -1,0 +1,491 @@
+######################################################################################################################################
+워드 클라우드(word cloud) : 특정 주제와 관련된 키워드의 색상과 크기, 글자모음 형태를 활용해 주제를 쉽고 빠르게 인식할 수 있는 시각화 기법
+######################################################################################################################################
+
+https://developers.naver.com/products/search/ 접속 Open API 신청
+[Products]-[서비스 API]-[검색]
+오픈 API 이용 신청
+로그인
+애플리케이션 이름 설정, WEB 설정 , 임의의 URL 입력 , 애플리케이션 등록 하기
+Client ID와 Client Secret 발급
+
+네이버 Open API의 WEB 방식 호출은 API URL 뒤에 요청변수들을 "&" 기호로 연결해 전송하는 GET방식을 사용
+[블러그 검색을 위한 API URL과  요청 변수]
+https://openapi.naver.com/v1/search/blog.xml
+요청변수 query는 string타입으로 필수이며 검색을 원하는 문자열(UTF-8로 인코딩)
+요청변수 display는 integer타입으로 기본값 10, 최대값 100으로  검색 결과 출력 건수
+요청변수 start는 integer타입으로 기본값 1, 최대값 1000으로 검색 시작 위치
+요청변수 sort는 string타입으로 기본값 sim, date로 정렬 옵션:sim(유사도순), date는 날짜순
+
+예) "RStudio"로 검색된 블로그 100개에 대해 첫 페이지부터 유사도순으로 정렬해 정보를 받기
+https://openapi.naver.com/v1/search/blog.xml?query=Rstudio&display=100&start=1&sort=sim
+
+결과값은 블로그 제목과 요약 내용, 작성자 이름 등 다양한 정보들이 XML 형식으로 제공
+
+library(httr)
+#기본 URL
+urlStr <- "https://openapi.naver.com/v1/search/blog.xml?"
+#검색어 설정 및 UTF-8 URL 인코딩
+searchString <- "query=코타키나발루"
+#UTF-8 인코딩
+searchString <- iconv(searchString, to="UTF-8")
+#URL 인코딩
+searchString <- URLencode(searchString )
+searchString
+
+#나머지 요청 변수 : 조회 개수 100개, 시작페이지 1, 유사도순 정렬
+etcString <- "&display=100&start=1&sort=sim"
+
+#URL조합
+reqUrl <- paste(urlStr, searchString, etcString, sep="")
+reqUrl
+
+
+#get방식으로 URL을 호출하기 위해 httr패키지의 GET함수 활용
+library(httr)
+clientID <- 클라이언트ID 
+clientSecret <- 클라이언트 secret
+
+#인증정보는 add_headers에 담아 함께 전송
+apiResult <- GET(reqUrl, add_headers("X-Naver-Client-Id"=clientID
+                          , "X-Naver-Client-Secret"=clientSecret))
+apiResult    #응답코드 status가 200이면 정상
+
+
+# Open API의 결과 구조 확인 (UTF-8로 인코딩된 XML 형식)
+str(apiResult)   #XML응답값은 "content"에 담겨 있습니다.
+
+apiResult$content
+str(apiResult$content)  
+
+#raw형식이므로 rawToChar()를 활용해 문자로 변환
+result <- rawToChar(apiResult$content)
+result
+
+Encoding(result) <- "UTF-8"
+result   #블러그 링크, 제목, 이름, 요약정보등을 제공
+
+##########################################################
+#워드 클라우드에 표현할 단어를 추출하기 전에 문자열을 치환하는 gsub 함수를 활용해 
+불필요한 XML관련 태그(tag)와 특수문자 제거
+#gsub(pattern, replacement, x, ignore.case)
+#변환 전 문자열(정규표현식 가능), 변환 후 문자열, 변환할 문자열 벡터, 대소문자 무시 여부
+#################################################################
+gsub("ABC", "***", "ABCabcABC")  #ABC를 **로 변환
+gsub("ABC", "***", "ABCabcABC", ignore.case=T)
+
+x<-c("ABCabcABC", "abcABCabc")
+gsub("ABC", "***", x) 
+#gsub()는 고정된 문자열뿐 아니라 정규표현식을 통해 특정 패턴의 문자열들도 치환할 수 있습니다.
+# 패턴문자  \\w 는 '_'를 포함한 문자와 숫자
+# 패턴문자  \\W 는  \\w 의 반대의미 '_'와 문자와 숫자를 제외한 기호
+# 패턴문자  \\d 는  숫자
+# 패턴문자  \\D 는  숫자를 제외한 기호와 문자
+# 패턴문자 []는 대괄호 안의 문자 중 한 개를 의미
+# 패턴문자 [^]는 대괄호 안의 문자가 없는 패턴을 의미
+gsub("b.n", "***", "i love banana")  
+gsub("b.*n", "***", "i love banana") 
+gsub("[bn]a", "***", "i love banana") 
+gsub("010-[0-9]{4}-[0-9]{4}", "010-****-****", "내 폰번호는 010-1234-6789") 
+gsub("010-\\d{4}-\\d{4}", "010-****-****", "내 폰번호는 010-1234-6789") 
+
+refinedStr <- result
+# XML 태그를 공란으로 치환
+refinedStr <- gsub("<(\\/?)(\\w ?+)*([^<>]*)>", " ", refinedStr)
+refinedStr
+# 단락을 표현하는 불필요한 문자를 공란으로 치환
+refinedStr <- gsub("[[:punct:]]", " ", refinedStr)
+refinedStr
+# 영어 소문자를 공란으로 치환
+refinedStr <- gsub("[a-z]", " ", refinedStr)
+refinedStr
+# 숫자를 공란으로 치환
+refinedStr <- gsub("[0-9]", " ", refinedStr)
+refinedStr
+# 여러 공란은 한 개의 공란으로 변경
+refinedStr <- gsub(" +", " ", refinedStr)
+# 변경 후의 검색 결과
+refinedStr
+
+
+################################################################
+#한글 자연어 분석 패키지 KoNLP
+#extractNoun()는 입력받은 문장에서 단어를 추출해 벡터로 반환
+#extractNoun( "안녕하세요 오늘은 기분 좋은 하루 입니다.")
+##########################################################
+library(KoNLP)
+library(rJava)
+
+nouns<- extractNoun( refinedStr )
+str(nouns)
+nouns[1:40]
+
+#길이가 1인 문자를 제외
+nouns <-nouns[nchar(nouns) > 1]
+
+#제외할 특정 단어를 정의
+excluNouns <- c("코타키나발루", "얼마" , '오늘", "으로", "해서", "API", 저희", "정도")
+
+nouns  <- nouns [!nouns  %in% excluNouns ]
+nouns [1:40]
+
+#빈도수 기준으로 상위 50개 단어 추출
+wordT <- sort(table(nouns), decreasing=T)[1:50]
+wordT
+
+#wordcloud2 패키지 
+# wordcloud2 (data, size, shape) 
+단어와 빈도수 정보가 포함된 데이터프레임 또는 테이블, 글자 크기, 워드 클라우드의 전체 모양(circle:기본값, cardioid, diamond, triangle, star등)
+
+install.packages("wordcloud2")
+library(wordcloud2)
+wordcloud2(wordT, size=3, shape="diamond")
+
+ 
+####################################################
+영문서 형태소 분석 및  워드클라우드
+####################################################
+# Install
+install.packages("tm")  # 텍스트 마이닝을 위한 패키지
+install.packages("SnowballC") # 어간추출을 위한 패키지
+#install.packages("wordcloud") # word-cloud generator 
+install.packages("RColorBrewer") # color palettes
+# Load
+library("tm")
+library("SnowballC")
+#library("wordcloud")
+library("RColorBrewer")
+
+filePath <- "http://www.sthda.com/sthda/RDoc/example-files/martin-luther-king-i-have-a-dream-speech.txt"
+text <- readLines(filePath)
+str(text)
+
+# VectorSource () 함수는 문자형 벡터을 만듭니다.
+docs <- Corpus(VectorSource(text))
+head(docs)
+
+# 텍스트의 특수 문자 등을 대체하기 위해 tm_map () 함수를 사용하여 변환이 수행됩니다.
+# “/”,“@”및“|”을 공백으로 바꿉니다.
+toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+docs <- tm_map(docs, toSpace, "/")
+docs <- tm_map(docs, toSpace, "@")
+docs <- tm_map(docs, toSpace, "\\|")
+head(docs)
+
+# 소문자로 변환
+docs <- tm_map(docs, content_transformer(tolower))
+# 수치 데이터 제거
+docs <- tm_map(docs, removeNumbers)
+# 영어 불용어 제거
+docs <- tm_map(docs, removeWords, stopwords("english"))
+
+# 벡터 구조로 사용자가 직접 불용어  설정 , 제거
+docs <- tm_map(docs, removeWords, c("blabla1", "blabla2")) 
+
+# 문장 부호 punctuations
+docs <- tm_map(docs, removePunctuation)
+
+# 공백 제거
+docs <- tm_map(docs, stripWhitespace)
+
+# 텍스트 형태소 분석
+# docs <- tm_map(docs, stemDocument)
+
+
+# 문서 매트릭스는 단어의 빈도를 포함하는 테이블입니다. 
+# 열 이름은 단어이고 행 이름은 문서입니다. 
+# text mining 패키지에서 문서 매트릭스를 생성하는 함수 사용
+dtm <- TermDocumentMatrix(docs)
+m <- as.matrix(dtm)
+v <- sort(rowSums(m),decreasing=TRUE)
+d <- data.frame(word = names(v),freq=v)
+head(d, 10)
+
+
+set.seed(1234)
+wordcloud(words = d$word, freq = d$freq, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+
+#############################################
+ggplot 패키지를 이용한 시각화
+#############################################
+#ggplot2문법은 레이어(layer) 구조로 되어 있습니다.
+# 1단계 : 배경 설정(축) 
+# ggplot(data, aes(x, y, ..)) : 사용할 데이터 지정
+# 데이터는 data.frame 타입으로 변환 후 입력
+
+# 2단계 : 그래프 추가(점, 막대, 선)
+geom_boxplot, geom_histogram, geom_col, geom_bar,  geom_line, geom_point
+
+# 3단계 : 설정 추가(축 범위, 색, 표식)
+xlim(), ylim(), labs(), theme()....
+
+installed.packages("ggplot2")
+library(ggplot2)
+
+
+
+
+
+
+####################################################################################################
+ read_html() : url에서 html 파일을 읽어오고 저장한다.
+ html_table() :  테이블추출
+ html_node()는 매칭되는 한 요소만 반환하고, 
+ html_nodes()는 모든 요소를 반환한다.
+ id를 찾을 경우에는 html_node()를 사용하면 되고, tag, class로 같은 요소를 모두 추출하고자 할 경우에는 html_nodes()를 사용하면 된다
+ #html_names()는 attribute의 이름을 가져온다.    
+ ex) <img src="....">
+#html_chidren() 해당 요소의 하위 요소를 읽어온다.
+#html_tag() tag이름 추출한다.
+#html_attrs() attribute을 추출한다.
+#################################################################################################
+
+install.packages('rvest')
+ 
+library(rvest)
+
+#스크래핑할 웹 사이트 URL을 변수에 저장
+url <- 'http://www.imdb.com/search/title?count=100&release_date=2016,2016&title_type=feature'
+
+#웹 사이트로부터  HTML code 읽기
+webpage <- read_html(url)   
+webpage
+
+# 스크래핑할 데이터 - rank, title, description, runtime, genre, rating, metascore, votes, gross_earning_in_Mil, director, actor
+
+#랭킹이 포함된 CSS selector를 찾아서 R 코드로 가져오기
+rank_data_html <- html_nodes(webpage,'.text-primary')
+
+#랭킹 데이터를 텍스트로 가져오기
+rank_data <- html_text(rank_data_html)
+head(rank_data)
+
+#랭킹 데이터를 수치형 데이터로 변환
+rank_data<-as.numeric(rank_data) 
+head(rank_data)
+#str(rank_data)
+#length(rank_data)
+
+
+#제목 영역의  CSS selector 스크래핑
+title_data_html <- html_nodes(webpage,'.lister-item-header a')
+
+#제목 데이터 텍스트로 가져오기
+title_data <- html_text(title_data_html)
+head(title_data)
+
+
+#description 영역의 CSS selectors 스크래핑
+description_data_html <- html_nodes(webpage,'.ratings-bar+ .text-muted')
+
+#description 데이터 텍스트로 가져오기
+description_data <- html_text(description_data_html)
+head(description_data)
+
+#'\n' 제거 데이터 처리
+description_data<-gsub("\n","",description_data)
+head(description_data)
+
+#영화 상영시간 CSS selectors 스크래핑
+runtime_data_html <- html_nodes(webpage,'.text-muted .runtime')
+
+#영화 상영시간 데이터 텍스트로 가져오기
+runtime_data <- html_text(runtime_data_html)
+head(runtime_data)
+
+#mins(분) 문자열 제거 후 수치형 데이터로 변환 데이터 처리
+runtime_data<-gsub(" min","",runtime_data)
+runtime_data<-as.numeric(runtime_data)
+head(runtime_data)
+
+
+ 
+#영화장르 영역 CSS selectors 스크래핑
+genre_data_html <- html_nodes(webpage,'.genre')
+
+#영화장르 데이터 텍스트로 가져오기
+genre_data <- html_text(genre_data_html)
+head(genre_data)
+
+# \n 제거 데이터 처리
+genre_data<-gsub("\n","",genre_data)
+head(genre_data)
+
+#1개이상의 공백을 제거하는 데이터 처리
+genre_data<-gsub(" ","",genre_data)
+head(genre_data)
+
+#장르는 첫번째 장르문자열만 남기고 모두 제거
+genre_data<-gsub(",.*","",genre_data)
+head(genre_data)
+
+#문자열 데이터를 범주형 데이터로 변환 처리
+genre_data<-as.factor(genre_data)
+head(genre_data) 
+
+#IMDB rating 영역의 CSS selectors를 이용한 스크래핑
+rating_data_html <- html_nodes(webpage,'.ratings-imdb-rating strong')
+
+#IMDB rating 데이터 text로 가져오기
+rating_data <- html_text(rating_data_html)
+head(rating_data) 
+
+##IMDB rating 데이터를 numerical으로 변환 데이터 처리
+rating_data<-as.numeric(rating_data)
+head(rating_data)
+
+#votes 영역의 CSS selectors를 이용한 스크래핑
+votes_data_html <- html_nodes(webpage,
+                     '.sort-num_votes-visible span:nth-child(2)')
+
+#votes 데이터 text로 가져오기
+votes_data <- html_text(votes_data_html)
+head(votes_data)
+
+#콤마(,) 제거 데이터 처리
+votes_data<-gsub(",","",votes_data)
+
+#votes 데이터를 numerical으로 변환 데이터 처리
+votes_data<-as.numeric(votes_data) 
+head(votes_data)
+
+#감독 영역의 CSS selectors를 이용한 스크래핑
+directors_data_html <- html_nodes(webpage,
+                                '.text-muted+ p a:nth-child(1)')
+
+#감독 데이터 text로 가져오기
+directors_data <- html_text(directors_data_html)
+head(directors_data)
+
+#감독 데이터 문자열을  범주형 데이터로 변환 처리
+directors_data<-as.factor(directors_data)
+directors_data
+ 
+# 배우 영역의 CSS selectors를 이용한 스크래핑
+actors_data_html <- html_nodes(webpage,
+                '.lister-item-content .ghost+ a')
+
+# 배우 데이터 text로 가져오기
+actors_data <- html_text(actors_data_html)
+head(actors_data)
+
+#배우 데이터 문자열을  범주형 데이터로 변환 처리
+actors_data<-as.factor(actors_data)
+actors_data 
+
+
+# metascore 영역의 CSS selectors를 이용한 스크래핑
+metascore_data_html <- html_nodes(webpage,'.metascore')
+
+# metascore 데이터 text로 가져오기
+metascore_data <- html_text(metascore_data_html)
+head(metascore_data)
+ 
+
+#1개 이상의 공백 제거
+metascore_data<-gsub(" ","",metascore_data)
+length(metascore_data)
+metascore_data
+
+#metascore 누락된 데이터  NA처리하기  - 29,58, 73, 96
+for (i in c(29,58, 73, 96)){
+a<-metascore_data[1:(i-1)]    #리스트로 확인
+b<-metascore_data[i:length(metascore_data)]
+metascore_data<-append(a,list("NA"))
+metascore_data<-append(metascore_data,b)
+}
+metascore_data
+
+# metascore  데이터를 numerical으로 변환 데이터 처리
+metascore_data<-as.numeric(metascore_data)
+
+# metascore  데이터 개수 확인
+length(metascore_data) 
+
+
+#metascore 요약 통계 확인
+summary(metascore_data)
+
+
+gross revenue(총수익)  영역의 CSS selectors를 이용한 스크래핑
+gross_data_html <- html_nodes(webpage,'.ghost~ .text-muted+ span')
+
+#gross revenue(총수익) 데이터 text로 가져오기
+gross_data <- html_text(gross_data_html)
+head(gross_data)
+ 
+# '$' 와 'M' 기호 제거 데이터 처리
+gross_data<-gsub("M","",gross_data)
+gross_data<-substring(gross_data,2,6)
+
+#gross revenue(총수익) 데이터 개수 확인
+length(gross_data)
+
+# 누락된 데이터  NA로 채우기 - 29,45,57,62,73,93,98
+for (i in c(29,45,57,62,73,93,98)){
+a<-gross_data[1:(i-1)]
+b<-gross_data[i:length(gross_data)]
+gross_data<-append(a,list("NA"))
+gross_data<-append(gross_data,b)
+}
+
+# gross revenue(총수익) 데이터를 numerical으로 변환 데이터 처리
+gross_data<-as.numeric(gross_data)
+
+#gross revenue(총수익) 데이터 개수 확인
+length(gross_data)
+
+#gross revenue(총수익) 요약 통계 확인 
+summary(gross_data)
+
+
+
+#data.frame으로 변환
+movies_df<-data.frame(Rank = rank_data, Title = title_data,
+Description = description_data, Runtime = runtime_data,
+Genre = genre_data, Rating = rating_data,
+Metascore = metascore_data, Votes = votes_data,
+Gross_Earning_in_Mil = gross_data,   
+Director = directors_data, Actor = actors_data)
+
+#변환된 data.frame 구조 확인
+str(movies_df)
+ 
+
+library('ggplot2')
+#x축 상영시간, y축 장르별 필름 수 
+qplot(data = movies_df,Runtime,fill = Genre,bins = 30)
+
+#상영시간이 가장 긴 필름의 장르는?
+
+ggplot(movies_df,aes(x=Runtime,y=Rating))+
+geom_point(aes(size=Votes,col=Genre))
+#상영시간이 130-160 분인 장르중 votes가 가장 높은 것은?
+
+
+##############################################
+가격 비교를 위한 스크래핑
+rvest 패키지 : 웹 페이지에서 필요한 정보를 추출하는데 유용한 패키지
+selectr패키지, xml2 패키지가 의존 패키지이므로 함께 설치
+read_html(url) : 지정된 url에서 html 컨텐츠를 가져옵니다.
+jsonline 패키지 : json 파서/생성기가 웹용으로 최적화되어 있는 패키지
+##############################################
+install.packages("jsonlite")
+libary(jsonlite)
+libary(xml2)
+libary(rvest)
+libary(stringr)
+
+url <- 'https://www.amazon.in/OnePlus-Mirror-Black-64GB-Memory/dp/B0756Z43QS?tag=googinhydr18418-21&tag=googinkenshoo-21&ascsubtag=aee9a916-6acd-4409-92ca-3bdbeb549f80'
+
+#추출할 정보 : 제목, 가격, 제품 설명, 등급, 크기, 색상
+
+
+
+
+
+
+
+

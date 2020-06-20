@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Review</title>
+</head>
+<body>
+<script>
+   function square(x) {  return x*x ; }
+   console.log( square(5));
+   var square1  = function(x) { return x*x; }
+   console.log(square1(5)); //호출
+ 
+  var square2  = new Function("x", "return x*x");
+  console.log(square2(5)); //호출
+ 
+  var square3  = x => x*x;
+   console.log(square3(5)); //호출
+
+  console.log( (function(x) { return x*x })(5));
+  console.log(this); //window
+  console.log(this==window);
+  
+  function f(){ console.log(this);} //전역 유효 범위의 namespace에
+  //추가되므로
+  f(); //this는 window입니다.
+  
+  function makeCounter(){
+	var count = 0;
+	return g;
+	function g(){	//클로저 함수
+		return count++;
+		}
+  }
+  var counter = makeCounter(); //함수 수행이 끝나면 
+  //garbage Collect되어야 하지만 클로저 함수를 리턴하는 함수의
+  //실행 Context는 메모리에 계속 남아 있습니다.
+  console.log(counter());
+  console.log(counter());
+  console.log(counter());
+  
+  function Person(name, age){
+    var _name = name;    //private 성격의 속성
+    var _age = age;
+    return {
+        getName : function() { return _name; },
+	getAge : function() { return _age; },
+	setAge : function(n) {_age =n; }
+    };
+}
+
+var p = new Person("kim" , 30);
+console.log(p._name) ;//오류
+console.log(p._age) ;//오류
+console.log(p.getName()) ; 
+console.log(p.getAge()) ; 
+
+
+  
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">  
+  <title>jQuery 문서 조작</title>
+  <style>  
+   
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>  
+  $(document).ready(function(){		 
+	$('img').css('width', 200);
+	$('div').append($('img').clone());
+});
+  </script>
+ </head>
+ <body>
+<h3>문서 객체 복제</h3>
+clone() : 객체 복제<br> 
+ <img src="./cat.jpg" />
+ <div></div>
+ </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style>
+		body{
+			font-size:9pt;
+		}
+		#panel1{
+			border:1px #000000 solid;
+			line-height:400px;
+			font-size:100px;
+			width:400px;
+			height:400px;
+			text-align:center;
+			vertical-align:middle;		
+		}
+	
+	</style>
+	<script>
+	var panel1;
+	var nTimerID;
+	var labTotal;
+	var nTotalMember; 	
+		
+		$(document).ready(function () {
+			nTimerID = 0;
+			panel1 = $("#panel1");
+			labTotal = $("#lab_total"); //input태그 객체
+			nTotalMember = 0;		
+		
+			var btnStart=$("#btn_start");
+			btnStart.on("click",function(){
+				if(nTimerID==0){
+				nTotalMember = Number(labTotal.val());
+				panel1.css({color:"#000000"});				
+				nTimerID=setInterval(createNumber,20);	
+				}
+			});	
+			
+			var btnStop= $("#btn_stop");
+			btnStop.on("click", function(){
+				if(nTimerID){
+				clearInterval(nTimerID);
+				nTimerID = 0;
+				panel1.css({color:"#ff0000", fontSize:"200px"});
+				}
+				});
+			});
+		
+		// 랜덤하게 1에서 참여인원수 사이의 숫자를 만들어 냅니다.
+		function createNumber(){	
+			var nNum = 1+Math.floor(Math.random()*nTotalMember);
+			//만들어진 숫자를 innerHTML에 대입시켜 줍니다.
+			panel1.html(nNum);
+			// 폰트 크기를 100~200으로 랜덤하게 설정해줍니다.
+			panel1.css("fontSize", 100+(Math.random()*100));
+		}	
+				
+		 
+	</script>
+</head>
+
+<body>
+	<div> 
+		<h4>경품추첨기-ver 0.1</h4>
+	
+		<div id="panel1" > 1
+			<!-- 이곳에 숫자가 출력됩니다. -->
+		</div>
+	
+		<div id="nav">
+			참여인원 : <input type="text" id="lab_total" value="100">
+			<button id="btn_start">시작</button>
+			<button id="btn_stop">멈춤</button>
+		</div>
+	</div>
+</body>
+</html>

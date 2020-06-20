@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>객체 리터럴 방식으로 객체 생성</h3>
+ 
+생성자 함수로 생성되는 객체들의 기능은 모두 동일하므로 객체 생성시마다 메모리에 객체의 메서드가 생성되는 것보다는 <br>
+생성자 함수는 function객체로 메모리에 생성될때 프로토타입 속성객체가 자동으로 생성됩니다.<br>
+프로토타입 속성객체에 생성자 함수로 생성되는 객체들의 기능을 추가하면, 전역 메서드처럼 사용 가능합니다. 메모리 낭비를 줄이고..<br>
+
+
+<script>
+    
+//객체 생성을 위한 생성자 함수 정의
+   function Student(name, ko, math, en, sci ){
+			this.name = name;
+			this.ko= ko;
+			this.math = math;
+			this.en = en;
+			this.sci = sci;			
+	}
+	Student.prototype.total= function(){//총점 반환
+					return  this.en+this.math+this.ko+this.sci;
+			};
+	Student.prototype.average = function(){  //평균 반환
+                    return this.total()/4;
+			};
+
+console.dir(Student);
+//객체 생성
+var students = [ new Student('장기영', 87,  98,  88,  95),
+                 new Student('연하진', 92, 98, 96, 98 ),
+				 new Student('구지연', 76,  96,  94, 90 ),
+				 new Student('나선주', 98, 92, 96, 92),
+				 new Student('윤아린', 95, 98, 98, 98 ),
+				 new Student('윤명월', 64, 88,92,92),
+				 new Student('김미화', 82, 86, 98,88 ),
+				 new Student('김연화', 88, 74, 78, 92 ),
+				 new Student('박아현', 97, 92, 88, 95),
+				 new Student('서준서', 45, 52, 72, 65)
+				 ]; 
+for (var idx in students ){
+document.write(students[idx].name+"의 총점 :" + students[idx].total()
+               + ", 평균 :" + students[idx].average()+"<br>");
+ }
+ 
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

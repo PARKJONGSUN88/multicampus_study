@@ -1,0 +1,133 @@
+<!DOCTYPE html  >
+<html>
+<head>
+	<meta  charset="UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;		
+		}
+		
+		#panel{
+			width:600px;
+			height:300px;
+			border:1px solid #999;
+			position:relative;
+		}
+		
+		#bar{
+			position:absolute;
+			left:50px;
+			top:190px;
+			width:500px;
+			height:20px;
+			
+			background:#F30;
+		}
+		
+		#img1{
+			position:absolute;
+			left:50px;
+			top:120px;		
+		}
+		
+		#nav{
+			text-align:center;
+			width:600px;
+		}
+	</style>
+	
+	<script>
+		var nEndX;
+		var nCurrentX;
+		var nStartX;
+		var nTimerID;
+		var nStep;
+		var objIMG;
+	
+		window.onload=function(){
+			var objBar = document.getElementById("bar");
+			
+			// 시작위치 구하기.
+			this.nStartX = objBar.offsetLeft;
+	
+			// 마지막 위치.(시작위치 + bar의 넓이 - 이미지 넓이)
+			this.nEndX = objBar.clientWidth;
+			this.nEndX += this.nStartX;		
+			this.nEndX -= 128;
+	
+			// 이미지의 현재 위치를 시작위치로 설정.
+			this.nCurrentX = this.nStartX;
+			
+			this.nStep = 2;
+			this.nTimerID = 0;
+			
+			// 계속해서 사용하게 될 이미지 엘리먼트를 변수에 저장.
+			this.objIMG = document.getElementById("img1");
+		 
+			// 시작버튼 이벤트 리스너 등록.
+			document.getElementById("btn_start").addEventListener("click",function(){
+				start();
+			},false);
+			
+			// 정지버튼 이벤트 리스너 등록.
+			document.getElementById("btn_stop").addEventListener("click",function(){
+				stopMove();
+			},false);
+		}
+		 
+		
+		// 타이머 실행.
+		function start(){
+			if(this.nTimerID==0)
+				this.nTimerID = setInterval(this.startMove,30);
+			
+		}
+		
+		// 이미지 움직이기.
+		function startMove(){
+			// nStep만큼 이동합니다.
+			this.nCurrentX += this.nStep;
+			
+			//  위치값이 마지막 위치값을 넘어가는 순간, 
+			//  시작 위치<--- 마지막 위치로 이동될수 있도록 방향을 바꿔준다.
+			if(this.nCurrentX>this.nEndX){
+				this.nCurrentX=this.nEndX;
+				this.nStep=-5;
+			}
+			// 위치값이 시작위치값을 넘어가는 순간,
+			// 시작위치 ---->마지막 위치로 이동될수 있도록 방향을 바꿔준다.
+			if(this.nCurrentX<this.nStartX){
+				this.nCurrentX=this.nStartX;
+				this.nStep=5;
+			}
+			
+			// 최종적으로 조절된 위치값을 left에 적용시켜 준다.
+			this.objIMG.style.left=this.nCurrentX+"px";		
+		}
+		
+		// 타이머 정지시키기.
+		function stopMove(){
+			if(this.nTimerID!=0){
+				clearInterval(this.nTimerID);
+				this.nTimerID=0;
+			}
+		}
+	</script>
+</head>
+
+	<div> 
+		<h4>#img1을 #bar의 영역에서 계속 좌우로 움직이도록 만들어주세요.</h4>
+		<div id="panel">
+			<div id="bar"> </div>
+			<div id="img1">
+				<img src="fish.png">
+			</div>
+		</div>
+		<div id="nav">
+			<button id="btn_start">시작</button>
+			<button id="btn_stop">멈춤</button>
+		</div>
+	</div>       
+</body>
+</html>

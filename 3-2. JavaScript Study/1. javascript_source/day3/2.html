@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>클로저</title>
+<script>
+/*	
+	window.onload = function(){
+		var buttons = document.getElementsByTagName("input");
+		for(var i=0 ;i<buttons.length; i++){
+			buttons[i].onclick=function(){
+				console.log(i);
+			}
+			
+		}
+	};
+*/
+  	window.onload = function(){
+		var buttons = document.getElementsByTagName("input");
+		for(var i=0 ;i<buttons.length; i++){
+			let _i = i;
+			buttons[_i].onclick=function(){
+				console.log(_i);
+			}			
+		}
+	};
+/*	
+ 	window.onload = function(){
+	var buttons = document.getElementsByTagName("input");
+		for(var i=0 ;i<buttons.length; i++)(function(_i){
+			buttons[_i].onclick=function(){
+				console.log(_i);
+				}
+			}
+		)(i);
+	};  	
+*/  
+  
+</script>
+</head>
+<body>
+<h3>클로저 함수를 사용해야 하는 예제</h3>
+<input type="button" value="0">
+<input type="button" value="1">
+<input type="button" value="2">
+
+</body>
+</html>

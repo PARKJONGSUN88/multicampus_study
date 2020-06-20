@@ -1,0 +1,351 @@
+==================================Movie.java================================
+package com.wokshop2.entity;
+
+public class Movie {
+	private String title;
+	private String director;
+	private String genre;
+	private String actor;
+	private int releaseYear;
+	private int runTime;
+	private String rating;
+	
+	public Movie(String title, String director, String genre, String actor) {		
+		this.title = title;
+		this.director = director;
+		this.genre = genre;
+		this.actor = actor;
+	}
+	public Movie(String title, String director, String genre, String actor, String rating) {
+		this(title, director, genre,actor);
+		this.rating = rating;
+	}
+	public Movie(String title, String director, String genre, String actor, int releaseYear, int runTime) {
+		this(title, director, genre,actor);
+		this.releaseYear = releaseYear;
+		this.runTime = runTime;
+	}
+	public Movie(String title, String director, String genre, String actor, int releaseYear, int runTime,
+			String rating) {
+		this(title, director, genre,actor, releaseYear, runTime);		
+		this.rating = rating;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public String getDirector() {
+		return director;
+	}
+	public String getGenre() {
+		return genre;
+	}
+	public String getActor() {
+		return actor;
+	}
+	public int getReleaseYear() {
+		return releaseYear;
+	}
+	public int getRunTime() {
+		return runTime;
+	}
+	public String getRating() {
+		return rating;
+	}
+	@Override
+	public String toString() {
+		String str = String.format("%-20s\t%-7s\t%-7s\t%-7s\t", title, director, genre, actor);
+		 
+		if(releaseYear==0) {
+			str += String.format("%-4s\t", "N/A");
+		}else {
+			str += String.format("%-4s년\t", String.valueOf(releaseYear));
+		}
+		if(runTime==0) {
+			str += String.format("%-3s\t", "N/A");
+		}else {
+			str += String.format("%-3s분\t", String.valueOf(runTime));
+		}
+		if(rating==null) {
+			str += String.format("%-7s\n", "N/A");
+		}else {
+			str += String.format("%-7s\n", rating);
+		}
+		return str;
+				 
+	}
+	
+	
+	
+}
+
+
+=======================MovieTest.java=====================
+package com.workshop2.test;
+
+import com.wokshop2.entity.Movie;
+
+public class MovieTest {
+
+	public static void main(String[] args) {
+		Movie[] movies = new Movie[] {
+			new Movie("반지의 제왕-반지 원정대", "피터 잭슨", "판타지, 모험", "일라이저 우드", 2001, 178, "12세 관람가"),
+			new Movie("트랜스포머:패자의 역습", "마이클 베이", "SF, 액션", "샤이아 라보프", 2009, 149 ),
+			new Movie("러브 액츄얼리", "리처드 커티스", "멜로, 드라마", "앨런 릭맨 등", 2003, 134, "15세 관람가"),
+			new Movie("쿵푸 팬더", "마크 오스본", "애니메이션", "잭 블랙", "전체 관람가")
+		};
+		System.out.println("<<전체 영화 정보 조회>>");
+		printTitle();
+		for(Movie m : movies) {
+			System.out.print(m);			
+		}
+		System.out.println("-------------------------------------------------------------------------------------------------------------");
+		System.out.println();
+		System.out.println("<<2005년 이전 개봉작 조회>>");
+		printTitle();
+		for(Movie m : movies) {
+			if(m.getReleaseYear()<2005&&m.getReleaseYear()!=0) {
+			System.out.print(m);
+			}
+		}
+		System.out.println("-------------------------------------------------------------------------------------------------------------");
+		System.out.println();
+		System.out.println("<<애니메이션 조회>>");
+		printTitle();
+		for(Movie m : movies) {
+			if(m.getGenre().contentEquals("애니메이션")) {
+			System.out.print(m);
+			}
+		}
+		System.out.println("-------------------------------------------------------------------------------------------------------------");
+		
+		System.out.println();
+		System.out.println("<<런타임 140분 영화 조회>>");
+		printTitle();
+		for(Movie m : movies) {
+			if(m.getRunTime()>=140	&& m.getRunTime()!=0) {
+			System.out.print(m);
+			}
+		}
+		System.out.println("-------------------------------------------------------------------------------------------------------------");
+	}//main end
+	
+	public static void printTitle() {
+		System.out.println("-------------------------------------------------------------------------------------------------------------");
+		System.out.println("\t제목\t\t\t감독\t\t장르\t\t주연\t\t개봉년도  런타임\t등급");
+		System.out.println("-------------------------------------------------------------------------------------------------------------");
+	}
+	
+
+}
+
+
+<<상속>>
+기존의 클래스를 재사용하여 새로운 클래스를 작성하는 것
+※ 클래스 상속은 단일 상속
+※ 명시적 부모 클래스 선언 없으면 java.lang.Object 최상위 클래스를 자동 상속받음
+※ 부모의 속성과 메서드를 상속받습니다. - private 선언 속성과 메서드 상속 안됨, 생성자 메서드 상속 안됨
+※ extends
+
+자식 클래스의 모든 생성자의 첫번째 줄에서 명시적 생성자 호출이 없는 경우,
+부모 클래스의 default 생성자를 호출하는 super()가 자동으로 컴파일시에 포함됩니다.
+
+
+
+package lab.java.core;
+
+class Parent {
+    String name = "parent";
+    private int money =1000000000;
+    public void work() {
+    	System.out.println("IT");
+    }
+    private void hobby() {
+    	System.out.println("2Job");
+    }
+}
+
+class Child extends Parent{ //상속
+	
+}
+
+public class ExtendsTest1 {
+	public static void main(String[] args) {
+		Child c1 = new Child();
+		System.out.println(c1.name);
+		c1.name = "child";
+		System.out.println(c1.name);
+		c1.work();		
+	}
+}
+
+
+
+
+package lab.java.core;
+
+class Parent2 {
+   public Parent2() {
+	   System.out.println(1);   
+ 	   }
+   public Parent2(String talent) {
+	   System.out.println(2);
+   }
+}
+
+class Child2 extends Parent2{ //상속
+	public Child2() {
+		super("IT");
+		System.out.println(3);
+	}
+	public Child2(String talent) {		
+		 System.out.println(4);
+	}
+}
+
+public class ExtendsTest2 {
+	public static void main(String[] args) {
+		 Child2 c2 = new Child2();
+		 Child2 c3 = new Child2("DB");
+	}
+}
+
+
+
+======================Account.java===============================
+
+package com.workshop2.account;
+
+public class Account {
+	private String customerId;
+	private String customerName;
+	private String accountNumber;
+	private int balance;
+
+	public Account(String customerId, String customerName, String accountNumber, int balance) {
+		super();
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+	}
+
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void withdraw(int money) {
+		System.out.println("[출금] " + money + "원을 출금합니다.");
+		if (money < 0) {
+			System.out.println("[에러] 음수는 출금할 수 없습니다.");
+		} else if (balance < money) {
+			System.out.println("[에러] 잔액이 부족합니다.");
+		} else {
+			balance -= money;
+		}
+	}
+
+	public void deposit(int money) {
+		System.out.println("[입금] " + money + "원을 입금합니다.");
+		if (money < 0) {
+			System.out.println("[에러] 음수는 입금할 수 없습니다.");
+		} else {
+			balance += money;
+		}
+	}
+
+	public void printAccountInfo() {
+		System.out.println("========================");
+		System.out.println("고객번호:"+customerId);
+		System.out.println("고객명:"+customerName);
+		System.out.println("계좌번호:"+accountNumber);
+		System.out.println("잔액:"+balance);
+		System.out.println("========================");
+	}
+}
+
+
+===================AccountTest.java===================
+package com.workshop2.account;
+
+public class AccountTest {
+
+	public static void main(String[] args) {
+		System.out.println("[공지] 계좌를 개설합니다." );
+		Account hong = new Account("CUST01", "홍길동", "11-222-3333", 100000);
+		hong.printAccountInfo();
+		System.out.println();
+		hong.deposit(30000);
+		hong.printAccountInfo();
+		System.out.println();
+		hong.deposit(-10000);
+		hong.printAccountInfo();
+		System.out.println();
+		hong.withdraw(50000);
+		hong.printAccountInfo();
+		System.out.println();
+		hong.withdraw(100000);
+		hong.printAccountInfo();
+		System.out.println();
+		hong.withdraw(-10000);
+		hong.printAccountInfo();
+		System.out.println();
+		hong.deposit(20000);
+		hong.printAccountInfo();
+		System.out.println();
+	}
+
+}
+
+<<override - 재정의>>
+상속받은 메서드를 그대로 사용하는 것이 아니라 
+메서드 선언은 동일하게 선언하고, 메서드의 내용을 개선하는 것
+
+AccessModifier - 동일하거나, Scope가 넓어야 합니다.
+리턴타입은 반드시 동일해야 합니다.
+메서드 이름은 반드시 동일해야 합니다.
+메서드의 매개변수 순서, 개수, 타입 모두 반드시 동일해야 합니다.
+
+throws 예외클래스는 생략하거나, 동일하게 선언하거나, 하위 예외클래스 선언은 가능합니다.(상위 예외클래스 선언은 오류, 개수가 많아도 오류)
+
+자식클래스에서는 부모로부터 상속받은 메서드를 overload와 override 가능하며,
+override 메서드는 한개만 재정의 가능하며, overload는 개수 제한 없이 가능합니다.
+
+
+<<access modifier>>
+public
+protected
+(default)
+private
+
+
+
+<<modifier>>
+final
+static
+abstract
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

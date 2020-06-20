@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta  charset="utf-8">
+<script>
+	function show(data){
+		console.log("name "+ data.name);		
+		console.log("price "+ data.price);		
+		//document.body.innerHTML += "name :"+data.name;	
+		//document.body.innerHTML += "price :"+data.price;
+	}
+	window.onload=function(){
+		var url="http://70.12.50.130:9000/jsonp.js";
+		var script =document.createElement("script");
+		script.setAttribute("src", url);
+		document.getElementsByTagName("head")[0].appendChild(script);
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트</title>
+<style>
+div, h1, p { border:2px solid black;
+             padding : 20px;
+             margin : 20px; }
+</style>
+<script>
+ window.addEventListener("load", function(){
+	document.getElementById("outerDiv").onclick= function(){
+		this.style.backgroundColor='gray';
+	}
+	document.getElementById("innerDiv").onclick= function(){
+		this.style.backgroundColor='cyan';
+	}
+	document.getElementById("header1").onclick= function(){
+		this.style.backgroundColor='magenta';
+	}
+	document.getElementById("p1").onclick= function(evt){	 
+		console.dir(evt);
+		if(event.stopPropagation){
+			event.stopPropagation();
+		}
+		this.style.backgroundColor='orange';
+	}
+}, false);
+</script>
+</head>
+<body>
+ <h3> 자바스크립트 버블링과 캡처링 </h3>
+자바스크립트 버블링 : html문서내에서 자식 태그객체에서 발생된 이벤트가 부모 태그 객체로 이벤트 전파되는 것 <br>
+자바스크립트 캡처링 : html문서내에서 부모 태그객체에서 발생된 이벤트가 자식 태그 객체로 이벤트 전파되는 것 <br>
+이벤트
+<div id="outerDiv">
+  <div id="innerDiv">
+    <h1 id="header1">
+       <p id="p1">이벤트 전파</p>
+    </h1>
+  </div>
+</div>
+</body>
+</html>

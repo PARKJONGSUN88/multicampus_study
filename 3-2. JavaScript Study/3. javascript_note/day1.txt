@@ -1,0 +1,20 @@
+#HTML문서에 자바스크립트 포함 위치
+<head>
+<script>
+//자바스크립트 코드 - 전역변수선언, 함수 선언
+//body의 요소를 참조하거나, 사용하는 자바스크립트 실행 문장은 오류 발생합니다.
+</script>
+</head>
+<body>
+<script>
+//자바스크립트 코드 - 즉시 실행 문장 코드
+</script>
+</body>
+
+#HTML문서와 자바스크립트를 분리하는 것을 권장합니다.
+<head>
+<script type="text/javascript" src="경로/파일.js"></script>
+</head>
+<body>
+ 
+</body>

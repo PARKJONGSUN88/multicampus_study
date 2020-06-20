@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+svg {
+	width : 1000px;
+	height : 1000px;
+	border : 1px solid black;
+}
+rect {
+	stroke-width : 4px;
+	stroke : black;
+	fill : orange;
+}
+circle {
+	opacity : 0.75;
+	fill : blue;
+}
+</style>
+
+</head>
+<body>
+
+
+<!-- 
+<rect x="30" y="20" width="200" height="100" />
+<rect x="30" y="150" width="200" height="100" rx="20" ry="20" />
+<circle cx="100" cy="140" r="80" />
+-->
+
+<!-- 
+<path d="M80,50 L220,90 L280,200"/>
+ --> 
+
+<!-- 
+<path d="M10,110 C80,-100 150,80 300,110"/>
+-->
+
+<!--
+<rect x="30" y="20" width="200" height="100"
+style="fill:red;stroke:blue;stroke-width:10px" />
+<text x="25" y="150" style="fill:black">SVG 텍스트 예제</text>
+-->
+
+<!--
+<svg width=400>
+	<rect x="200" y="0" width="1" height="160" style="fill:red" />
+	<text x="200" y="40" text-anchor="start" style="fill:black" >텍스트1</text>
+	<text x="200" y="80" text-anchor="middle" style="fill:black" >텍스트2</text>
+	<text x="200" y="120" text-anchor="end" style="fill:black" >텍스트3</text>	
+</svg>
+-->
+
+<!--
+<h1>도형 그룹화</h1>
+<svg>
+	<g style="opacity:0.25">
+	<rect x="200" y="50" width="100" height="80" />
+	<text x="200" y="40" text-anchor="start" style="fill:black">Sample Text</text>
+	<g/>
+</svg>
+-->
+
+<!--
+<h1>도형 이동</h1>
+<svg>
+	<g transform="translate(-200, 40)">
+	<rect x="200" y="50" width="100" height="80" />
+	<text x="200" y="40" text-anchor="start" style="fill:black">Sample Text</text>
+	<g/>
+</svg>
+-->
+
+<!--
+<h1>도형 회전</h1>
+<svg>
+	<g transform="rotate(45, 200, 100)">
+	<rect x="200" y="50" width="100" height="80" />
+	<text x="200" y="40" text-anchor="start" style="fill:black">Sample Text</text>
+	<g/>
+</svg>
+-->
+
+<!--
+<h1>도형 확대</h1>
+<svg>
+	<g transform="scale(2.0)">
+	<rect x="200" y="50" width="100" height="80" />
+	<text x="200" y="40" text-anchor="start" style="fill:black">Sample Text</text>
+	<g/>
+</svg>
+-->
+
+<br>
+M 절대좌표, m 상대좌표 : 이동 관련 명령<br>
+Z, z는 패스를 닫음<br>
+L절대좌표, l 상대좌표 : 그리기 관련 명령<br>
+C절대좌표, c 상대좌표 : 곡선 그리기 관련 명령<br> 
+A절대좌표, a 상대좌표 : 곡선 그리기 관련 명령<br>
+
+</body>
+</html>

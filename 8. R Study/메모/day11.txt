@@ -1,0 +1,545 @@
+#################의사 결정 트리(Decision Tree)##################
+install.packages("party")
+library(party)
+#install.packages("datasets")
+library(datasets)  
+#뉴욕의 대기 질을 측정한 데이셋
+str(airquality)     # 관측치 153개 , 변수 6개 
+#Ozone, Solar.R(태양광), Wind, Temp, Month, Day
+#온도에 영향을 미치는 변수를 알아보기
+formula <- Temp ~ Solar.R+Wind+Ozone
+
+#분류모델 생성
+air_ctree <- ctree(formula, data=airquality)
+air_ctree
+
+plot(air_ctree)
+#온도에 가장 큰 영향을 미치는 첫번째 영향변수는 Ozone
+# 두번째 영향변수는 Wind
+# 오존량 37이하이면서 바람의 양이 15.5이상이면 평균온도는 63정도에 해당
+#바람의 양이 15.5이하인 경우 평균 온도는 70이상으로 나타남
+#태양광은 온도에 영향을 미치지 않는 것으로 분석됨
+
+
+
+############iris 데이터 셋으로 분류 분석 수행#################
+set.seed(1234)  #시드값을 적용하면 랜덤 값이 동일하게 생성
+idx <- sample(1:nrow(iris), nrow(iris)*0.7)
+train <- iris[idx, ]   #학습 데이터
+test <- iris[-idx, ]   #검정 데이터
+
+#종속변수는 Species, 독립변수는 ...
+formula <- Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width
+
+#분류모델 생성
+iris_ctree <- ctree(formula, data=train)   
+iris_ctree
+plot(iris_ctree, type="simple")
+plot(iris_ctree)
+# 꽃종 분류에 가장 중요한 독립변수는 Petal.Length, Petal.Width
+
+
+# 분류모델 평가 - 예측치 생성, 혼돈 매트릭스 생성
+pred <- predict(iris_ctree, test)
+table(pred, test$Species)
+
+#분류정확도  95.56% 
+(16 + 15 +12) /nrow(test)    # 0.9555556
+
+
+#############k겹 교차 검증(k-fold cross validation) ###########
+# 3겹, 2회 반복을 위한 샘플링
+install.packages("cvTools")
+library(cvTools)
+cross <- cvFolds(nrow(iris), K=3, R=2)
+str(cross)
+
+cross  #교차검정 데이터 확인
+length(cross$which)
+dim(cross$subsets)
+table(cross$which)
+
+R=1:2               #2회 반복
+K=1:3               #3겹
+CNT=0               #카운트 변수
+ACC <- numeric()    #정확도 저장
+
+for(r in R ) {
+   cat('\n R=', r, '\n)
+   for(k in K) {
+      datas_idx <- cross$subsets[cross$which==k, r]
+      test <- iris[datas_idx, ]   #테스트 데이터 생성
+      cat('test:', nrow(test), '\n')
+
+      formula <- Species ~ .
+      train <- iris[-datas_idx, ]  #훈련 데이터 생성
+      cat('train:', nrow(train), '\n')
+
+      model <- ctree(formula, data=train)
+      pred <- predict(model, test)
+      t <- table(pred, test$Species)
+      print(t)              #혼돈 메트릭스
+      CNT <- CNT+1
+      ACC[CNT] <- t[1,1]+t[2,2]+t[3,3]) /sum(t)
+      }
+   }
+CNT   #테스트 데이터 3셋 생성 모델, 예측 비교를 2번 반복, 즉 6회 수행 
+ACC  #6회 수행 정확도 확인
+#6회 정확도의 평균
+mean(ACC, na.rm=T)
+
+
+#####################분류분석 연습문제 1  ####################
+# ggplot2::mpg 데이터 셋
+# model(모델), displ(엔진 크기) , cyl(실린더 수), drv(구동 방식)
+# 종속변수 : 고속도로 주행거리(hwy)
+library(ggplot2)
+data(mpg)
+t <-sample(1:nrow(mpg), 120)
+train <- mpg[t, ]
+test <- mpg[-t, ]
+test$drv <- factor(test$drv)  #구동방식 범주형 변환
+formula <- hwy ~ disp+cyl+drv
+hwy_ctree <- ctree(formula, data=test)
+plot(hwy_ctree)
+
+분석 결과 : 엔진 크기가 작으면서 전륜구동(f)이나 후륜(r) 구동 방식인 경우 고속도로 주행거리가 가장 좋고, 
+엔진 크기가 크고, 사륜구동 방식이면 실린더 수가 많은 경우 고속도로 주행거리가 적은 것으로 분석된다.
+
+#####################분류분석 연습문제 2  ####################
+install.packages("arules")
+library(arules)
+data("AdultUCI")
+#성인 대상 인구 소득에 관한 설문 조사 데이터
+#48,842 관측치와 15개변수
+age, workclass(직업 :4개), education(교육수준: 16개), marital-status(결혼상태: 6개), occupation(직업:12개), relationship(관계: 6개), race(인종:아시아계, 백인), sex(성별), capital-gain(자본이득), capital-loss(자본손실), fnlwgt(미지의 변수), hours-per-week(주당 근무시간), native-country(국가), income(소득)
+
+#10,000개 관측치를 샘플링해서
+자본이득에 영향을 미치는 변수를 분석하기 위해 
+capital-gain, hours-per-week, education-num, race, age, income 변수로만 구성된 데이터프레임을 생성한후 분류모델 생성하고 예측하시오
+names(AdultUCI)
+set.seed(1234)
+choice <- sample(1:nrow(AdultUCI), 10000)
+choice
+
+adult.df <- AdultUCI[choice, ]
+str(adult.df)
+
+capital <- adult.df$'capital-gain'
+hours <- adult.df$'hours-per-week'
+education <- adult.df$'education-num'
+race <- adult.df$race
+age <- adult.df$age
+income <- adult.df$income
+
+adult_df <- data.frame(capital=capital, age=age , hours=hours,
+    education=education, income=income)
+str(adult_df)
+
+formula <- capital ~ income+education+hours+age
+
+adult_ctree <- ctree(formula, data=adult_df)
+
+plot(adult_ctree)
+
+#분석결과 : 자본이득(capital)에 가장 큰 영향을 미치는 변수는 income이고, 두번째는 education 변수이다.
+수입이 많고 교육수준이 높을수록 자본이득이 많은 것으로 분석된다.
+
+#분류 모델의 조건에 맞는 subset 생성
+adultResult <- subset(adult_df, adult_df$income=='large' &  adult_df$education > 14)
+length(adultResult$education)
+summary(adultResult$capital) 
+boxplot(adultResult$capital)
+
+#income이 large이고 education이 14를 초과한 경우, 
+자본이득 평균은 7,170
+
+
+############rpart 패키지 rpart()를 이용한 분류 분석############
+install.packages("rpart")
+library(rpart)
+data(iris)
+
+iris.df <- rpart(Species ~., data=iris)
+iris.df
+
+plot(iris.df)
+text(iris.df, use.n=T, cex=0.6)
+post(iris.df, file="")
+
+#줄기에 분기 조건
+#끝 노드에는 반응변수의 결과값이 나타남
+# 꽃 종류 변수를 분류하는 가장 중요한 변수는 Petal.Length와 Petal.Width로 나타난다.
+
+############분류분석 연습문제 3 ########################
+weather <- read.csv("./data/weather.csv", header=TRUE)
+
+#RainTomorrow 컬럼을 종속변수로 
+# 날씨 요인과 관련없는 Date와 RainToday컬럼을 제외한 나머지 변수를 x변수로 지정하여 분류 모델 생성하고 모델을 평가하시오
+
+str(weather)
+names(weather)
+weather.df <- rpart(RainTomorrow ~ ., data=weather[, c(-1, -14)], cp=0.01) 
+X11()
+plot(weather.df)
+text(weather.df, use.n=T, cex=0.7)
+
+#분석 결과 : 분기조건이 True이면 왼쪽으로 분류되고, False
+이면 오른쪽으로 분류된다.
+#rpart()함수의 cp속성값을 높이면 가지 수가 적어지고, 낮추면 가지 수가 많아진다. cp 기본값은 0.01
+
+weather_pred <- predict(weather.df , weather)
+weather_pred
+
+#y의 범주로 코딩 변환 : Yes(0.5이상), No(0.5미만)
+#rpart의 분류모델 예측치는 비 유무를 0~1사이의 확률값으로 예측하다 
+# 혼돈매트릭스를 이용하여 분류정확도를 구하기 위해 범주화 코딩 변경
+weather_pred2 <- ifelse(weather_pred[,2] >= 0.5, 'Yes', 'No')
+table(weather_pred2, weather$RainTomorrow)
+
+#정확도 
+(Yes인데 Yes로 측정값+No인데 No로 측정값) /nrow(weather)
+
+
+#############랜덤 포레스트 분류 분석 #########################
+install.packages("randomForest")
+library(randomForest)
+data(iris)
+
+model<-randomForest(Species~., data=iris)
+model
+
+#Number of trees는 학습데이터(Forest)로 복원 추출 방식으로 500개 생성했다는 의미
+#No, of variables tried at each split는 두 개의 변수를 이용하여 트리의 자식노드가 분류되었다는 의미 (ntree:500, mtry:2)
+#error.rate는 모델의 분류정확도 오차 비율을 의미
+#Confusion matrix (혼돈 메트릭스) ..
+#분류 정확도는 (setosa+versicolor+virgina)/150 : 96%
+
+
+model2<-randomForest(Species~., data=iris, ntree=300, mtry=4, na.action=na.omit)
+model2
+
+#중요변수 생성으로 랜덤 포레스트 모델 생성
+
+model3<-randomForest(Species~., data=iris, importance=T, na.action=na.omit)
+model3
+#중요 변수 보기 - importance속성은 분류모델 생성하는 과정에서 입력변수 중 가장 중요한 변수가 어떤 변수인가를 알려주는 역할을 한다.
+
+importance(model3)
+#MeanDecreaseAccuracy - 분류정확도를 개선하는데 기여한 변수를 수치로 제공
+ 
+#최적의 ntree, mtry 수치값 찾아내기
+ntree <- c(400, 500, 600)
+mtry <-c(2:4)
+param <- data.frame(n=ntree, m=mtry)
+param
+
+for(i in param$n){
+  cat('ntree=', i, '\n')
+  for(j in param$m) {
+     cat('mtry = ', j, '\n')
+     model_iris <- randomForest(Species~. , data=iris, ntree=i, mtry=j, na.action=na.omit)
+     print(model_iris)
+   }
+}
+
+#오차 비율을 비교하여 최적의 트리와 변수의 수를 결정합니다.
+#(400, 2) (400, 3), (400, 4)
+#(500, 2) (500, 3), (500, 4)
+#(600, 2) (600, 3), (600, 4)
+
+
+###############Simple 인공신경망 모델 생성 실습##################
+install.packages("nnet")
+library(nnet)
+
+#x1, x2는 입력변수, y는 출력변수로 사용할 데이터 프레임 생성
+df = data.frame(x2=c(1:6), 
+                x1=c(6:1), 
+               y=factor(c('no', 'no','no', 'yes','yes','yes')))
+str(df)
+
+#인공신경망 모델 생성
+model_net <- nnet(y~., df, size=1)
+#결과는 5개의 가중치 생성 , 오차는 점차적으로 줄어드는 결과를 확인할 수 있습니다.
+
+model_net
+# 신경망(a 2-1-1)는 (경계값-입력변수-은닉층-출력변수) 형태로 5개의 가중치
+
+summary(model_net)  #가중치 요약 정보 확인
+#입력층의 경계값(b) 1개와 입력변수(i1, i2)2개가 은닉층(h1)으로 연결되는 가중치
+#은닉층의 경계값(b) 1개와 은닉층의 결과값이 출력층으로 연결되는 가중치 
+
+model_net$fitted.values  # 분류모델의 적합값 
+
+#분류모델의 예측치 생성, 정확도 확인
+#type="class"는 예측 결과를 출력변수 y의 범주('no','yes')로 분류
+p <- predict(model_net, df, type="class")
+table(p, df$y)
+
+
+
+#####iris 데이터 셋에 인공신경망 모델 생성: nnet 패키지 ########
+idx<-sample(1:nrow(iris), 0.7*nrow(iris))
+training <- iris[idx, ]
+testing <- iris[-idx, ]
+
+model_net_iris <- nnet(Species ~ ., training, size=1)
+#은닉층 1개, 11개의 가중치 , 출력값 3개
+
+
+model_net_iris3 <- nnet(Species ~ ., training, size=3)
+#은닉층 3개,  27개의 가중치, 출력값 3개
+
+※ 입력변수의 값들이 일정하지 않으면 과적합(overfitting)을 피하기 위해서 정규화 과정을 수행해야 합니ㅏㄷ.
+
+#가중치 확인
+summary(model_net_iris) 
+summary(model_net_iris3) 
+
+#분류모델의 정확도 평가
+table(predict(model_net_iris, testing, type="class"), testing$Species)
+#정확률은 
+
+table(predict(model_net_iris3, testing, type="class"), testing$Species)
+#정확률은
+
+#nnet 패키지에서 제공되는 인공 신경망 모델은 1개의 은닉층으로 최적화되어 있기 때문에 
+은닉층의 노두 수를 3개로 늘려서 많은 연산이 수행된 반면, 분류 정확도는 크게 차이가 없다
+
+
+#####iris 데이터 셋에 인공신경망 모델 생성: neuralnet 패키지 ########
+install.packages("neuralnet")
+library(neuralnet)
+idx<-sample(1:nrow(iris), 0.7*nrow(iris))
+training <- iris[idx, ]
+testing <- iris[-idx, ]
+
+※neuralnet()함수는 종속변수(출력변수y)가 수치형이어야 합니다.
+
+training$Species2[training$Species=='setosa'] <- 1
+training$Species2[training$Species=='versicolor'] <- 2
+training$Species2[training$Species=='virginica'] <- 3
+head(training)
+
+testing$Species2[testing$Species=='setosa'] <- 1
+testing$Species2[testing$Species=='versicolor'] <- 2
+testing$Species2[testing$Species=='virginica'] <- 3
+head(testing)
+
+# 정규화 함수를 이용하여 학습데이터와 검정데이터를 정규화
+# 0과 1사이의 범위로 컬럼값을 정규화 
+normal <- function(x){
+     return ((x-min(x))/(max(x)-min(x)))
+}
+
+training$Species <- NULL
+testing$Species <-NULL
+
+training_nor <- as.data.frame(lapply(training, normal))
+summary(training_nor)
+
+testing_nor <- as.data.frame(lapply(testing, normal))
+summary(testing_nor)
+
+#인공신경망 분류 모델 생성
+model_net <- neuralnet(Species2 ~ Sepal.Length+ Sepal.Width+Petal.Length+Petal.Width, data=training_nor, hidden=1)
+model_net
+plot(model_net)
+
+#분류모델 정확도(성능) 평가
+model_result <- compute(model_net, testing_nor[c(1:4)])
+model_result$net.result
+
+#상관관계분석 : 상관계수로 두 변수 간의 선형관계의 강도 측정
+#예측된 꼭 종류와 실제 관측치 사이의 상관관계 측정
+cor(model_result$net.result, testing_nor$Species2)
+
+#은닉층 2개
+model_net2 <- neuralnet(Species2 ~ Sepal.Length+ Sepal.Width+Petal.Length+Petal.Width, 
+               data=training_nor, hidden=2, algorithm="backprop", learningrate=0.01)
+model_net2
+plot(model_net2)
+
+
+#분류모델 정확도(성능) 평가
+model_result2 <- compute(model_net, testing_nor[c(1:4)])
+model_result2$net.result
+cor(model_result2$net.result, testing_nor$Species2)
+
+
+
+########################분류분석 연습문제 4#######################
+# mpg 데이터 셋을 대상으로 7:3 비율로 학습데이터와 검정데이터로 각각 샘플링한 후
+각 단계별로 분류분석을 수행하시오.
+조건) 변수모델링 : x변수(displ + cyl + year), y변수(cty)
+
+단계1 : 학습데이터와 검정 데이터 생성
+idx <- sample(1: nrow(mpg), nrow(mpg) * 0.7)
+train <- mpg[idx, ] # 학습데이터
+dim(train)
+test <- mpg[-idx, ] # 검정데이터
+dim(test)
+
+단계2 : formula 생성
+# 도시 주행마일수 <- 실린더, 엔진크기, 제조년도 
+formula <- cty ~ displ + cyl + year
+
+단계3 : 학습데이터에 분류모델 적용
+mpg_train <- ctree(formula, data=train)
+
+단계4 : 검정데이터에 분류모델 적용
+mpg_test <- ctree(formula, data=test)
+
+단계5 : 분류분석 결과 시각화
+plot(mpg_test)
+
+단계6 : 분류분석 결과 해설
+실린더가 5이하이면 엔진크기에 의해서 23개가 분류되고, 실린더가 5이상이고,
+6이하이면 27개가 분류되고, 6을 초과한 경우 21개가 분류된다.
+
+########################분류분석 연습문제 5##################
+weather 데이터를 이용하여 다음과 같은 단계별로 분류분석을 수행하시오.
+조건1) rpart() 함수 이용 분류모델 생성
+조건2) 변수 모델링 :
+y변수(RainTomorrow), x변수(Date와 RainToday 변수 제외한 나머지 변수)
+조건3) 비가 올 확률이 50% 이상이면 ‘Yes Rain’, 50% 미만이면 ‘No Rain’으로 범주화
+
+단계1 : 데이터 가져오기
+library(rpart)
+weather = read.csv("./data/weather.csv", header=TRUE)
+ 
+단계2 : 데이터 샘플링
+weather.df <- weather[, c(-1,-14)]
+nrow(weather.df)
+idx <- sample(1:nrow(weather.df), nrow(weather.df)*0.7)
+weather_train <- weather.df[idx, ]
+weather_test <- weather.df[-idx, ]
+
+단계3 : 분류모델 생성
+weather_model <- rpart(RainTomorrow ~ ., data = weather.df)
+weather_model # Humidity 중요변수
+
+단계4 : 예측치 생성 : 검정데이터 이용
+weater_pred <- predict(weather_model, weather_test)
+weater_pred
+
+단계5 : 예측 확률 범주화('Yes Rain', 'No Rain')
+weater_class <- ifelse(weater_pred[,1] >=0.5, 'No Rain', 'Rain')
+
+단계6 : 혼돈 행렬(confusion matrix) 생성 및 분류정확도 구하기
+table(weater_class, weather_test$RainTomorrow)
+# weater_class No Yes
+# No Rain 83 6
+# Rain 2 19
+# (83 + 19) / nrow(weather_test)
+# [1] 0.9272727
+ 
+
+
+###################유클리디안 거리 계산 ########################
+x <- matrix(1:9, nrow=3, by=T)
+x
+dist<-dist(x, method="euclidean")
+dist
+
+#1과 2, 2와 3은  유클리디안 거리 1과 3보다는 가깝고 
+
+s<- sum((x[1,] - x[2,])^2)  #1행과 2행의 변량의 차의 제곱의 합
+sqrt(s)  
+
+
+
+s<- sum((x[1,] - x[3,])^2)  #1행과 3행의 변량의 차의 제곱의 합
+sqrt(s) 
+
+
+######## 유클리디안 거리 계산 계층적 군집 분석 1##################
+install.packages("cluster")
+library(cluster)
+
+x <- matrix(1:9, nrow=3, by=T)
+x
+dist<-dist(x, method="euclidean")
+dist
+
+#유클리드 거리 matrix를 이용한 군집화
+hc <- hclust(dist) #클러스터링 적용
+
+plot(hc)
+
+ 
+##########유클리디안 거리 계산 계층적 군집 분석 2 #############
+interview <- read.csv("./data/interview.csv", header=TRUE)
+names(interview)
+head(interview)
+
+#유클리디안 거리 계산
+interview_df <- interview[c(2:7)]
+idist <- dist(interview_df)
+head(idist)
+
+hc <- hclust(idist)
+plot(hc, hang=-1)  #hang=-1 은 덴드로그램에서 음수값을 제거
+rect.hclust(hc, k=3, border="red")
+
+#유사한 데이터끼리 그룹화한 결과, 3개 그룹 (8,10,7,12,15), (2,1,4,6,13), (3,5,9,11,14)
+
+#군집별 특성을 보기위해서 군집별 subset 생성
+g1 <- subset(interview, no==108|no==110|no==107|no==112|no==115)
+g2 <- subset(interview, no==102|no==101|no==104|no==106|no==113)
+g3 <- subset(interview, no==103|no==105|no==109|no==111|no==114)
+
+summary(g1)  #종합점수 평균:71.6, 인성평균 :9.4 , 자격증 없음
+summary(g2)  #종합점수 평균:75.6, 인성평균 :14.8 , 자격증 있음
+summary(g3)  #종합점수 평균:62.8, 인성평균 :11 , 자격증 있음, 없음
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

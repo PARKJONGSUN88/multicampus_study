@@ -1,0 +1,528 @@
+6월 3일 
+자바 필답평가 25문제 예정
+-Java의 기초 문법 
+-Java의 OOP 구문
+-Java의 기본 API 활용
+
+자바 수행평가(코딩) 3문제 예정
+-Java의 기초 문법 
+-Java의 OOP 구문
+-Java의 기본 API 활용
+
+============================================================
+java.lang.Object
+
+객체.clone() -객체 복제
+
+얕은 복사 -객체의 생성된 주소값을 할당하는 방식 유사(동일한 객체를 참조)
+깊은 복사 -객체의 모든 속성을 새로 생성해서 메모리에 새로운 동일한 객체를 생성 방식
+사용자 정의 클래스를 복제가능도록 하려면 Cloneable 구현,
+
+Object의 equals() - 객체 생성 주소의 hash값을 비교
+hashCode() - 객체 생성 주소의 hash값 리턴
+
+Object obj = new Double();
+실제 생성된 객체의 타입을 리턴받으려면...getClass()
+
+Object의 toString() - 클래스 FullName@hash값
+
+일반 메서드에서는 notify(), notifyAll(), wait() 호출 불가, synchronized가 선언된 메서드에서 호출가능 => 멀티 스레드 환경에서 
+
+java.lang.String - 문자열 표현, 불변객체
+String s = new String(new byte[]{65,66,67});
+System.out.println(s); //System.out.println(s.toString())와 동일, ABC출력
+
+String s2 = "java";
+byte[] bytes =  s2.getBytes();
+s2.charAt(0)
+s2.substring(1, 3);
+String newStr  =s.concat(s2); -> s객체 출력하면 "ABC"
+contains()
+문자열객체.equals(비교할 문자열객체) - 문자열의 내용을 비교
+equalsIgnoreCase()
+s2.length()
+String s3 = "JackAndJue";
+String s4 = s3.replace("J", "Bl"); =>s3객체 출력하면 "JackAndJue"
+
+s3 = "   Jack  Jue   ";
+s3.trim().length(); ==> 결과? 9
+
+primitive data type을 문자열로 변환하려면 : String.valueOf() 또는 값+""
+
+split(구분자 또는 정규표현식) - 문자열을 구분자로 쪼개어 문자열 배열로 리턴
+join(결합문자, 문자열배열) - 문자열 배열의 요소를 하나씩 결합문자를 사용해서 하나의 결합된 문자열로 리턴
+
+가변문자열은 StringBuffer
+equals()
+StringBuffer sb1 = new StringBuffer("java");
+StringBuffer sb2 = new StringBuffer("java");
+System.out.println(sb1.equals(s2)); //?
+sb1.append("& sql"); //sb1의 출력내용은 "java& sql"
+sb1.insert(4, " web ");
+remove()
+length()
+substring()
+
+수학계산에 유용한 메서드를 가지고 있는 클래스 java.lang.Math
+생성자 private 이므로 new Math() 불가
+모든 속성과 메서드는 static
+abs()
+max()
+min()
+log()
+power()
+sqrt()
+round()
+ceil()
+floor()
+cos()
+...
+
+모두 객체로 구현해야 할경우, primitive data type을 객체로 wrapping
+boolean -> Boolean -> booleanValue()  문자열 "true" -> Boolean.parseBoolean()
+byte -> Byte          byteValue()     문자열 "100" -> Byte.parseByte()
+short -> Short        shortValue()
+char -> Character     charValue()
+int -> Integer        intValue()
+long -> Long          longValue()
+float -> Float        floatValue()
+double -> Double      doubleValue()
+
+
+객체가 null 또는 null이 아닌지 체크하거나 반드시 null이 아니어야 함을 메서드로 제공해주는 클래스 : java.util.Objects
+
+String s = null;
+s==null?
+s!=null?
+
+
+시스템의 현재시간을 utc기준 milli second로 리턴하는 메서드 : System.currentTimeMillis()
+
+
+난수 생성 : Math.random()
+            Random r = new Random()
+ex) (int)(Math.random()*100 +1)
+     Random r = new Random()
+     r.nextInt(100)+1
+     Random r = new Random(seed값)
+
+
+정규표현식을 이용해서 데이터 처리해야 할 경우, 특정 패턴을 객체로 생성
+1. java.util.regex.Pattern.compile("패턴") => Pattern 인스턴스 생성
+2. Matcher m =  Pattern 인스턴스.matcher(처리할 대상 데이터) => Matcher 인스턴스 생성
+3. m.matches() => true or false로 리턴
+
+.  하나의 모든 문자
+[a-zA-Z0-9] 범위
+en$
+^ab
+[^0-9]
+[0-9]?  zero or one
+[0-9]+  one or more
+[0-9]*  zero or more
+{2, 5} 최소횟수, 최대횟수
+{3}
+\\d
+\\D
+\\w
+\\W
+\\s
+\\S
+
+표준출력 
+1.5버전 이전에 한글을 포함한 키보드 입력을 받으려면
+java.io.InputStream 바이트 최상위 스트림은 추상클래스
+System.in 운영체제에 맞게 InputStream 구현 객체
+문자 스트림은 XXXXReader, XXXWriter
+try{
+     BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+     String s = br.readLIne();
+     //Integer.parseInt(s)
+   }catch(IOException e){
+   
+   }finally{
+       try{
+           br.close();
+          }catch(IOException e){
+          }
+   }
+
+
+Scanner scan = new Scanner(System.in)
+scan.next()
+scan.nextLine()
+scan.nextInt()
+....
+
+1.6버전에서는  System.console() 
+
+
+==============================================================================
+
+
+
+
+
+
+
+
+String s="월, 화, 수, 목, 금, 토, 일";
+StringTokenizer sToken = new StringTokenizer(s, ",");
+StringTokenizer는 내부에 포인터를 가지고 있고 구분자를 기준으로 포인터를 이동하면서 
+hasNextTokens()메서드는 Token이 있으면 true를 리턴하고 없으면 false를 리턴합니다.
+포인터가 가리키는 Token을 반환받으려면 nextToken() 메서드를 사용하며
+이 과정을 반복문에서 수행합니다.
+
+
+
+
+package lab.java.core;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
+
+public class ListTest {
+
+	public static void main(String[] args) {
+		String cars[] = {"k3", "k5", "sm6","k7", "k9", "sm3", "k5","sm5", "sm6", "sm7"}; 
+		List<String> alist = new ArrayList();
+		for (String car : cars) {
+			alist.add(car);
+		}
+		System.out.println(alist.size());
+		System.out.println(alist);
+		alist.set(1, "Bentz");
+		System.out.println(alist);
+		alist.remove(5);
+		System.out.println(alist);
+		System.out.println(alist.size());
+		
+		for(int i=0;i<alist.size();i++) {
+			System.out.print(alist.get(i)+",");
+		}
+		System.out.println();
+		Iterator<String> iter = alist.iterator();
+		while(iter.hasNext()) {
+			System.out.print(iter.next()+",");
+		}
+		//alist.iterator(), iter.hasNext(), iter.next()		
+		System.out.println();
+		 
+	}
+
+}
+
+
+
+
+
+============================================================================
+
+package com.grade.entity;
+
+import java.util.Arrays;
+
+import com.grade.util.CommonUtil;
+
+public abstract class Student {
+   private String studentNo;
+   private String studentName;
+   private int[] gradeArr;
+public Student(String studentNo, String studentName, int[] gradeArr) {
+	super();
+	this.studentNo = studentNo;
+	this.studentName = studentName;
+	this.gradeArr = gradeArr;
+}
+public String getStudentNo() {
+	return studentNo;
+}
+public void setStudentNo(String studentNo) {
+	this.studentNo = studentNo;
+}
+public String getStudentName() {
+	return studentName;
+}
+public void setStudentName(String studentName) {
+	this.studentName = studentName;
+}
+public int[] getGradeArr() {
+	return gradeArr;
+}
+public void setGradeArr(int[] gradeArr) {
+	this.gradeArr = gradeArr;
+}
+
+public int getTotal() {
+	int sum = 0;
+	for(int jumsu : gradeArr)
+		sum += jumsu;
+	return sum;
+}
+
+public double getAverage() {
+	 double total = getTotal();
+			 
+	 return CommonUtil.round(total/gradeArr.length);
+}
+
+public abstract boolean isPass();
+
+@Override
+public String toString() {
+	String str = null;
+	for(int jumsu : gradeArr) {
+		str += jumsu+"   ";
+	}
+	str += getTotal() +"   ";
+	str += getAverage() +"   ";
+	
+	return  str;
+}
+
+   
+}
+
+
+
+
+
+package com.grade.entity;
+
+public class NewStudent extends Student{
+    private boolean internYn;	 
+
+	public NewStudent(String studentNo, String studentName, int[] gradeArr, boolean internYn) {
+		super(studentNo, studentName, gradeArr);
+		this.internYn = internYn;
+	}
+
+	public boolean isInternYn() {
+		return internYn;
+	}
+
+	public void setInternYn(boolean internYn) {
+		this.internYn = internYn;
+	}
+	@Override
+	public boolean isPass() {
+		boolean pass = false;
+		if(getAverage()>=70) {
+			pass = true;
+		}
+		return pass;
+	}
+
+}
+
+
+
+
+
+package com.grade.entity;
+
+public class CareerStudent extends Student{
+    private int careerYears;
+    
+	public CareerStudent(String studentNo, String studentName, int[] gradeArr, int careerYears) {
+		super(studentNo, studentName, gradeArr);
+		this.careerYears = careerYears;
+	}	
+
+	public int getCareerYears() {
+		return careerYears;
+	}
+
+	public void setCareerYears(int careerYears) {
+		this.careerYears = careerYears;
+	}
+
+	@Override
+	public boolean isPass() {		 
+		boolean pass = false;
+		if(getAverage()>=80) {
+			pass = true;
+		}
+		return pass;
+	}
+
+}
+
+
+
+
+
+package com.grade.util;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class CommonUtil {
+	public static String getUserInput() {
+		   String strKeyln=null;
+		   try {
+			   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			   strKeyln = br.readLine();			   
+		   }catch(IOException e) {
+			   e.printStackTrace();
+		   }
+		   return strKeyln;
+	   }
+	
+	public static double round(double input) {
+		return Double.parseDouble(String.format("%.1f", input));
+	}
+}
+
+
+
+
+
+package com.grade.biz;
+
+public interface IGradeManager {
+  public static final int PRINT_ALL = 0;
+  public static final int PRINT_PASS = 1;
+  public static final int PRINT_FAIL = 2;
+  public void printStudents(int printType);
+  
+}
+
+
+
+
+
+package com.grade.biz;
+
+import com.grade.entity.CareerStudent;
+import com.grade.entity.NewStudent;
+import com.grade.entity.Student;
+
+public class GradeManager implements IGradeManager {
+	private Student[] students = new Student[30];
+	private int cnt = 0;
+
+	public GradeManager() {
+		super();
+		students[cnt++] = new NewStudent("10001", "kim", new int[] { 74, 70, 80 }, false);
+		students[cnt++] = new NewStudent("10005", "park", new int[] { 90, 90, 100 }, false);
+		students[cnt++] = new NewStudent("10009", "lee", new int[] { 70, 62, 60 }, true);
+		students[cnt++] = new CareerStudent("20001", "han", new int[] { 96, 85, 93 }, 1);
+		students[cnt++] = new CareerStudent("20005", "nam", new int[] { 90, 80, 73 }, 2);
+		students[cnt++] = new CareerStudent("20009", "choi", new int[] { 70, 70, 90 }, 1);
+	}
+
+	@Override
+	public void printStudents(int printType) {
+		System.out.println("=============================================================================");
+		System.out.println("사번    이름  신입/경력 인턴여부 경력년수  C  Linux  Java  총점 평균  합격여부");
+		System.out.println("=============================================================================");
+		if (printType == IGradeManager.PRINT_ALL) {
+			for (int i = 0; i < cnt; i++) {
+				System.out.print(students[i].getStudentNo() + " ");
+				System.out.print(students[i].getStudentName() + " ");
+				if (students[i] instanceof NewStudent) {
+					System.out.print("신입 " + (((NewStudent) students[i]).isInternYn() ? " Y      " : "  N     "));
+				} else {
+					System.out.print("경력           " + ((CareerStudent) students[i]).getCareerYears());
+				}
+				System.out.print(students[i].toString());
+				if (students[i].isPass()) {
+					System.out.print("합격");
+				} else {
+					System.out.print("불합격");
+				}
+			}
+		} else if (printType == IGradeManager.PRINT_PASS) {
+			for (int i = 0; i < cnt; i++) {
+				if (students[i].isPass()) {
+					System.out.print(students[i].getStudentNo() + " ");
+					System.out.print(students[i].getStudentName() + " ");
+					if (students[i] instanceof NewStudent) {
+						System.out.print("신입 " + (((NewStudent) students[i]).isInternYn() ? " Y      " : "  N     "));
+					} else {
+						System.out.print("경력           " + ((CareerStudent) students[i]).getCareerYears());
+					}
+					System.out.print(students[i].toString());
+					System.out.print("합격");
+				}
+			}
+		} else if (printType == IGradeManager.PRINT_FAIL) {
+			for (int i = 0; i < cnt; i++) {
+				if (!students[i].isPass()) {
+					System.out.print(students[i].getStudentNo() + " ");
+					System.out.print(students[i].getStudentName() + " ");
+					if (students[i] instanceof NewStudent) {
+						System.out.print("신입 " + (((NewStudent) students[i]).isInternYn() ? " Y      " : "  N     "));
+					} else {
+						System.out.print("경력           " + ((CareerStudent) students[i]).getCareerYears());
+					}
+					System.out.print(students[i].toString());
+					System.out.print("불합격");
+				}
+			}
+
+		}
+         System.out.println("=============================================================================");
+	}
+}
+
+
+
+
+
+
+package com.grade.test;
+
+import com.grade.biz.GradeManager;
+import com.grade.biz.IGradeManager;
+import com.grade.util.CommonUtil; 
+
+public class GradeTest {
+
+	public static void main(String[] args) {
+		IGradeManager manager = new GradeManager();
+		int menu =0;
+		while(true) {
+			printMenu();
+			System.out.print("## 메뉴 입력 ==>");
+			try {
+			     menu = Integer.parseInt(CommonUtil.getUserInput());
+			}catch(NumberFormatException e) {
+				System.out.println("## 숫자를 입력하세요!");
+				continue;
+			}
+			if (menu==9) {				 
+				System.out.println("##성적 관리 시스템을 종료합니다.!!");				 
+				break;
+			}
+			switch(menu) {
+			case 1:
+			case 2:
+			case 3: manager.printStudents(menu-1); break;
+			default : System.out.println("##없는 메뉴를 선택하였습니다.!!");			 
+			}
+		}//while end
+
+	}
+	
+	public static void printMenu() {
+		System.out.println("===== << 성적 관리 시스템 메뉴 >> ======");
+    	System.out.println("1. 전체 수강생 출력");
+    	System.out.println("2. 합격 수강생 출력");
+    	System.out.println("3. 불합격 수강생 출력");
+    	System.out.println("9. 종료");
+    	System.out.println("=======================================");
+	}
+
+}
+
+
+
+
+
+

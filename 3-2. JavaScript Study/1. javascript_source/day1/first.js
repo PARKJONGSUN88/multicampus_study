@@ -1,0 +1,1 @@
+window.onload = window.alert("코드 실행")

@@ -1,0 +1,147 @@
+리눅스 고유의 디스크 기반 파일 시스템 종류 : ext, ext2, ext3, ext4, XFS
+파일 시스템을 디렉토리 계층 구조의 특정 디렉토리와 연결하는 것 : mount
+리눅스 시스템이 부팅될때 자동으로 파일 시스템이 마운트되게 하려면 /etc/fstab 파일에 설정
+디스크 파티션 생성, 삭제 , 보기등 파티션 관리 명령 : fdisk
+리눅스 시스템이 부팅될때 스크립트들을 순차적으로 실행시켜서 다른 프로세스를 동작시키는 프로세스 : init 프로세스
+init은 시스템의 단계를 일곱개로 정의, 각 단계별로 셸 스크립트를 실행 : Runlevel
+0 - 시스템 종료 - /etc/rc0.d
+1, S - 응급 복구 모드(싱글 사용자 모드) - /etc/rc1.d
+2, 3, 4 - 다중 사용자 모드
+5 - 그래피컬 다중 사용자 모드
+6 - 재시작
+
+리눅스 종료 -  poweroff, shutdown, halt, init 0, init 6, reboot
+
+파일을 묶어서 하나로 만드는 것 : 파일 아카이브
+
+다른 시스템과 파일을 주고 받거나, 백업을 하기 위해 여러 파일이나 디렉토리를 하나의 아카이브 파일로 생성, 추출, 업데이트하는 명령 : tar
+새 아카이브 생성 : tar cvf
+아카이브 파일 내용 확인 : tar tvf
+아카이브 풀기 : tar xvf
+아카이브 업데이트 : tar uvf
+아카이브에 파일 추가 : tar rvf
+아카이브를 생성, 동시에 압축 : tar cvzf (gzip) , tar cvjf(bzip2)
+압축 하기/풀기 : gzip / gunzip (.gz)  , bzip2 /bunzip2 (.bz)
+압축 파일의 내용 보기 : zcat / bzcat
+
+사용자 계정 정보가 저장된 기본 파일 : /etc/passwd
+사용자 계정의 암호화된 비밀번호 정보가 저장된 기본 파일 : /etc/shadow
+
+사용자가 속한 그룹 정보가 저장된 기본 파일 : /etc/group
+사용자가 속한 그룹의 암호화된 비밀번호 정보가 저장된 기본 파일 : /etc/gshadow
+
+사용자 계정 생성 - useradd, adduser
+사용자 계정 수정 - usermod
+사용자 계정 삭제 - userdel
+사용자 계정의 패스워드 에이징 관리 - chage
+
+사용자 그룹 생성 - groupadd, addgroup
+사용자 그룹 수정 - groupmod
+사용자 그룹 삭제 - groupdel
+
+사용자 로그인 정보 확인 - who
+사용자 이름, 로그인한 시간, 로그아웃 시간, 터미널번호, IP 주소 확인 - last
+사용자 소속된 그룹 확인 - groups
+
+파일이나 디렉토리의 소유자, 그룹 변경 -  chown -R 소유자:그룹 ~
+                                        chown 소유자 ~
+                                        chgrp 그룹 ~
+
+빅데이터 6V
+Hadoop - 오픈소스 분산 병렬 (파일 시스템) 프레임워크
+       - HDFS, MapReduce, Yarn, Core, 여러 API
+클러스터 - Master-Slave구조
+           NameNode(HDFS의 namespace, meta정보)
+           DataNode(64M, 128M 데이터 블럭이 분산되어 저장)
+           3개 Data블럭은 복제되어 저장 - 장애 허용, 대응력 높음
+
+
+[hadoop@master hadoop]$ vi core-site.xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Put site-specific property overrides in this file. -->
+<configuration>
+<property>
+<name>fs.default.name</name>
+<value>hdfs://master:9000</value>
+</property>
+<property>
+<name>hadoop.tmp.dir</name>
+<value>/usr/local/hadoop-2.7.7/tmp</value>
+</property>
+</configuration>
+
+
+
+
+[hadoop@master hadoop]$ vi hdfs-site.xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Put site-specific property overrides in this file. -->
+<configuration>
+<property>
+<name>dfs.replication</name>
+<value>1</value>
+</property>
+<property>
+<name>dfs.permissions.enabled</name>
+<value>false</value>
+</property>
+<property>
+<name>dfs.secondary.http.address</name>
+<value>secondary:50090</value>
+</property>
+</configuration>
+
+
+
+[hadoop@master hadoop]$ cp mapred-site.xml.template  mapred-site.xml
+[hadoop@master hadoop]$ vi mapred-site.xml
+<configuration>
+<property>
+<name>mapreduce.framework.name</name>
+<value>yarn</value>
+</property>
+</configuration>
+
+
+[hadoop@master hadoop]$ vi yarn-site.xml
+<configuration>
+<property>
+<name>yarn.nodemanager.aux-services</name>
+<value>mapreduce_shuffle</value>
+</property>
+<property>
+<name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+<value>org.apache.hadoop.mapred.ShuffleHandler</value>
+</property>
+</configuration>
+
+
+
+
+
+
+# sample configuration for iptables service
+# you can edit this manually or use system-config-firewall
+# please do not ask us to add additional ports/services to this default configuration
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8088 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 50070 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 5432 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8032 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 12000 -j ACCEPT
+-A INPUT -s 192.168.50.0/24 -d 192.168.50.0/24 -j ACCEPT
+-A OUTPUT -s 192.168.50.0/24 -d 192.168.50.0/24 -j ACCEPT
+
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited

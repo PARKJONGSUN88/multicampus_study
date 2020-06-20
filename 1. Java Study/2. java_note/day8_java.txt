@@ -1,0 +1,401 @@
+상속-기존의 클래스를 재사용하여 새로운 클래스로 확장
+단일 상속 - 클래스(속성+생성자+기능), extends
+다중 구현(상속) - 인터페이스(속성+구현없는 기능 선언), implements
+
+클래스를 설계시 클래스간의 관계 :
+1. 포함관계 - has a관계, A클래스와 B의 클래스의 관계는 멤버관계로 설계됩니다.
+2. 상속관계 - is a 관계
+
+자바에서 모든 클래스는  java.lang.Object 상속받습니다.
+
+상속제외되는 것 - private 속성, private 메서드, 생성자메서드
+자식클래스로부터 객체를 생성할때 부모 객체가 먼저 생성됩니다. - 자식클래스의 생성자 첫번째 줄에 부모클래스의 default 생성자를 호출하는 super();가 컴파일시에 자동 추가됩니다.
+
+자식클래스에서 부모로부터 상속받은 속성과 메서드를  동일하게 다시 정의할 수 있습니다.
+
+자식클래스의 속성을 읽으려면 this.속성으로, 상속받은 동일한 이름의 속성을 읽으려면 super.속성으로 읽습니다.
+
+override - 부모로부터 상속받은 메서드를  동일하게 다시 정의하는 것
+1. AccessModifier는 동일하거나 scope가 더 넓어야 합니다.
+2. 리턴타입 반드시 동일
+3. 메서드이름 반드시 동일
+4. 매개변수(parameter)의 순서, 개수, 타입 모두 반드시 일치
+5. override메서드는 1번만 가능
+6. 상속받는 메서드의 파라미터 순서, 개수, 타입중 하나를 다르게 선언해서 overload는 제한없이 가능
+
+package - 관계가 있는 인터페이스, 클래스, enum, 예외클래스들을 그룹핑해놓은것
+          물리적으로 계층구조의 폴더로 생성
+          javac -d 패키지와클래스가 생성될 경로
+          java 패키지명.클래스명
+
+어떤 클래스가 속해 있는 package가 아닌 다른 package의 클래스를 사용할 경우   import해야 합니다.
+자바 소스파일에서 명시적 import없이 자동 import되는 패키지는 java.lang.*;
+
+JavaSE 또는 JavaEE외에 다른 자바 라이브러리(xxxx.jar)들을 사용하려면
+classpath에 추가
+1. set classpath ( 환경변수 )
+2. JDK 기본적 library찾는 영역 ($JAVA_HOME\jre\lib\ext)
+3. eclise IDE (build path의 library로 추가)
+
+
+import 패키지명.클래스명;
+import 패키지명.*;
+
+static import java.lang.Math.*;
+
+Math.abs()로 사용하지 않고 -> abs()로 사용 가능합니다.
+
+access modifier :
+            외부패키지(상속X), 외부패키지(상속), 동일패키지, 동일 클래스
+public           O                  O             O             O
+protected        X                  O             O             O
+(default)        X                  X             O             O
+private          X                  X             X             O
+
+
+
+다형성(polymorphism) - overload, override, 다형성 객체
+
+부모클래스 객체 = new 자식클래스1();
+           .....
+           객체 = new 자식클래스2();
+           .....
+           객체 = new 자식클래스3();
+
+다형성 객체가 access가능한 속성은  부모에 선언된 속성만 access가능
+다형성 객체가 호출 가능한 메서드는  부모에 선언된 메서드와 override된 자식클래스의 메서드
+다형성 객체에서 부모에 선언되지 않은 생성된 자식 객체의 속성이 메서드를 access하려면 선언된 부모 타입으로 형변환합니다.
+선언타입과 생성타입외에는 객체간의 형변환은 오류입니다.
+
+
+클래스의 modifier (클래스의 종류 선언): abstract, final
+
+
+final modifier: 멤버변수, 로컬변수, 메서드, 클래스 선언 
+final 멤버변수=> 상수
+final 로컬변수=> 상수
+
+public final 리턴타입 메서드명([매개변수 리스트]){ ...}
+=> override금지, 확장 금지, 
+
+public final class 클래스이름 { }
+=>상속 불가
+
+
+abstract modifier : 추상 (선언만 존재하고, 구현은 없는)
+
+public abstract 리턴타입 메서드이름([매개변수 리스트]);
+
+#부모로부터 상속받은 메서드이지만, 구현이 없고,
+자식클래스에서 필수 기능으로 반드시 구현해야 함을 강제할때
+
+#클래스에 abstract를 선언하는 이유는 객체 생성못함
+abstract메서드가 정의되어 있는 클래스는 객체 생성이 불가하므로 abstract를 선언합니다.
+
+public abstract class 클래스{}
+
+
+Animal - 모든 공통 속성, 기능(move, eat) 정의
+Dog, Cat, ....
+
+abstract메서드가 정의되어 있지 않는 클래스이지만, 객체 생성을 못하도록 하기 위해 abstract를 선언할 수 있습니다.
+
+
+
+인터페이스 - 속성(final static) , 구현 없는 메서드 선언(abstract메서드)
+구현 메서드를 정의할 수 없습니다.
+멤버변수 선언 불가
+
+JDK8버전부터 함수적 프로그래밍 가능하도록 하기 위해서
+람다 표현식이 지원되고, default로 선언된 구현 메서드를 정의할 수 있습니다.
+javascript, R, python 은 함수적 프로그래밍 언어
+함수는 변수 저장
+함수의 파라미터로 함수 전달 가능
+함수 내부에 함수를 정의할 수 있습니다.
+함수에서 함수를 리턴할 수 있습니다.
+
+
+Quiz> public final static int PACKAGE = 1; //선언가능
+      public final static void method(){} //선언가능
+      public abstract final void method2(){} //선언불가
+
+
+
+클래스 상속 불가
+인터페이스 상속 가능, extends, 
+
+public interface 인터페이스이름 [extends 인터페이스, 인터페이스,...] {
+    
+}
+
+인터페이스 타입은 참조변수의 타입으로 선언가능합니다. 그러나 객체(인스턴스) 생성은 불가
+인터페이스의 인스턴스를 생성하려면 반드시 구현 객체가 존재해야 합니다.
+
+
+
+클래스 - 속성 + 생성자 + 기능메서드+ 내부클래스(Inner Class)
+
+
+내부클래스(Inner Class) :
+1. Member Inner Class
+2. static Inner Class
+3. Local Inner Class
+4. Annoymous Inner Class(익명 클래스, 1회성 객체)
+
+ 
+
+Member Inner Class에는 protected , private 선언 가능
+Inner class에서는 Enclosing class의 private 멤버를 객체 생성 없이 접근(읽기) 가능
+Enclosing class에서 Inner class의 멤버를 접근(읽기)하려면 객체 생성해서 객체로 접근(읽기) 가능
+
+
+static Inner Class는 Inner Class의 멤버속성 또는 멤버 메서드가 static으로 정의되어야 할경우, Inner Class가 static scope를 제공해야 하므로 static으로 선언해야 합니다.
+
+Local Inner Class가 참조하는 local변수는 final이어야 합니다. 
+명시적으로 final을 local변수에 선언했었었는데...지금은 자동으로 참조할때 final로 선언됩니다.
+
+Enclosing class에서 Local Inner Class 객체 생성 불가(메서드가 메모리에 올라와 있는 상태에서 객체를 생성해야 합니다.)
+
+Local Inner Class의 객체 생성은 정의된 메서드 내부에서만 가능합니다.
+
+
+
+
+
+package com.workshop3.entity;
+
+public class Travel {
+	private String travelCode;
+	private String cityName;
+	private String flight;
+	private int travelType;
+	private int maxPeople;
+	private int reserved;
+	public static final int INDIVIDUAL = 0;
+	public static final int PACKAGE = 1;
+	 
+
+	public Travel(String travelCode, String cityName, String flight, int travelType, int maxPeople) {
+		super();
+		this.travelCode = travelCode;
+		this.cityName = cityName;
+		this.flight = flight;
+		this.travelType = travelType;
+		this.maxPeople = maxPeople;
+		reserved =0;
+	}
+
+	public String getTravelCode() {
+		return travelCode;
+	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public String getFlight() {
+		return flight;
+	}
+
+	public String getTravelType() {
+		String st = null;
+		if(travelType==INDIVIDUAL) {
+			st = "개별자유여행"	;
+		}else if(travelType==PACKAGE) {
+			st= "패키지여행"	;
+		}
+		return st;
+	}
+
+	public int getMaxPeople() {
+		return maxPeople;
+	}
+	public int getReserved() {
+		return reserved;
+	}
+  
+	public void setReserved(int reserved) {
+		this.reserved = reserved;
+	}
+	public void printTravelInfo() {
+		System.out.print(getTravelCode()+"\t");
+		System.out.print(getCityName()+"\t");
+		System.out.print(getFlight()+"\t");
+		System.out.print(getTravelType()+"\t");
+		System.out.print(getMaxPeople()+"\t");
+		System.out.print(getReserved()+"\t");
+	}
+}
+
+
+
+
+
+
+
+
+package com.workshop3.biz;
+
+import com.workshop3.entity.Travel;
+
+public class TravelBiz {
+	private Travel[] travels;
+
+	public TravelBiz() {
+		travels = new Travel[5];
+		travels[0] = new Travel("TRV001", "뮌휀", "독일항공", Travel.INDIVIDUAL, 10);
+		travels[1] = new Travel("TRV002", "프라하", "에어프랑스", Travel.INDIVIDUAL, 7);
+		travels[2] = new Travel("TRV003", "LA", "델타항공", Travel.PACKAGE, 12);
+		travels[3] = new Travel("TRV004", "후쿠오카", "대한항공", Travel.INDIVIDUAL, 15);
+		travels[4] = new Travel("TRV005", "상해", "남방항공", Travel.PACKAGE, 10);
+
+	}
+
+	public void printAllTravels() {
+		for (Travel t : travels) {
+			t.printTravelInfo();
+		}
+	}
+
+	public void printIndividualTravels() {
+		for (Travel t : travels) {
+			if (t.getTravelType().equals("개별자유여행")) {
+				t.printTravelInfo();
+			}
+		}
+	}
+
+	public void printPackageTravels() {
+		for (Travel t : travels) {
+			if (t.getTravelType().equals("패키지여행")) {
+				t.printTravelInfo();
+			}
+		}
+	}
+
+	public Travel reserveTravel(String travelCode, int reserveCount) {
+        Travel reservedTravel = null;
+        for(Travel t : travels) {
+			 if(t.getTravelCode().equals(travelCode)) {				
+				 reservedTravel = t;
+				
+	        }//outer if end
+        }//for end
+        return reservedTravel;
+	}
+
+	public void printTravelListTitle() {
+		System.out.println("-------------------------------------------------------------------");
+		System.out.println("여행코드\t도시명\t항공편\t\t여행유형\t\t최대예약가능인원  예약");
+		System.out.println("-------------------------------------------------------------------");
+
+	}
+}
+
+
+
+
+package com.workshop3.util;
+
+import java.util.Scanner;
+
+public class TravelUtil {
+    public String getUserInput() {
+    	Scanner input = new Scanner(System.in);
+    	return input.next();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+package com.workshop3.test;
+
+import com.workshop3.biz.TravelBiz;
+import com.workshop3.entity.Travel;
+import com.workshop3.util.TravelUtil;
+
+public class TravelTest {
+
+	public static void main(String[] args) {
+		TravelBiz biz = new TravelBiz();
+		
+		 while(true) {
+			 printMenu();
+			 System.out.print("## 메뉴 입력:");
+			 String menu = TravelUtil.getUserInput();
+			 if(menu.equals("9")) {
+				 break;
+			 }else {
+			     switch(menu) {
+			     case "1" : 
+			    	 biz.printTravelListTitle();
+			    	 biz.printAllTravels();
+			    	 break;
+			     case "2" : 
+			    	 biz.printTravelListTitle();
+			    	 biz.printIndividualTravels();
+			    	 break;
+			     case "3" : 
+			    	 biz.printTravelListTitle();
+			    	 biz.printPackageTravels();
+			    	 break;
+			     case "4" : 
+			    	 System.out.println("여행 상품을 예약합니다");
+			    	 System.out.print("여행 코드 입력:");
+			    	 String travelCode = TravelUtil.getUserInput();
+			    	 System.out.print("예약 인원 입력:");
+			    	 int reserveCount = Integer.parseInt(TravelUtil.getUserInput());
+			    	 Travel reservedTravel = null;
+			    	 reservedTravel =biz.reserveTravel(travelCode, reserveCount);
+			    	 if( reservedTravel.getMaxPeople()- reservedTravel.getReserved() >= reserveCount) {
+			    		 reservedTravel.setReserved( reservedTravel.getReserved()+reserveCount);
+			    		 System.out.println("예약이 완료 되었습니다");
+			    		 biz.printTravelListTitle();
+			    		 reservedTravel.printTravelInfo();
+			    	 }else {
+			    		 System.out.print("예약 가능 인원이 초과되었습니다.");
+			    		 System.out.print("(예약 가능 인원:");
+			    		 System.out.print(reservedTravel.getMaxPeople()- reservedTravel.getReserved()+"명)\n");
+			    	 }
+			     }
+			 }//if end
+		 }//while end
+
+	}
+	public static void printMenu() {
+		System.out.println("========<메뉴>========");
+		System.out.println("1.전체 여행 상품 조회");
+		System.out.println("2.개별자유여행 상품 조회");
+		System.out.println("3.패키지 여행 상품 조회");
+		System.out.println("4.여행 상품 예약");
+		System.out.println("9.종료");
+		System.out.println("=====================");
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

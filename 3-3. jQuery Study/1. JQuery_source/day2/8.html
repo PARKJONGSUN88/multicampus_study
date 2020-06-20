@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+ div{  margin:10px;
+       border:3px Solid Black;
+       border-radius:10px;
+       float:left;
+       width:120px; height:120px;
+       text-align:center;
+    }
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> 
+ $(document).ready(function () {
+     /*
+	 var headers = $("h1").html();
+	 alert(headers);
+	 */
+	 
+	 var texts = $("h1").text();
+	 alert(texts);	 
+	 
+	/*
+	$("div").html(function(index){
+		return("<h3>Header-"+index+"</h3>");
+	});
+	*/
+	
+	 $("div").text(function(index){
+		return("<h3>Header-"+index+"</h3>");
+	});
+	
+	$("h3").last().remove();
+	$("article").empty();	
+	
+	$('<p></p>').html("This is <mark>web app</mark>").appendTo('body');
+	
+    });
+    </script>
+</head>
+<body>
+    
+   <h1> Header-0 </h1>
+   <h1> Header-1 </h1>
+   <h1> Header-2 </h1>
+   <div></div>
+   <div></div>
+   <div></div>   
+   <br>   <br>   <br>   <br>   <br>   <br>   <br>
+   <h3>제목1</h3>
+   <h3>제목2</h3>
+   <article>
+   <p>단락1</p>
+   <p>단락2</p>
+   </article> 
+</body>
+</html>

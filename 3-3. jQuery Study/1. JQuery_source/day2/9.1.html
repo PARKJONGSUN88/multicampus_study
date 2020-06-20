@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> 
+	$(document).ready(function() {
+		$('img').css('width', 250);
+		setInterval(function(){
+			$('img').first().appendTo('body');
+		}, 1000);
+	});
+</script> 
+</head>
+<body>
+	
+	<img src="Desert.jpg">
+	<img src="Lighthouse.jpg">
+	<img src="Penguins.jpg">
+</body>
+</html>	

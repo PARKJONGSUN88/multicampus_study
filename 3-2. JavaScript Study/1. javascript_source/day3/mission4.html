@@ -1,0 +1,73 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta  charset="UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+		
+		}
+		#panel{
+			width:600px;
+			height:300px;
+			border:1px solid #999;
+			position:relative;
+		}
+		
+		#bar{
+			position:absolute;
+			left:50px;
+			top:190px;
+			width:500px;
+			height:20px;
+			
+			background:#F30;
+		}
+		
+		#img1{
+			position:absolute;
+			left:50px;
+			top:120px;		
+		}
+		
+		#nav{
+			text-align:center;
+			width:600px;
+		}
+	</style>
+	
+	<script>
+		 // 시작위치 구하기.
+		 // 마지막 위치.(시작위치 + bar의 넓이 - 이미지 넓이)
+		 // 이미지의 현재 위치를 시작위치로 설정.
+		 // 사용하게 될 이미지(물고기) 엘리먼트를 변수에 저장.
+		 // 시작버튼 이벤트 리스너 등록.
+		 // 정지버튼 이벤트 리스너 등록.
+		 // 타이머 실행.
+		 // 이미지 움직이기. -  2px만큼 이동합니다.
+         //  위치값이 마지막 위치값을 넘어가는 순간, 
+		//  시작 위치<--- 마지막 위치로 이동될수 있도록 방향을 바꿔준다.
+		// 위치값이 시작위치값을 넘어가는 순간,
+		// 시작위치 ---->마지막 위치로 이동될수 있도록 방향을 바꿔준다.
+		// 최종적으로 조절된 위치값을 left에 적용시켜 준다.
+		// 타이머 정지시키기.
+	</script>
+</head>
+
+<body>	
+	<div> 
+		<h4>#img1을 #bar의 영역에서 계속 좌우로 움직이도록 만들어주세요.</h4>
+		<div id="panel">
+			<div id="bar"> </div>
+			<div id="img1">
+				<img src="fish.png">
+			</div>
+		</div>
+		<div id="nav">
+			<button id="btn_start">시작</button>
+			<button id="btn_stop">멈춤</button>
+		</div>
+	</div>       
+</body>
+</html>

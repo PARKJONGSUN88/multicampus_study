@@ -1,0 +1,294 @@
+음수를 binary값으로 만들때 할때 => 양수값의 binary로 만든후, 2의 보수로 변환하면 
+
+-15는 양수 binary는 15는 0.........01111
+                         1........110001
+
+음수 binary값을 십진수로 변환할때 => 음수 binary값의 2의 보수로 변환한후에 -음수를 붙이면 됩니다.
+
+=========================this 예제=====================================
+
+package lab.java.core;
+
+public class Test {   //Test this = new Test();
+    private int num;
+    public void setNum(int num) {//로컬변수
+        //메소드를 호출한 객체 자신의 속성 num에 저장하기 위해서는 
+    	//모든 객체는 생성될때 자기자신을 참조하는 reference변수 자동 생성됩니다.
+     	this.num = num;
+    }
+    public int getNum() {
+    	return num;
+    }
+	public static void main(String[] args) {
+		Test t = new Test();
+		System.out.println(t.getNum());//?0
+		t.setNum(100);
+		System.out.println(t.getNum());//?100
+		
+	}
+
+}
+
+
+==================private 필드에 대한 인터페이스 메서드================================== 
+package lab.java.core;
+
+public class Person {
+	public String  id;
+    private String name;
+    //생성자 메서드를 명시적으로 정의하지 않으면
+    //default 생성자를 컴파일시에 JDK라 생성해줍니다.
+    public void setName(String n) {
+    	name = n;
+    }
+    
+    public String getName() {
+    	return name;
+    }
+}
+
+
+package lab.java.core;
+
+public class PersonTest {
+
+	public static void main(String[] args) {
+		Person p1 = new Person();
+		System.out.println(p1.id);
+		p1.id="korea";
+		System.out.println(p1.id);
+		//p1.name="대한민국";
+		p1.setName("대한민국");
+		//System.out.println(p1.name);
+		System.out.println(p1.getName());
+	}
+
+}
+
+
+==============================================
+package exercise.basic.diary;
+
+public class MyDiary {
+private String title;
+private int month;
+private int day;
+private String desc;
+
+public MyDiary(String title, int month, int day) {
+	this.title = title;
+	this.month = month;
+	this.day = day;
+	
+}
+public MyDiary(String title, int month, int day, String desc) {
+	this(title, month, day); //다른 생성자를 호출 
+	this.desc = desc;
+}
+public String getTitle() {
+	return this.title;
+}
+
+public void setTitle(String title) {
+	this.title = title;
+}
+
+public int getMonth() {
+	return this.month;
+}
+public void setMonth(int month) {
+	this.month = month;
+}
+
+public int getDay() {
+	return this.day;
+}
+
+public void setDay(int day) {
+	this.day = day;
+}
+
+public String getDesc() {
+	return this.desc;
+}
+
+public void setDesc(String desc) {
+	this.desc = desc;
+}
+
+
+}
+
+
+============================================
+package exercise.basic.diary;
+
+import java.util.Scanner;
+
+public class MyDiaryTest {
+
+	public static void main(String[] args) {
+		MyDiary[] my = new MyDiary[] {
+				new MyDiary("데이터", 1, 5, "레스토랑"),
+				new MyDiary("야근", 2, 3 ),
+				new MyDiary("시험", 1, 7, "열공"),
+				new MyDiary("OPEN API", 5, 13, "IT전문가 교육시작"),
+				new MyDiary("영화", 4, 20, "어밴져스")
+		};
+		 
+		
+		while(true) {
+			System.out.print("## 월 입력(종료:-1)=>");
+			int inputNumber = getUserInput();
+			if(inputNumber==-1) {
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			}
+			
+			for(int i=0;i<my.length;i++) {
+				int cnt = 1;
+				if(my[i].getMonth()==inputNumber) {
+					System.out.print(cnt++ +". " +my[i].getMonth()+"월 ");
+					System.out.print(my[i].getDay()+"일 : ");
+					System.out.print(my[i].getTitle());
+					if(my[i].getDesc()!=null) {
+						System.out.print(", "+my[i].getDesc());
+					}
+					System.out.println();
+				}
+					
+				}//for end
+			}//while end			
+		}//main end
+
+	 
+	public static int getUserInput() {
+		Scanner input = new Scanner(System.in);
+		return input.nextInt();
+	}
+
+}
+
+
+
+===============================================================
+package exercise.basic.array;
+
+import java.util.Random;
+
+public class Array {
+  private String title;
+  private int row;
+  private int col;
+  private int[][] array;
+  
+  public Array(String title, int row, int col) {
+	  this.title = title;
+	  this.row = row;
+	  this.col = col;
+	  this.array = new int[row][col];
+  }
+  public int getRow() {
+	  return this.row;
+  }
+  public void setRow(int row) {
+	  this.row = row;
+  }
+  public int getCol() {
+	  return this.col;	  
+  }
+  public int[][] getArray(){
+	  return this.array;
+  }
+  public void setArray(int[][] array) {
+	  this.array = array;
+  }
+  private int getRandomNumber() {
+	  Random rand = new Random();
+	  int randomNumber = rand.nextInt(row*col)+1;
+	  return randomNumber;
+  }
+  public void makeArrayData() {
+	  for(int r=0;r<row;r++) { //array.length==row
+		  for (int c=0;c<col;c++){ //array[r].length==col
+			  array[r][c] = getRandomNumber();
+		  }
+	  }
+  }
+  
+  public void printArray() {
+       System.out.println("## "+title+" Array 출력");
+	  for(int r=0;r<row;r++) { //array.length==row
+		  for (int c=0;c<col;c++){ //array[r].length==col
+			  System.out.printf("%3d", array[r][c]);  
+		  }
+		  System.out.println();
+	  }
+  }
+  public void findMatchNumber(Array src, Array desc) {	  
+	  int count = 0;
+		for(int r=0;r<src.getArray().length;r++) {
+	    	for(int c=0;c<src.getArray()[r].length;c++) {
+	    		if(src.getArray()[r][c]==desc.getArray()[r][c]) {
+	    			count++;   
+	    			System.out.print("일치하는 숫자 : ["+r+"]["+c+"]="+src.getArray()[r][c]+",");
+	    		}
+	    	}
+	    	System.out.println();
+		}
+		System.out.println("일치하는 숫자 갯수 :"+count);
+	  
+  }//findMatchNumber() end
+  
+}//class end
+
+
+
+클래스변수는 class의 byte코드가 메모리에 로딩될때 생성
+
+인스턴스 변수는 class로부터 객체 생성할때 생성
+인스턴스 변수는 객체가 소멸될때까지 참조 가능
+※ 인스턴스 변수는 명시적 초기화 없이 사용 가능
+
+로컬변수는 메서드가 호출될때 stack에서 실행될때 생성되고, 
+메서드 수행이 끝나면 Garbage Collect되므로 메소드 밖에서 참조 불가합니다.
+※ 로컬 변수는 사용전에 반드시 명시적 초기화가 필요합니다.
+※ 로컬 변수는 final을 제외한 AccessModifier, Modifier는 선언 불가
+
+
+
+※JVM은 메소드 호출시 파라미터 타입이 Primitive Data Type이면 값을 복사해서 전달합니다.=>CallByValue방식
+※JVM은 메소드 호출시 파라미터 타입이 Referenec Data Type이면 주소값을 전달합니다.=>CallByReference방식
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

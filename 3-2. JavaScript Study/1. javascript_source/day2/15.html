@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+ window.onload=function(){
+	var h1 = document.createElement("p");
+	var text1 = document.createTextNode("새 요소 추가");
+	h1.appendChild(text1);
+	document.body.appendChild(h1);
+	
+	var img1 = document.createElement("img");
+	img1.src = "dog.jpg";
+	img1.width = 300;
+	img1.height = 300;
+	document.body.appendChild(img1);		
+	
+	var img2 = document.createElement("img");
+	img2.setAttribute('src', "dog2.jpg");
+	img2.setAttribute('width', 300);
+	img2.setAttribute('height', 300);
+	console.log(img2.getAttribute("src"));
+	document.body.appendChild(img2);
+
+	
+console.log(document.getElementById("j1").innerHTML);
+	var nodelist = document.getElementsByName("j2");
+	console.log(nodelist.length);
+	console.log(nodelist[0].innerHTML+","+nodelist[1].innerHTML);
+	nodelist=document.getElementsByTagName("p");
+	console.log(nodelist.length);
+	
+	var p1 = document.getElementById("j1");
+	p1.style.border="2px solid blue";
+	p1.style.color="orange";
+	p1.style.fontSize="20";
+	console.log(document.getElementById("j1").parentNode.nodeName);
+	
+	//document.body.removeChild(p1);
+
+
+
+	
+}
+</script>
+</head>
+<body>
+<h3>Document객체를 이용한 문서 구조 변경</h3>
+	<p id="j1">javascript</p>
+	<p name="j2">JQuery</p>
+	<p name="j2">SencaTouch</p>
+	<p>Node.js</p>
+	<p>Angular.js</p> 
+
+
+
+</body>
+</html>

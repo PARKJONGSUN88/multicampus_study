@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>객체 리터널 방식으로 객체 생성<h3>
+# for in 반복문을 객체의 속성에 접근할때 사용 가능<br>
+# 객체에 대해서 사용하는 in키워드는 속성 존재 여부를 체크할 때 사용할 수 있습니다.<br>
+# 객체의 속성을 객체.속성 대신 속성명으로만 사용할때 with(객체){ } 사용합니다<br>
+# 객체 리터럴 방식으로 정의되는 객체는 동적으로 속성, 메소드를 추가하거나, 제거할 수 있습니다.<br>
+<script>
+var student = {이름:'홍길동', 영어:88, 국어:90, 수학:77, 과학:75};
+document.write(student.이름 + "의 총점 :"+ (student.영어+student.국어+student.수학+student.과학) + "<br>");//이름과 총점 출력
+
+with(student){
+document.write(이름+"의 평균 :"+(영어+국어+수학+과학)/4+"<br>");
+}
+
+</script>
+</body>
+</html>

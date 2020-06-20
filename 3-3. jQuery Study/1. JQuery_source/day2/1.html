@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">  
+  <title>jQuery 기본</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>   
+$(document).ready(function(){
+	var arry = [ {name: "네이버", link:"http://www.naver.com"},
+				{name: "구글", link:"http://www.google.com"},
+				{name: "멀티캠퍼스", link:"http://www.multicampus.com"}
+				
+				];
+    var output = "";
+	
+  //$.each() 메서드를 사용합니다.
+  $.each(arry, function(index, item) {
+	output += "<a href="+item.link+"><h1>"
+			+item.name+"</h1></a><br>";
+	});
+	document.body.innerHTML += output;
+	});	
+  </script>
+ </head>
+ <body>   
+ </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax처리 1</title>
+<style>
+ 
+</style>
+<script>
+window.onload=function(){	//이벤트 발생
+	var req = new XMLHttpRequest(); //1.XMLHttpRequest
+	req.onloadstart=function(){
+		console.log("loadstart : 요청을 보낼때");
+	}
+	req.onload=function(){
+		console.log("load : 요청 성공, 응답 가져올 수 있을 때");
+	}
+	req.onloadend=function(){
+		console.log("loadend : 요청 완료");	
+	}
+	req.onprogress=function(){
+		console.log("progress : 데이터를 주고 받을 때");	
+	}
+	req.onreadystatechange = function(){
+		if(req.readyState==4){
+			if(req.status==200){	
+				document.getElementById("view").innerHTML=req.responseText
+			}
+		}
+	}	//응답 처리 함수
+	req.open("Get", "data.txt"); //2.요청 보낼 준비
+	req.send(null);	//3.요청보냄
+
+};
+</script>
+</head>
+<body>
+ <p id="view"></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript:event</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('a').click(function(event){
+		event.preventDefault();
+	});
+	$('#f1').submit(function(event){
+		event.preventDefault();
+	});	
+}); 
+</script>
+</head>
+<body>
+<a href="http://www.multicampus.co.kr">www.multicampus.co.kr</a><br>
+<form  id = "f1" method="get" action="data.jsp">
+email : <input type=email name="email" id="email"><br>
+<input type="submit">
+</form>
+</body>
+</html>
+
+

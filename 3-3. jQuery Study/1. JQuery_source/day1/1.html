@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html lang="ko">
+<head>
+<meta charset="UTF=8">
+<title>JQuery 기본</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+/*
+	jQuery(document).ready(
+		function(){
+			alert("ready event handler1"); 
+		}
+	);
+	 
+	$(document).ready(
+		function(){
+			alert("ready event handler1");
+		}
+	);
+	
+	$(
+		function(){
+			alert("즉시 실행될 함수"); 
+		}
+	);
+ */
+ /*
+	$(document).ready(function(){
+		$("h3").css("color", "blue").css("backgroundColor", "orange");
+		}
+	);
+	$(document).ready(function(){
+		$("*").css("color", "blue").css("backgroundColor", "orange");
+		}
+	);
+	$(document).ready(function(){
+		$("div, p").css("color", "blue").css("backgroundColor", "orange");
+		}
+	);		
+	$(document).ready(function(){
+		$("#simple").css("color", "blue").css("backgroundColor", "orange");
+		}
+	);
+	$(document).ready(function(){
+		$(".todo").css("color", "blue").css("backgroundColor", "orange");
+		}
+	);
+*/		
+	$(document).ready(function(){
+		$("body>p").css("color", "blue").css("backgroundColor", "orange");
+		$("input[type='text']").val("헬로 제이쿼리");
+		$("input:password").css("backgroundColor", "cyan");
+		$("input:focus").css("backgroundColor", "lightgray");
+		
+		
+	}	
+	);
+ 
+</script>
+</head>
+<body>
+	<h3>JQuery</h3>
+	<h3 id="simple">JQuery는 javascript보다 코드가 간결해서 코드량을 1/3로 줄여줍니다.</h3>
+	<h3>JQuery 기본 효과를 조합하면 멋진 효과를 만들 수 있습니다.</h3>
+	<div class="todo"> <p>1. 좀 쉬기</p></div>
+	<p>2. 많이 먹기</p>
+	<article class="todo">3. 많이 공부하기</article>
+	<ul>
+	  <li>4. 사회관계망 튼튼하게 하기</li>
+	  <li>5. 긍정적 마인드 컨트롤하기</li>
+	</ul>
+text : <input type="text"><br>
+password : <input type="password"><br>
+email : <input type="email"><br>
+search : <input type="search"  autofocus><br>
+tel : <input type="tel"><br>
+url : <input type="url"><br>
+ </body>
+</html>

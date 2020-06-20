@@ -1,0 +1,490 @@
+Spark?
+인메모리 기반의 대용량 데이터 고속 처리 엔진으로 범용 분산 클러스터 컴퓨팅 프레임워크
+
+Spark 구성 요소?
+- 클러스터 매니저 : Spark standalone, Yarn, Mesos
+- SparkCore 
+- Spark SQL
+- Spark Streaming - 실시간 처리
+- MLlib
+- Graph X
+
+Spark에서는 데이터 처리하기 추상화된 모델 : RDD(복구가능한 분산 데이터셋)
+
+SparkApplication 구현 단계 :
+1. SparkContext 생성
+   - Spark애플리케이션과 Spark 클러스터와의 연결을 담당하는 객체
+   - 모든 스파크 애플리케이션은 SparkContext를 이용해 RDD나 accumulator 또는 broadcast 변수 등을 다루게 됩니다.
+   - Spark 애플리케이션을 수행하는 데 필요한 각종 설정 정보를 담는 역할을 한다
+2. RDD (불변데이터 모델, parition가능) 생성
+   collection, HDFS, hive , CSV 등..
+3. RDD 처리 - 변환연산(RDD의 요소의 구조 변경, filter처리, grouping...)    
+4. 집계, 요약 처리 - Action연산 
+5. 영속화 
+
+SparkApplication => Job
+Spark 클러스터 환경에서 node들  : SparkClient, Master노드, Worker노드
+SparkClient 역할 - SparkApplication 배포하고 실행을 요청
+Spark Master노드 역할 -  Spark 클러스터 환경에서 사용가능한 리소스들의 관리
+Spark Worker노드 역할 - 할당받은 리소스(CPU core, memory)를 사용해서  SparkApplication 실행 
+Spark Worker노드에서 실행되는 프로세스 - Executor는 RDD의 partition을 task단위로 실행
+
+Spark장점
+1. 반복처리와 연속으로 이루어지는 변환처리를 고속화 (메모리 기반)
+2. 딥러닝, 머신러닝등의 실행환경에 적합한 환경 제공
+3. 서로 다른 실행환경과 구조, 데이터들의 처리에 대해서 통합 환경 제공
+
+
+sc.textFile() : file로 부터 RDD생성
+collect
+map, flatMap()
+mkString("구분자")
+
+
+
+package  lab.spark.example 
+import org.apache.spark.{SparkConf, SparkContext}  
+object WordCountTop3 {
+  def main(args: Array[String]) {
+   require(args.length >= 1,      
+        "드라이버 프로그램의 인자에 단어를 세고자 하는 " 
+        + "파일의 경로를 지정해 주세요")    
+val conf = new SparkConf   
+val sc = new SparkContext(conf)    
+try {       
+// 모든 단어에 대해 (단어, 등장횟수)형식의 튜플을 만든다       
+val filePath = args(0)       
+val wordAndCountRDD = sc.textFile(filePath) 
+                   .flatMap(_.split("[ ,.]"))   
+                   .filter(_.matches("""\p{Alnum}+""")) 
+                   .map((_, 1))  
+                   .reduceByKey(_ + _)  
+        // 등장횟수가 가장 많은 단어 세개를 찾는다     
+ val top3Words = wordAndCountRDD.map {
+                    case (word, count) => (count, word)  
+                 }
+                .sortByKey(false)
+                .map {         
+                    case (count, word) => (word, count)       
+                 }
+                .take(3)    
+// val result = top3Words.sortByKey(false)
+ 
+ // 등장횟수가 가장 많은 단어 톱쓰리를 표준출력으로 표시한다  
+     top3Words.foreach(println)   
+} finally {     
+sc.stop() 
+ } 
+} 
+}
+
+
+
+
+
+
+
+
+products.csv==============================
+0,송편(6개),12000
+1,가래떡(3개),16000
+2,연양갱,5000
+3,호박엿(6개),16000
+4,전병(20장),4000
+5,별사탕,3200
+6,백설기,3500
+7,약과(5개),8300
+8,강정(10개),15000
+9,시루떡,6500
+10,무지개떡,4300
+11,깨강정(5개),14000
+12,수정과(6컵),19000
+13,절편(10개),15000
+14,팥떡(8개),20000
+15,생과자(10개),17000
+16,식혜(2캔),21000
+17,약식,4000
+18,수수팥떡(6개),28000
+19,팥죽(4개),16000
+20,인절미(4개),10000
+ 
+  
+
+sales-october.csv===============================
+
+5830,2014-10-02 10:20:38,16,28
+5831,2014-10-02 15:13:04,15,22
+5832,2014-10-02 15:21:53,2,10
+5833,2014-10-02 16:22:05,18,13
+5834,2014-10-06 12:04:28,19,18
+5835,2014-10-06 12:54:13,10,18
+5836,2014-10-06 15:43:54,1,8
+5837,2014-10-06 17:33:19,10,22
+5838,2014-10-11 10:28:00,20,19
+5839,2014-10-11 15:00:32,15,3
+5840,2014-10-11 15:06:04,15,14
+5841,2014-10-11 15:45:38,18,1
+5842,2014-10-11 16:12:56,4,5
+5843,2014-10-13 10:13:53,3,12
+5844,2014-10-13 15:02:23,15,19
+5845,2014-10-13 15:12:08,6,6
+5846,2014-10-13 17:17:20,10,9
+5847,2014-10-18 11:08:11,15,22
+5848,2014-10-18 12:01:47,3,8
+5849,2014-10-18 14:25:25,6,10
+5850,2014-10-18 15:18:50,10,16
+5851,2014-10-20 13:06:00,11,21
+5852,2014-10-20 16:07:04,13,29
+5853,2014-10-20 17:29:24,5,4
+5854,2014-10-20 17:47:39,8,17
+5855,2014-10-23 10:02:10,2,24
+5836,2014-10-23 11:22:53,8,19
+5857,2014-10-23 12:29:16,7,7
+5858,2014-10-23 14:01:56,12,26
+5859,2014-10-23 16:09:39,8,13
+5860,2014-10-23 17:26:46,8,19
+
+
+
+
+sales-november.csv====================================
+5861,2014-11-01 10:47:52,15,22
+5863,2014-11-01 11:44:54,8,26
+5864,2014-11-01 14:29:51,18,10
+5865,2014-11-01 17:50:00,6,17
+5867,2014-11-04 10:03:57,15,16
+5868,2014-11-04 11:22:55,15,13
+5869,2014-11-04 16:32:09,19,6
+5870,2014-11-10 11:12:30,17,27
+5871,2014-11-10 13:32:53,17,13
+5872,2014-11-10 15:31:21,4,15
+5873,2014-11-10 16:03:01,6,5
+5874,2014-11-10 17:52:20,12,28
+5875,2014-11-15 11:36:39,3,5
+5876,2014-11-15 14:08:26,9,7
+5877,2014-11-15 15:05:21,10,0
+5878,2014-11-18 11:17:09,7,16
+5879,2014-11-18 14:50:37,9,3
+5880,2014-11-18 16:23:39,4,20
+5881,2014-11-18 17:28:31,18,25
+5882,2014-11-22 10:50:24,7,26
+5883,2014-11-22 11:43:31,3,3
+5884,2014-11-22 12:57:22,4,12
+5885,2014-11-22 15:20:17,19,25
+5886,2014-11-25 16:42:07,10,27
+5887,2014-11-25 17:38:03,14,0
+5888,2014-11-25 18:30:36,10,8
+5889,2014-11-25 18:41:57,11,10
+5890,2014-11-30 14:30:08,11,17
+5862,2014-11-30 14:57:47,8,22
+5866,2014-11-30 15:17:29,8,24
+
+
+
+package lab.spark.example
+import scala.collection.mutable.{HashMap, Map}
+import java.io.{BufferedReader, InputStreamReader, Reader}
+import org.apache.hadoop.conf.Configuration
+import org.apache.hadoop.fs.{FileSystem, Path}
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.broadcast.Broadcast
+import org.apache.spark.rdd.RDD
+object BestSellerFinder {
+  /**
+   * 판매실적 데이터카 기록되어 있는 파일로부터
+   * (상품ID, 판매개수)를 요소로 갖는 RDD를 생성하는 메소드
+   */
+  private def createSalesRDD(csvFile: String, sc: SparkContext) = {
+    val logRDD = sc.textFile(csvFile)
+    logRDD.map { record =>
+      val splitRecord = record.split(",")
+      val productId = splitRecord(2)
+      val numOfSold = splitRecord(3).toInt
+      (productId, numOfSold)
+    }
+  }
+  /**
+   * 각 달의 판매실적 데이터를 갖고 있는 RDD로부터
+   * 50개이상 팔린 상품의 정보만을 갖는 RDD를 생성하는 메소드
+   */
+  private def createOver50SoldRDD(rdd: RDD[(String, Int)]) = {
+    rdd.reduceByKey(_ + _).filter(_._2 >= 50)
+  }
+  /**
+   * 상품의 마스터 데이터를 갖는 HashMap을 생성하는 메소드
+   */
+  private def loadCSVIntoMap(productsCSVFile: String) = {
+    var productsCSVReader: Reader = null
+    try {
+      val productsMap = new HashMap[String, (String, Int)]
+      val hadoopConf = new Configuration
+      val fileSystem = FileSystem.get(hadoopConf)
+      val inputStream = fileSystem.open(new Path(productsCSVFile))
+      val productsCSVReader = new BufferedReader(new InputStreamReader(inputStream))
+      var line = productsCSVReader.readLine
+      while (line != null) {
+        val splitLine = line.split(",")
+        val productId = splitLine(0)
+        val productName = splitLine(1)
+        val unitPrice = splitLine(2).toInt
+        productsMap(productId) = (productName, unitPrice)
+        line = productsCSVReader.readLine
+      }
+      productsMap
+    } finally {
+      if (productsCSVReader != null) {
+        productsCSVReader.close()
+      }
+    }
+  }
+  /**
+   * 상품의 마스터 데이터와 결합해서
+   * 두달 연속으로 50개 이상 판매된 상품정보를 갖는 RDD를 생성하는 메소드
+   */
+  private def createResultRDD(
+      broadcastedMap: Broadcast[_ <: Map[String, (String, Int)]],
+      rdd: RDD[(String, Int)]) = {
+    rdd.map {
+      case (productId, amount) =>
+        val productsMap = broadcastedMap.value
+        val (productName, unitPrice) = productsMap(productId)
+        (productName, amount, amount * unitPrice)
+    }
+  }
+  def main(args: Array[String]) {
+    require(
+      args.length >= 4,
+      """
+        |애플리케이션의 인자에
+        |<첫번째 달의 판매데이터를 갖고 있는 파일의 경로>
+        |<두번째 달의 판매데이터를 갖고 있는 파일의 경로>
+        |<상품의 마스터 데이터 파일의 경로>
+        |<출력하는 결과파일의 경로>를 지정해 주세요. """.stripMargin)
+    val conf = new SparkConf
+    val sc = new SparkContext(conf)
+    try {
+      // 드라이버 프로그램에 파라미터로 넘겨진 값을 일괄적으로 끄집어 낸다
+      val Array(
+        salesCSVFile1,
+        salesCSVFile2,
+        productsCSVFile,
+        outputPath) = args.take(4)
+      // 각 달의 판매실적이 기록된 CSV파일로부터
+      // (상품ID, 판매개수) 형식의 튜플을 요소로 갖는 RDD를 생성한다
+      val salesRDD1 = createSalesRDD(salesCSVFile1, sc)
+      val salesRDD2 = createSalesRDD(salesCSVFile2, sc)
+      // (상품ID, 판매개수) 형식의 튜플을 요소로 갖는 RDD로부터
+      // (상품ID, 총판매개수) 형식의 튜플을 요소로 갖는 RDD를 생성한다
+      val over50SoldRDD1 = createOver50SoldRDD(salesRDD1)
+      val over50SoldRDD2 = createOver50SoldRDD(salesRDD2)
+      // 두달 연속으로 50개 이상 판매된 상품에 대해서
+      // (상품ID, 두달간의 총판매개수)형식의 튜플을 요소로 갖는 RDD를 생성한다
+      val bothOver50SoldRDD = over50SoldRDD1.join(over50SoldRDD2)
+      val over50SoldAndAmountRDD = bothOver50SoldRDD.map {
+        case (productId, (amount1, amount2)) =>
+          (productId, amount1 + amount2)
+     }
+      // 상품의 마스터 데이터를 HashMap에 로드하고
+      // 브로드캐스트 변수로 이그제큐터에 배포한다
+      val productsMap = loadCSVIntoMap(productsCSVFile)
+      val broadcastedMap = sc.broadcast(productsMap)
+      // 결과를 계산해 파일시스템이 출력한다
+      val resultRDD = createResultRDD(broadcastedMap, over50SoldAndAmountRDD)
+      resultRDD.saveAsTextFile(outputPath)
+    } finally {
+      sc.stop()
+    }
+  }
+}
+
+
+questionnaire.csv======================================
+23,F,3
+22,F,5
+20,M,4
+35,F,2
+33,F,4
+18,M,4
+28,M,5
+42,M,3
+18,M,3
+56,F,2
+53,M,1
+30,F,4
+19,F,5
+17,F,4
+33,M,4
+26,F,3
+22,F,2
+27,M,4
+45,F,2
+
+
+package lab.spark.example
+
+import org.apache.spark.{Accumulator, SparkConf, SparkContext}
+import org.apache.spark.rdd.RDD
+
+object QuestionnaireSummarization {
+
+  /**
+   * 모든 앙케이트의 평가 평균값을 계산하는 메소드
+   */ 
+  private def computeAllAvg(rdd: RDD[(Int, String, Int)]) = {
+    val (totalPoint, count) =
+      rdd.map(record => (record._3, 1)).reduce {
+        case ((intermedPoint, intermedCount), (point, one)) =>
+          (intermedPoint + point, intermedCount + one)
+      }
+    totalPoint / count.toDouble
+  }
+
+  /**
+   * 연령대별 평강의 평균값을 계산하는 메소드
+   */
+  private def computeAgeRangeAvg(rdd: RDD[(Int, String, Int)]) = {
+    rdd.map(record => (record._1, (record._3, 1))).reduceByKey {
+      case ((intermedPoint, intermedCount), (point, one)) =>
+        (intermedPoint + point, intermedCount + one)
+    }.map {
+      case (ageRange, (totalPoint, count)) =>
+        (ageRange, totalPoint / count.toDouble)
+    }.collect
+  }
+
+  /**
+   * 남녀별 평가의 평균값을 계산하는 메소드
+   */
+  private def computeMorFAvg(
+      rdd: RDD[(Int, String, Int)],
+      numMAcc: Accumulator[Int],
+      totalPointMAcc: Accumulator[Int],
+      numFAcc: Accumulator[Int],
+      totalPointFAcc: Accumulator[Int]) = {
+    rdd.foreach {
+      case (_, maleOrFemale, point) =>
+        maleOrFemale match {
+          case "M" =>
+            numMAcc += 1
+            totalPointMAcc += point
+          case "F" =>
+            numFAcc += 1
+            totalPointFAcc += point
+        }
+    }
+    Seq(("Male", totalPointMAcc.value / numMAcc.value.toDouble),
+      ("Female", totalPointFAcc.value / numFAcc.value.toDouble))
+  }
+
+  def main(args: Array[String]) {
+    require(
+      args.length >= 2,
+      """
+        |애플리케이션의 인자에
+        |<앙케이트 CSV 파일의 경로>
+        |<출력하는 결과파일의 경로>를 지정해 주세요. """.stripMargin)
+
+    val conf = new SparkConf
+    val sc = new SparkContext(conf)
+
+    try {
+      val filePath = args(0)
+
+      // 앙케이트를 로드해 (연령대, 성별, 평가) 형식의
+      // 튜플을 요소로 하는 RDD를 생성한다.
+      val questionnaireRDD = sc.textFile(filePath).map { record =>
+        val splitRecord = record.split(",")
+        val ageRange = splitRecord(0).toInt / 10 * 10
+        val maleOrFemale = splitRecord(1)
+        val point = splitRecord(2).toInt
+        (ageRange, maleOrFemale, point)
+      }
+
+      // questionnaireRDD는 각각의 집계처리에 이용되기 때문에 캐시에 보존한다
+      questionnaireRDD.cache
+
+      // 모든 평가의 평균치를 계산한다
+      val avgAll = computeAllAvg(questionnaireRDD)
+      // 연령대별 평균치를 계산한다
+      val avgAgeRange = computeAgeRangeAvg(questionnaireRDD)
+
+      // 성별이 M인 앙케이트의 건수를 세는 어큐뮬레이터
+      val numMAcc = sc.accumulator(0, "Number of M")
+      // 성별이 M인 앙케이트의 평가를 합계하는 어큐뮬레이터
+      val totalPointMAcc = sc.accumulator(0, "Total Point of M")
+      // 성별이 F인 앙케이트의 건수를 세는 어큐뮬레이터
+      val numFAcc = sc.accumulator(0, "Number of F")
+      // 성별이 F인 앙케이트의 평가를 합계하는 어큐뮬레이터
+      val totalPointFAcc = sc.accumulator(0, "TotalPoint of F")
+
+      // 남여별 평균치를 계산한다
+      val avgMorF = computeMorFAvg(
+        questionnaireRDD,
+        numMAcc,
+        totalPointMAcc,
+        numFAcc,
+        totalPointFAcc)
+
+      println(s"AVG ALL: $avgAll")
+      avgAgeRange.foreach {
+        case (ageRange, avg) =>
+          println(s"AVG Age Range($ageRange): $avg")
+      }
+
+      avgMorF.foreach {
+        case (mOrF, avg) =>
+          println(s"AVG $mOrF: $avg")
+      }
+    } finally {
+      sc.stop()
+    }
+  }
+}
+
+
+
+
+
+dessert-menu.csv================================================
+D-0,초콜릿 파르페,4900,420
+D-1,푸딩 파르페,5300,380
+D-2,딸기 파르페,5200,320
+D-3,판나코타,4200,283
+D-4,치즈 무스,5800,288
+D-5,아포가토,3000,248
+D-6,티라미스,6000,251
+D-7,녹차 파르페,4500,380
+D-8,바닐라 젤라또,3600,131
+D-9,카라멜 팬케익,3900,440
+D-10,크림 안미츠,5000,250
+D-11,고구마 파르페,6500,650
+D-12,녹차 빙수,3800,320
+D-13,초코 크레이프,3700,300
+D-14,바나나 크레이프,3300,220
+D-15,커스터드 푸딩,2000,120
+D-16,초코 토르테,3300,220
+D-17,치즈 수플레,2200,160
+D-18,호박 타르트,3400,230
+D-19,캬라멜 롤,3700,230
+D-20,치즈 케익,4000,230
+D-21,애플 파이,4400,350
+D-22,몽블랑,4700,290
+
+
+
+
+dessert-order.csv==================================
+SID-0,D-0,2
+SID-0,D-3,1
+SID-1,D-10,4
+SID-2,D-5,1
+SID-2,D-8,1
+SID-2,D-20,1
+
+
+
+
+
+
+
+

@@ -1,9 +1,0 @@
-bs4
-yweather
-Twitter
-numpy
-pandas
-requests
-
-
-

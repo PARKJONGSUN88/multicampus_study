@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript 연산자</title>
+
+</head>
+<body>
+<h3>자바스크립트 연산자</h3>
+
+<script>
+a=1;
+b=++a;
+document.write("b="+b+"<br>");
+document.write("a="+a+"<br>");
+c=a++ + 2;
+document.write("c="+c+"<br>");
+document.write("a="+a+"<br>");
+//console.log("(a++)++="+(a++)++);
+</script>
+<br>
+실행할때마다 주사위가 던져져서 값이 출력됩니다<br>
+<script>
+var num = Math.round(Math.random()*5)+1;
+document.write("주사위의 숫자 : "+num+"<br>");
+</script>
+<br>
+<script>
+document.write("1 + {} : "+ (1+{}) +"<br>"); 
+//{} - JSON객체는 Object 내장객체를 상속받습니다.
+</script>
+<br>
+<script>
+document.write("true + (new Date()) : "+ (true + (new Date())) + "<br>");
+</script>
+<br>
+<br>
+msgObj<br>
+<br>
+<script>
+var msgObj = new String("Everything is practice");
+document.write("msgObj.length : "+ msgObj.length + "<br>");
+document.write("msgObj.charAt(3) : "+ msgObj.charAt(3) + "<br>");
+document.write("msgObj.substring(7, 10) : "+ msgObj.substring(7, 10) + "<br>");
+document.write("msgObj.slice(7, 10) : "+ msgObj.slice(7, 10) + "<br>");
+document.write("msgObj.slice(-3) : "+ msgObj.slice(-3) + "<br>");
+document.write("msgObj.slice(-9, -6) : "+ msgObj.slice(-9, -6) + "<br>");
+document.write("msgObj.indextOf('t') : "+ msgObj.indexOf("t") + "<br>");
+document.write("msgObj.indextOf('i', 10) : "+ msgObj.indexOf("i", 10) + "<br>");
+document.write("msgObj.split(' ') : "+ msgObj.split(" ") + "<br>");
+document.write("msgObj.replace('p', 'P') : "+ msgObj.replace("p", "P") + "<br>");
+document.write("msgObj.includes('thing') : "+ msgObj.includes("thing") + "<br>");
+</script>
+<br>
+<br>
+==연산자는 값만 비교합니다.<br>
+<br>
+<script>
+document.write("null == undefined : " + (null == undefined) + "<br>");
+document.write("1 == '1' : " + (1 == '1') +"<br>");
+document.write("255== '0xff' : " + (255=='0xff') + "<br>");
+document.write("true== 1: " + (true== 1) + "<br>");
+document.write("true== '1': " + (true== '1') + "<br>");
+document.write("new String('a') == 'a' : "+(new String('a') == 'a')+ "<br>");
+document.write("new Number(2) == 2 : " + (new Number(2) == 2)+"<br>");
+</script>
+<br>
+<br>
+===연산자는 값과 타입을 비교합니다.<br>
+<br>
+<script>
+document.write("null === undefined : " + (null === undefined)+ "<br>");
+document.write("1 === '1' : " +(1 === '1')+"<br>")
+document.write("255=== '0xff' : " + (255==='0xff') + "<br>");
+document.write("true=== 1: " + (true=== 1) + "<br>");
+document.write("true=== '1': " + (true=== '1') + "<br>");
+document.write("new String('a') === 'a' : "+(new String('a') === 'a')+ "<br>");
+document.write("new Number(2) === 2 : " + (new Number(2) === 2)+"<br>");
+</script>
+<br>
+<script>
+document.write("10>20>30 : " +(10>20>30) +"<br>");
+</script>
+
+<script>
+//var a="window.alert('eval은 문자열을 자바스크립트 코드로 실행합니다')";
+//eval(a);
+</script>
+
+<script>
+var student = {"name":"kim", "ko":85, "en":90, "math":80};
+document.write("typeof(student) : " + typeof(student) + "<br>");
+document.write("student instanceof Object : " + (student instanceof Object) + "<br>");
+document.write("ko in student : "+ ('ko' in student) + "<br>");
+</script>
+<br>
+<br>
+형변환 숫자+문자열<br>
+<br>
+<script>
+document.write('10+"cookies" : '+10+"cookies"+"<br>");
+document.write('100+"" : '+100+""+"<br>");
+document.write('("0000"+12).slice(-4) : '+("0000"+12).slice(-4)+"<br>");
+</script>
+<br>
+<script>
+var n =26;
+document.write('n.toString() : '+ n.toString() + "<br>");
+document.write('n.toString(2) : '+ n.toString(2) + "<br>");
+document.write('n.toString(16) : '+ n.toString(16) + "<br>");
+document.write('(26).toString(16) : '+ (26).toString(16) + "<br>");
+</script>
+<br>
+<script>
+var x = 1234.567;
+document.write('x.toString() : '+ x.toString() +"<br>");
+document.write('x.toString(16) : '+ x.toString(16) +"<br>");
+document.write('x.toFixed(0) : '+ x.toFixed(0) +"<br>");
+document.write('x.toFixed(2) : '+ x.toFixed(2) +"<br>"); 
+document.write('x.toFixed(4) : '+ x.toFixed(4) +"<br>");
+document.write('x.toExponential(3) : '+ x.toExponential(3) +"<br>");
+document.write('x.toPrecision(3) : '+ x.toPrecision(3) +"<br>");
+document.write('x.toPrecision(6) : '+ x.toPrecision(6) +"<br>");
+</script>
+<br>
+String 함수를 활용하는 방법<br>
+<br>
+<script>
+document.write('String(26) : '+ String(26) +"<br>");
+document.write('String(1234.567) : '+ String(1234.567) +"<br>");
+document.write('String(0x1a) : '+ String(0x1a) +"<br>");
+document.write('String("ABC") : '+ String("ABC") +"<br>");
+document.write('String(true) : '+ String(true) +"<br>");
+document.write('String(false) : '+ String(false) +"<br>");
+document.write('String(NaN) : '+ String(NaN) +"<br>");
+document.write('String(null) : '+ String(null) +"<br>");
+document.write('String(underfined) : '+ String(undefined) +"<br>");
+document.write('String({x:1, y:2}) : '+ String({x:1, y:2}) +"<br>");
+document.write('String([1, 2, 3]) : '+ String([1, 2, 3]) +"<br>");
+</script>
+<br>
+문자열을 숫자로 변환하기<br>
+Number 함수를 활용하는 방법<br>
+<br>
+<script>
+document.write('Number(123) : '+ Number(123) +"<br>");
+document.write('Number(true) : '+ Number(true) +"<br>");
+document.write('Number(false) : '+ Number(false) +"<br>");
+document.write('Number(NaN) : '+ Number(NaN) +"<br>");
+document.write('Number(undefined) : '+ Number(undefined) +"<br>");
+document.write('Number(null) : '+ Number(null) +"<br>");
+document.write('Number({x:1, y:2}) : '+ Number({x:1, y:2}) +"<br>");
+document.write('Number([1, 2, 3]) : '+ Number([1, 2, 3]) +"<br>");
+</script>
+<br>
+<br>
+논리값으로 변환하기<br>
+<br>
+<script>
+document.write('!!x : ' + !!x + "<br>");
+document.write('Boolean(x) : '+ Boolean(x) + "<br>");
+</script>
+<br>
+<br>
+입출력<br>
+<br>
+<script>
+//var input1 = window.prompt("점수를 입력하세요", 0);
+//document.write(input1+typeof(input1)+"<br>");
+
+var input2 = window.confirm("종료하시겠습니까?");
+document.write(input2+typeof(input2)+"<br>");
+</script>
+
+</body>
+</html>

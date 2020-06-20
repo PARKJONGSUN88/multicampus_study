@@ -1,0 +1,178 @@
+########DataFrameWriter와 DataFrameReader로 구조화 데이터 read/write 실습################
+case class Dessert(menuId: String, name: String, price: Int, kcal: Int)
+val dessertRDD = sc.textFile("/data/dessert-menu.csv")
+val dessertDF = dessertRDD.map{ record => 
+    val splitRecord = record.split(",")
+    val menuId = splitRecord(0)
+    val name = splitRecord(1)
+    val price = splitRecord(2).toInt
+    val kcal = splitRecord(3).toInt
+    Dessert(menuId, name, price, kcal)
+    }.toDF
+
+val dfWriter = dessertDF.write
+dfWriter.format("parquet").save("/output/dessert-parquet")
+
+#hadoop fs -ls /output  으로부터 파일 생성 확인
+#hadoop fs -cat /output/dessert-parquet 파일 내용 확인
+
+val dfReader = spark.read
+val dessertDF2 = dfReader.format("parquet").load("/output/dessert-parquet")
+dessertDF2.orderBy($"name").show(3)
+
+
+#########테이블형식으로 저장, 조회 ######################
+dessertDF.write.format("parquet").saveAsTable("dessert_tbl_parquet")
+spark.read.format("parquet").table("dessert_tbl_parquet").show(3)
+spark.sql("select * from dessert_tbl_parquet limit 3 ").show
+
+# hadoop fs -mkdir /output/dessert_json
+dessertDF.write.save("/output/dessert_json")    #예외 발생?
+
+
+import org.apache.spark.sql.SaveMode
+dessertDF.write.format("json").mode(SaveMode.Overwrite).save("/output/dessert_json")
+
+val dessertDF2 = dfReader.format("json").load("/output/dessert_json")
+dessertDF2.orderBy($"kcal").show(3)
+
+#########명시적 스키마 정보 설정하고 읽기 ###############
+import java.math.BigDecimal
+case class DecimalTypeContainer(data: BigDecimal)
+val bdContainerDF = sc.parallelize(List(new BigDecimal("12345.6789999999999"))).map(data => DecimalTypeContainer(data)).toDF
+bdContainerDF.printSchema
+bdContainerDF.show(false)
+
+bdContainerDF.write.format("orc").save("/output/bdContainerORC")
+val bdContainerORCDF = spark.read.format("orc").load("/output/bdContainerORC")
+bdContainerORCDF.printSchema
+bdContainerORCDF.show(false)
+
+
+bdContainerDF.write.format("json").save("/output/bdContainerJSON")
+val bdContainerJSONDF = spark.read.format("json").load("/output/bdContainerJSON")
+bdContainerJSONDF.printSchema
+bdContainerJSONDF.show(false)
+
+
+import org.apache.spark.sql.types.DataTypes._
+val schema = createStructType(Array(createStructField("data", createDecimalType(38, 18), true)))
+
+val bdContainerJSONDF = spark.read.schema(schema).format("json").load("/output/bdContainerJSON")
+bdContainerJSONDF.printSchema
+bdContainerJSONDF.show(false)
+
+
+###########파티셔닝과 실행계획 비교 #######################
+val priceRangeDessertDF = dessertDF.select(((($"price" / 1000) cast IntegerType)* 1000) as "price_range", dessertDF("*"))
+priceRangeDessertDF.write.format("parquet").save("/output/price_range_dessert_parquet_nonpartitioned")
+priceRangeDessertDF.write.format("parquet").partitionBy("price_range").save("/output/price_range_dessert_parquet_partitioned")
+
+val nonPritionedDessertDF = spark.read.format("parquet").load("/output/price_range_dessert_parquet_nonpartitioned")
+nonPritionedDessertDF.where($"price_range" >= 5000).explain
+
+
+val pritionedDessertDF = spark.read.format("parquet").load("/output/price_range_dessert_parquet_partitioned")
+pritionedDessertDF.where($"price_range" >= 5000).explain
+
+
+########SPARK-SQL로 구조화된 데이터셋을 테이블로 다루기 ##########
+create table dessert_tbl_json using org.apache.spark.sql.json options ( path "/output/dessert_json");
+select name, price from dessert_tbl_json limit 3;
+
+
+
+넷캣(Netcat)은 TCP나 UDP 프로토콜을 사용하는 네트워크 연결에서 데이터를 읽고 쓰는 간단한 유틸리티 프로그램이다.
+nc는 network connection에 읽거나 쓴다.
+Network connection 에서 raw-data read, write를 할수 있는 유틸리티 프로그램으로
+원하는 포트로 원하는 데이터를 주고받을수 있는 특징때문에 해킹에도 널리 이용되며, 컴퓨터 포렌식에 있어서 라이브시스템의 데이터를 손상없이 가져오기위해서도 사용될수 있습니다.
+
+(nc server) 192.168.50.133
+[TERM1] # nc -l 9999
+ 
+
+(nc client) 192.168.50.134
+[TERM2] # nc 192.168.50.133 9999 (# telnet 192.168.50.133 9999)
+
+hi
+hello netcat!!!!
+
+<CTRL + D>
+
+ 
+
+-> 클라이언트에서 입력한 모든 문자가 서버에 출력된다.
+-> 간단한 채팅 서버를 만든 셈이다.
+-> 클라이언트에서 <CTRL + D> 통해 끊을 때  종료 된다.
+
+-> connection 이 이루어 졌을 때 파일을 실행시킨다. -l 과 같이 사용되면 한 instance만을 사용하
+는 inetd와 비슷하다.
+
+ 
+
+ 
+
+[실습] 파일 전송
+
+클라이언트에서 명령의 결과를 바로 서버 측으로 전송하거나 파일을 전송할 수 있다.
+
+클라이언트에서 넷캣 리스너로 파일을 전송할 수도 있고 역방향으로 파일을 전송할 수도 있다.
+
+ 
+
+(nc server) 
+[TERM1] # nc -l 9999 > /home/hadoop/listen.txt
+
+ 
+
+(nc client) [TERM2] # ps auxf | nc 192.168.50.133 9999
+
+or
+
+    # nc 192.168.50.133 9999 < /tmp/input.txt
+
+(nc server) 
+[TERM1] # cat /tmp/listen.txt
+
+ 
+ 
+import org.apache.spark.{SparkContext, SparkConf}
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.storage.StorageLevel
+import org.apache.log4j.{Level, Logger}
+
+
+Logger.getRootLogger.setLevel(Level.WARN)
+
+val ssc = new StreamingContext(sc, Seconds(10))
+val lines = ssc.socketTextStream("localhost", 9999,  StorageLevel.MEMORY_AND_DISK_SER)
+val words = lines.flatMap(_.split(" ")) 
+val pairs = words.map((_, 1)) 
+val wordCounts = pairs.reduceByKey(_ + _)
+wordCounts.print()
+ssc.start()
+ssc.awaitTermination()
+
+
+
+
+#hadoop fs -mkdir  /data/sample_dir
+
+import org.apache.spark.{SparkContext, SparkConf}
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.storage.StorageLevel
+import org.apache.log4j.{Level, Logger}
+
+Logger.getRootLogger.setLevel(Level.WARN)
+
+val ssc = new StreamingContext(sc, Seconds(10))
+val lines = ssc.textFileStream("/data/sample_dir/")
+val words = lines.flatMap(_.split(" ")) 
+val pairs = words.map((_, 1)) 
+val wordCounts = pairs.reduceByKey(_ + _)
+wordCounts.print()
+ssc.start()
+ssc.awaitTermination()
+
+
+#hadoop fs -put  /usr/local/spark/README.md  /data/sample_dir/

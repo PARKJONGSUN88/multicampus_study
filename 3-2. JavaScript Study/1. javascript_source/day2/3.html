@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>자바스크립트 함수<h3>
+# var 변수 = function(){} ; //익명(anonymous) 함수<br>
+# function 이름(){ } //named function, 선언적 함수<br>
+# 사용자 정의 함수는 소스가 공개되지만, 내장함수등은 소스는 native code로 공개하지 않습니다.<br>
+# 변수에 저장된 익명함수는 정의된 후에 호출이 가능하지만 <br>
+# 자바스크립트 엔진은 실행코드보다 먼저 선언적 함수를 읽습니다.(hoisting)<br>
+#선언적 함수는 defintion전에 호출을 하더라도 실행 순서상 문제가 되지 않습니다.<br> 
+<script>
+//func1(); //변수에 저장된 함수 호출
+func2(); //선언적 함수(named funtion) 호출
+var func1 = function() {
+	var jum = Number(window.prompt("1~100사이의 수를 입력하세요", 0));
+	(jum%2==0)? alert("짝수") : alert("홀수");
+}
+function func2() {
+	var jum = Number(window.prompt("1~100사이의 수를 입력하세요", 0));
+	(jum%2==0)? alert("짝수") : alert("홀수");
+}
+
+func1();
+</script>
+</body>
+</html>

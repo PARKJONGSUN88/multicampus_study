@@ -1,0 +1,473 @@
+
+1. java 파일을 컴파일하는 명령어는 무엇인가?
+1) vbc.exe
+2) cpp.exe
+3) java.exe       --main메서드가 포함되어 있는 class파일 실행시키는 interpretor
+4) javac.exe      --고급언어인 java소스코드를 중간언어 byte코드로 변환(.class)하는 컴파일러
+
+2. 다음 중 변수를 올바르게 초기화 한 것은?
+1) byte b = 256;      --정수, 1byte, -128~127
+2) char c = " ";      --정수, 하나의 문자를 표현할 수 있는 타입, 'A', 65, '\u0000'~'\uffff'
+3) float f = 3.14 ;   --실수,  부동소수점 형태, 4byte, 실수literal에 F, f
+4) double d = 1.4e3f;  --실수,  부동소수점 형태, 8byte, 실수literal에 D, d
+
+3. 다음 중 에러가 나는 문장은 무엇인가?
+1) System.out.println(3 && 4);
+2) System.out.println(true && false);    ==> false
+3) System.out.println(true & false);   1&0 =>  false
+4) System.out.println(3 & 4);  --0011 & 0100 => 0
+
+& (비트연산)  :  정수 & 정수 , boolean값 & boolean값
+&& (논리 연산) : 조건표현식 && 조건표현식
+
+
+
+4. 반복문을 종료할 때 사용되는 예약어는?
+1) throw      --예외 발생시킬 때 : throw new 예외클래스(message)
+2) break      --switch, for, while 반복문
+3) return     --메서드 리턴타입,  if문
+4) void       --메서드 리턴타입
+
+5. 다음의 연산 결과를 저장할 result 변수에 선언할 적절한 타입 고르시오
+ [ ] result = (3>4)? 99.9: 90;    --연산 표현식에서는 자동으로 가장 큰 타입으로 promotion이 일어납니다.
+1) int
+2) float
+3) double
+4) String
+
+
+6. 다음은 Java의 배열에 대한 설명이다. 틀린 것을 고르시오.
+1) 배열의 인덱스는 1 부터 시작한다.
+2) 배열의 인덱스로 음의 값을 사용하면 ArrayIndexOutofBoundsException이 발생한다.
+3) 배열의 길이를 알고자 할 때는 length 라는 속성을 사용한다.
+4) 배열이 만들어질 때 부여된 크기는 변경 불가하다.
+
+배열 - 하나의 변수명에 동일한 타입의 1개 이상의 값을 저장할 수 있는 집합유형
+       자바에서는 reference type, 객체로 취급합니다.
+       int[] nums = new int[5];  //선언 + 생성+ 초기화
+       int[] nums = new int[ ]{1,2,3,4,5};
+       int[] nums = {1,2,3,4,5,6} ;
+       배열객체가 생성되면 length 멤버필드가 자동 생성되며, 배열에 저장된 요소개수가 저장됨
+       배열의 요소는 index로 접근하며, index는 0부터 시작합니다.
+       nums[3] = 100;
+       for(int i=0;i<배열객체.length;i++){ ...}
+       for(int a : nums){....}  ==> 순차적인 처리
+       배열의 단점은 생성시에 size가 결정되며, 동적으로 배열 크기는 변경 불가
+       java.util.ArrayList<Integer> alist = new ArrayList(5);
+
+
+7. 아래 문장을 실행한 결과는? 
+public static void main(String args[]){ 
+int cnt = 0; 
+for(int i=0;i<3;i++){ 
+switch(i){ 
+case 0 : cnt++; 
+case 1 : cnt++; break; 
+case 2 : cnt++; 
+} //switch end
+} //for end
+System.out.println(cnt);
+}
+1) 1
+2) 2
+3) 3
+4) 4
+
+
+
+1. 다음 중 접근 제어자(access modifier)가 아닌 것은?
+1) private
+2) protected
+3) public
+4) static
+
+modifier는 변수 유형, 메서드 유형, 클래스 유형
+abstract, final, static, native, synchronized,...
+
+
+2. 다음 중 객체지향 언어의 주요 특징이 아닌 것은 ?
+1) 상속성   -- extends, 클래스 단일 상속
+2) 캡슐화   -- private 멤버 필드, getter/setter메서드 public으로 ..
+3) 절차적   -- 함수적 프로그래밍 특성 , 알고리즘 중심
+4) 다형성   -- 부모타입 = new 자식타입(), override, overload
+
+3. 상속 불가능한 클래스 선언 또는 변경 불가능한 속성 멤버 변수를 정의할 때 사용하는 키워드를 고르시오
+1) abstract
+2) final
+3) static
+4) protected
+
+
+4. 다음 코드처럼 부모클래스의 메소드를 자식 클래스에서 다시 작성하는 것을 무엇이라고 하는가 ? 
+class Animal{ 
+void eat(){} 
+} 
+class Human extends Animal{ 
+void eat(){} 
+}
+1) 오버로드(overload)   ---중복정의
+2) 오버라이드(override)  --재정의
+3) abstract
+4) final
+
+
+5. 다음 중 예외처리문으로 옳은 것은?
+1) try catch finally
+2) try except finally
+3) try catch end
+4) try except else
+
+
+6. 메소드 오버로딩에 대한 설명으로 틀린 것은 무엇인가?
+1) 동일한 이름의 메소드를 여러 개 선언하는 것을 말한다.
+2) 반드시 리턴 타입이 달라야 한다.
+3) 매개 변수의 타입 또는 개수 또는 순서중 최소 하나를 다르게 선언해야 한다.
+4) 매개 값의 타입 및 수에 따라 호출될 메소드가 선택된다.
+
+
+
+7. 다음 중 상속에 대해 옳지 않은 것은?
+1) 기존 클래스를 재사용해서 새로운 클래스를 작성하는 것이다.
+2) 자식 클래스는 부모클래스의 생성자, 초기화 블록을 제외한 private 를 제외한 모든 멤버를 상속받는다.
+3) 다중 상속을 허용함으로써, 상속의 다양성을 갖는다.
+4) 부모가 없는 클래스는 자동적으로 Object 클래스를 상속받는다.
+
+
+8. 객체 생성없이 클래스명으로 호출 가능한 메서드를 정의하려 한다. 이 때 사용되는 제어자를 고르시오.
+
+1) abstract
+2) final
+3) static
+4) sychronized
+
+9. 다음은 생성자 메서드에 대한 설명글이다. 틀린 것을 고르시오.
+1) 메서드명이 클래스명과 동일해야 한다.
+2) 여러 개로 오버로딩 가능하다.
+3) 리턴타입은 void로 선언한다
+4) 접근제어자를 반드시 선언해야 한다.
+
+
+생성자 메서드의 역할 - 클래스로부터 객체를 메모리에 생성, 객체의 속성을 초기화
+AccessMoidifier 클래스이름(초기화할 파라미터 값 리스트 ){
+  this.멤버필드 = 파라미터값;
+   .....
+}
+
+
+10. 인터페이스에 대한 설명 중 틀린 것은 (JDK8이전)?
+1) 인터페이스는 모든 메소드가 abstract 메소드이다.
+2) 인터페이스에서 선언된 메소드에 대한 표준화된 개발이 가능하다.
+3) 인터페이스는 선언부와 구현부를 분리하여 독립적인 프로그래밍이 가능하다.
+4) 인터페이스는 객체 생성을 할 수 없고, Reference 변수의 타입으로도 사용할 수 없다.
+
+caller(서비스 요청)----interface----callee(서비스 수행)
+new 로 객체 생성 불가 - abstract클래스, interface
+
+abstract클래스  객체(reference변수) = new 자식클래스();
+interface 객체(reference변수) = new  구현클래스();
+
+
+
+
+
+11. 다음 코드의 method()에서 로컬변수 name이 아닌 멤버변수 name을 출력하기위해 [ ]안의 키워드를 고르시오 
+class Student { 
+String name; 
+public void method(String name){ 
+System.out.println(name); 
+System.out.println([ ].name); 
+} 
+}
+1) self
+2) super
+3) this
+4) Student
+
+
+
+
+1. Java의 모든 클래스를 파생시키는 가장 상위의 클래스 이름은 무엇인가?
+1) java.lang.Object
+2) java.util.Objects
+3) .....
+4) 
+
+
+2. 외부 패키지나 클래스를 소스에 포함시키고자 할 때, 사용하는 문장은?
+1) package
+2) import
+3) include
+4) export
+
+
+
+3. 중복되지 않은 데이터(객체)들을 저장하려 합니다. 적당한 컬렉션 클래스를 고르시오
+1) ArrayList
+2) Stack
+3) TreeSet
+4) HashMap
+
+
+4. key 와 value 형식의 데이터(객체)를 저장할 수 있는 Collection 객체는?
+1) ArrayList
+2) Deque
+3) TreeSet
+4) HashMap
+
+
+5. 다음 code의 실행 결과는? 
+String str1 = new String ("test"); 
+String str2 = new String ("test"); 
+System.out.print ( str1.equals(str2) );    --내용비교
+System.out.print(str1 == str2);   ---주소값 비교
+1) true true
+2) true false
+3) false true
+4) false false
+
+
+6. 다음 중 Stream에 대한 설명 중 틀린 것은?	
+1) Stream이란 자료의 입출력을 도와주는 중간 매개체로, 데이터를 읽고 쓰기 위한 공통된 방법을 제공한다.
+2) Stream은 양방향 통신으로, 입력용과 출력용 Stream을 공용으로 사용한다.
+3) 문자 단위로 파일을 읽고 쓸 때 File Reader와 FileWriter를 사용한다.
+4) 바이트 단위로 파일을 일고 쓸 때 FileInputStream과 FileOutputStream을 사용한다.
+
+io에 stream 사용
+stream - 단방향, FIFO(first in first out), 지연
+byte 스트림 - 바이너리 데이터 입출력 , InputStream(추상, System.in), OutputStream(추상) -> PrintStream(System.out)
+chracter 스트림 - 2byte단위 입출력(한글, 한자, 일본어등 text처리)  , Reader, Writer
+1차 스트림 - source stream로부터 read()로 읽기, target stream에 write()로 쓰기
+2차 스트림 - 필터, 버퍼, 변환..
+2차 스트림은 1차 스트림을 생성자의 인자로 전달해서 chaining방식으로 사용
+
+RandomAccessFile객체는 read()와 write() 동시 가능
+
+
+
+7. 기본형 데이터 타입과 래퍼(Wrapper)클래스타입이 틀린 것을 고르시오
+1) char-CharSequence
+2) int-Integer
+3) float-Float
+4) char-Character
+
+
+
+
+
+
+1. 자바언어의 특징으로 틀리게 설명하고 있는 것을 고르시오
+1) 객체지향 언어이다.
+2) 컴파일&인터프리터 언어이다.
+3) 운영체제에 의존적인 실행파일을 생성한다.
+4) 동적로딩을 지원한다.
+
+
+2. 자바 standalone 프로그램 실행시 JVM에 의해 호출되어 실행되는 정의로 옳은 것을 고르시오.
+	
+1) public static void main(String args[]) { }
+2) public static void main(String args) { }
+3) public void main(String args[][]) { }
+4) public static int main(char args[]) { }
+
+3. 자바의 기본형 중에서 다른 타입으로 형 변환(강제, 자동)이 불가능한 타입은?
+	
+1) int
+2) double
+3) char
+4) boolean
+
+4. switch문의 표현식에 사용 가능한 타입이 아닌 것을 고르시오.
+
+1) int
+2) char
+3) float
+4) String
+
+5. 자바의 기본형 중에서 값의 저장 범위가 가장 큰 타입은?
+	
+1) double
+2) float
+3) long
+4) int
+
+6. 다음에 제시된 변수명 중에서 구문(문법)적으로 가능한 것은?
+	
+1) 100sample
+2) num#
+3) case
+4) abc$1
+
+
+7. 다음 연산 문장 중에서 result의 값이 다른 결과가 되는 것을 고르시오. (int var = 10;)
+1) result = var++;
+2) result = ++var;
+3) result = var + var/var;
+4) result = var + 1;
+
+
+1. emp 라는 변수가 참조하게 된 객체가 Employee 객체인지 채크하려 할 때 사용되는 연산자를 고르시오.
+	
+1) ==
+2) !=
+3) !
+4) instanceof
+
+2. 상속 불가한 클래스를 정의하려 할 때 사용되는 제어자를 고르시오.
+	
+1) final
+2) abstract
+3) static
+4) private
+
+
+3. 클래스명으로 호출 가능한 메서드를 정의하려 한다. 이 때 사용되는 제어자를 고르시오.
+	
+1) public
+2) static
+3) protected
+4) final
+
+4. 다음은 생성자 메서드에 대한 설명글이다. 틀린 것을 고르시오.
+	
+1) 메서드명이 클래스명과 동일해야 한다.
+2) 리턴값의 타입은 생략한다.
+3) 여러 개로 오버로딩 가능하다.
+4) 제어자를 설정할 수 없다.
+
+
+5. 다음은 메서드 오버라이딩 규칙을 설명하는 내용이다. 틀린 것을 고르시오.
+	
+1) 오버라이딩하려는 부모 메서드의 접근제어자는 원하는대로 변경 가능하다.
+2) 오버라이딩하려는 부모 메서드의 명칭과 동일해야 한다.
+3) 오버라이딩하려는 부모 메서드의 리턴값의 타입과 동일해야 한다.
+4) 오버라이딩하려는 부모 메서드의 매개변수 사양이 동일해야 한다
+
+
+6. 동일 클래스의 다른 생성자 메서드 호출시 사용되는 것은?
+
+1) this
+
+2) this()
+
+3) super
+
+4) super()
+
+
+
+7. 동일 패키지이거나 자손에서만 접근 가능한 메서드를 정의하려 한다. 이 때 사용되는 제어자를 고르시오.
+1) private
+2) public
+3) protected
+4) 접근 제어자를 생략한다.
+
+8. 다음은 OOP 언어의 어떤한 구문에 대한 설명글인가? - 조상유형의 변수로 자손의 객체를 참조할 수 있다. - 조상 유형의 변수로 자손에서 추가된 멤버는 자손 유형으로 강제 형변환하여 접근한다.
+ 
+1) 상속
+
+2) 다형성
+
+3) 캡슐화
+
+4) 추상화
+
+
+9. 다음은 abstract 클래스에 대한 설명글이다. 틀린것을 고르시오.
+ 
+1) abstract 클래스를 상속하여 자식 클래스를 구현할 때는 implements 절을 사용하여 상속한다.
+
+2) 객체 생성은 불가하며 상속만 가능하다.
+
+3) abstract 메서드를 0개 이상 정의할 수 있다.
+
+4) abstract 클래스는 final 제어자를 함께 지정할 수 없다.
+
+
+
+10. 다음 중 예외처리문으로 옳은 것은?
+ 
+1) try catch finally.
+
+2) try except finally
+
+3) try catch end
+
+4) try except else
+
+
+11. 자바의 상속에 대한 설명 중 틀린 것은?
+ 
+1) 자바는 다중 상속을 허용한다.
+
+2) 부모의 메소드를 자식 클래스에서 재정의(오버라이딩) 할 수 있다.
+
+3) 부모의 private 접근 제한을 갖는 필드와 메소드는 상속의 대상이 아니다.
+
+4) final 클래스는 상속할 수 없고, final 메소드는 오버라이딩 할 수 없다
+
+
+
+
+1. key 와 value 형식의 데이터를 저장할 수 있는 Collection 객체는?
+ 
+1) ArrayList
+
+2) HashSet
+
+3) LinkedList
+
+4) HashMap
+
+
+2. 중복데이터 저장을 허용하지 않는 Collection 객체는?
+ 
+1) ArrayList
+
+2) HashSet
+
+3) LinkedList
+
+4) HashMap
+
+3. 한글 텍스트가 저장된 파일의 내용을 자바 프로그램으로 읽어들이기 위해 사용되는 객체의 클래스명은?
+ 
+1) File
+
+2) FileReader
+
+3) FileWriter
+
+4) BufferedReader
+
+
+5. 어떠한 객체든 전달받을 수 있는 매개변수를 선언하려 한다. 어떤 타입으로 해야 하나?
+ 
+1) Object
+
+2) String
+
+3) System
+
+4) file
+
+6. 외부 패키지나 클래스를 소스에 포함시키고자 할 때, 사용하는 문장은?
+ 
+1) package
+
+2) import
+
+3) include
+
+4) export
+
+
+
+7. 다음 두 문자열 객체의 내용을 비교하기 위한 연산자 또는 메소드는? String s1 = new String("java") String s2 = new String("java")
+ 
+1) ==
+
+2) clone()
+
+3) same()
+
+4) equals()

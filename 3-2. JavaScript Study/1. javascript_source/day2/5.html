@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>자바스크립트 함수<h3>
+함수 내부에 함수를 정의할 수 있습니다. => 외부함수와 충돌이 발생하는 경우,<br>
+함수를 사용하는 내부에 정의할 수 있으며, 내부함수는 내부함수가 정의한<br>
+함수 내부에서만 호출할 수 있습니다.<br>
+<br>
+<script>
+/*
+function square(x){ //인수의 제곱을 반환
+	return x*x;
+}
+*/
+function pythagoras(width, height){ //직각삼각형의 빗변의 길이
+	function square(x){
+		return x*x;
+	}	
+	return Math.sqrt(square(width)+square(height));
+}
+document.write("밑변3, 높이4인 삼각형의 빗변의 길이:"+
+pythagoras(3, 4) +"<br>");
+
+document.write("<br>");
+
+
+
+//삼각형이 직각인지 확인하는 함수
+function square(width, height, hypotenuse){ //인수의 제곱을 반환
+	if (width * width + height * height == hypotenuse * hypotenuse) {
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"	%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>message.jsp</title>
+</head>
+<body>
+<h3>메세지 전송</h3>
+	<form action="/message" method="post">
+		메시지 입력하세요<br>
+		<input type="text" name="msg" size=100><br>
+		<input type="submit" value="전송"><br>	
+	</form>	
+</body>
+</html>

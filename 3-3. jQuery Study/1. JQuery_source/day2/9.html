@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+div { border: 1px solid black;
+      width : 300px;
+      height : 300px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> 
+ $(document).ready(function () {
+	$('<p></p>').html('<mark>appendTo</mark>').appendTo('div');
+	$('<p></p>').html('<mark>prependTo</mark>').prependTo('div');
+	$('<p></p>').html('<mark>insertAfter</mark>').insertAfter('div');	
+	$('<p></p>').html('<mark>insertBefore</mark>').insertBefore('div');	
+		$('div').append(function(){
+			return $('<p></p>').html('<mark>append</mark>');
+		});
+		$('div').prepend(function(){
+			return $('<p></p>').html('<mark>prepend</mark>');
+		});
+		$('div').after(function(){
+			return $('<p></p>').html('<mark>After</mark>');
+		});
+		$('div').before(function(){
+			return $('<p></p>').html('<mark>Before</mark>');
+		});    
+    });
+    </script>
+</head>
+<body>
+ <h3>문서 객체를 추가<h3>
+ A.appendTo(B) : B의 마지막 자식 요소로 A요소를 추가 <br>
+ A.prependTo(B) : B의 첫번째 자식 요소로 A요소를 추가 <br>
+ A.insertAfter(B) : B의 형제노드로서 A요소를 B의 다음에 추가<br>
+ A.insertBefore(B) : B의 형제노드로서 A요소를 B의 앞에 추가<br>
+ A.append(B) : A의 마지막 자식 요소로 B요소를 추가 <br>
+ A.prepend(B) : A의 첫번째 자식 요소로 B요소를 추가 <br>
+ A.after(B) : A의 형제노드로서 B요소를 A의 다음에 추가<br>
+ A.before(B) : A의 형제노드로서 B요소를 A의 앞에 추가<br> 
+ <div>내용</div>
+   
+    
+</body>
+</html>

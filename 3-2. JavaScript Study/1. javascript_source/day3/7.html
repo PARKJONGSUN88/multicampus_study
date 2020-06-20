@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트</title>
+<script>
+window.addEventListener("load", function(){
+//브라우저 기본 이벤트 핸들러 취소
+	document.getElementById("searchForm").onsubmit=function(){
+		//return false;
+		event.preventDefault();
+	}
+	document.getElementById("link1").onclick=function(){
+		//return false;
+		event.preventDefault();
+	} 
+}, false);
+</script>
+</head>
+<body>
+ <h3> 브라우저에 정의된 기본 이벤트 취소 </h3>
+ 브라우저에서 자동으로 처리해주는 기본 이벤트 핸들러를 취소하려면 이벤트 핸들러 함수를  override해서 false를 리턴합니다.<br>
+<a id="link1" href="http://www.google.com">구글</a><br>
+<form id="searchForm" action="data.jsp" method="GET">
+찾기 <input type="search">
+<input type="submit" value="검색">
+</form>
+</body>
+</html>

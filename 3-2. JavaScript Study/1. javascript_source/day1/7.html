@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript 반복문</title>
+</head>
+<body>
+<h3>자바스크립트 반복문</h3>
+
+<script>
+
+for(var i=0;i<10;i++){
+	if(i%2==1)
+	document.write(i+"<hr>");
+}
+document.write("<hr>");
+var i=0;
+while(i<10){
+	++i;
+	if(i%2==1)
+	document.write(i+"<hr>");
+}
+document.write("<hr>");
+i=1;
+do{
+	if(i%2==1)
+	document.write(i+"<hr>");
+}while(++i<10);
+document.write("<hr>");
+
+var nums = [1,2,3,4,5,6,7,8,9,10];
+for(var n in nums) {
+	if(n%2==1)
+	document.write(n+"<hr>");
+}
+document.write("<hr>");
+
+for(var su=1 ; su<10 ; su++) {
+	for(var dan=2 ; dan<10 ; dan++) {
+	document.write(`${dan}X${su} = ${dan*su}\t`);
+	
+	}
+	document.write("<hr>");
+}
+
+
+
+</script>
+
+</body>
+</html>

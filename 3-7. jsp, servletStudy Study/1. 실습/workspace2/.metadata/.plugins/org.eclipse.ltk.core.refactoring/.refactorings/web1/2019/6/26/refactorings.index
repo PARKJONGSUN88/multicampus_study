@@ -1,0 +1,36 @@
+1561523437020	Move 'index.html' to 'WEB-INF'
+1561523455974	Delete element
+1561523459265	Delete element
+1561600028949	Move 'NewFile.html' to 'WebContent'
+1561600394535	Rename resource 'NewFile.html'
+1561601480153	Delete element
+1561601549012	Rename type 'JoinServket'
+1561612556019	Move 'message.jsp' to 'view'
+1561612721401	Rename type 'ForwardMessage'
+1561614332128	Delete element
+1561616561547	Move 'result.jsp' to 'WebContent'
+1561616920896	Move 'result.jsp' to 'view'
+1561616953991	Delete element
+1561617753630	Delete element
+1561617766624	Delete element
+1561617800258	Delete element
+1561621010664	Delete element
+1561621589759	Copy file
+1561622023530	Rename resource 'cookie_login.jsp'
+1561622039566	Rename resource 'logout1.jsp'
+1561696693301	Rename type 'HttpServletResponse'
+1561698037487	Rename resource 'result.jsp'
+1561698073256	Move 'postResult.jsp' to 'WebContent'
+1561698932526	Move 'Calc.html' to 'WebContent'
+1561699753046	Rename resource 'Calc.html'
+1561700072004	Delete element
+1561703715098	Delete element
+1561707706269	Delete element
+1561707976208	Delete element
+1561711570328	Delete element
+1561711592714	Delete element
+1561711633523	Delete element
+1561711635801	Delete element
+1561711672164	Delete element
+1561711729198	Move 'test2.jsp' to 'WebContent'
+1561711741678	Move 'product.jsp' to 'WebContent'

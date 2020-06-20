@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+window.onload=function(){
+	document.getElementById("d1").innerHTML ="<strong>강조체</strong> <i>이탤릭</i>";
+	document.getElementById("d2").textContent ="<strong>강조체</strong> <i>이탤릭</i>";
+	document.getElementById("d3").innerText ="<strong>강조체</strong> <i>이탤릭</i>";
+	console.log(document.getElementById("d4").innerHTML);
+	console.log(document.getElementById("d4").textContent);
+}
+</script>
+</head>
+<body>
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<div id="d3"></div>
+	<div id="d4">
+		<div id="d5">
+			내용
+		</div>
+	</div>	
+</body>
+</html>

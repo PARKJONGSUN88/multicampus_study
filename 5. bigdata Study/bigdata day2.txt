@@ -1,0 +1,161 @@
+Live Node가 2개가 아닌경우 다시 설정해볼 내용
+[hadoop@master hadoop-2.7.7]$ ls
+#tmp 삭제
+[hadoop@master hadoop-2.7.7]$ rm -rfR tmp
+[hadoop@master hadoop-2.7.7]$ ls
+
+#Slave1 노드에서도 삭제
+[hadoop@slave1 hadoop-2.7.7]$ ls
+bin  include  libexec      logs        README.txt  share
+etc  lib      LICENSE.txt  NOTICE.txt  sbin        tmp
+[hadoop@slave1 hadoop-2.7.7]$ rm -rfR tmp
+[hadoop@slave1 hadoop-2.7.7]$ ls
+
+#master 노드에서 tmp 디렉토리 다시 생성
+[hadoop@master hadoop-2.7.7]$ mkdir -p /usr/local/hadoop-2.7.7/tmp/dfs/name
+[hadoop@master hadoop-2.7.7]$ mkdir -p /usr/local/hadoop-2.7.7/tmp/dfs/data
+[hadoop@master hadoop-2.7.7]$ ls -R /usr/local/hadoop-2.7.7/tmp
+
+[hadoop@master hadoop-2.7.7]$ mkdir -p /usr/local/hadoop-2.7.7/tmp/mapred/system
+[hadoop@master hadoop-2.7.7]$ mkdir -p /usr/local/hadoop-2.7.7/tmp/mapred/local
+[hadoop@master hadoop-2.7.7]$ ls -R /usr/local/hadoop-2.7.7/tmp
+
+[hadoop@master hadoop-2.7.7]$rsync -av . hadoop@slave1:/usr/local/hadoop-2.7.7
+
+[hadoop@master hadoop-2.7.7]$ cd etc/hadoop
+[hadoop@master hadoop-2.7.7]$ rsync -av . hadoop@slave1:/usr/local/hadoop-2.7.7
+
+[hadoop@master hadoop-2.7.7]$ rm -rf ./logs/yarn*
+[hadoop@master hadoop-2.7.7]$ rm -rf ./logs/hadoop*
+
+[hadoop@master ~]$ hadoop namenode -format
+
+
+
+
+postgresql
+$HADOOP-HOME/share/hadoop/common/lib/common-cli-1.2.jar
+$HADOOP-HOME/share/hadoop/common/hadoop-common-2.7.7.jar
+$HADOOP-HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.7.jar
+$HADOOP-HOME/share/hadoop/mapreduce/lib/log4j ~.jar
+
+
+
+
+
+
+package lab.hadoop.fileio;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataInputStream;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+
+public class SingleFileWriteRead {
+  public static void main(String[] args) {
+	// 입력 파라미터 확인
+	if (args.length != 2) {
+		System.err.println("Usage: SingleFileWriteRead <filename> <contents>");
+			System.exit(2);
+		}
+
+	try {
+		// 파일 시스템 제어 객체 생성
+		Configuration conf = new Configuration();
+		FileSystem hdfs = FileSystem.get(conf);
+
+		// 경로 체크
+		Path path = new Path(args[0]);
+		if (hdfs.exists(path)) {
+			hdfs.delete(path, true);
+		}
+
+		// 파일 저장
+		FSDataOutputStream outStream = hdfs.create(path);
+		outStream.writeUTF(args[1]);
+		outStream.close();
+
+		// 파일 출력
+		FSDataInputStream inputStream = hdfs.open(path);
+		String inputString = inputStream.readUTF();
+		inputStream.close();
+
+		System.out.println("## inputString:" +inputString);
+                . System.out.println(path.getFileSystem(conf).getHomeDirectory()); //hdfs 홈 경로
+ System.out.println(path.toUri()); //패스의 파일명
+ System.out.println(path.getFileSystem(conf).getUri().getPath());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+
+1. slave node를 삭제
+2. master node에서 /usr/local/hadoop-2.7.7 아래 logs와 tmp 삭제  
+   master node에서 /usr/local/eclipse 디렉토리 삭제
+   hostname 확인 
+   /home/hadoop/.bash_profile에는 JAVA_HOME과 HADOOP_HOME 환경변수 설정,
+   PATH에 JAVA_HOME과 HADOOP_HOME의 bin이 추가
+3. master node 종료 후 복사해서 slave node 생성
+4.  master node 시작 후  slave node  시작
+5.  slave node에서 hostname 변경
+6.  root권한으로 ifconfig 확인 후에 master node와 slave node의 /etc/hosts파일을 변경
+
+root@master ~]# vi /etc/hosts
+192.168.50.128  master
+192.168.50.129  secondary
+192.168.50.129  slave1
+192.168.50.128  slave2
+
+
+[root@slave1 ~]# vi /etc/hosts
+192.168.50.128  master
+192.168.50.129  secondary
+192.168.50.129  slave1
+192.168.50.128  slave2
+
+
+7. master node에서 hadoop 계정으로 ssh 설정
+[hadoop@master ~]$ pwd   #현재 디렉토리 경로 확인 (/home/hadoop)
+[hadoop@master ~]$ ssh-keygen -t rsa
+[hadoop@master ~]$ ls -al .ssh
+[hadoop@master ~]$ cp ~/.ssh/id_rsa.pub   ~/.ssh/authorized_keys
+[hadoop@master ~]$ ls -al .ssh
+
+8. master node에서 생성한 인증키를 slave node로 복사
+[hadoop@slave1 ~]$ mkdir .ssh
+[hadoop@slave1 ~]$ ls -al 
+
+[hadoop@master ~]$ scp ~/.ssh/authorized_keys hadoop@192.168.50.129:./.ssh/
+
+
+9.master node에서 hadoop 계정으로 hadoop설정 파일 변경
+hadoop-env.sh 
+slaves 
+core-site.xml 
+hdfs-site.xml
+mapred-site.xml
+yarn-site.xml
+
+
+
+10. master node에서 hadoop 계정으로 
+/usr/local/hadoop-2.7.7/디렉토리 아래 tmp/dfs/name 디렉토리 생성
+/usr/local/hadoop-2.7.7/디렉토리 아래 tmp/dfs/data 디렉토리 생성
+/usr/local/hadoop-2.7.7/디렉토리 아래 tmp/mapred/system 디렉토리 생성
+/usr/local/hadoop-2.7.7/디렉토리 아래 tmp/mapred/local 디렉토리 생성
+
+11. rsync 명령으로 slave node에 동기화 hadoop 계정으로 수행
+[hadoop@master ~]$ cd /usr/local/hadoop-2.7.7
+[hadoop@master  hadoop-2.7.7]$ rsync -av . hadoop@slave1:/usr/local/hadoop-2.7.7
+
+[hadoop@master  hadoop-2.7.7]$ rsync -av . hadoop@slave2:/usr/local/hadoop-2.7.7
+
+[hadoop@master  hadoop-2.7.7]$ rsync -av . hadoop@secondary:/usr/local/hadoop-2.7.7
+
+12. master node와 slave node에 root 계정으로 iptables (방화벽 설정파일) 변경 후에 iptables파일 restart
+
+13. Namenode 포맷

@@ -1,0 +1,8 @@
+@CHARSET "utf-8";
+div#confirmed{
+  width            : 250px;
+  height           : 100px;
+  background-color : #e0ffff;
+  border-color     : #b0e0e6;
+  border-style     : dotted;
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">  
+  <title>jQuery 기본</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>    
+$(document).ready(function(){	  
+	 $("#btn1").on("click", function(){
+        $("p:first").replaceWith("Hello world!");	
+     });
+
+  $("#btn2").click(function(){	
+	$("<h2>Hello world!</h2>").replaceAll("p");
+  });
+  $("#btn3").click(function(){
+	    $("p").wrap("<div></div>");
+	  });
+  $("#btn4").click(function(){
+	    $("p").wrapAll("<div></div>");
+	  });
+	 });
+  </script>
+ </head>
+ <body>
+     
+<p>단락1</p>
+<p>단락2</p>
+<p>단락3</p> 
+<button id="btn1">단락1에 새로운 내용 넣기</button>
+<button id="btn2">모든 단락에 새로운 내용 넣기</button>
+<button id="btn3"> 단락을 div로 감싸기</button>
+<button id="btn4"> 모든 단락을 div로 감싸기</button>
+ </body>
+</html>

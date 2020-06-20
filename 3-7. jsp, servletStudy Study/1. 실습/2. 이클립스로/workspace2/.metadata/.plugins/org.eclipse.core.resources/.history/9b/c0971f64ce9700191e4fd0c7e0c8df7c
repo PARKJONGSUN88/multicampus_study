@@ -1,0 +1,34 @@
+package lab.web.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/hello")
+public class HelloServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+    public HelloServlet() {
+        super();
+        System.out.println("HelloServlet() called!");
+    }
+
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init() called! - 서블릿 초기화");
+	}
+	
+	public void destroy() {
+		System.out.println("destroy() called! - 컨테이너로부터 서블릿 소멸시");
+	}
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContectType("text/html;charset=utf-8");
+		printWriter out = response.
+	}
+
+}

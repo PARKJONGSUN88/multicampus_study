@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">  
+  <title>jQuery 기본</title>
+  <style>  
+   
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>  
+  $(document).ready(function(){
+	$("h3").filter(function(index){
+		return index%3 == 0;
+	}).css({backgroundColor:"black", color:"White"});  
+	
+	$("input").filter(function(index){
+		return this.type=='search';
+	}).css('background-color', 'magenta');	
+});
+  </script>
+ </head>
+ <body>
+ <h3>item - 0</h3>
+<h3>item - 1</h3>
+<h3>item - 2</h3>
+<h3>item - 3</h3>
+<h3>item - 4</h3>
+<h3>item - 5</h3>
+
+email : <input type="email"><br>
+url : <input type="url"><br>
+phone: <input type="tel"><br>
+search : <input type="search"><br>
+number : <input type="number"><br>
+ </body>
+</html>

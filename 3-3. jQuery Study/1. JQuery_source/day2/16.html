@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript:event</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("textarea").keyup(function(){
+		var inputLength = $(this).val().length;
+		var remain=150-inputLength;
+		
+		$('h1').html(remain);
+		
+		if(remain >= 0) {
+			$('h1').css('color', 'black');
+		} else {
+			$('h1').css('color', 'red');
+		}
+	});	
+}); 
+</script>
+</head>
+<body>
+<div>
+        <p>지금 내 생각을</p>
+        <h1>150</h1>
+        <textarea cols="70" rows="5"></textarea>
+    </div>
+</body>
+</html>
+
+

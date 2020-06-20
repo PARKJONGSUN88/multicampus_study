@@ -1,0 +1,322 @@
+
+[package kr.multicampus.프로젝트명;]
+
+import java.lang.*;  //컴파일시에 자동으로 import됩니다.
+import java.uitl.Scanner;
+
+
+
+
+클래스는 Reference Type입니다.
+클래스는 객체를 생성하기 위한 객체의 속성과기능을 설계한 설계도입니다.
+설계도인 클래스를 메모리에 객체로 생성해야 사용 가능합니다.
+Scanner input = new Scanner(System.in); //객체를 생성
+int num = input.nextInt()
+String name = input.next();
+
+Random  r = new Random();
+int num = r.nextInt( );//-2^31~2^31-1
+
+클래스이름.java => 소스 코드를 파일로 저장
+
+for(초기화;조건;증감식){
+  반복 수행 문장;
+   ....  
+}
+
+while(조건표현식) {
+  반복 수행 문장;
+   ....
+}
+
+초기화식; //count변수 초기화
+while(조건){
+  반복 수행 문장;
+   ....
+  증감식;
+}
+
+
+C/S 프로그램 (Client/Server) 무중단 서비스
+Server Application은 무한루프로 client 요청을 기다려야 합니다.
+while(true){
+  //Client요청 대기
+  //Client 응답 보낼 서비스 수행
+  //탈출 조건문 if(조건) break;
+}
+
+
+do {
+  반복수행 문장;  //최초 1번은 무조건 수행
+  ....
+   }while(조건);   //조건이 true이면 반복 수행
+
+
+for(초기화;조건;증감식){
+  if(조건) continue;
+  반복 수행 문장;
+   ....  
+}
+
+while(조건표현식) {
+  if(조건) continue;
+  반복 수행 문장;
+   ....
+}
+
+
+for(초기화;조건;증감식){
+  for(초기화;조건;증감식){
+    if(조건) break; //가장 가까운 반복문 탈출
+     반복 수행 문장;
+   ....  
+  }
+}
+
+a1:
+for(초기화;조건;증감식){
+  a2:
+  for(초기화;조건;증감식){
+    if(조건) break a1; //전체 반복문 탈출
+     반복 수행 문장;
+   ....  
+  }
+}
+
+
+1차원 배열
+배열은 하나의 변수로 동일한 타입의 1개이상의 값을 저장하고,참조할 수 있는 집합 유형
+
+배열은 Reference Type으로 객체취급
+int[]  array1;   //배열 선언
+String[]  array2;
+
+array1 = new int[5];  //배열은 생성시 size 선언해야 합니다.
+//명시적으로 배열의 요소값을 초기화하시 않으면 정수, 실수 타입은 자동 0으로 초기화 됩니다.
+
+배열 객체 array1에는 자동으로 멤버필드(속성) length가 생성되고 배열 요소의 개수 값(size)이 저장됩니다
+array1.length
+
+
+int[]  array3 = new int[10]; //선언과 생성을 동시에..
+
+int[]  array4 = new int[]{'A', 'B', 'C'};//선언, 생성, 명시적 초기화
+※ 배열을 생성할 때 명시적 초기화를 할 경우 size 정의 안합니다.
+ 
+array4[3] = 'D';
+배열의 요소에 접근할 때는 index를 사용합니다.
+index는 0부터 시작합니다.
+자바에서 배열은 생성한 후에는 size 조정이 불가능합니다.
+array4[2] = 'Z'
+
+
+for(int i=0;i<array4.length;i++){
+  System.out.println(array4[i]);
+}
+
+<<2차원 배열>>
+1차원 배열이 여러개 구성된 집합 구조
+
+int[][] nums; //배열 선언
+int nums2[][];
+int[] nums3[];
+
+nums = new int[5][5]; //배열 생성, 자동 0으로 초기화 
+nums2 = new int[5][]; //배열 생성, 1차원 배열이 5개 저장, 1차원 배열의 저장될 요소 개수는 동적입니다.
+ 
+nums2 = new int[ ][5]; //컴파일 에러
+
+
+==============================================================
+package lab.java.core;
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+		int[][] nums; //배열 선언
+		int nums2[][];
+		int[] nums3[];
+		nums = new int[5][5];//배열 생성
+		nums[0][0] = (int)(Math.random()*12+1);
+		
+		nums2 = new int[5][];
+		//nums3 = new int[ ][5];
+		nums3 = new int[][] {{1, 2, 3},
+			{4, 5, 6, 7}, {8, 9, 10, 11, 12}}; // 배열의 요소 초기화
+	    System.out.println(nums3.length);//2차원구조의 행개수, 1차원 배열의 개수
+	    System.out.println(nums3[0].length);//첫번째 1차원 배열의 요소 개수
+	    System.out.println(nums3[1].length);//두번째 1차원 배열의 요소 개수
+	    System.out.println(nums3[2].length);//세번째 1차원 배열의 요소 개수
+	    
+	    for(int r=0;r<nums3.length;r++) {
+	    	for(int c=0;c<nums3[r].length;c++) {
+	    		System.out.print(nums3[r][c]+" ");
+	    	}
+	    	System.out.println();
+	    }
+
+	}
+
+}
+
+============================================================
+package lab.java.core;
+
+public class ArrayTest2 {
+
+	public static void main(String[] args) {
+		int[][] array1 =new int[3][4]; 
+		int[][] array2 =new int[3][4];  
+		for(int r=0;r<array1.length;r++) {
+	    	for(int c=0;c<array1[r].length;c++) {
+	    		array1[r][c] = (int)(Math.random()*12+1);
+	    		array2[r][c] = (int)(Math.random()*12+1);
+	    	}
+		}
+		
+		System.out.println("####첫번째 배열####");
+		for(int r=0;r<array1.length;r++) {
+	    	for(int c=0;c<array1[r].length;c++) {
+	    		System.out.printf("%2d ", array1[r][c] );	    		
+	    	}
+	    	System.out.println();
+		}
+		
+		System.out.println("####두번째 배열####");
+		for(int r=0;r<array2.length;r++) {
+	    	for(int c=0;c<array2[r].length;c++) {
+	    		System.out.printf("%2d ", array2[r][c] );	   		
+	    	}
+	    	System.out.println();
+		}
+	    	
+		 
+		int count = 0;
+		for(int r=0;r<array1.length;r++) {
+	    	for(int c=0;c<array1[r].length;c++) {
+	    		if(array1[r][c]==array2[r][c]) {
+	    			count++;   
+	    			System.out.print("일치하는 숫자 : ["+r+"]["+c+"]="+array1[r][c]+",");
+	    		}
+	    	}
+	    	System.out.println();
+		}
+		System.out.println("요소의 위치와 값이 동일한 개수 :"+count);
+
+	}//main end
+}//class end
+
+=============================================================
+
+
+package lab.java.core;
+
+public class ArrayTest3 {
+
+	public static void main(String[] args) {
+		int[][] array =new int[3][3]; 
+		 
+		for(int r=0;r<array.length;r++) {
+	    	for(int c=0;c<array[r].length;c++) {
+	    		array[r][c] = (int)(Math.random()*100+1);	    		
+	    	}
+		}
+		
+		System.out.println("####배열####");
+		for(int r=0;r<array.length;r++) {
+	    	for(int c=0;c<array[r].length;c++) {
+	    		System.out.printf("%2d ", array[r][c] );	    		
+	    	}
+	    	System.out.println();
+		}
+		
+	   int sum =0, count=0, min = 100 , max=0;
+		for(int r=0;r<array.length;r++) {
+	    	for(int c=0;c<array[r].length;c++) {
+	    		sum+=array[r][c]	;	    		
+	    		if(min>array[r][c]) min = array[r][c];
+	    		if(max<array[r][c]) max = array[r][c];
+	    	}
+	    	count+=array[r].length;
+	    	System.out.println();
+		} 
+		 
+		System.out.println("배열의 모든 요소의 합 :" +sum);
+		System.out.println("배열의 모든 요소의 평균 : " + Math.round(sum*100.0/count)/100.0);
+		System.out.println("배열의 모든 요소의 최소값 :" + min);
+		System.out.println("배열의 모든 요소의 최대값 :" + max);
+	}//main end
+}//class end
+
+
+
+
+
+
+
+===================================================
+
+클래스= 객체의 정의 = 객체의 설계도 = 객체의 속성+기능
+객체(인스턴스)
+인스턴스화한다 - 클래스를 메모리에 객체로 생성하는 동적개념
+
+
+
+
+
+
+<<클래스 선언 Spec>>
+AccessModifier [Modifier] class 이름 [extends 부모클래스] [implements 인터페이스, 인터페이스,...]  { }
+public          final 
+(default)       abstract
+
+※ 자바는 클래스대 클래스 상속은 단일 상속만 지원합니다.
+※ 명시적으로 상속받지 않으면 자동으로 java.lang.Object클래스를 상속받습니다.(컴파일시에 JDK가 자동으로 )
+
+
+<<Attribute, Property, Member Variable...>>
+AccessModifier [Modifier]  타입 변수이름 = 초기값;
+public          final
+protected       static
+(defaut)        volatile
+private         transient
+
+※객체(인스턴스)의 멤버변수는 명시적으로 초기화하지 않으면 JVM이 객체를 생성할때 default초기값으로 초기화를 합니다.
+
+
+<<기능, method, function>>
+AccessModifier  [Modifier]    리턴타입      메서드이름([타입 변수, 타입 변수,...]) {
+public           final        void
+protected        abstract     모든타입가능
+(defaut)         static
+private          sychronized
+                 native
+
+
+※ final 선언된 상수는 반드시 명시적 초기화가 필요합니다.
+※ static 선언된 변수는 객체 생성없이 클래스이름으로 사용 가능합니다.=> 클래스 변수
+static 변수는 동일한 클래스로부터 생성되는 객체들로부터 공유해야 하는 값을 설계할 때 사용합니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

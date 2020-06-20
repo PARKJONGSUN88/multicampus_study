@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+window.addEventListener("load", function(){	
+	var fileElement = document.getElementById("f1");
+	fileElement.addEventListener("change", function(){		
+		var files = fileElement.files;
+		var output = "";			
+			for(var i=0;i<files.length; i++){
+				var file = files[i];
+				output += "파일이름: "+file.name+", 크기: "
+				+file.size+", 타입: "+file.type+"<br>";
+			}			
+	document.getElementById("result").innerHTML=output;
+	}, false); 
+}, false);
+
+</script>
+</head>
+<body>
+  <input id="f1" type="file" multiple accept="image/*">
+  <div id="result"></div>
+ </body>
+</html>
